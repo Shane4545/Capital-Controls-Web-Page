@@ -51,7 +51,7 @@
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">Menu</button>
       <nav class="nav" id="site-nav" aria-label="Primary">
         <ul class="nav-list">
-          <li><a href="markets.html">Markets</a></li>
+          <li><a href="markets.html">Industries</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="platforms.html">Platforms</a></li>
@@ -63,48 +63,47 @@
     </div>
   </header>
 
-  <div class="tech-strip tech-strip--live" role="presentation">
-    <div class="tech-strip-viewport">
-      <div class="tech-strip-track">
-        <span class="tech-strip-chunk">
-          <strong class="tech-strip-tag">Typical stack</strong>
-          <span>Rockwell / Studio 5000 · FactoryTalk View</span>
-          <span>AVEVA Wonderware · GE iFIX</span>
-          <span>AutoCAD electrical · CSA panel build</span>
-          <span class="tech-strip-pulse">PLC · SCADA · HMI · OT networks</span>
-        </span>
-        <span class="tech-strip-chunk" aria-hidden="true">
-          <strong class="tech-strip-tag">Typical stack</strong>
-          <span>Rockwell / Studio 5000 · FactoryTalk View</span>
-          <span>AVEVA Wonderware · GE iFIX</span>
-          <span>AutoCAD electrical · CSA panel build</span>
-          <span class="tech-strip-pulse">PLC · SCADA · HMI · OT networks</span>
-        </span>
-      </div>
+  <div class="stack-strip" role="region" aria-label="Platforms and credentials">
+    <div class="stack-strip-inner section-inner">
+      <ul class="stack-strip-chips">
+        <li>Rockwell / Studio 5000</li>
+        <li>FactoryTalk · PanelView</li>
+        <li>AVEVA Wonderware</li>
+        <li>GE iFIX</li>
+        <li>Siemens instrumentation</li>
+        <li>CSA-certified panels</li>
+        <li>ISO 9001:2015</li>
+        <li>Independent integrator</li>
+      </ul>
     </div>
   </div>
 
   <main id="main">
-    <section class="hero hero--automation">
-      <canvas id="cci-3d-canvas" class="cci-3d-canvas" width="1200" height="800" aria-hidden="true"></canvas>
-      <div class="hero-inner section-inner">
-        <div class="hero-copy">
+    <section class="hero hero--elite" aria-labelledby="hero-heading">
+      <div class="hero-elite-bg" aria-hidden="true">
+        <img class="hero-elite-bg-img" src="assets/photos/scada-killaloe-overview.png" alt="" width="1920" height="1080" decoding="async" fetchpriority="high">
+        <div class="hero-elite-bg-gradient"></div>
+        <div class="hero-elite-bg-vignette"></div>
+        <div class="hero-elite-grain"></div>
+      </div>
+      <div class="hero-inner section-inner hero-elite-layout">
+        <div class="hero-elite-copyblock">
           <p class="eyebrow">Ottawa · Eastern Ontario · Western Quebec</p>
-          <h1 class="hero-display">Design, fabricate, program, and commission control systems for water, wastewater, and industrial automation.</h1>
+          <h1 class="hero-display" id="hero-heading">Design, fabricate, program, and commission control systems for water, wastewater, and industrial automation.</h1>
           <p class="hero-lead">
-            From treatment plant to lift station—one accountable controls partner for programming, panels, and field commissioning. Capital Controls delivers <strong>CSA-certified PLC control panels, SCADA/HMI systems, process instrumentation, and VFD/starter integration</strong> for municipal water, wastewater, and pumping programs across Eastern Ontario—built on Allen-Bradley platforms with comprehensive FAT/SAT documentation.
+            From treatment plant to lift station—one accountable partner for panels, PLC, SCADA, instrumentation, and field commissioning. <strong>CSA-certified builds, operator-grade graphics, and documented FAT/SAT</strong>—engineered for municipal programs and critical infrastructure.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="contact.html">Contact engineering</a>
-            <a class="btn btn-secondary" href="services.html">Explore services</a>
+            <a class="btn btn-primary" href="contact.html">Start a project</a>
+            <a class="btn btn-secondary" href="services.html">View capabilities</a>
           </div>
         </div>
-        <div class="hero-visual">
-          <figure class="hero-figure photo-frame hero-figure--screenshot">
+        <div class="hero-elite-stage">
+          <figure class="hero-elite-float photo-frame photo-frame--screenshot">
             <div class="photo-frame-inner">
-              <img src="assets/photos/scada-killaloe-overview.png" alt="Live water treatment SCADA overview: process areas, equipment status, and operator navigation from a municipal WTP upgrade." width="960" height="600" loading="eager" decoding="async" fetchpriority="high">
+              <img src="assets/photos/scada-pembroke-mixer-pumps.png" alt="Live SCADA process display: mixers, pumps, and operator detail from a municipal water treatment upgrade." width="880" height="550" loading="eager" decoding="async">
             </div>
-            <figcaption class="hero-caption">Municipal WTP SCADA overview—Killaloe water treatment plant control system.</figcaption>
+            <figcaption class="hero-elite-float-cap">Live operator environment—process graphics, alarms, and control in one view.</figcaption>
           </figure>
         </div>
       </div>
@@ -196,13 +195,6 @@
       </div>
     </section>
 
-    <div class="credibility-strip" role="presentation">
-      <strong>Credentials</strong>
-      <span>CSA-certified fabrication &amp; test</span>
-      <span>ISO 9001:2015 (certificate on request)</span>
-      <span>Independent integrator — no manufacturer exclusivity</span>
-    </div>
-
     <section class="section section-platforms cci-reveal" aria-labelledby="platforms-kicker">
       <div class="section-inner">
         <header class="section-intro section-intro--tight">
@@ -213,7 +205,7 @@
         <div class="platforms-grid">
           <article class="platform-card platform-card--featured">
             <h3 class="platform-title">Rockwell Automation / Allen-Bradley</h3>
-            <p class="platform-body">CompactLogix, ControlLogix, and Studio 5000 programming environment. PanelView HMI, FactoryTalk View, and Logix-family controllers—dominant platform across municipal and industrial programs with proven long-term support.</p>
+            <p class="platform-body">CompactLogix, ControlLogix, and Studio 5000 programming environment. PanelView HMI, FactoryTalk View, and Logix-family controllers—the backbone of most municipal programs we deliver, with long-term vendor support.</p>
           </article>
           <article class="platform-card">
             <h3 class="platform-title">AVEVA Wonderware</h3>
@@ -247,13 +239,13 @@
         <header class="section-intro section-intro--tight">
           <p class="section-kicker" id="projects-kicker">Selected projects</p>
           <h2 class="section-title section-title--accent">Representative municipal and transit programs</h2>
-          <p class="section-deck">Flagship water, wastewater, and pumping projects demonstrating full-scope integration—from quotation through commissioning and operator training.</p>
+          <p class="section-deck">Flagship water, wastewater, and pumping work—engineering, fabrication, startup, and training delivered as one accountable scope.</p>
         </header>
         <div class="projects-grid">
           <article class="project-card">
             <figure class="project-image photo-frame photo-frame--screenshot">
               <div class="photo-frame-inner">
-                <img src="assets/photos/scada-killaloe-overview.png" alt="Killaloe WTP SCADA overview screen" width="640" height="400" loading="lazy" decoding="async">
+                <img src="assets/photos/scada-killaloe-overview.png" alt="Municipal water treatment SCADA overview" width="640" height="400" loading="lazy" decoding="async">
               </div>
             </figure>
             <div class="project-content">
@@ -265,37 +257,37 @@
           <article class="project-card">
             <figure class="project-image photo-frame photo-frame--screenshot">
               <div class="photo-frame-inner">
-                <img src="assets/photos/scada-pembroke-mixer-pumps.png" alt="Pembroke WTP SCADA display" width="640" height="400" loading="lazy" decoding="async">
+                <img src="assets/photos/scada-pembroke-alarms.png" alt="WWTP SCADA alarm and operator configuration display" width="640" height="400" loading="lazy" decoding="async">
               </div>
             </figure>
             <div class="project-content">
               <span class="project-tag">Wastewater capital</span>
               <h3 class="project-title">ROPEC clarifiers &amp; disinfection</h3>
-              <p class="project-body">Multi-phase WWTP expansion with clarifier control, UV disinfection, and plant-wide SCADA integration. Dense submittal registers, vendor coordination, and phased commissioning—representative of large municipal programs.</p>
+              <p class="project-body">Multi-phase WWTP expansion with clarifier control, UV disinfection, and plant-wide SCADA integration—phased commissioning aligned with running facilities.</p>
             </div>
           </article>
           <article class="project-card">
-            <figure class="project-image photo-frame">
+            <figure class="project-image photo-frame photo-frame--screenshot">
               <div class="photo-frame-inner">
-                <img src="assets/photos/panel-csa-shop-primary.jpg" alt="CSA panel fabrication" width="640" height="400" loading="lazy" decoding="async">
+                <img src="assets/photos/hmi-chalk-river-trends.png" alt="SCADA trend display for process monitoring" width="640" height="400" loading="lazy" decoding="async">
               </div>
             </figure>
             <div class="project-content">
               <span class="project-tag">Transit pumping</span>
               <h3 class="project-title">TTC / LRT station pumping</h3>
-              <p class="project-body">Warden, Islington, Museum, and St. George station pump panels. VFD control, SCADA telemetry, safety interlocks, and coordination with transit authority standards—Xylem partnership on multiple Toronto sites.</p>
+              <p class="project-body">Station dewatering and utility pumping with VFD control, SCADA telemetry, safety interlocks, and coordination with transit authority standards—Toronto and Ottawa LRT programs.</p>
             </div>
           </article>
           <article class="project-card">
             <figure class="project-image photo-frame">
               <div class="photo-frame-inner">
-                <img src="assets/photos/panel-csa-shop-primary.jpg" alt="Control panel assembly" width="640" height="400" loading="lazy" decoding="async">
+                <img src="assets/photos/wtp-rockland-actiflo-panel.jpg" alt="Actiflo high-rate clarification control panel interior" width="640" height="400" loading="lazy" decoding="async">
               </div>
             </figure>
             <div class="project-content">
               <span class="project-tag">Municipal infrastructure</span>
               <h3 class="project-title">Ottawa Hurdman pump station</h3>
-              <p class="project-body">Brown &amp; Caldwell design-build pumping station with duplex VFD panels, PLC control, and SCADA integration. Coordinated with City of Ottawa standards for long-term operations and maintenance support.</p>
+              <p class="project-body">Design-build pumping station with duplex VFD panels, PLC control, and SCADA integration—aligned with City of Ottawa standards for long-term operations.</p>
             </div>
           </article>
         </div>
@@ -314,7 +306,7 @@
           <article class="process-step">
             <span class="process-number">01</span>
             <h3 class="process-step-title">Design &amp; engineering</h3>
-            <p class="process-step-body">Quotation, scope definition, and submittal preparation. Electrical schematics, panel layouts, PLC architecture, and SCADA design—coordinated with owner standards and consultant specifications.</p>
+            <p class="process-step-body">Scope alignment, submittal preparation, and control architecture. Electrical schematics, panel layouts, PLC structure, and SCADA design—coordinated with owner standards and consultant specifications.</p>
           </article>
           <article class="process-step">
             <span class="process-number">02</span>
@@ -350,7 +342,7 @@
         <div class="cta-final-content">
           <p class="section-kicker section-kicker--on-dark" id="cta-final-kicker">Ready to start</p>
           <h2 class="cta-final-title">Tender-ready. Upgrade-ready. Project-ready.</h2>
-          <p class="cta-final-body">Send scope, standards, and schedule. We reply with quotation, submittal requirements, and delivery milestones—structured for municipal procurement and consultant coordination.</p>
+          <p class="cta-final-body">Send scope, standards, and schedule. We respond with clear deliverables, submittal expectations, and milestone dates—structured for municipal procurement and consultant coordination.</p>
           <div class="cta-final-actions">
             <a class="btn btn-primary" href="contact.html">Contact engineering</a>
             <a class="btn btn-secondary-on-dark" href="services.html">Review services</a>
@@ -371,7 +363,7 @@
       <nav class="footer-col" aria-label="Footer">
         <span class="footer-heading">Site</span>
         <ul class="footer-links">
-          <li><a href="markets.html">Markets</a></li>
+          <li><a href="markets.html">Industries</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="platforms.html">Platforms</a></li>
