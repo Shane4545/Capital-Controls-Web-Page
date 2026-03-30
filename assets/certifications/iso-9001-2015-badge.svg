@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 104" role="img" aria-labelledby="isoTitle isoDesc">
+  <title id="isoTitle">ISO 9001:2015 quality management systems</title>
+  <desc id="isoDesc">Registered quality management system to ISO 9001:2015. Official certificate and scope available from Capital Controls on request.</desc>
+  <defs>
+    <linearGradient id="isoBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#001a3d"/>
+      <stop offset="100%" stop-color="#002d62"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="104" rx="10" fill="url(#isoBg)"/>
+  <rect x="2" y="2" width="296" height="100" rx="8" fill="none" stroke="#00a651" stroke-width="2" opacity="0.55"/>
+  <text x="150" y="40" text-anchor="middle" fill="#ffffff" font-family="Segoe UI, system-ui, sans-serif" font-size="20" font-weight="700">ISO 9001:2015</text>
+  <text x="150" y="62" text-anchor="middle" fill="#b8d4f0" font-family="Segoe UI, system-ui, sans-serif" font-size="11" font-weight="600" letter-spacing="0.08em">QUALITY MANAGEMENT</text>
+  <text x="150" y="88" text-anchor="middle" fill="#7dffb3" font-family="Segoe UI, system-ui, sans-serif" font-size="9.5" font-weight="600">Registered system · certificate on request</text>
+</svg>

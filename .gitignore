@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.Python
+.venv/
+venv/
+.env
+.env.*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+
+# Internal sales-document extracts (large + sensitive — keep local only)
+assets/_sales_corpus.txt
+assets/_sales_corpus_jobs/
+assets/_sales_file_index.json
+
+# Local review screenshots
+review-*.png

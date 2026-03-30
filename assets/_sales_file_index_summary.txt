@@ -1,0 +1,60 @@
+Jobs with 'Sales Documents': 182
+Total files: 11708
+
+Top extensions:
+  .pdf: 5448
+  .doc: 1622
+  .xlsx: 1593
+  .dwg: 993
+  .db: 626
+  .msg: 419
+  .jpg: 296
+  .dgn: 215
+  .docx: 139
+  .png: 67
+  .txt: 39
+  .mov: 34
+
+Keywords in relative paths:
+  specification: 6436
+  quotation: 5216
+  drawing: 1644
+  pumping: 1203
+  panel: 1167
+  quote: 1002
+  wtp: 807
+  instrument: 760
+  wwtp: 486
+  vfd: 323
+  scada: 163
+  plc: 155
+  lift: 150
+  design: 88
+  bom: 76
+  scope: 66
+  network: 65
+  treatment: 55
+  commission: 53
+  sat: 52
+  hmi: 42
+  csa: 34
+  proposal: 23
+  fat: 22
+  programming: 15
+
+Top 15 jobs by file count:
+  CCI1536 B&M Hurdman: 1541
+  CCI1009 Rondeau Golfview Subdivision PS: 1115
+  CCI1544 Xylem TTC Warden: 639
+  CCI1103 LRT Pump Panels: 486
+  CCI1362 Xylem TTC Islington: 400
+  CCI1105 LRT Accessory Work Sumps: 396
+  CCI-1677 Carlteton Place WTP WWTP Upgrade: 356
+  CCI1608 T&M Elec ROPEC Secondary Clarifiers Rehab Ph 3: 309
+  CCI1149 Modern Niagara - Ropec Disinfection: 216
+  CCI1663 Sheridan - Napanee WPCP: 209
+  CCI1703 NAC - ROPEC Reliability: 173
+  CCI1186 Acres Road Pumping Station Phase 1 Upgrades: 137
+  CCI1514 IECBL Lemieux PS Screen Install: 137
+  CCI1247 B&M ROPEC RSPS Rehabilitation: 131
+  CCI1551 KU Power Richcraft 1298 Ogilvie Road Pumping Station: 126
