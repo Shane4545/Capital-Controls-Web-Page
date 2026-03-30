@@ -78,7 +78,7 @@
 
 ## H. GIT STATUS
 
-- **Committed:** `26fe36a` — *Complete deployment pass: premium imagery, engineering proof, leadership template, motion polish, and QA receipts.*
+- **Committed:** `26fe36a` (deployment pass) + `68ec9f4` (receipt git block).
 - **Pushed:** `origin/main` — `https://github.com/Shane4545/Capital-Controls-Web-Page.git` (success).
 
 ## I. TESTER VERDICT
