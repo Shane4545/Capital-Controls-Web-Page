@@ -3071,11 +3071,11 @@ body.page-home {
   padding-right: 0;
 }
 
-/* ========== Homepage cinematic hero (full-bleed image + scrim, no card) ========== */
+/* ========== Homepage cinematic hero: composition-first (text column + image showcase) ========== */
 .hero--cinematic {
   position: relative;
   isolation: isolate;
-  min-height: clamp(36rem, 92vh, 64rem);
+  min-height: clamp(26rem, 68vh, 44rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -3096,15 +3096,34 @@ body.page-home {
   position: absolute;
   inset: 0;
   z-index: 0;
+  animation: hero-cinematic-media-fade 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes hero-cinematic-media-fade {
+  from {
+    opacity: 0.88;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.hero-cinematic-parallax-root {
+  position: absolute;
+  inset: -4%;
+  overflow: hidden;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
 }
 
 @keyframes hero-cinematic-img-settle {
   from {
-    transform: scale(1.08);
+    transform: scale(1.09);
   }
 
   to {
-    transform: scale(1.02);
+    transform: scale(1);
   }
 }
 
@@ -3112,14 +3131,15 @@ body.page-home {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 48% 42%;
-  transform: scale(1.02);
-  transform-origin: 50% 40%;
+  object-position: 62% 42%;
+  display: block;
+  transform: scale(1);
+  transform-origin: 58% 42%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .hero--cinematic .hero-cinematic-img {
-    animation: hero-cinematic-img-settle 1.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation: hero-cinematic-img-settle 1.45s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 }
 
@@ -3130,14 +3150,15 @@ body.page-home {
   border-radius: 0;
   background:
     linear-gradient(
-      100deg,
-      rgba(0, 2, 10, 0.94) 0%,
-      rgba(0, 8, 26, 0.88) 28%,
-      rgba(0, 18, 42, 0.55) 52%,
-      rgba(0, 24, 48, 0.22) 72%,
-      rgba(0, 10, 28, 0.06) 100%
+      98deg,
+      rgba(0, 3, 12, 0.94) 0%,
+      rgba(0, 10, 28, 0.86) 26%,
+      rgba(0, 16, 36, 0.52) 42%,
+      rgba(0, 20, 42, 0.18) 56%,
+      rgba(0, 12, 28, 0.04) 72%,
+      transparent 100%
     ),
-    linear-gradient(180deg, rgba(0, 4, 14, 0.28) 0%, transparent 48%, rgba(0, 2, 10, 0.22) 100%);
+    linear-gradient(180deg, rgba(0, 4, 14, 0.22) 0%, transparent 55%, rgba(0, 2, 10, 0.18) 100%);
 }
 
 .hero-cinematic-inner {
@@ -3149,9 +3170,9 @@ body.page-home {
   max-width: var(--max);
   margin: 0 auto;
   padding:
-    clamp(5.5rem, 14vh, 7.5rem) var(--gutter)
-    clamp(4rem, 10vh, 6rem);
-  min-height: clamp(36rem, 92vh, 64rem);
+    clamp(3.75rem, 9vh, 5.25rem) var(--gutter)
+    clamp(2.5rem, 5vh, 3.75rem);
+  min-height: clamp(26rem, 68vh, 44rem);
   box-sizing: border-box;
 }
 
@@ -3163,8 +3184,34 @@ body.page-home {
   }
 }
 
+.hero-cinematic-layout {
+  display: grid;
+  width: 100%;
+  align-items: center;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 1024px) {
+  .hero-cinematic-layout {
+    grid-template-columns: minmax(0, 0.42fr) minmax(0, 1fr);
+    gap: clamp(1.25rem, 3vw, 2.75rem);
+  }
+}
+
+.hero-cinematic-stage {
+  display: none;
+  min-height: 1px;
+}
+
+@media (min-width: 1024px) {
+  .hero-cinematic-stage {
+    display: block;
+  }
+}
+
 .hero-cinematic-copy {
-  max-width: min(36rem, 100%);
+  max-width: min(22rem, 100%);
   margin: 0;
   padding: 0;
   background: none;
@@ -3173,34 +3220,50 @@ body.page-home {
   box-shadow: none;
 }
 
+@media (max-width: 1023px) {
+  .hero-cinematic-copy {
+    max-width: min(28rem, 100%);
+  }
+}
+
 .page-home .hero--cinematic .hero-display {
-  margin: 0 0 1.35rem;
-  max-width: 12.5em;
-  font-size: clamp(2.05rem, 4.1vw, 3.25rem);
-  font-weight: 800;
-  line-height: 1.06;
-  letter-spacing: -0.042em;
+  margin: 0 0 0.75rem;
+  max-width: none;
+  font-size: clamp(1.45rem, 2.15vw, 1.95rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
   color: #f8fafc;
-  text-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.45),
-    0 12px 48px rgba(0, 0, 0, 0.35);
-  text-wrap: balance;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+}
+
+.hero--cinematic .hero-display-line {
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
 }
 
 .hero--cinematic .eyebrow {
-  margin: 0 0 1.15rem;
+  margin: 0 0 0.65rem;
   color: #5ee9a8;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   font-weight: 700;
+  font-size: 0.625rem;
 }
 
 .hero--cinematic .hero-lead {
-  margin: 0 0 0;
-  max-width: 38rem;
-  font-size: 1.0625rem;
-  line-height: 1.68;
-  color: rgba(248, 250, 252, 0.9);
-  text-shadow: 0 1px 20px rgba(0, 0, 0, 0.4);
+  margin: 0;
+  max-width: 22rem;
+  font-size: 0.9375rem;
+  line-height: 1.58;
+  color: rgba(248, 250, 252, 0.88);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.45);
+}
+
+@media (max-width: 1023px) {
+  .hero--cinematic .hero-lead {
+    max-width: 28rem;
+  }
 }
 
 .hero--cinematic .hero-lead strong {
@@ -3212,12 +3275,12 @@ body.page-home {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.8rem 1rem;
-  margin: 2rem 0 0;
+  gap: 0.65rem 0.85rem;
+  margin: 1.25rem 0 0;
 }
 
 .hero--cinematic .btn-cinematic-primary {
-  padding: 0.9rem 1.6rem;
+  padding: 0.72rem 1.35rem;
   font-weight: 800;
   letter-spacing: 0.03em;
   border-radius: 999px;
@@ -3241,7 +3304,7 @@ body.page-home {
 }
 
 .hero--cinematic .btn-cinematic-secondary {
-  padding: 0.9rem 1.45rem;
+  padding: 0.72rem 1.25rem;
   font-weight: 700;
   letter-spacing: 0.03em;
   border-radius: 999px;
@@ -3304,9 +3367,17 @@ body.page-home {
     animation: none !important;
   }
 
+  .hero-cinematic-media {
+    animation: none !important;
+  }
+
   .hero--cinematic .hero-cinematic-img {
     animation: none !important;
-    transform: scale(1.02);
+    transform: none;
+  }
+
+  .hero-cinematic-parallax-root {
+    transform: none !important;
   }
 }
 

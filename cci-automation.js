@@ -227,9 +227,62 @@ function initHeroEntrance() {
   });
 }
 
+/** Single signature motion: subtle lerped parallax on SCADA layer (fine pointer only). */
+function initHeroParallax() {
+  if (prefersReduced) return;
+  if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+
+  const hero = document.querySelector(".hero--cinematic");
+  const root = hero?.querySelector(".hero-cinematic-parallax-root");
+  if (!hero || !root) return;
+
+  const maxX = 16;
+  const maxY = 11;
+  let targetX = 0;
+  let targetY = 0;
+  let curX = 0;
+  let curY = 0;
+  let frameId = 0;
+
+  function step() {
+    curX += (targetX - curX) * 0.065;
+    curY += (targetY - curY) * 0.065;
+    root.style.transform = `translate3d(${curX.toFixed(2)}px, ${curY.toFixed(2)}px, 0)`;
+    if (Math.abs(targetX - curX) > 0.05 || Math.abs(targetY - curY) > 0.05) {
+      frameId = requestAnimationFrame(step);
+    } else {
+      frameId = 0;
+    }
+  }
+
+  function queue() {
+    if (!frameId) frameId = requestAnimationFrame(step);
+  }
+
+  hero.addEventListener(
+    "pointermove",
+    (e) => {
+      const r = hero.getBoundingClientRect();
+      const nx = (e.clientX - r.left) / r.width - 0.5;
+      const ny = (e.clientY - r.top) / r.height - 0.5;
+      targetX = -nx * 2 * maxX;
+      targetY = -ny * 2 * maxY;
+      queue();
+    },
+    { passive: true }
+  );
+
+  hero.addEventListener("pointerleave", () => {
+    targetX = 0;
+    targetY = 0;
+    queue();
+  });
+}
+
 initViewTransitions();
 initLinkPrefetch();
 markRevealTargets();
 initScrollReveals();
 initHeroThree(document.getElementById("cci-3d-canvas"));
 initHeroEntrance();
+initHeroParallax();
