@@ -78,12 +78,8 @@
 
 ## H. GIT STATUS
 
-Run after commit:
-
-- `git log -1 --oneline`
-- `git status`
-
-If push fails, record stderr (auth, network, or missing remote).
+- **Committed:** `26fe36a` — *Complete deployment pass: premium imagery, engineering proof, leadership template, motion polish, and QA receipts.*
+- **Pushed:** `origin/main` — `https://github.com/Shane4545/Capital-Controls-Web-Page.git` (success).
 
 ## I. TESTER VERDICT
 
