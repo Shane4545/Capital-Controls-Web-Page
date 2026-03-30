@@ -2,7 +2,7 @@
   "name": "Capital Controls & Instrumentation Inc.",
   "short_name": "Capital Controls",
   "description": "CSA-certified panels, ISO 9001, PLC/SCADA, water/wastewater and industrial automation, Ottawa.",
-  "start_url": "/",
+  "start_url": "./",
   "display": "browser",
   "background_color": "#f7f8fa",
   "theme_color": "#002d62",

@@ -63,4 +63,29 @@
       });
     });
   }
+
+  /* Partner / certification / header logos: text label if file missing (GitHub Pages path issues) */
+  document
+    .querySelectorAll(
+      'img[src*="assets/partners/"], img[src*="assets/certifications/"], img.site-logo, img[src*="logo-mark"], .footer-logo-link img, .credibility-micro-list img'
+    )
+    .forEach(function (img) {
+      img.addEventListener("error", function onLogoError() {
+        img.removeEventListener("error", onLogoError);
+        if (img.classList.contains("logo-fallback-done")) return;
+        img.classList.add("logo-fallback-done");
+        var alt = (img.getAttribute("alt") || "").trim();
+        var label =
+          alt.length > 0 && alt.length < 80
+            ? alt
+            : "Brand";
+        var span = document.createElement("span");
+        span.className = "logo-fallback-label";
+        span.textContent = label;
+        span.setAttribute("role", "img");
+        img.style.display = "none";
+        var parent = img.parentNode;
+        if (parent) parent.insertBefore(span, img.nextSibling);
+      });
+    });
 })();

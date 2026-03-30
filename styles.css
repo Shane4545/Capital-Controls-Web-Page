@@ -513,12 +513,13 @@ a:hover {
   justify-content: center;
   padding: 0.35rem 0.5rem;
   text-decoration: none;
-  opacity: 0.88;
-  transition: opacity 0.2s var(--ease);
+  opacity: 1;
+  transition: opacity 0.2s var(--ease), filter 0.2s var(--ease);
 }
 
 .partner-logo-link:hover {
   opacity: 1;
+  filter: brightness(0.97);
 }
 
 .partner-logos img {
@@ -529,9 +530,39 @@ a:hover {
   object-fit: contain;
 }
 
+/* GE monogram SVG uses white + blue; white ring vanishes on light UI — give a neutral chip */
 .partner-logo--ge {
   max-height: 40px !important;
   max-width: 48px !important;
+  padding: 0.2rem;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #e8edf3 0%, #d8dee8 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.75),
+    0 1px 2px rgba(0, 28, 72, 0.12);
+  box-sizing: content-box;
+}
+
+.credibility-micro-list a,
+.partner-logo-link {
+  position: relative;
+}
+
+/* Text fallback when partner/ISO image fails to load (see site.js) */
+.logo-fallback-label {
+  display: inline-block;
+  max-width: 12rem;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.25;
+  color: var(--color-primary);
+  background: var(--color-surface-muted);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius);
 }
 
 .partner-strip-subhead {
