@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Capital Controls &amp; Instrumentation — complete control system delivery for treatment plants, pumping stations, and municipal infrastructure. CSA fabrication, PLC/SCADA, commissioning, and operator turnover. Ottawa; programs across Canada.">
-  <meta name="theme-color" content="#002d62">
+  <meta name="theme-color" content="#05080c">
   <meta name="author" content="Capital Controls &amp; Instrumentation Inc.">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="canonical" href="https://www.capitalcontrols.ca/">
@@ -33,8 +33,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="cinematic-home.css">
 </head>
-<body data-page="home" class="page-home">
+<body data-page="home" class="page-home page-home--cinematic">
   <a class="skip-link" href="#main">Skip to content</a>
 
   <div class="topbar">
@@ -79,329 +80,395 @@
   </div>
 
   <main id="main">
-    <section class="hero hero--cinematic hero--elite" aria-labelledby="hero-heading">
-      <div class="hero-cinematic-media" aria-hidden="true">
-        <div class="hero-cinematic-parallax-root">
-          <img class="hero-cinematic-img" src="assets/photos/scada-killaloe-overview.png" alt="" width="1920" height="1080" decoding="async" fetchpriority="high">
-        </div>
-        <div class="hero-cinematic-scrim"></div>
+    <section class="cinema-hero" aria-labelledby="cinema-hero-heading">
+      <div class="cinema-hero__layers" aria-hidden="true">
+        <div class="cinema-hero__glow"></div>
+        <div class="cinema-hero__grid"></div>
+        <div class="cinema-hero__noise"></div>
       </div>
-      <div class="hero-inner section-inner hero-cinematic-inner">
-        <div class="hero-cinematic-layout">
-          <div class="hero-cinematic-copy">
-            <p class="eyebrow">Ottawa · Eastern Ontario · Western Quebec · Projects across Canada</p>
-            <h1 class="hero-display" id="hero-heading">
-              <span class="hero-title-balanced">Automation Systems for Water &amp; Wastewater Infrastructure</span>
-            </h1>
-            <p class="hero-lead">
-              Capital Controls &amp; Instrumentation designs, builds, and commissions <strong>complete control systems</strong> for treatment plants, pumping stations, and industrial automation.
-            </p>
-            <div class="hero-actions hero-cinematic-actions">
-              <a class="btn btn-primary btn-cinematic-primary" href="contact.html">Contact engineering</a>
-              <a class="btn btn-secondary btn-cinematic-secondary" href="services.html">Delivery scope <span class="btn-hero-arrow" aria-hidden="true">→</span></a>
-            </div>
+      <div class="cinema-hero__media" aria-hidden="true">
+        <img class="cinema-hero__img" src="assets/photos/scada-killaloe-overview.png" alt="" width="1920" height="1080" decoding="async" fetchpriority="high">
+        <div class="cinema-hero__grade"></div>
+        <div class="cinema-hero__vignette"></div>
+        <div class="cinema-hero__scan"></div>
+      </div>
+      <div class="cinema-hero__content">
+        <p class="cinema-hero__eyebrow">Ottawa · Eastern Ontario · Western Quebec · Programs across Canada</p>
+        <h1 class="cinema-hero__title" id="cinema-hero-heading">
+          <span class="cinema-hero__title-line">Mission-critical control.</span>
+          <span class="cinema-hero__title-line">Engineered as one system.</span>
+        </h1>
+        <p class="cinema-hero__lead">
+          Capital Controls &amp; Instrumentation designs, fabricates, programs, and commissions <strong>complete control systems</strong> for water, wastewater, and municipal infrastructure—from enclosure to SCADA to turnover.
+        </p>
+        <div class="cinema-hero__actions">
+          <a class="cinema-btn cinema-btn--primary" href="contact.html">Contact engineering</a>
+          <a class="cinema-btn cinema-btn--ghost" href="services.html">Delivery scope</a>
+        </div>
+      </div>
+      <a class="cinema-hero__scroll" href="#cinema-signal">Continue</a>
+    </section>
+
+    <section class="cinema-signal" id="cinema-signal" aria-labelledby="cinema-signal-heading">
+      <div class="cinema-signal__inner">
+        <header class="cinema-signal__header">
+          <p class="cinema-section__kicker">System activation</p>
+          <h2 class="cinema-section__title" id="cinema-signal-heading">Signal path, end to end</h2>
+          <p class="cinema-section__deck">Field intelligence routes through structured terminations and PLC logic, surfaces in SCADA, and closes the loop on the physical process—documented, testable, and maintainable.</p>
+        </header>
+        <div class="cinema-signal__diagram">
+          <svg class="cinema-signal__svg" viewBox="0 0 1000 200" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Control signal flow from field devices through PLC and SCADA to process">
+            <defs>
+              <linearGradient id="cinema-signal-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#00a651" stop-opacity="0.25"></stop>
+                <stop offset="45%" stop-color="#00a651" stop-opacity="1"></stop>
+                <stop offset="100%" stop-color="#00a651" stop-opacity="0.35"></stop>
+              </linearGradient>
+            </defs>
+            <path class="cinema-signal__path" d="M 92 102 L 230 102"></path>
+            <path class="cinema-signal__path" d="M 230 102 L 380 102"></path>
+            <path class="cinema-signal__path" d="M 380 102 L 530 102"></path>
+            <path class="cinema-signal__path" d="M 530 102 L 680 102"></path>
+            <path class="cinema-signal__path" d="M 680 102 L 908 102"></path>
+            <path class="cinema-signal__path--energy" d="M 92 102 L 230 102"></path>
+            <path class="cinema-signal__path--energy" d="M 230 102 L 380 102"></path>
+            <path class="cinema-signal__path--energy" d="M 380 102 L 530 102"></path>
+            <path class="cinema-signal__path--energy" d="M 530 102 L 680 102"></path>
+            <path class="cinema-signal__path--energy" d="M 680 102 L 908 102"></path>
+            <g class="cinema-signal__node-group" data-node="0">
+              <circle class="cinema-signal__node-dot" cx="92" cy="102" r="11"></circle>
+            </g>
+            <g class="cinema-signal__node-group" data-node="1">
+              <circle class="cinema-signal__node-dot" cx="230" cy="102" r="11"></circle>
+            </g>
+            <g class="cinema-signal__node-group" data-node="2">
+              <circle class="cinema-signal__node-dot" cx="380" cy="102" r="11"></circle>
+            </g>
+            <g class="cinema-signal__node-group" data-node="3">
+              <circle class="cinema-signal__node-dot" cx="530" cy="102" r="11"></circle>
+            </g>
+            <g class="cinema-signal__node-group" data-node="4">
+              <circle class="cinema-signal__node-dot" cx="680" cy="102" r="11"></circle>
+            </g>
+            <g class="cinema-signal__node-group" data-node="5">
+              <circle class="cinema-signal__node-dot" cx="908" cy="102" r="11"></circle>
+            </g>
+          </svg>
+          <div class="cinema-signal__labels">
+            <p class="cinema-signal__label" tabindex="0">Field / instrument<small>Transmitters, discrete devices, process feedback</small></p>
+            <p class="cinema-signal__label" tabindex="0">Terminations<small>Structured I/O, marshalling, protection</small></p>
+            <p class="cinema-signal__label" tabindex="0">PLC / control<small>Sequences, interlocks, alarming</small></p>
+            <p class="cinema-signal__label" tabindex="0">Plant network<small>Industrial Ethernet, secure paths</small></p>
+            <p class="cinema-signal__label" tabindex="0">HMI / SCADA<small>Operations visibility and control</small></p>
+            <p class="cinema-signal__label" tabindex="0">Process outcome<small>Pumps, valves, treatment, uptime</small></p>
           </div>
-          <div class="hero-cinematic-stage" aria-hidden="true"></div>
         </div>
       </div>
     </section>
 
-    <section class="section section-system-authority cci-reveal" aria-labelledby="system-authority-heading">
-      <div class="section-inner">
-        <header class="section-intro section-intro--tight section-intro--editorial">
-          <p class="section-kicker">System authority</p>
-          <h2 class="section-title section-title--accent" id="system-authority-heading">Complete System Delivery</h2>
-        </header>
-        <div class="authority-copy">
-          <p>We don’t supply isolated components.</p>
-          <p>We deliver complete, working control systems—from panel fabrication and PLC programming to SCADA, instrumentation, commissioning, and operator turnover.</p>
-          <p>Every system is engineered, tested, and delivered as a fully integrated solution.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-delivery-accountability cci-reveal" aria-labelledby="delivery-accountability-heading">
-      <div class="section-inner">
-        <header class="section-intro section-intro--tight section-intro--editorial">
-          <p class="section-kicker">Accountability</p>
-          <h2 class="section-title section-title--accent" id="delivery-accountability-heading">From Design to Operation</h2>
-        </header>
-        <div class="authority-copy">
-          <p>From initial design through factory testing, site commissioning, and operator training, we deliver systems that are ready for live operation.</p>
-          <p>We remain accountable from concept to turnover.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-engineering-proof cci-reveal" aria-labelledby="engineering-proof-heading">
-      <div class="section-inner">
-        <header class="section-intro section-intro--tight section-intro--editorial">
-          <p class="section-kicker">Engineering proof</p>
-          <h2 class="section-title section-title--accent" id="engineering-proof-heading">Drawings, logic, and field integration</h2>
-          <p class="section-deck section-deck--narrow">Programs ship with native <strong>Studio&nbsp;5000 / RSLogix</strong> ladder, structured tag databases, and PCNs aligned to P&amp;IDs. The image pool does not include an IDE screenshot cleared for public use; the frames below are representative <strong>panel electrical excerpts</strong>, <strong>integration craftsmanship</strong>, and <strong>municipal PLC deployment</strong> from delivered work.</p>
-        </header>
-        <div class="engineering-proof-grid">
-          <figure class="engineering-proof-card photo-frame photo-frame--screenshot">
-            <div class="photo-frame-inner">
-              <img src="assets/photos/drawing-bishop-panel.png" alt="Excerpt from an industrial control panel electrical drawing set showing disciplined layout and documentation." width="960" height="540" loading="lazy" decoding="async">
-            </div>
-            <figcaption>Panel electrical design excerpt—submittal-grade drawings coordinated with PLC I/O and field terminations.</figcaption>
-          </figure>
-          <figure class="engineering-proof-card photo-frame">
-            <div class="photo-frame-inner">
-              <img src="assets/photos/gallery-killaloe-wtp-02.jpg" alt="Control panel interior with organized terminations and field wiring during municipal integration." width="960" height="640" loading="lazy" decoding="async">
-            </div>
-            <figcaption>Integration quality—structured wiring and checkout discipline inside municipal project enclosures.</figcaption>
-          </figure>
-          <figure class="engineering-proof-card photo-frame">
-            <div class="photo-frame-inner">
-              <img src="assets/photos/wtp-rockland-main-plc.jpg" alt="Main PLC enclosure installed at a municipal water treatment facility." width="960" height="640" loading="lazy" decoding="async">
-            </div>
-            <figcaption>Field deployment—Allen-Bradley control hardware integrated at a treatment facility.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-deliverables cci-reveal" aria-labelledby="deliverables-kicker">
-      <div class="section-inner">
-        <header class="section-intro section-intro--tight section-intro--editorial">
-          <p class="section-kicker" id="deliverables-kicker">Delivery scope</p>
-          <h2 class="section-title section-title--accent">Integrated delivery—not discrete parts</h2>
-          <p class="section-deck">Panels, PLC logic, SCADA, instrumentation, networking, FAT/SAT, and documentation under one accountable scope—for treatment plants, pumping stations, and municipal infrastructure programs.</p>
-        </header>
-        <div class="deliverables-grid">
-          <article class="deliverable-card">
-            <h3 class="deliverable-title">Control panels</h3>
-            <p class="deliverable-body">CSA-listed industrial control panels for indoor and outdoor service. PLC/SCADA enclosures, duplex/triplex pump panels, VFD assemblies, MCC sections, and network cabinets—NEMA 3R/4/4X rated with complete drawings, submittals, and certification.</p>
-          </article>
-          <article class="deliverable-card">
-            <h3 class="deliverable-title">PLC programming</h3>
-            <p class="deliverable-body">Control logic for pumps, blowers, mixers, chemical systems, and utility processes. Clear, maintainable ladder logic with sequences, interlocks, and alarm structures—organized for future support staff and integrators.</p>
-          </article>
-          <article class="deliverable-card">
-            <h3 class="deliverable-title">SCADA / HMI layer</h3>
-            <p class="deliverable-body">Operator interfaces for status, control, alarms, and trending. Touch panels and PC SCADA with plant-satellite linkage, remote visibility, and historian integration—built for shift turnover and upset conditions.</p>
-          </article>
-          <article class="deliverable-card">
-            <h3 class="deliverable-title">Instrumentation</h3>
-            <p class="deliverable-body">Flow, level, pressure, and analytical instruments for water and wastewater processes. Magnetic flowmeters, ultrasonic level, hydrostatic transmitters, and water-quality sensors—configured, loop-checked, and commissioned.</p>
-          </article>
-          <article class="deliverable-card">
-            <h3 class="deliverable-title">VFD / starter integration</h3>
-            <p class="deliverable-body">Variable frequency drives for pumps and blowers, soft starters, and full-voltage motor control. PLC/SCADA coordination for speed control, bypass sequencing, and protection—with PID tuning for level, pressure, and flow applications.</p>
-          </article>
-          <article class="deliverable-card">
-            <h3 class="deliverable-title">Industrial networking</h3>
-            <p class="deliverable-body">Industrial Ethernet, EtherNet/IP, Modbus TCP/RTU, and secure remote access. Network-ready controls coordinated with IT and operations standards—from field devices through plant SCADA and historians.</p>
-          </article>
-          <article class="deliverable-card">
-            <h3 class="deliverable-title">FAT / SAT / commissioning</h3>
-            <p class="deliverable-body">Factory acceptance testing with I/O verification, communication checks, and HMI dry testing. Site commissioning with loop checks, rotation verification, interlock testing, alarm validation, and PID tuning under real process conditions.</p>
-          </article>
-          <article class="deliverable-card">
-            <h3 class="deliverable-title">Documentation / training</h3>
-            <p class="deliverable-body">Shop drawings, schematics, terminal schedules, and as-built packages. Native PLC/HMI files, tag databases, and operation narratives. On-site training for operations and maintenance staff—aligned with municipal closeout requirements.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-industries cci-reveal" aria-labelledby="industries-kicker">
-      <div class="section-inner">
-        <header class="section-intro section-intro--tight section-intro--editorial">
-          <p class="section-kicker" id="industries-kicker">Infrastructure focus</p>
-          <h2 class="section-title section-title--accent">Treatment plants, pumping stations, and municipal infrastructure</h2>
-          <p class="section-deck">Delivery experience across drinking-water and wastewater treatment plants, lift and booster stations, transit utility pumping, and selective industrial process systems—engineered for uptime, maintainability, and code compliance.</p>
-        </header>
-        <div class="industries-grid">
-          <article class="industry-card industry-card--primary">
-            <span class="industry-tag">Primary</span>
-            <h3 class="industry-title">Water treatment plants</h3>
-            <p class="industry-body">WTP process control for filtration, chemical feed, disinfection, and booster systems. SCADA upgrades, PLC modernization, and instrumentation integration for municipal drinking water facilities across Eastern Ontario.</p>
-          </article>
-          <article class="industry-card industry-card--primary">
-            <span class="industry-tag">Primary</span>
-            <h3 class="industry-title">Wastewater treatment</h3>
-            <p class="industry-body">WWTP automation for screening, aeration, clarification, disinfection, and biosolids handling. Lagoon controls, secondary treatment upgrades, and leachate systems—with alarm rationalization and operator training.</p>
-          </article>
-          <article class="industry-card industry-card--primary">
-            <span class="industry-tag">Primary</span>
-            <h3 class="industry-title">Pumping stations</h3>
-            <p class="industry-body">Sanitary and storm lift stations, subdivision pumping, and booster stations. Duplex/triplex/simplex panels with VFD control, SCADA telemetry, and remote monitoring—designed for unattended operation and maintainability.</p>
-          </article>
-          <article class="industry-card">
-            <span class="industry-tag">Specialty</span>
-            <h3 class="industry-title">Transit infrastructure</h3>
-            <p class="industry-body">Station pumping and utility controls for TTC, Metrolinx, LRT, and OC Transpo infrastructure. Safety interlocks, redundant operational systems, and coordination with transit authority standards—proven on Warden, Islington, and Museum stations.</p>
-          </article>
-          <article class="industry-card">
-            <span class="industry-tag">Specialty</span>
-            <h3 class="industry-title">Bridge automation</h3>
-            <p class="industry-body">Movable bridge control systems with HMI interfaces, safety interlocks, and position monitoring. Hydraulic and mechanical coordination for lift bridges and swing spans—engineered for marine and roadway safety.</p>
-          </article>
-          <article class="industry-card">
-            <span class="industry-tag">Specialty</span>
-            <h3 class="industry-title">Industrial process</h3>
-            <p class="industry-body">Material handling, conveyor systems, packaging automation, and institutional facilities. Mining water treatment, hospital BAS-adjacent panels, university utilities, and laboratory process controls—diversification beyond municipal core.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-platforms cci-reveal" aria-labelledby="platforms-kicker">
-      <div class="section-inner">
-        <header class="section-intro section-intro--tight">
-          <p class="section-kicker" id="platforms-kicker">Platforms &amp; technology</p>
-          <h2 class="section-title section-title--accent">Rockwell-centric with multi-vendor instrumentation</h2>
-          <p class="section-deck">Allen-Bradley PLC and HMI platforms with Wonderware, iFIX, and FactoryTalk SCADA. Siemens instrumentation, industrial Ethernet protocols, and standards-based integration—aligned with owner IT and operations requirements.</p>
-        </header>
-        <div class="platforms-grid">
-          <article class="platform-card platform-card--featured">
-            <h3 class="platform-title">Rockwell Automation / Allen-Bradley</h3>
-            <p class="platform-body">CompactLogix, ControlLogix, and Studio 5000 programming environment. PanelView HMI, FactoryTalk View, and Logix-family controllers—the backbone of most municipal infrastructure programs we deliver, with long-term vendor support.</p>
-          </article>
-          <article class="platform-card">
-            <h3 class="platform-title">AVEVA Wonderware</h3>
-            <p class="platform-body">InTouch SCADA and System Platform for plant-wide visualization, historian integration, and remote operations. Proven on water and wastewater upgrades requiring scalable, multi-site architectures.</p>
-          </article>
-          <article class="platform-card">
-            <h3 class="platform-title">GE iFIX</h3>
-            <p class="platform-body">Legacy SCADA host platform for plant upgrades and modernization programs. Migration paths from older iFIX versions to current releases—protecting production and compliance during cutovers.</p>
-          </article>
-          <article class="platform-card">
-            <h3 class="platform-title">Siemens instrumentation</h3>
-            <p class="platform-body">Sitrans FM magnetic flowmeters, ultrasonic level transmitters, and pressure instruments. Endress+Hauser, Rosemount, and Hach analytical devices—configured and commissioned for harsh water/wastewater service.</p>
-          </article>
-        </div>
-        <div class="partner-strip-compact" aria-label="Technology partners and certifications">
-          <p class="partner-strip-subhead">Technology partners</p>
-          <ul class="partner-logos partner-logos--compact">
-            <li><a class="partner-logo-link" href="https://www.rockwellautomation.com/" rel="noopener noreferrer" target="_blank"><img src="assets/partners/rockwell-automation.svg" alt="Rockwell Automation" width="160" height="38" loading="lazy" decoding="async"></a></li>
-            <li><a class="partner-logo-link" href="https://www.rockwellautomation.com/en-us/products/hardware/allen-bradley.html" rel="noopener noreferrer" target="_blank"><img src="assets/partners/allen-bradley.svg" alt="Allen-Bradley" width="140" height="32" loading="lazy" decoding="async"></a></li>
-            <li><a class="partner-logo-link" href="https://www.aveva.com/" rel="noopener noreferrer" target="_blank"><img src="assets/partners/aveva.svg" alt="AVEVA" width="100" height="30" loading="lazy" decoding="async"></a></li>
-            <li><a class="partner-logo-link" href="https://www.ge.com/digital/" rel="noopener noreferrer" target="_blank"><img src="assets/partners/ge-monogram.svg" alt="GE Digital" width="48" height="48" loading="lazy" decoding="async" class="partner-logo--ge"></a></li>
-            <li><a class="partner-logo-link" href="https://www.phoenixcontact.com/" rel="noopener noreferrer" target="_blank"><img src="assets/partners/phoenix-contact.jpg" alt="Phoenix Contact" width="130" height="62" loading="lazy" decoding="async"></a></li>
-            <li><a class="partner-logo-link" href="https://www.csagroup.org/" rel="noopener noreferrer" target="_blank"><img src="assets/partners/csa-group.svg" alt="CSA Group" width="100" height="43" loading="lazy" decoding="async"></a></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-projects cci-reveal" aria-labelledby="projects-kicker">
-      <div class="section-inner">
-        <header class="section-intro section-intro--tight">
-          <p class="section-kicker" id="projects-kicker">Programs delivered</p>
-          <h2 class="section-title section-title--accent">Representative treatment plants, stations, and infrastructure</h2>
-          <p class="section-deck">Water, wastewater, and pumping work—engineering, fabrication, commissioning, and operator turnover delivered as one accountable scope.</p>
-        </header>
-        <div class="projects-grid projects-grid--premium">
-          <article class="project-card project-card--featured">
-            <figure class="project-image photo-frame photo-frame--screenshot">
-              <div class="photo-frame-inner">
-                <img src="assets/photos/scada-killaloe-overview.png" alt="Municipal water treatment SCADA overview" width="640" height="400" loading="lazy" decoding="async">
-              </div>
-            </figure>
-            <div class="project-content">
-              <span class="project-tag">Municipal water</span>
-              <h3 class="project-title">Carleton Place WTP &amp; WWTP</h3>
-              <p class="project-body">Combined drinking water and wastewater treatment upgrade. PLC modernization, SCADA graphics, instrumentation integration, and panel fabrication—dual-plant program with coordinated FAT/SAT and operator training.</p>
-            </div>
-          </article>
-          <article class="project-card">
-            <figure class="project-image photo-frame photo-frame--screenshot">
-              <div class="photo-frame-inner">
-                <img src="assets/photos/scada-pembroke-alarms.png" alt="WWTP SCADA alarm and operator configuration display" width="640" height="400" loading="lazy" decoding="async">
-              </div>
-            </figure>
-            <div class="project-content">
-              <span class="project-tag">Wastewater capital</span>
-              <h3 class="project-title">ROPEC clarifiers &amp; disinfection</h3>
-              <p class="project-body">Multi-phase WWTP expansion with clarifier control, UV disinfection, and plant-wide SCADA integration—phased commissioning aligned with running facilities.</p>
-            </div>
-          </article>
-          <article class="project-card">
-            <figure class="project-image photo-frame photo-frame--screenshot">
-              <div class="photo-frame-inner">
-                <img src="assets/photos/scada-pembroke-mixer-pumps.png" alt="SCADA process display for pumps, mixers, and live process data" width="640" height="400" loading="lazy" decoding="async">
-              </div>
-            </figure>
-            <div class="project-content">
-              <span class="project-tag">Transit pumping</span>
-              <h3 class="project-title">TTC / LRT station pumping</h3>
-              <p class="project-body">Station dewatering and utility pumping with VFD control, SCADA telemetry, safety interlocks, and coordination with transit authority standards—Toronto and Ottawa LRT programs.</p>
-            </div>
-          </article>
-          <article class="project-card">
-            <figure class="project-image photo-frame">
-              <div class="photo-frame-inner">
-                <img src="assets/photos/panel-csa-shop-primary.jpg" alt="CSA-certified shop: control panel interior during assembly and wiring checkout." width="640" height="400" loading="lazy" decoding="async">
-              </div>
-            </figure>
-            <div class="project-content">
-              <span class="project-tag">Municipal infrastructure</span>
-              <h3 class="project-title">Ottawa Hurdman pump station</h3>
-              <p class="project-body">Design-build pumping station with duplex VFD panels, PLC control, and SCADA integration—aligned with City of Ottawa standards for long-term operations.</p>
-              <p class="project-visual-note">Representative shop fabrication—same CSA discipline applied to municipal programs.</p>
-            </div>
-          </article>
-        </div>
-        <p class="projects-cta"><a class="btn btn-secondary" href="experience.html">View delivery record</a></p>
-      </div>
-    </section>
-
-    <section class="section section-process cci-reveal" aria-labelledby="process-kicker">
-      <div class="section-inner">
-        <header class="section-intro section-intro--tight">
-          <p class="section-kicker" id="process-kicker">Delivery process</p>
-          <h2 class="section-title section-title--accent">Milestones from design through turnover</h2>
-          <p class="section-deck">Phased delivery aligned with procurement, fabrication, testing, and commissioning—documented for municipal closeout, SAT, and audit requirements.</p>
-        </header>
-        <div class="process-timeline">
-          <article class="process-step">
-            <span class="process-number">01</span>
-            <h3 class="process-step-title">Design &amp; engineering</h3>
-            <p class="process-step-body">Scope alignment, submittal preparation, and control architecture. Electrical schematics, panel layouts, PLC structure, and SCADA design—coordinated with owner standards and consultant specifications.</p>
-          </article>
-          <article class="process-step">
-            <span class="process-number">02</span>
-            <h3 class="process-step-title">Panel fabrication</h3>
-            <p class="process-step-body">CSA-certified shop build with photo documentation. Component assembly, wiring, labeling, and internal testing—aligned with approved shop drawings and submittal schedules.</p>
-          </article>
-          <article class="process-step">
-            <span class="process-number">03</span>
-            <h3 class="process-step-title">Programming &amp; graphics</h3>
-            <p class="process-step-body">PLC logic development, HMI screen creation, and SCADA graphics. Alarm rationalization, historian configuration, and network integration—prepared for factory acceptance testing.</p>
-          </article>
-          <article class="process-step">
-            <span class="process-number">04</span>
-            <h3 class="process-step-title">Factory acceptance test</h3>
-            <p class="process-step-body">Witnessed FAT with I/O verification, communication checks, and simulated process sequences. Documented test protocols, punch lists, and sign-off—before shipment to site.</p>
-          </article>
-          <article class="process-step">
-            <span class="process-number">05</span>
-            <h3 class="process-step-title">Site commissioning</h3>
-            <p class="process-step-body">Installation support, loop checks, rotation verification, and interlock testing. PID tuning under real process conditions, alarm validation, and SAT coordination—with operations staff present.</p>
-          </article>
-          <article class="process-step">
-            <span class="process-number">06</span>
-            <h3 class="process-step-title">Training &amp; support</h3>
-            <p class="process-step-body">Operator training, maintenance orientation, and as-built documentation turnover. Native software files, tag databases, and O&amp;M manuals—aligned with municipal closeout and warranty requirements.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-cta-final" aria-labelledby="cta-final-kicker">
-      <div class="section-inner">
-        <div class="cta-final-content">
-          <p class="section-kicker section-kicker--on-dark" id="cta-final-kicker">Ready to start</p>
-          <h2 class="cta-final-title">Tender-ready. Upgrade-ready. Operations-ready.</h2>
-          <p class="cta-final-body">Send scope, owner standards, and schedule. We respond with defined deliverables, submittal expectations, and milestone dates—structured for municipal procurement and consultant coordination.</p>
-          <div class="cta-final-actions">
-            <a class="btn btn-primary" href="contact.html">Contact engineering</a>
-            <a class="btn btn-secondary-on-dark" href="services.html">Review delivery scope</a>
+    <section class="cinema-section cinema-section--deep" data-cinema-reveal="slide-left" aria-labelledby="cinema-manifest-heading">
+      <div class="cinema-section__inner">
+        <p class="cinema-section__kicker">Authority</p>
+        <h2 class="cinema-section__title" id="cinema-manifest-heading">Complete system delivery</h2>
+        <p class="cinema-section__deck">We do not ship parts in isolation. We engineer, build, test, and commission integrated systems—accountable from submittal through SAT and operator turnover.</p>
+        <div class="cinema-manifest__grid">
+          <div class="cinema-manifest__block">
+            <h3>Integrated scope</h3>
+            <p>Panels, PLC logic, SCADA, instrumentation, networking, FAT/SAT, and documentation under one responsible integrator—aligned to owner standards and consultant specifications.</p>
+            <p>Every deliverable is traceable: drawings, logic, graphics, and field checkout tie back to the same control narrative.</p>
           </div>
+          <div class="cinema-manifest__block">
+            <h3>Accountability</h3>
+            <p>From design intent through factory testing, site commissioning, and training, the system is delivered ready for live operation—not handed off as a collection of loose ends.</p>
+            <p>We remain engaged until operations sign off and documentation meets municipal closeout.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cinema-section cinema-section--elevated" data-cinema-reveal="clip" aria-labelledby="cinema-engine-heading">
+      <div class="cinema-section__inner">
+        <p class="cinema-section__kicker">Evidence</p>
+        <h2 class="cinema-section__title" id="cinema-engine-heading">Drawings, panels, field integration</h2>
+        <p class="cinema-section__deck">Programs ship with native <strong>Studio&nbsp;5000 / RSLogix</strong> ladder, structured tags, and PCNs coordinated with P&amp;IDs. Below: submittal-grade electrical excerpts, integration discipline, and municipal PLC deployment from delivered work.</p>
+        <div class="cinema-engine-grid">
+          <figure class="cinema-engine-card">
+            <img src="assets/photos/drawing-bishop-panel.png" alt="Industrial control panel electrical drawing excerpt with disciplined layout." width="960" height="540" loading="lazy" decoding="async">
+            <figcaption>Panel electrical design—coordinated with PLC I/O and field terminations.</figcaption>
+          </figure>
+          <figure class="cinema-engine-card">
+            <img src="assets/photos/gallery-killaloe-wtp-02.jpg" alt="Control panel interior with organized terminations during municipal integration." width="960" height="640" loading="lazy" decoding="async">
+            <figcaption>Integration discipline—structured wiring inside project enclosures.</figcaption>
+          </figure>
+          <figure class="cinema-engine-card">
+            <img src="assets/photos/wtp-rockland-main-plc.jpg" alt="Main PLC enclosure at a municipal water treatment facility." width="960" height="640" loading="lazy" decoding="async">
+            <figcaption>Field deployment—control hardware installed and commissioned on site.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="cinema-section" data-cinema-reveal="slide-left" aria-labelledby="cinema-cap-heading">
+      <div class="cinema-section__inner">
+        <p class="cinema-section__kicker">Capability</p>
+        <h2 class="cinema-section__title" id="cinema-cap-heading">What we deliver</h2>
+        <p class="cinema-section__deck">One scope: fabrication, software, graphics, instruments, networks, testing, and turnover—structured for infrastructure programs that cannot afford ambiguity.</p>
+        <div class="cinema-cap-grid">
+          <article class="cinema-cap-card">
+            <h3>Control panels</h3>
+            <p>CSA-listed builds—PLC/SCADA enclosures, pump panels, VFD assemblies, MCC sections—with drawings, submittals, and certification.</p>
+          </article>
+          <article class="cinema-cap-card">
+            <h3>PLC programming</h3>
+            <p>Maintainable ladder and structure for pumps, blowers, chemical systems, and utilities—interlocks and alarms organized for long-term support.</p>
+          </article>
+          <article class="cinema-cap-card">
+            <h3>SCADA / HMI</h3>
+            <p>Operator layers for status, control, alarms, and trending—touch panels and host SCADA with historian and remote visibility where required.</p>
+          </article>
+          <article class="cinema-cap-card">
+            <h3>Instrumentation</h3>
+            <p>Flow, level, pressure, and analytical devices—configured, loop-checked, and commissioned for harsh water and wastewater service.</p>
+          </article>
+          <article class="cinema-cap-card">
+            <h3>Drives &amp; starters</h3>
+            <p>VFD and motor control coordinated with PLC/SCADA—speed, bypass, protection, and PID where the process demands it.</p>
+          </article>
+          <article class="cinema-cap-card">
+            <h3>Industrial networks</h3>
+            <p>EtherNet/IP, Modbus, secure remote access—from field devices through plant SCADA, aligned with IT and operations standards.</p>
+          </article>
+          <article class="cinema-cap-card">
+            <h3>FAT / SAT</h3>
+            <p>Witnessed factory testing and site commissioning—loops, interlocks, alarms, and tuning under real conditions.</p>
+          </article>
+          <article class="cinema-cap-card">
+            <h3>Documentation</h3>
+            <p>Native files, tag databases, narratives, and training—packaged for municipal closeout and warranty.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cinema-section cinema-section--deep" data-cinema-reveal="clip" aria-labelledby="cinema-ind-heading">
+      <div class="cinema-section__inner">
+        <p class="cinema-section__kicker">Infrastructure</p>
+        <h2 class="cinema-section__title" id="cinema-ind-heading">Where these systems live</h2>
+        <p class="cinema-section__deck">Treatment plants, lift and booster stations, transit utility pumping, and selected industrial processes—engineered for uptime, code compliance, and maintainability.</p>
+        <div class="cinema-industry-grid">
+          <article class="cinema-industry-card">
+            <h3>Water treatment</h3>
+            <p>Filtration, chemical feed, disinfection, booster systems—PLC modernization, SCADA upgrades, and instrumentation integration.</p>
+          </article>
+          <article class="cinema-industry-card">
+            <h3>Wastewater</h3>
+            <p>Screening through disinfection and biosolids—lagoon and secondary upgrades, alarm rationalization, operator training.</p>
+          </article>
+          <article class="cinema-industry-card">
+            <h3>Pumping stations</h3>
+            <p>Sanitary, storm, subdivision, and booster stations—VFD control, telemetry, unattended operation design.</p>
+          </article>
+          <article class="cinema-industry-card">
+            <h3>Transit utilities</h3>
+            <p>Station pumping and interlocks for TTC, Metrolinx, LRT, OC Transpo—coordination with authority standards.</p>
+          </article>
+          <article class="cinema-industry-card">
+            <h3>Bridge &amp; marine</h3>
+            <p>Movable bridge control—HMI, interlocks, hydraulic and mechanical coordination for marine and roadway safety.</p>
+          </article>
+          <article class="cinema-industry-card">
+            <h3>Industrial</h3>
+            <p>Material handling, institutional utilities, selective process lines—same integration discipline outside municipal core.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cinema-section" data-cinema-reveal="slide-left" aria-labelledby="cinema-plat-heading">
+      <div class="cinema-section__inner">
+        <p class="cinema-section__kicker">Platforms</p>
+        <h2 class="cinema-section__title" id="cinema-plat-heading">Rockwell-centric stack</h2>
+        <p class="cinema-section__deck">Allen-Bradley controllers and HMIs with Wonderware, iFIX, and FactoryTalk—plus multi-vendor instrumentation integrated to owner standards.</p>
+        <div class="cinema-cap-grid">
+          <article class="cinema-cap-card">
+            <h3>Allen-Bradley / Studio 5000</h3>
+            <p>CompactLogix, ControlLogix, PanelView, FactoryTalk—the backbone of most programs we deliver.</p>
+          </article>
+          <article class="cinema-cap-card">
+            <h3>AVEVA Wonderware</h3>
+            <p>InTouch and System Platform for plant-wide visualization, historian, and remote operations.</p>
+          </article>
+          <article class="cinema-cap-card">
+            <h3>GE iFIX</h3>
+            <p>Host SCADA upgrades and migrations with production-safe cutover planning.</p>
+          </article>
+          <article class="cinema-cap-card">
+            <h3>Instrumentation</h3>
+            <p>Siemens Sitrans, Endress+Hauser, Rosemount, Hach—configured for field service.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cinema-cred" aria-labelledby="cinema-cred-heading">
+      <div class="cinema-section__inner">
+        <p class="cinema-section__kicker" id="cinema-cred-heading">Credentials</p>
+        <h2 class="cinema-section__title">Certifications &amp; partners</h2>
+        <p class="cinema-section__deck">Subdued presentation—swap assets as approvals allow. Logos are vector or high-resolution for crisp rendering.</p>
+        <div class="cinema-cred__wall" aria-label="Certifications and technology partners">
+          <a class="cinema-cred__iso" href="about.html#certifications" title="ISO 9001:2015">
+            <img src="assets/certifications/iso-9001-2015-badge.svg" alt="ISO 9001:2015 certified" width="200" height="80" loading="lazy" decoding="async">
+          </a>
+          <a href="https://www.rockwellautomation.com/" rel="noopener noreferrer" target="_blank"><img src="assets/partners/rockwell-automation.svg" alt="Rockwell Automation" width="160" height="38" loading="lazy" decoding="async"></a>
+          <a href="https://www.rockwellautomation.com/en-us/products/hardware/allen-bradley.html" rel="noopener noreferrer" target="_blank"><img src="assets/partners/allen-bradley.svg" alt="Allen-Bradley" width="140" height="32" loading="lazy" decoding="async"></a>
+          <a href="https://www.aveva.com/" rel="noopener noreferrer" target="_blank"><img src="assets/partners/aveva.svg" alt="AVEVA" width="100" height="30" loading="lazy" decoding="async"></a>
+          <a href="https://www.ge.com/digital/" rel="noopener noreferrer" target="_blank"><img src="assets/partners/ge-monogram.svg" alt="GE Digital" width="48" height="48" loading="lazy" decoding="async" class="partner-logo--ge"></a>
+          <a href="https://www.phoenixcontact.com/" rel="noopener noreferrer" target="_blank"><img src="assets/partners/phoenix-contact.jpg" alt="Phoenix Contact" width="130" height="62" loading="lazy" decoding="async"></a>
+          <a href="https://www.csagroup.org/" rel="noopener noreferrer" target="_blank"><img src="assets/partners/csa-group.svg" alt="CSA Group" width="100" height="43" loading="lazy" decoding="async"></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cinema-section cinema-section--elevated" data-cinema-reveal="clip" aria-labelledby="cinema-proj-heading">
+      <div class="cinema-section__inner">
+        <p class="cinema-section__kicker">Execution</p>
+        <h2 class="cinema-section__title" id="cinema-proj-heading">Programs delivered</h2>
+        <p class="cinema-section__deck">Representative water, wastewater, pumping, and infrastructure work—SCADA and field imagery from real projects.</p>
+        <div class="cinema-projects">
+          <article class="cinema-project cinema-project--wide">
+            <div class="cinema-project__media">
+              <img src="assets/photos/scada-killaloe-overview.png" alt="Municipal water treatment SCADA overview" width="960" height="600" loading="lazy" decoding="async">
+            </div>
+            <div class="cinema-project__body">
+              <span class="cinema-project__tag">Municipal water</span>
+              <h3>Carleton Place WTP &amp; WWTP</h3>
+              <p>Dual-plant upgrade—PLC modernization, SCADA graphics, instrumentation, fabrication, FAT/SAT, and operator training under one scope.</p>
+            </div>
+          </article>
+          <article class="cinema-project">
+            <div class="cinema-project__media">
+              <img src="assets/photos/scada-pembroke-alarms.png" alt="WWTP SCADA alarm display" width="640" height="400" loading="lazy" decoding="async">
+            </div>
+            <div class="cinema-project__body">
+              <span class="cinema-project__tag">Wastewater</span>
+              <h3>ROPEC clarifiers &amp; disinfection</h3>
+              <p>Phased WWTP expansion—clarifier and UV control with running-plant commissioning discipline.</p>
+            </div>
+          </article>
+          <article class="cinema-project">
+            <div class="cinema-project__media">
+              <img src="assets/photos/scada-pembroke-mixer-pumps.png" alt="SCADA display for pumps and mixers" width="640" height="400" loading="lazy" decoding="async">
+            </div>
+            <div class="cinema-project__body">
+              <span class="cinema-project__tag">Transit</span>
+              <h3>TTC / LRT station pumping</h3>
+              <p>Utility pumping with VFD control, telemetry, and authority-standard interlocks.</p>
+            </div>
+          </article>
+          <article class="cinema-project">
+            <div class="cinema-project__media">
+              <img src="assets/photos/panel-csa-shop-primary.jpg" alt="CSA shop panel assembly and wiring" width="640" height="400" loading="lazy" decoding="async">
+            </div>
+            <div class="cinema-project__body">
+              <span class="cinema-project__tag">Fabrication</span>
+              <h3>CSA shop standard</h3>
+              <p>Representative enclosure build—the same fabrication discipline applied to municipal programs including Ottawa Hurdman and similar stations.</p>
+            </div>
+          </article>
+        </div>
+        <p class="cinema-projects__cta"><a class="cinema-btn cinema-btn--ghost" href="experience.html">Full delivery record</a></p>
+      </div>
+    </section>
+
+    <section class="cinema-section cinema-leadership cinema-section--deep" data-cinema-reveal="slide-left" aria-labelledby="cinema-lead-heading">
+      <div class="cinema-section__inner">
+        <p class="cinema-section__kicker">Leadership</p>
+        <h2 class="cinema-section__title" id="cinema-lead-heading">Accountable direction</h2>
+        <p class="cinema-section__deck">Replace placeholders with approved names, titles, and photography. Structure is fixed for a consistent reveal.</p>
+        <div class="cinema-leadership__grid">
+          <article class="cinema-leadership-card">
+            <div class="cinema-leadership-card__photo" aria-hidden="true"></div>
+            <div class="cinema-leadership-card__body">
+              <p class="cinema-leadership-card__name">[Name]</p>
+              <p class="cinema-leadership-card__role">[Title]</p>
+              <p class="cinema-leadership-card__bio">[One line: primary accountability—e.g. engineering direction, client delivery, or operations.]</p>
+            </div>
+          </article>
+          <article class="cinema-leadership-card">
+            <div class="cinema-leadership-card__photo" aria-hidden="true"></div>
+            <div class="cinema-leadership-card__body">
+              <p class="cinema-leadership-card__name">[Name]</p>
+              <p class="cinema-leadership-card__role">[Title]</p>
+              <p class="cinema-leadership-card__bio">[One line: scope of responsibility—fabrication, commissioning, or technical leadership.]</p>
+            </div>
+          </article>
+          <article class="cinema-leadership-card">
+            <div class="cinema-leadership-card__photo" aria-hidden="true"></div>
+            <div class="cinema-leadership-card__body">
+              <p class="cinema-leadership-card__name">[Name]</p>
+              <p class="cinema-leadership-card__role">[Title]</p>
+              <p class="cinema-leadership-card__bio">[One line: accountability area—programs, standards, or field execution.]</p>
+            </div>
+          </article>
+          <article class="cinema-leadership-card">
+            <div class="cinema-leadership-card__photo" aria-hidden="true"></div>
+            <div class="cinema-leadership-card__body">
+              <p class="cinema-leadership-card__name">[Name]</p>
+              <p class="cinema-leadership-card__role">[Title]</p>
+              <p class="cinema-leadership-card__bio">[One line: role in client continuity and project governance.]</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cinema-section" data-cinema-reveal="clip" aria-labelledby="cinema-process-heading">
+      <div class="cinema-section__inner">
+        <p class="cinema-section__kicker">Process</p>
+        <h2 class="cinema-section__title" id="cinema-process-heading">Design through turnover</h2>
+        <p class="cinema-section__deck">Milestones documented for procurement, audit, and SAT—no ambiguous handoffs.</p>
+        <div class="cinema-process-rail">
+          <div class="cinema-process-step">
+            <span class="cinema-process-step__num">01</span>
+            <h3>Design</h3>
+            <p>Architecture, schematics, panel layouts, PLC/SCADA structure—aligned to owner standards.</p>
+          </div>
+          <div class="cinema-process-step">
+            <span class="cinema-process-step__num">02</span>
+            <h3>Fabrication</h3>
+            <p>CSA shop build, labeling, internal test—photo-documented against approved drawings.</p>
+          </div>
+          <div class="cinema-process-step">
+            <span class="cinema-process-step__num">03</span>
+            <h3>Software</h3>
+            <p>Logic, HMI, SCADA graphics, historians, network integration—ready for FAT.</p>
+          </div>
+          <div class="cinema-process-step">
+            <span class="cinema-process-step__num">04</span>
+            <h3>FAT</h3>
+            <p>Witnessed I/O and sequence testing—protocols, punch lists, sign-off.</p>
+          </div>
+          <div class="cinema-process-step">
+            <span class="cinema-process-step__num">05</span>
+            <h3>Commissioning</h3>
+            <p>Loops, rotation, interlocks, alarms, tuning—with operations present.</p>
+          </div>
+          <div class="cinema-process-step">
+            <span class="cinema-process-step__num">06</span>
+            <h3>Turnover</h3>
+            <p>Training, native files, O&amp;M—municipal closeout and warranty alignment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cinema-cta-final" aria-labelledby="cinema-cta-heading">
+      <div class="cinema-section__inner">
+        <h2 id="cinema-cta-heading">Tender-ready. Upgrade-ready. Operations-ready.</h2>
+        <p>Send scope, standards, and schedule. We respond with defined deliverables, submittal expectations, and milestone dates—structured for procurement and consultant coordination.</p>
+        <div>
+          <a class="cinema-btn cinema-btn--primary" href="contact.html">Contact engineering</a>
+          <a class="cinema-btn cinema-btn--ghost" href="services.html">Review delivery scope</a>
         </div>
       </div>
     </section>
@@ -438,6 +505,7 @@
     </div>
   </footer>
   <script type="module" src="cci-automation.js"></script>
+  <script type="module" src="cinematic-home.js"></script>
   <script src="site.js" defer></script>
 </body>
 </html>

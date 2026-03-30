@@ -205,6 +205,7 @@ function initHeroThree(canvas) {
 function markRevealTargets() {
   const sel = "main .section, .page-hero, .partner-strip";
   document.querySelectorAll(sel).forEach((el) => {
+    if (document.body.classList.contains("page-home--cinematic") && el.closest("main")) return;
     if (!el.classList.contains("cci-reveal")) el.classList.add("cci-reveal");
   });
   const proseMain = document.querySelector("main.prose-page");
@@ -216,10 +217,13 @@ function markRevealTargets() {
 }
 
 function initHeroEntrance() {
+  const cinemaHero = document.querySelector(".cinema-hero");
+  if (cinemaHero) return;
+
   if (prefersReduced) return;
   const hero = document.querySelector(".hero--cinematic, .hero--elite, .hero--automation");
   if (!hero) return;
-  
+
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
       hero.classList.add("hero-entrance");
@@ -232,8 +236,12 @@ function initHeroParallax() {
   if (prefersReduced) return;
   if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
 
-  const hero = document.querySelector(".hero--cinematic");
-  const root = hero?.querySelector(".hero-cinematic-parallax-root");
+  let hero = document.querySelector(".hero--cinematic");
+  let root = hero?.querySelector(".hero-cinematic-parallax-root");
+  if (!hero) {
+    hero = document.querySelector(".cinema-hero");
+    root = hero?.querySelector(".cinema-hero__media");
+  }
   if (!hero || !root) return;
 
   const maxX = 16;
