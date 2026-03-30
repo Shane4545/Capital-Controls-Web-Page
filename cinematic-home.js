@@ -1,19 +1,18 @@
 /**
- * Cinematic homepage: spine scroll, hero sequence, signal-flow activation,
- * engineering readout, label↔node sync, section reveals.
+ * Homepage: spine scroll, restrained hero entrance, signal diagram, section reveals.
  */
 const cinemaReduced =
   typeof window !== "undefined" &&
   window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 const READOUT_STAGES = [
-  "Idle — awaiting energize",
-  "Field I/O online",
-  "Marshalling verified",
-  "PLC logic in service",
-  "Plant network path OK",
-  "SCADA layer active",
-  "Process loop closed — topology nominal",
+  "Overview",
+  "Field instruments",
+  "I/O terminations",
+  "PLC controller",
+  "Plant network",
+  "HMI / SCADA",
+  "Process equipment",
 ];
 
 function setScrollSpineVar() {
@@ -60,16 +59,12 @@ function initCinemaHeroEntrance() {
   const hero = document.querySelector(".cinema-hero");
   if (!hero) return;
   if (cinemaReduced) {
-    hero.classList.add("is-entered", "is-schematic");
+    hero.classList.add("is-entered");
     return;
   }
-  const enterDelay = 220;
-  window.setTimeout(() => {
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => hero.classList.add("is-entered"));
-    });
-  }, enterDelay);
-  window.setTimeout(() => hero.classList.add("is-schematic"), enterDelay + 980);
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => hero.classList.add("is-entered"));
+  });
 }
 
 function initCinemaSignalFlow() {
@@ -128,7 +123,7 @@ function initCinemaSignalFlow() {
   });
 
   if (cinemaReduced) {
-    root.classList.add("cinema-signal--active", "cinema-signal--charged");
+    root.classList.add("cinema-signal--active");
     nodes.forEach((n) => n.classList.add("is-live"));
     labels.forEach((lb) => lb.classList.add("is-live"));
     setReadout(READOUT_STAGES.length - 1);
@@ -145,7 +140,7 @@ function initCinemaSignalFlow() {
       root.classList.add("cinema-signal--active");
 
       paths.forEach((path, i) => {
-        path.style.transition = `stroke-dashoffset 1.35s cubic-bezier(0.16, 1, 0.3, 1) ${i * 0.13}s`;
+        path.style.transition = `stroke-dashoffset 1.1s cubic-bezier(0.25, 0.46, 0.45, 0.94) ${i * 0.1}s`;
         path.style.strokeDashoffset = "0";
       });
 
@@ -154,18 +149,8 @@ function initCinemaSignalFlow() {
           node.classList.add("is-live");
           syncLabel(i, true);
           setReadout(i + 1);
-        }, 220 + i * 155);
+        }, 200 + i * 120);
       });
-
-      const chargeDelay = 220 + nodes.length * 155 + 900;
-      window.setTimeout(() => {
-        root.classList.add("cinema-signal--charged");
-        paths.forEach((path) => {
-          path.style.transition = "none";
-          path.style.strokeDasharray = "7 22";
-          path.style.strokeDashoffset = "0";
-        });
-      }, chargeDelay);
     },
     { threshold: 0.18, rootMargin: "0px 0px -8% 0px" }
   );

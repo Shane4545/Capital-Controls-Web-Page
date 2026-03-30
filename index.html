@@ -81,82 +81,58 @@
 
   <main id="main" class="cinema-main cinema-main--cinematic">
     <section class="cinema-hero" aria-labelledby="cinema-hero-heading">
-      <div class="cinema-hero__layers" aria-hidden="true">
-        <div class="cinema-hero__glow cinema-hero__glow--cool"></div>
-        <div class="cinema-hero__glow cinema-hero__glow--warm"></div>
-        <div class="cinema-hero__grid"></div>
-        <div class="cinema-hero__noise"></div>
-      </div>
-      <div class="cinema-hero__media" aria-hidden="true">
-        <img class="cinema-hero__img" src="assets/photos/scada-killaloe-overview.png" alt="" width="1920" height="1080" decoding="async" fetchpriority="high">
-        <div class="cinema-hero__grade"></div>
-        <div class="cinema-hero__vignette"></div>
-        <div class="cinema-hero__scan"></div>
-        <div class="cinema-hero__rim"></div>
-      </div>
-      <svg class="cinema-hero__schematic" viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <path class="cinema-hero__schematic-path" d="M 32 188 L 32 72 L 118 72 L 118 48 L 200 48"></path>
-        <path class="cinema-hero__schematic-path" d="M 118 72 L 118 120 L 260 120 L 260 88 L 340 88"></path>
-        <path class="cinema-hero__schematic-path cinema-hero__schematic-path--accent" d="M 48 188 L 168 188 L 168 152 L 288 152"></path>
-        <circle class="cinema-hero__schematic-node" cx="32" cy="188" r="3"></circle>
-        <circle class="cinema-hero__schematic-node" cx="200" cy="48" r="3"></circle>
-        <circle class="cinema-hero__schematic-node" cx="340" cy="88" r="3"></circle>
-      </svg>
-      <div class="cinema-hero__frame" aria-hidden="true"></div>
-      <div class="cinema-hero__content">
-        <p class="cinema-hero__index"><span class="cinema-hero__index-line"></span> Control system delivery</p>
-        <p class="cinema-hero__eyebrow">Ottawa · Eastern Ontario · Western Quebec · Canada-wide programs</p>
-        <h1 class="cinema-hero__title" id="cinema-hero-heading">
-          <span class="cinema-hero__title-line cinema-hero__title-line--primary">Infrastructure<br>under control.</span>
-          <span class="cinema-hero__title-line cinema-hero__title-line--secondary">One integrator. One system. From field to SCADA.</span>
-        </h1>
-        <p class="cinema-hero__lead">
-          We design, build, program, and commission <strong>integrated control systems</strong> for plants and stations where failure is not an option—panels, logic, graphics, instruments, networks, FAT/SAT, and documented turnover.
-        </p>
-        <div class="cinema-hero__actions">
-          <a class="cinema-btn cinema-btn--primary" href="contact.html">Engage engineering</a>
-          <a class="cinema-btn cinema-btn--ghost" href="services.html">Delivery scope</a>
+      <div class="cinema-hero__backdrop" aria-hidden="true">
+        <div class="cinema-hero__media">
+          <img class="cinema-hero__img" src="assets/photos/scada-killaloe-overview.png" alt="" width="1920" height="1080" decoding="async" fetchpriority="high">
+          <div class="cinema-hero__scrim"></div>
         </div>
       </div>
-      <a class="cinema-hero__scroll" href="#cinema-signal"><span class="cinema-hero__scroll-label">Enter</span></a>
+      <div class="cinema-hero__inner">
+        <div class="cinema-hero__content">
+          <p class="cinema-hero__label">Industrial controls &amp; instrumentation</p>
+          <p class="cinema-hero__eyebrow">Ottawa · Eastern Ontario · Western Quebec · Canada-wide projects</p>
+          <h1 class="cinema-hero__headline" id="cinema-hero-heading">Control system integration for water, wastewater, and municipal infrastructure.</h1>
+          <p class="cinema-hero__disciplines" aria-label="Technical scope">PLC · HMI · SCADA · Instrumentation · Panels · Networks · FAT/SAT · Documentation</p>
+          <p class="cinema-hero__lead">
+            We engineer and integrate CSA-listed control panels, PLC and HMI/SCADA software, field instrumentation, and industrial networks. We support factory and site acceptance testing, commissioning, operator training, and turnover documentation—under a single accountable scope for owners, municipalities, and engineering consultants.
+          </p>
+          <div class="cinema-hero__actions">
+            <a class="cinema-btn cinema-btn--primary" href="contact.html">Contact</a>
+            <a class="cinema-btn cinema-btn--ghost" href="services.html">Services &amp; delivery scope</a>
+          </div>
+        </div>
+      </div>
+      <a class="cinema-hero__scroll" href="#cinema-signal"><span class="cinema-hero__scroll-label">Continue</span></a>
     </section>
 
     <section class="cinema-signal" id="cinema-signal" aria-labelledby="cinema-signal-heading">
-      <div class="cinema-signal__sweep" aria-hidden="true"></div>
       <div class="cinema-signal__inner">
         <header class="cinema-signal__header">
-          <p class="cinema-section__kicker">System activation</p>
-          <h2 class="cinema-section__title cinema-section__title--signal" id="cinema-signal-heading">The path power travels</h2>
-          <p class="cinema-section__deck">Not a diagram for decoration—this is how we think: disciplined I/O, explicit logic, operator-grade SCADA, and a physical process that must respond. Every segment is testable in FAT and traceable in documentation.</p>
+          <p class="cinema-section__kicker">Integration model</p>
+          <h2 class="cinema-section__title cinema-section__title--signal" id="cinema-signal-heading">Control signal path</h2>
+          <p class="cinema-section__deck">How data and commands move from field devices through terminations and the PLC, across the plant network to HMI/SCADA, and back to the physical process—aligned with how we document, test, and commission systems.</p>
         </header>
         <div class="cinema-signal__diagram">
-          <p class="cinema-signal__readout" aria-live="polite"><span class="cinema-signal__readout-label">Topology</span> <span class="cinema-signal__readout-value" data-signal-readout>Idle — awaiting energize</span></p>
+          <p class="cinema-signal__readout" aria-live="polite"><span class="cinema-signal__readout-label">Reference</span> <span class="cinema-signal__readout-value" data-signal-readout>Overview</span></p>
           <div class="cinema-signal__viewport">
             <svg class="cinema-signal__svg" viewBox="0 0 1000 220" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Control signal flow from field devices through PLC and SCADA to process">
               <defs>
                 <linearGradient id="cinema-signal-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#00a651" stop-opacity="0.2"></stop>
-                  <stop offset="40%" stop-color="#4ddb95" stop-opacity="1"></stop>
-                  <stop offset="100%" stop-color="#00a651" stop-opacity="0.45"></stop>
+                  <stop offset="0%" stop-color="#00a651" stop-opacity="0.35"></stop>
+                  <stop offset="50%" stop-color="#00a651" stop-opacity="0.85"></stop>
+                  <stop offset="100%" stop-color="#00a651" stop-opacity="0.4"></stop>
                 </linearGradient>
-                <filter id="cinema-signal-glow" x="-40%" y="-40%" width="180%" height="180%">
-                  <feGaussianBlur stdDeviation="1.2" result="b"></feGaussianBlur>
-                  <feMerge>
-                    <feMergeNode in="b"></feMergeNode>
-                    <feMergeNode in="SourceGraphic"></feMergeNode>
-                  </feMerge>
-                </filter>
               </defs>
               <path class="cinema-signal__path" d="M 92 112 L 230 112"></path>
               <path class="cinema-signal__path" d="M 230 112 L 380 112"></path>
               <path class="cinema-signal__path" d="M 380 112 L 530 112"></path>
               <path class="cinema-signal__path" d="M 530 112 L 680 112"></path>
               <path class="cinema-signal__path" d="M 680 112 L 908 112"></path>
-              <path class="cinema-signal__path--energy" filter="url(#cinema-signal-glow)" d="M 92 112 L 230 112"></path>
-              <path class="cinema-signal__path--energy" filter="url(#cinema-signal-glow)" d="M 230 112 L 380 112"></path>
-              <path class="cinema-signal__path--energy" filter="url(#cinema-signal-glow)" d="M 380 112 L 530 112"></path>
-              <path class="cinema-signal__path--energy" filter="url(#cinema-signal-glow)" d="M 530 112 L 680 112"></path>
-              <path class="cinema-signal__path--energy" filter="url(#cinema-signal-glow)" d="M 680 112 L 908 112"></path>
+              <path class="cinema-signal__path--energy" d="M 92 112 L 230 112"></path>
+              <path class="cinema-signal__path--energy" d="M 230 112 L 380 112"></path>
+              <path class="cinema-signal__path--energy" d="M 380 112 L 530 112"></path>
+              <path class="cinema-signal__path--energy" d="M 530 112 L 680 112"></path>
+              <path class="cinema-signal__path--energy" d="M 680 112 L 908 112"></path>
               <g class="cinema-signal__node-group" data-node="0">
                 <circle class="cinema-signal__node-ring" cx="92" cy="112" r="20" fill="none"></circle>
                 <circle class="cinema-signal__node-dot" cx="92" cy="112" r="10"></circle>
@@ -217,12 +193,11 @@
 
     <section class="cinema-section cinema-section--elevated" data-cinema-reveal="clip" aria-labelledby="cinema-engine-heading">
       <div class="cinema-section__inner">
-        <p class="cinema-section__kicker">Evidence</p>
-        <h2 class="cinema-section__title" id="cinema-engine-heading">Submittal-grade reality</h2>
-        <p class="cinema-section__deck">What you see below is how we work: drawing sets that survive consultant review, enclosures wired with discipline, and controllers commissioned where they matter. When ladder or HMI captures are cleared for release, they slot into this layout as first-class artifacts—not afterthoughts.</p>
+        <p class="cinema-section__kicker">Documentation &amp; field work</p>
+        <h2 class="cinema-section__title" id="cinema-engine-heading">Drawings, panels, and site integration</h2>
+        <p class="cinema-section__deck">Representative electrical excerpts, enclosure wiring, and field-installed controllers from delivered programs. Ladder logic and HMI/SCADA screen captures are added here when client and vendor approvals allow public use.</p>
         <div class="cinema-engine-bento">
           <figure class="cinema-engine-card cinema-engine-card--hero">
-            <div class="cinema-engine-card__shine" aria-hidden="true"></div>
             <img src="assets/photos/drawing-bishop-panel.png" alt="Industrial control panel electrical drawing excerpt with disciplined layout." width="960" height="540" loading="lazy" decoding="async">
             <figcaption><span class="cinema-engine-card__cap">Electrical</span> Panel design excerpt—PLC I/O and field terminations aligned.</figcaption>
           </figure>
@@ -298,9 +273,9 @@
 
     <section class="cinema-section cinema-section--deep" data-cinema-reveal="clip" aria-labelledby="cinema-ind-heading">
       <div class="cinema-section__inner">
-        <p class="cinema-section__kicker">Infrastructure</p>
-        <h2 class="cinema-section__title" id="cinema-ind-heading">Built for critical duty</h2>
-        <p class="cinema-section__deck">Water, wastewater, pumping, transit utilities, bridges, and selective industry—environments where controls must survive decades of operators, storms, and code changes.</p>
+        <p class="cinema-section__kicker">Markets</p>
+        <h2 class="cinema-section__title" id="cinema-ind-heading">Sectors we support</h2>
+        <p class="cinema-section__deck">Primary experience in municipal water and wastewater, lift and booster pumping, and related infrastructure. Additional work in transit utility systems, bridge controls, and selected industrial facilities.</p>
         <div class="cinema-industry-grid">
           <article class="cinema-industry-card">
             <h3>Water treatment</h3>
@@ -333,8 +308,8 @@
     <section class="cinema-section" data-cinema-reveal="slide-left" aria-labelledby="cinema-plat-heading">
       <div class="cinema-section__inner">
         <p class="cinema-section__kicker">Platforms</p>
-        <h2 class="cinema-section__title" id="cinema-plat-heading">Rockwell at the core</h2>
-        <p class="cinema-section__deck">Logix, PanelView, and FactoryTalk anchor most programs; Wonderware and iFIX host where owners require them; field devices follow the instrument list—no religious wars, just correct integration.</p>
+        <h2 class="cinema-section__title" id="cinema-plat-heading">Platforms and vendors</h2>
+        <p class="cinema-section__deck">Most municipal programs use Allen-Bradley ControlLogix / CompactLogix with Studio 5000, PanelView, and FactoryTalk. Host SCADA may be AVEVA Wonderware or GE iFIX per owner standard. Field instruments are specified per project—Siemens, Endress+Hauser, Rosemount, Hach, and others as required.</p>
         <div class="cinema-cap-grid">
           <article class="cinema-cap-card">
             <h3>Allen-Bradley / Studio 5000</h3>
@@ -361,7 +336,7 @@
         <p class="cinema-section__kicker" id="cinema-cred-heading">Credentials</p>
         <h2 class="cinema-section__title">Certifications &amp; partners</h2>
         <p class="cinema-section__deck">Quiet credibility. Swap marks as partnership and certification approvals require—vectors and print-resolution assets only.</p>
-        <div class="cinema-cred__wall cinema-cred__wall--sweep" aria-label="Certifications and technology partners">
+        <div class="cinema-cred__wall" aria-label="Certifications and technology partners">
           <a class="cinema-cred__iso" href="about.html#certifications" title="ISO 9001:2015">
             <img src="assets/certifications/iso-9001-2015-badge.svg" alt="ISO 9001:2015 certified" width="200" height="80" loading="lazy" decoding="async">
           </a>
@@ -377,9 +352,9 @@
 
     <section class="cinema-section cinema-section--elevated" data-cinema-reveal="clip" aria-labelledby="cinema-proj-heading">
       <div class="cinema-section__inner">
-        <p class="cinema-section__kicker">Execution</p>
-        <h2 class="cinema-section__title" id="cinema-proj-heading">Proof in the field</h2>
-        <p class="cinema-section__deck">A narrow slice of programs—SCADA and enclosure work from jobs delivered under our scope, not stock photography.</p>
+        <p class="cinema-section__kicker">Selected projects</p>
+        <h2 class="cinema-section__title" id="cinema-proj-heading">Recent program types</h2>
+        <p class="cinema-section__deck">Examples below are from work performed under Capital Controls scope—SCADA displays, panel fabrication, and field integration. See Experience for a broader record.</p>
         <div class="cinema-projects">
           <article class="cinema-project cinema-project--wide">
             <div class="cinema-project__media">
@@ -429,13 +404,13 @@
     <section class="cinema-section cinema-leadership cinema-section--deep" data-cinema-reveal="slide-left" aria-labelledby="cinema-lead-heading">
       <div class="cinema-section__inner">
         <p class="cinema-section__kicker">Leadership</p>
-        <h2 class="cinema-section__title" id="cinema-lead-heading">The people behind the system</h2>
-        <p class="cinema-section__deck">Portraits and titles follow legal and brand approval. The layout is deliberate—treat it as a cast list, not a placeholder block.</p>
+        <h2 class="cinema-section__title" id="cinema-lead-heading">Leadership</h2>
+        <p class="cinema-section__deck">Names, titles, and photographs will be published when approved. Roles below describe typical areas of accountability.</p>
         <div class="cinema-leadership__grid">
           <article class="cinema-leadership-card">
             <div class="cinema-leadership-card__photo" aria-hidden="true"><span class="cinema-leadership-card__silhouette"></span></div>
             <div class="cinema-leadership-card__body">
-              <span class="cinema-leadership-card__cast" aria-hidden="true">I</span>
+              <span class="cinema-leadership-card__cast" aria-hidden="true">01</span>
               <p class="cinema-leadership-card__name">Name forthcoming</p>
               <p class="cinema-leadership-card__role">Principal / Managing direction</p>
               <p class="cinema-leadership-card__bio">Accountable for engineering judgment, client alignment, and delivery standards across programs.</p>
@@ -444,7 +419,7 @@
           <article class="cinema-leadership-card">
             <div class="cinema-leadership-card__photo" aria-hidden="true"><span class="cinema-leadership-card__silhouette"></span></div>
             <div class="cinema-leadership-card__body">
-              <span class="cinema-leadership-card__cast" aria-hidden="true">II</span>
+              <span class="cinema-leadership-card__cast" aria-hidden="true">02</span>
               <p class="cinema-leadership-card__name">Name forthcoming</p>
               <p class="cinema-leadership-card__role">Operations / fabrication leadership</p>
               <p class="cinema-leadership-card__bio">Owns shop execution, CSA discipline, and build quality through FAT readiness.</p>
@@ -453,7 +428,7 @@
           <article class="cinema-leadership-card">
             <div class="cinema-leadership-card__photo" aria-hidden="true"><span class="cinema-leadership-card__silhouette"></span></div>
             <div class="cinema-leadership-card__body">
-              <span class="cinema-leadership-card__cast" aria-hidden="true">III</span>
+              <span class="cinema-leadership-card__cast" aria-hidden="true">03</span>
               <p class="cinema-leadership-card__name">Name forthcoming</p>
               <p class="cinema-leadership-card__role">Technical / commissioning lead</p>
               <p class="cinema-leadership-card__bio">Drives site acceptance, loop strategy, and handover to operations and maintenance.</p>
@@ -462,7 +437,7 @@
           <article class="cinema-leadership-card">
             <div class="cinema-leadership-card__photo" aria-hidden="true"><span class="cinema-leadership-card__silhouette"></span></div>
             <div class="cinema-leadership-card__body">
-              <span class="cinema-leadership-card__cast" aria-hidden="true">IV</span>
+              <span class="cinema-leadership-card__cast" aria-hidden="true">04</span>
               <p class="cinema-leadership-card__name">Name forthcoming</p>
               <p class="cinema-leadership-card__role">Programs / client continuity</p>
               <p class="cinema-leadership-card__bio">Keeps schedules, standards packages, and stakeholder communication coherent from award to closeout.</p>
@@ -475,8 +450,8 @@
     <section class="cinema-section" data-cinema-reveal="clip" aria-labelledby="cinema-process-heading">
       <div class="cinema-section__inner">
         <p class="cinema-section__kicker">Process</p>
-        <h2 class="cinema-section__title" id="cinema-process-heading">Milestones you can audit</h2>
-        <p class="cinema-section__deck">Each phase produces evidence—submittals, test records, training sign-offs—so consultants and owners know where responsibility sits.</p>
+        <h2 class="cinema-section__title" id="cinema-process-heading">Project phases</h2>
+        <p class="cinema-section__deck">Delivery is structured around design submittals, shop fabrication, software development, witnessed testing, site work, and turnover—each phase supported by documentation suitable for consultant review and owner records.</p>
         <div class="cinema-process-rail">
           <div class="cinema-process-step">
             <span class="cinema-process-step__num">01</span>
@@ -514,11 +489,11 @@
 
     <section class="cinema-cta-final" aria-labelledby="cinema-cta-heading">
       <div class="cinema-section__inner">
-        <h2 id="cinema-cta-heading">When the spec is real, we answer in deliverables.</h2>
-        <p>Share scope, owner standards, and dates. You get a structured response—what we build, what we test, what we document, and when—aligned to municipal procurement and engineer-of-record expectations.</p>
+        <h2 id="cinema-cta-heading">Request a proposal or technical discussion</h2>
+        <p>Send project scope, applicable standards, and schedule. We respond with a clear statement of deliverables, testing approach, documentation, and milestones suitable for procurement and engineer-of-record review.</p>
         <div>
-          <a class="cinema-btn cinema-btn--primary" href="contact.html">Contact engineering</a>
-          <a class="cinema-btn cinema-btn--ghost" href="services.html">Review delivery scope</a>
+          <a class="cinema-btn cinema-btn--primary" href="contact.html">Contact</a>
+          <a class="cinema-btn cinema-btn--ghost" href="services.html">Services &amp; scope</a>
         </div>
       </div>
     </section>
