@@ -217,7 +217,7 @@ function markRevealTargets() {
 
 function initHeroEntrance() {
   if (prefersReduced) return;
-  const hero = document.querySelector(".hero--elite, .hero--automation");
+  const hero = document.querySelector(".hero--cinematic, .hero--elite, .hero--automation");
   if (!hero) return;
   
   requestAnimationFrame(() => {
