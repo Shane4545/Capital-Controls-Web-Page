@@ -105,7 +105,7 @@ function initHeroThree(canvas) {
         const group = new THREE.Group();
         scene.add(group);
 
-        const n = 64;
+        const n = window.innerWidth < 960 ? 32 : 64;
         const pos = new Float32Array(n * 3);
         for (let i = 0; i < n; i++) {
           const u = Math.random();
@@ -119,16 +119,14 @@ function initHeroThree(canvas) {
         }
         const geo = new THREE.BufferGeometry();
         geo.setAttribute("position", new THREE.BufferAttribute(pos, 3));
-        const pts = new THREE.Points(
-          geo,
-          new THREE.PointsMaterial({
-            color: 0x00a651,
-            size: 0.22,
-            transparent: true,
-            opacity: 0.85,
-            sizeAttenuation: true,
-          })
-        );
+        const ptsMaterial = new THREE.PointsMaterial({
+          color: 0x00a651,
+          size: 0.22,
+          transparent: true,
+          opacity: 0.85,
+          sizeAttenuation: true,
+        });
+        const pts = new THREE.Points(geo, ptsMaterial);
         group.add(pts);
 
         const linePos = [];
@@ -154,7 +152,7 @@ function initHeroThree(canvas) {
 
         const grid = new THREE.GridHelper(80, 24, 0x002d62, 0xc5cdd8);
         grid.position.y = -14;
-        grid.material.opacity = 0.12;
+        grid.material.opacity = 0.16;
         grid.material.transparent = true;
         scene.add(grid);
 
@@ -172,15 +170,22 @@ function initHeroThree(canvas) {
         ro.observe(hero);
 
         let rafId = 0;
+        let pulseTime = 0;
         function tick() {
           rafId = requestAnimationFrame(tick);
           group.rotation.y += 0.0018;
           group.rotation.x += 0.0004;
+          
+          pulseTime += 0.016;
+          const pulse = 0.75 + 0.2 * Math.sin(pulseTime * 0.6);
+          ptsMaterial.opacity = pulse;
+          
           renderer.render(scene, cam);
         }
         tick();
       })
-      .catch(() => {
+      .catch((err) => {
+        console.warn("Three.js canvas failed to load:", err);
         canvas.classList.add("cci-3d-canvas--failed");
       });
   };
@@ -210,8 +215,21 @@ function markRevealTargets() {
   }
 }
 
+function initHeroEntrance() {
+  if (prefersReduced) return;
+  const hero = document.querySelector(".hero--automation");
+  if (!hero) return;
+  
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      hero.classList.add("hero-entrance");
+    });
+  });
+}
+
 initViewTransitions();
 initLinkPrefetch();
 markRevealTargets();
 initScrollReveals();
 initHeroThree(document.getElementById("cci-3d-canvas"));
+initHeroEntrance();
