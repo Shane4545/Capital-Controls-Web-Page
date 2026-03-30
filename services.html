@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Capital Controls services: electrical schematics, control panels, PLC, SCADA/HMI graphics, instrumentation, FAT/SAT, documentation.">
+  <meta name="description" content="PLC programming, CSA-certified panel fabrication, SCADA/HMI development, instrumentation, and commissioning services for water, wastewater, and pumping stations.">
   <meta name="theme-color" content="#002d62">
   <link rel="canonical" href="https://www.capitalcontrols.ca/services.html">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.capitalcontrols.ca/services.html">
   <meta property="og:title" content="Services · Capital Controls">
-  <meta property="og:description" content="Electrical, panels, PLC, SCADA/HMI, instrumentation—from schematic to SAT.">
-  <meta property="og:image" content="https://www.capitalcontrols.ca/assets/photos/scada-killaloe-overview.png">
+  <meta property="og:description" content="Turnkey control system integration from design through commissioning.">
+  <meta property="og:image" content="https://www.capitalcontrols.ca/assets/photos/panel-csa-shop-primary.jpg">
   <meta property="og:locale" content="en_CA">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="manifest" href="site.webmanifest">
@@ -44,98 +44,162 @@
     </div>
   </header>
 
-  <header class="page-hero">
+  <header class="page-hero" style="background:linear-gradient(rgba(0,45,98,0.92),rgba(0,45,98,0.88)),url('assets/photos/panel-csa-shop-primary.jpg') center/cover; color:#fff;">
     <div class="page-hero-inner">
       <ol class="breadcrumb"><li><a href="index.html">Home</a></li><li aria-current="page">Services</li></ol>
       <p class="eyebrow">What we deliver</p>
-      <h1>Engineering services from schematic to SAT</h1>
-      <p class="page-hero-lead">A concise catalog of how we help owners, constructors, and maintenance teams—whether the job is a greenfield MCC lineup or a SCADA faceplate refresh across an existing plant.</p>
+      <h1>Control system integration from design through commissioning</h1>
+      <p class="page-hero-lead">Turnkey automation solutions for water treatment, wastewater, and pumping station applications—PLC programming, CSA-certified panel fabrication, SCADA/HMI development, instrumentation, and comprehensive commissioning services.</p>
     </div>
   </header>
 
   <main id="main" class="prose-page">
-    <div class="prose-block sales-evidence-callout" id="quotation-scope">
-      <h2>What our quotations actually include</h2>
-      <p class="sales-evidence-lead">The following reflects recurring <strong>scope language, BOM structures, and tender packages</strong> drawn from how we structure <strong>Sales Documents</strong> on projects—<em>CCI Quotations</em>, <em>Supplier Quotations</em>, and owner <em>Specifications</em>—not generic marketing language.</p>
-      <p class="sales-evidence-lead sales-evidence-lead--follow">For example, on <strong>Carleton Place WTP/WWTP</strong> (<strong>CCI-T-338Q rev&nbsp;D</strong>, April&nbsp;2025), scope of supply is written as: panels, starters (VFD, SS and FVNR) and instrumentation per attached lists—with explicit lines that <strong>panel supply includes drawings, submittals, CSA certification and commissioning</strong>; <strong>PLC/SCADA/HMI panels include software and programming</strong>; starters include <strong>configuration and commissioning</strong>; and <strong>instrumentation includes drawings, submittals, configuration and commissioning</strong>. Anything not listed as supplied by CCI is outside scope—same discipline we apply to other municipal bids.</p>
-      <ul class="detail-list detail-list--compact">
-        <li><strong>Div. 25 / instrumentation &amp; controls supply</strong> priced distinctly from <strong>systems integration</strong> labor when the bid calls for it (example: municipal WTP tender packages split “instrumentation &amp; controls” vs integrator total).</li>
-        <li><strong>PLC panels</strong> (new or replacement), <strong>network / RPU / remote I/O panels</strong>, <strong>HMI enclosures</strong>, and <strong>SCADA PC / terminal</strong> hardware as specified—coordinated against motor, starter, and MCC schedules.</li>
-        <li><strong>Motor control packages</strong> aligned to bid documents: VFD, reduced-voltage / LCS, full-voltage non-reversing, and specialty drives (mixers, blowers, high-service pumps) with tags carried through drawings and PLC.</li>
-        <li><strong>Instrument supply &amp; field commissioning</strong>: flow, level, pressure, analytical, and discrete devices—often including <strong>manufacturer startup</strong> and <strong>operator training</strong> where quoted.</li>
-        <li><strong>Engineering deliverables</strong> bundled in scope: <strong>drawings, submittals, PLC/HMI programming, shop testing, and site commissioning</strong> through SAT (exceptions—installation labor, valves, confined space—called out explicitly per quote).</li>
-        <li><strong>Coordination with others’ equipment</strong>: UV skids, chemical feed, packaged systems—panels and SCADA integrated while mechanical scope remains with the named vendor.</li>
-        <li><strong>Tender hygiene</strong>: addenda, spec PDFs, instrument index spreadsheets, combined quotation PDFs, and supplier quote binders maintained under Sales Documents for audit trail.</li>
-      </ul>
-      <p class="sales-evidence-note">Representative jobs reviewed for this section include <strong>CCI1444 Beachburg WTP Renewal</strong> (CCI-T279Q scope of supply), <strong>Carleton Place WTP/WWTP</strong> (instrument indices, WTP/WWTP panel &amp; starter schedules, PLC references, SCADA terminals), and <strong>Golfview subdivision pumping</strong> (pump-station quotations and supplier packages).</p>
-    </div>
     <div class="prose-block">
-      <h2>Electrical schematics &amp; panel design</h2>
-      <p>AutoCAD-based electrical drawings: single-line diagrams, three-line motor schematics, control schematics, loop diagrams, and panel layouts. We maintain revision discipline so site redlines flow back to the master set.</p>
+      <h2>PLC Programming &amp; Control System Integration</h2>
+      <p>Supply, program, and commission PLC-based control systems with integrated HMI interfaces for comprehensive process monitoring and control. Our programming follows clear, documented ladder logic standards that ensure programs can be understood by programmers not involved in the original project.</p>
       <ul class="detail-list detail-list--compact">
-        <li>Power distribution, motor control, and control power design</li>
-        <li>Terminal block plans, cable schedules, and inter-panel interconnects</li>
-        <li>Coordination with equipment vendors and short-circuit / protection data when provided</li>
+        <li><strong>Allen-Bradley CompactLogix and ControlLogix platforms</strong>—1769-L33ER/L36ERM for pumping stations and small process systems; 1756-L73/L83E for large WTP/WWTP applications</li>
+        <li><strong>Custom ladder logic programming</strong> with clear documentation, descriptive tags, and memory block assignments</li>
+        <li><strong>Process Control Narratives (PCN)</strong> describing control strategies, sequences, and interlocking logic</li>
+        <li><strong>PID loop configuration and tuning</strong> for pumps, blowers, chemical dosing, and level control</li>
+        <li><strong>Alarm and interlock programming</strong> with priority levels and operator-friendly messaging</li>
+        <li><strong>Electronic deliverables</strong> in native format (RSLogix 5000/Studio 5000) and PDF for owner archives</li>
       </ul>
     </div>
+
     <div class="prose-block">
-      <h2>Control panel fabrication</h2>
-      <p>Shop wiring to approved drawings, component installation, point-to-point checkout, and factory acceptance testing in our <strong>CSA-certified</strong> fabrication and test facility. Panels are built for the environment you specify—indoor MCC lineups, outdoor enclosures, and remote kiosk-style installations—and documented to the same quality system we maintain under <strong>ISO 9001:2015</strong> (see <a href="about.html#certifications">certifications</a>).</p>
+      <h2>CSA-Certified Control Panel Fabrication</h2>
+      <p>Design and fabricate CSA-certified control panels engineered to meet project-specific requirements and environmental conditions. All panels are built to CSA/UL 508A standards in our certified shop and include comprehensive factory acceptance testing before shipment.</p>
       <ul class="detail-list detail-list--compact">
-        <li>PLC, VFD, and networking hardware integration</li>
-        <li>Heat-load and wireway verification against as-built conditions</li>
-        <li>FAT documentation package for owner sign-off</li>
+        <li><strong>Panel types</strong>: PLC/SCADA control panels, VFD panels, soft starter panels, FVNR starter panels, MCC sections, network/RPU panels</li>
+        <li><strong>NEMA 4/4X and IP65/IP66 ratings</strong> for outdoor and harsh environments—stainless steel (304/316) or painted carbon steel construction</li>
+        <li><strong>Standard features</strong>: hinged doors with 3-point latching, interior lighting, laptop shelf with 120VAC/Ethernet outlets, panel heaters/thermostats for outdoor installations</li>
+        <li><strong>Component integration</strong>: Allen-Bradley PLCs and I/O, Phoenix Contact terminal blocks and power supplies, surge protection on all I/O</li>
+        <li><strong>Shop drawings and submittals</strong>: single-line electrical diagrams, wiring diagrams, terminal schedules, panel layout drawings</li>
+        <li><strong>Factory Acceptance Testing (FAT)</strong>: panel inspection, CSA certification verification, power supply testing, I/O card functionality, communication network testing, PLC program simulation</li>
       </ul>
       <figure class="photo-frame" style="margin-top:1.5rem; max-width:min(100%, 44rem);">
         <div class="photo-frame-inner">
           <img src="assets/photos/panel-csa-shop-primary.jpg" alt="CSA-certified shop: organized control panel interior during assembly, wiring, and checkout." width="880" height="660" loading="lazy" decoding="async">
         </div>
-        <figcaption style="margin:0.65rem 0 0; font-size:0.8125rem; color:var(--color-text-secondary); line-height:1.5;">What owners and AHJs evaluate: disciplined layout, torque discipline, and photo-register traceability before FAT (Bishop Water CP-100 register).</figcaption>
+        <figcaption style="margin:0.65rem 0 0; font-size:0.8125rem; color:var(--color-text-secondary); line-height:1.5;">CSA-certified panel fabrication facility—disciplined layout, component mounting, and wiring standards ensure reliable operation in municipal water and wastewater applications.</figcaption>
       </figure>
     </div>
+
     <div class="prose-block">
-      <h2>PLC application development</h2>
-      <p>Rockwell-centric development is our default for municipal and industrial work: ladder, structured text, and add-on instructions as appropriate; UDT/AOI patterns for repeatability; and change-controlled program archives.</p>
+      <h2>SCADA &amp; HMI Development</h2>
+      <p>Develop centralized SCADA systems providing operators with real-time process visualization, alarm management, and historical trending capabilities. Our HMI graphics follow P&amp;ID conventions with intuitive navigation and operator-friendly interfaces.</p>
       <ul class="detail-list detail-list--compact">
-        <li>Sequences, permissives, equipment modules, and interlocking</li>
-        <li>Integration to VFDs, motor starters, analyzers, and packaged skids</li>
-        <li>Simulation and dry-run support prior to energization</li>
-      </ul>
-    </div>
-    <div class="prose-block">
-      <h2>SCADA / HMI graphics &amp; operations design</h2>
-      <p>We build operator displays in the platforms you operate—<strong>FactoryTalk View</strong>, <strong>AVEVA Wonderware</strong> (InTouch / System Platform), <strong>GE iFIX</strong>, and others on request. Work includes alarm philosophy, faceplate standards, navigation hierarchy, and historian/trend configuration.</p>
-      <ul class="detail-list detail-list--compact">
-        <li>P&amp;ID-style graphics, equipment pop-ups, and trend groups</li>
-        <li>Role-based security and audit trails per site policy</li>
-        <li>Alarm shelving, flood suppression, and rationalization support</li>
+        <li><strong>SCADA platforms</strong>: GE iFix, FactoryTalk View SE, AVEVA Wonderware (InTouch/System Platform)</li>
+        <li><strong>HMI hardware</strong>: Allen-Bradley PanelView Plus 7 touchscreens (7", 10", 12", 15" displays) with Ethernet/IP communication</li>
+        <li><strong>Graphical displays</strong>: plant-wide overview screens, equipment faceplates, trend groups, alarm summaries</li>
+        <li><strong>Alarm management</strong>: priority-based alarming, alarm annunciation, historical alarm logs, flood suppression</li>
+        <li><strong>Operator control interfaces</strong>: Auto/Manual/Local mode selection, setpoint adjustment, equipment start/stop</li>
+        <li><strong>Historical trending</strong>: process data logging, trend displays, report generation</li>
       </ul>
       <figure class="photo-frame photo-frame--screenshot" style="margin-top:1.5rem; max-width:min(100%, 48rem);">
         <div class="photo-frame-inner">
           <img src="assets/photos/scada-killaloe-overview.png" alt="Municipal water treatment SCADA overview with process areas, equipment status, and operator navigation." width="960" height="600" loading="lazy" decoding="async">
         </div>
-        <figcaption style="margin:0.65rem 0 0; font-size:0.8125rem; color:var(--color-text-secondary); line-height:1.5;">Plant-wide overview graphic from a live WTP project—navigation, equipment state, and alarm-ready context operators use every shift. Filter and pump faceplates (e.g. Pembroke mixer graphics) follow the same standards.</figcaption>
+        <figcaption style="margin:0.65rem 0 0; font-size:0.8125rem; color:var(--color-text-secondary); line-height:1.5;">Plant-wide SCADA overview from a municipal WTP project—real-time equipment status, alarm context, and intuitive navigation for operators.</figcaption>
       </figure>
     </div>
+
     <div class="prose-block">
-      <h2>Instrumentation &amp; loop commissioning</h2>
-      <p>Field verification that instruments, valves, and actuators behave as documented in loop sheets and cause-and-effect matrices. Factory-trained technicians with <strong>Red Seal</strong> credentials perform <strong>calibration, verification, and startup</strong> for temperature, flow, pressure, and related loops—using current-generation calibrators so records stand up to audit.</p>
+      <h2>Process Instrumentation Supply &amp; Configuration</h2>
+      <p>Supply and configure process instrumentation including flow, level, pressure, and analytical measurement devices with full commissioning support. We are authorized by Siemens for commissioning of Siemens Process Instrumentation in Ontario.</p>
       <ul class="detail-list detail-list--compact">
-        <li>Scheduled verification programs or one-time commissioning support</li>
-        <li>Loop checks, stroke tests, and calibration records</li>
-        <li>Support during process performance testing</li>
-        <li>Updates to loop folders and redlines after SAT</li>
-        <li><strong>24-hour</strong> on-site service in Eastern &amp; Northern Ontario and Western Quebec where contracted; VPN-based support for remote sites</li>
+        <li><strong>Magnetic flow meters</strong>: Siemens Sitrans FM (Mag 5000/6000), Endress+Hauser Promag—DN50 to DN600, 4-20mA output with HART</li>
+        <li><strong>Ultrasonic level transmitters</strong>: Siemens Sitrans Probe LU, Endress+Hauser Prosonic—tank and wet well level monitoring</li>
+        <li><strong>Pressure transmitters</strong>: Siemens Sitrans P (DS III, P300), Endress+Hauser Cerabar—gauge, differential, and hydrostatic pressure</li>
+        <li><strong>Analytical instruments</strong>: Hach, YSI, Endress+Hauser—pH, turbidity, chlorine, dissolved oxygen</li>
+        <li><strong>Float switches and level sensors</strong>: Magnetrol, Gems—high/low level alarms</li>
+        <li><strong>Specifications</strong>: 4-20mA analog signals with HART protocol, stainless steel wetted materials (316L), IP68 submersible ratings, explosion-proof ratings where required</li>
       </ul>
     </div>
+
     <div class="prose-block">
-      <h2>Product supply &amp; vendor-neutral design</h2>
-      <p>We supply industrial automation components—historically including lines such as <strong>Phoenix Contact</strong>—and we remain <strong>independent</strong>: we do not represent manufacturers exclusively, so the architecture and bill of materials reflect your process, not a quota.</p>
+      <h2>VFD &amp; Motor Starter Integration</h2>
+      <p>Configure and commission variable frequency drives with seamless integration to PLC control systems for optimized pump and blower operation. Starter panels include drawings, submittals, CSA certification, configuration, and commissioning.</p>
+      <ul class="detail-list detail-list--compact">
+        <li><strong>VFD applications</strong>: low lift pumps, high lift pumps, backwash pumps, waste activated sludge pumps, blowers (aeration, membrane scour), mixers</li>
+        <li><strong>VFD brands</strong>: Allen-Bradley PowerFlex 525/755, ABB ACS580/ACS880, Danfoss VLT series</li>
+        <li><strong>Starter types</strong>: VFD (variable frequency drive), soft starter (reduced voltage starting), FVNR (full voltage non-reversing), combination starters with motor protection</li>
+        <li><strong>Integration features</strong>: Ethernet/IP or Modbus TCP communication to PLC, integrated bypass contactors, motor overload protection, current/power monitoring, remote start/stop and speed control from SCADA</li>
+        <li><strong>Panel construction</strong>: NEMA 3R/4X or IP65 ratings, outdoor-rated enclosures, integrated disconnect and motor protection</li>
+      </ul>
     </div>
+
     <div class="prose-block">
-      <h2>Documentation &amp; training</h2>
-      <p>Turnover binders, O&amp;M supplements, loop books, backup media (or secured file transfer), and operator training sessions structured around real plant tasks—not generic software tutorials.</p>
+      <h2>Factory &amp; Site Acceptance Testing</h2>
+      <p>Provide comprehensive commissioning services including factory acceptance testing, site startup, and operator training to ensure reliable system operation. Our commissioning follows systematic test procedures with documented results.</p>
+      <ul class="detail-list detail-list--compact">
+        <li><strong>Factory Acceptance Testing (FAT)</strong>: conducted at our shop before shipment—panel inspection and CSA label verification, power-up and voltage checks, PLC program simulation, HMI graphics navigation, communication network testing</li>
+        <li><strong>Site Acceptance Testing (SAT)</strong>: conducted at project site after installation—field device loop checks (4-20mA signals verified), motor rotation and VFD operation, interlock and alarm sequence testing, PID loop tuning under actual process loads, SCADA communication verification</li>
+        <li><strong>Commissioning deliverables</strong>: commissioning reports with test results, as-built PLC programs and HMI graphics, instrument calibration certificates, loop check documentation</li>
+        <li><strong>PLC output verification</strong>: forcing corresponding outputs from PLC program to verify field device operation</li>
+        <li><strong>Process performance testing</strong>: support during startup to verify control sequences under actual operating conditions</li>
+      </ul>
     </div>
+
+    <div class="prose-block">
+      <h2>Network Infrastructure &amp; Remote Access</h2>
+      <p>Integrate Ethernet/IP and fiber optic networks for reliable communication between field devices, PLCs, and SCADA workstations. Enable remote SCADA access via cellular modem for off-site monitoring, alarm notification, and troubleshooting support.</p>
+      <ul class="detail-list detail-list--compact">
+        <li><strong>Managed switches</strong>: Allen-Bradley Stratix 5200/5800 series, Cisco Industrial Ethernet—VLAN, QoS, RSTP, DLR (Device Level Ring)</li>
+        <li><strong>Fiber optic</strong>: single-mode fiber for long distances (&gt;2km), multi-mode fiber for building-to-building (up to 2km), LC/SC connectors</li>
+        <li><strong>Communication protocols</strong>: Ethernet/IP (primary for Allen-Bradley PLCs, VFDs, HMIs), Modbus TCP (third-party devices), Modbus RTU RS485 (legacy serial devices), HART (analog instruments)</li>
+        <li><strong>Remote access</strong>: cellular modems (Sierra Wireless, Digi), VPN routers for secure remote access, static IP or dynamic DNS services</li>
+        <li><strong>Network panels</strong>: Ethernet switches, fiber optic converters, cellular modems in NEMA-rated enclosures</li>
+      </ul>
+    </div>
+
+    <div class="prose-block">
+      <h2>Documentation &amp; Training</h2>
+      <p>Deliver complete as-built documentation including PLC programs, HMI graphics, wiring diagrams, and operation and maintenance manuals. Operator training sessions are structured around real plant tasks and equipment operation.</p>
+      <ul class="detail-list detail-list--compact">
+        <li><strong>Shop drawings</strong>: panel general arrangement drawings, single-line electrical diagrams, wiring diagrams and terminal schedules, panel layout and component location drawings</li>
+        <li><strong>Control system documentation</strong>: PLC program files (native RSLogix format + PDF), HMI graphics files (FactoryView/PanelView format + PDF), tag database with descriptions and I/O assignments, Process Control Narratives (PCN), network architecture diagrams</li>
+        <li><strong>Instrumentation documentation</strong>: instrument data sheets and specifications, calibration certificates and range settings, installation and mounting details, wiring termination schedules</li>
+        <li><strong>As-built records</strong>: marked-up drawings showing field changes, final PLC/HMI programs after commissioning, updated P&amp;IDs with actual tag numbers, network configuration files</li>
+        <li><strong>Operation &amp; Maintenance manuals</strong>: equipment operation procedures, maintenance schedules, troubleshooting guides, spare parts lists, manufacturer literature</li>
+        <li><strong>Operator training</strong>: on-site training (4-8 hours typical), PLC/HMI navigation and control mode selection, alarm acknowledgement and troubleshooting, setpoint adjustment procedures, emergency shutdown procedures</li>
+      </ul>
+    </div>
+
+    <div class="prose-block">
+      <h2>Typical Scope Inclusions</h2>
+      <p>Standard deliverables included in our control system integration projects:</p>
+      <ul class="detail-list detail-list--compact">
+        <li>Panel fabrication with CSA certification to UL 508A standards</li>
+        <li>PLC/HMI programming and configuration</li>
+        <li>Instrumentation supply and configuration</li>
+        <li>Shop drawings and submittals</li>
+        <li>Factory acceptance testing (FAT)</li>
+        <li>Site commissioning and startup support</li>
+        <li>Operator training (basic)</li>
+        <li>As-built documentation</li>
+        <li>One-year warranty on CCI-supplied equipment</li>
+      </ul>
+    </div>
+
+    <div class="prose-block">
+      <h2>Typical Scope Exclusions</h2>
+      <p>Items typically provided by others unless specifically included in quotation:</p>
+      <ul class="detail-list detail-list--compact">
+        <li>Electrical permits and inspections</li>
+        <li>Field wiring between panels and devices</li>
+        <li>Conduit and cable tray installation</li>
+        <li>Panel mounting and anchoring</li>
+        <li>External grounding and bonding</li>
+        <li>Civil/structural work</li>
+        <li>Process equipment (pumps, blowers, filters)</li>
+        <li>Vendor control panels (UV, filtration, chemical feed systems)</li>
+        <li>Motor temperature sensors (TSH)</li>
+        <li>Spare parts beyond commissioning consumables</li>
+      </ul>
+    </div>
+
     <p style="margin-top:2rem;"><a class="btn btn-secondary" href="platforms.html">Platforms we use</a> <a class="btn btn-primary" href="contact.html" style="margin-left:0.5rem;">Request a quote</a></p>
   </main>
 

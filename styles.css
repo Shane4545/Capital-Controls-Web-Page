@@ -245,9 +245,9 @@ a:hover {
   font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   font-weight: 600;
   letter-spacing: -0.02em;
-  line-height: 1.2;
+  line-height: 1.18;
   color: var(--color-text);
-  max-width: 20ch;
+  max-width: 22ch;
 }
 
 .page-hero-lead {
@@ -297,15 +297,25 @@ a:hover {
 }
 
 .prose-block h2 {
-  margin: 2.25rem 0 0.75rem;
+  margin: 2.25rem 0 0.85rem;
   font-family: var(--font-serif);
   font-size: 1.35rem;
   font-weight: 600;
+  line-height: 1.3;
   color: var(--color-text);
 }
 
 .prose-block h2:first-child {
   margin-top: 0;
+}
+
+.prose-block h3 {
+  margin: 1.75rem 0 0.65rem;
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--color-text);
 }
 
 .prose-block p {
@@ -615,7 +625,7 @@ a:hover {
 .link-card {
   display: flex;
   flex-direction: column;
-  padding: 1.35rem 1.5rem;
+  padding: 1.5rem 1.65rem;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
@@ -636,7 +646,7 @@ a:hover {
 
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
   .link-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
     box-shadow: 0 16px 44px rgba(0, 45, 98, 0.09);
   }
 }
@@ -751,7 +761,7 @@ a:hover {
   font-family: var(--font-serif);
   font-size: clamp(2rem, 4.2vw, 2.875rem);
   font-weight: 600;
-  line-height: 1.14;
+  line-height: 1.12;
   letter-spacing: -0.025em;
   color: var(--color-text);
 }
@@ -779,6 +789,7 @@ a:hover {
   font-size: 0.8125rem;
   font-weight: 700;
   letter-spacing: 0.04em;
+  line-height: 1.2;
   text-transform: uppercase;
   text-decoration: none;
   border: none;
@@ -870,7 +881,7 @@ a:hover {
   position: relative;
 }
 
-/* Unified photo treatment — consistent ratio, neutral matte, no gimmick overlays */
+/* Unified photo treatment — consistent ratio, neutral matte, premium framing */
 .photo-frame {
   margin: 0;
   background: var(--color-surface-muted);
@@ -878,6 +889,7 @@ a:hover {
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
   overflow: hidden;
+  transition: box-shadow 0.25s var(--ease);
 }
 
 .photo-frame-inner {
@@ -892,6 +904,13 @@ a:hover {
   object-fit: cover;
   object-position: center center;
   display: block;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .photo-frame:hover .photo-frame-inner img {
+    transform: scale(1.03);
+  }
 }
 
 .img-anchor-panel {
@@ -940,26 +959,31 @@ a:hover {
 }
 
 .tech-showcase-item figcaption {
-  margin-top: 0.5rem;
+  margin-top: 0.65rem;
   font-size: 0.8125rem;
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 1.55;
   color: var(--color-text-secondary);
 }
 
-.hero-caption {
+.hero-caption,
+figcaption {
   margin: 0.75rem 0 0;
   padding: 0;
   font-size: 0.8125rem;
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 1.55;
   color: var(--color-muted);
-  max-width: 42ch;
+  max-width: 52ch;
 }
 
-/* Section system */
+/* Section system — consistent vertical rhythm */
 .section {
   padding: clamp(3.5rem, 9vw, 6rem) 0;
+}
+
+.section + .section {
+  border-top: 1px solid var(--color-border);
 }
 
 .section-intro {
@@ -968,7 +992,7 @@ a:hover {
 }
 
 .section-intro--tight {
-  margin-bottom: 2rem;
+  margin-bottom: clamp(2rem, 4vw, 2.75rem);
   max-width: 40rem;
 }
 
@@ -1006,7 +1030,7 @@ a:hover {
   font-size: clamp(1.75rem, 3vw, 2.25rem);
   font-weight: 600;
   letter-spacing: -0.02em;
-  line-height: 1.2;
+  line-height: 1.18;
   color: var(--color-text);
 }
 
@@ -1065,12 +1089,12 @@ a:hover {
 }
 
 .service-block-body h3 {
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.85rem;
   font-family: var(--font-serif);
   font-size: 1.35rem;
   font-weight: 600;
   letter-spacing: -0.02em;
-  line-height: 1.25;
+  line-height: 1.28;
   color: var(--color-text);
 }
 
@@ -1145,6 +1169,16 @@ a:hover {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-xs);
+  transition:
+    border-color 0.25s var(--ease),
+    box-shadow 0.25s var(--ease);
+}
+
+@media (hover: hover) {
+  .capability-card:hover {
+    border-color: var(--color-border-strong);
+    box-shadow: var(--shadow-sm);
+  }
 }
 
 .capability-card h3 {
@@ -1227,12 +1261,13 @@ a:hover {
 }
 
 .mosaic-item figcaption {
-  margin-top: 0.4rem;
+  margin-top: 0.5rem;
   font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--color-muted);
+  line-height: 1.35;
 }
 
 .photo-frame--tile {
@@ -2105,9 +2140,10 @@ a:hover {
 }
 
 .archive-item figcaption {
-  margin-top: 0.5rem;
+  margin-top: 0.65rem;
   font-size: 0.8125rem;
   font-weight: 500;
+  line-height: 1.55;
   color: var(--color-text-secondary);
 }
 
@@ -2150,6 +2186,8 @@ a:hover {
 
 a:focus-visible,
 button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
 .nav-toggle:focus-visible,
 .btn:focus-visible,
 .back-to-top:focus-visible {

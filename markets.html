@@ -44,15 +44,15 @@
     </div>
   </header>
 
-  <header class="page-hero">
+  <header class="page-hero" style="background: linear-gradient(135deg, rgba(0,45,98,0.92) 0%, rgba(0,45,98,0.85) 100%), url('assets/photos/hero-killaloe-wtp.jpg') center/cover; color: white; padding: 4rem 0;">
     <div class="page-hero-inner">
       <ol class="breadcrumb">
-        <li><a href="index.html">Home</a></li>
-        <li aria-current="page">Markets</li>
+        <li><a href="index.html" style="color: rgba(255,255,255,0.9);">Home</a></li>
+        <li aria-current="page" style="color: white;">Markets</li>
       </ol>
-      <p class="eyebrow">Where we focus</p>
-      <h1>Water, wastewater, and selective industrial work</h1>
-      <p class="page-hero-lead">Treatment plants and pumping infrastructure are the core of our practice. We also take on other industrial automation when the control problem fits our PLC/SCADA and electrical skill set.</p>
+      <p class="eyebrow" style="color: rgba(255,255,255,0.95);">Where we focus</p>
+      <h1>Municipal water infrastructure and specialty industrial controls</h1>
+      <p class="page-hero-lead">Water treatment plants, wastewater facilities, and pumping stations represent the majority of our work. We also deliver control systems for transit infrastructure, bridges, conveyors, and industrial process applications.</p>
     </div>
   </header>
 
@@ -64,31 +64,69 @@
   </section>
 
   <main id="main" class="prose-page">
-    <div class="prose-block">
-      <h2>Industries we support</h2>
-      <p>In addition to municipal water and wastewater, our public-facing practice includes <strong>landfill leachate and gas-related SCADA</strong>, <strong>boiler and combustion-related control</strong>, general <strong>industrial plants</strong>, <strong>hydro generation</strong>–related work, <strong>airports</strong>, and infrastructure for <strong>municipal, provincial, federal</strong>, and <strong>private</strong> clients—consistent with how Capital Controls has described its markets for years.</p>
+    
+    <div class="prose-block" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 2.5rem; border-radius: 8px; margin-bottom: 3rem;">
+      <h2 style="margin-top: 0;">Primary Market: Municipal Water & Wastewater</h2>
+      <p style="font-size: 1.1rem; line-height: 1.7;">Over 92% of our project corpus involves municipal water treatment, wastewater treatment, and pumping station applications. We supply, program, and commission PLC-based control systems with integrated HMI interfaces for comprehensive process monitoring and control across these facilities.</p>
     </div>
+
     <div class="prose-block">
-      <h2>Water treatment plants (WTP)</h2>
-      <p>Raw water intake, chemical dosing, clarification, filtration, residuals, clearwells, and high-service pumping often span multiple PLCs and a central SCADA. We implement sequences, permissives, and operator interfaces aligned to your process narrative—whether you are modernizing legacy platforms or expanding capacity.</p>
+      <h2>Water Treatment Plants</h2>
+      <p><strong>Typical systems we integrate:</strong> Raw water intake and low lift pumping, screening and grit removal, chemical dosing (coagulation, chlorination, pH adjustment), clarification systems including Actiflo and ballasted flocculation, gravity and membrane filtration, UV disinfection, high lift pumping and distribution, backwash systems, and clearwell level control.</p>
+      <p><strong>Recent project example:</strong> Carleton Place WTP Expansion involved CompactLogix PLC programming with iFix SCADA workstation, process control narratives for each unit operation, and integration of Siemens instrumentation including magnetic flow meters and ultrasonic level transmitters.</p>
+      <p>We develop control logic for equipment monitoring and control, with PLC programs written using clear organized ladder logic and comprehensive comments to ensure programs can be understood by operators and programmers not involved in the original project.</p>
     </div>
+
     <div class="prose-block">
-      <h2>Wastewater treatment plants (WWTP)</h2>
-      <p>Influent structures, headworks, biological processes, secondary clarification, disinfection, solids handling, and effluent monitoring all depend on reliable I/O, interlocks, and alarm design. We support upgrades that must coexist with running facilities: phased cutovers, temporary bypass logic, and documentation that operators and maintenance can follow under outage pressure.</p>
+      <img src="assets/photos/scada-killaloe-overview.png" alt="Municipal WTP SCADA overview screen showing real-time process monitoring" style="width: 100%; max-width: 900px; height: auto; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin: 2rem 0;">
     </div>
+
     <div class="prose-block">
-      <h2>Lift stations, pumping stations &amp; remote sites</h2>
-      <p>Many utilities distribute control across lift stations, booster stations, and well fields. That usually means RTU/PLC at the edge, secure connectivity back to a central SCADA, and consistent graphics and alarm philosophy across sites. We integrate radios, fiber, or VPN paths according to your IT/OT standards.</p>
+      <h2>Wastewater Treatment Plants</h2>
+      <p><strong>Typical systems we integrate:</strong> Influent pumping and screening, grit removal including vortex systems, primary clarification, biological treatment (activated sludge, MBR, SBR), aeration blowers and diffusers, secondary clarification, UV disinfection, sludge thickening and dewatering, digester control and mixing, and effluent pumping.</p>
+      <p><strong>Recent project example:</strong> Carleton Place WWTP Expansion required phased commissioning to maintain continuous operation during the upgrade. We provided standalone PLC programming for the biological treatment process, integrated VFD control for aeration blowers, and developed HMI graphics displaying alarm data with necessary operator control interfaces.</p>
+      <p>Our approach supports upgrades that must coexist with running facilities through phased cutovers, temporary bypass logic, and documentation that operators and maintenance staff can follow under outage pressure.</p>
     </div>
+
     <div class="prose-block">
-      <h2>Industrial &amp; specialty applications</h2>
-      <p>Outside of water/wastewater, we have delivered (and continue to bid) projects such as <strong>swing bridge automation</strong>, <strong>conveyor and material-handling</strong> integration, and other industrial machinery where discrete and motion control meet supervisory SCADA. These jobs are scheduled around our municipal workload—not the majority of revenue—but they use the same engineering habits: documented logic, testable interfaces, and clean handover.</p>
+      <img src="assets/photos/wtp-rockland-actiflo-panel.jpg" alt="Process control panel at municipal water treatment facility" style="width: 100%; max-width: 700px; height: auto; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin: 2rem 0;">
     </div>
+
     <div class="prose-block">
-      <h2>Internal tooling &amp; documentation discipline</h2>
-      <p>Our project systems (including AutoCAD-style electrical workflows, PLC I/O utilities, and structured BOM/submittal tooling developed under internal programs) reinforce consistent schematics, wiring exports, and revision control—so field work matches what was approved in design reviews.</p>
+      <h2>Pumping Stations & Lift Stations</h2>
+      <p><strong>Configuration types:</strong> Sanitary sewage lift stations with submersible pumps and wet well level control, stormwater pumping stations with high-flow capacity, water booster stations with pressure control and variable speed drives, and raw water intake stations with traveling screens.</p>
+      <p><strong>Standard features we implement:</strong> Duplex, triplex, or quad pump configurations with lead/lag/standby rotation, high and low level alarms with auto-dialer capability, wet well level control using ultrasonic transmitters, VFD speed control for flow matching, backup generator integration, and remote SCADA monitoring via cellular modem.</p>
+      <p><strong>Recent project examples:</strong> McGee Street Lift Station (CCI-1413) included a SCADA panel with CompactLogix controller, PanelView touchscreen, and cellular modem to provide lift station control and monitoring with communication to the main plant. Golfview Subdivision Pumping Station (CCI-1413Q) featured similar architecture with duplex pump control and remote access capability.</p>
     </div>
-    <p style="margin-top:2rem;"><a class="btn btn-secondary" href="services.html">Next: Services</a> <a class="btn btn-primary" href="contact.html" style="margin-left:0.5rem;">Contact</a></p>
+
+    <div class="prose-block">
+      <img src="assets/photos/wtp-rockland-main-plc.jpg" alt="Main PLC control enclosure at municipal facility" style="width: 100%; max-width: 700px; height: auto; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin: 2rem 0;">
+    </div>
+
+    <div class="prose-block">
+      <h2>Transit & Infrastructure</h2>
+      <p>We have delivered control systems for transit applications including tunnel dewatering systems, station drainage pumping, and emergency backup systems. These projects typically involve coordination with transit authorities and integration with existing facility management systems.</p>
+      <p><strong>Applications:</strong> TTC and LRT infrastructure projects requiring ruggedized control panels, redundant communication paths, and compliance with transit-specific electrical and safety standards.</p>
+    </div>
+
+    <div class="prose-block">
+      <h2>Bridges & Conveyors</h2>
+      <p><strong>Bridge automation:</strong> We have supplied control systems for swing bridge automation, including motor control, position sensing, safety interlocks, and operator interfaces for manual and automatic operation modes.</p>
+      <p><strong>Conveyor integration:</strong> Material handling and conveyor systems requiring discrete and motion control integrated with supervisory SCADA. These applications use the same Allen-Bradley CompactLogix platform and Ethernet/IP communication architecture as our municipal work.</p>
+    </div>
+
+    <div class="prose-block">
+      <h2>Industrial Process Control</h2>
+      <p><strong>Applications we support:</strong> Chemical feed systems with precision dosing control, process water treatment for industrial facilities, cooling tower control with temperature and flow management, and compressed air systems with pressure regulation.</p>
+      <p>Industrial projects are scheduled around our municipal workload and represent a secondary market. However, they leverage the same engineering practices: documented ladder logic, testable operator interfaces, comprehensive commissioning, and complete as-built documentation.</p>
+    </div>
+
+    <div class="prose-block" style="background: #f8f9fa; padding: 2rem; border-left: 4px solid #002d62; margin-top: 3rem;">
+      <h3 style="margin-top: 0;">Platform Consistency Across Markets</h3>
+      <p>Regardless of market sector, we standardize on Allen-Bradley CompactLogix and ControlLogix PLCs with FactoryTalk HMI, Siemens process instrumentation, and Ethernet/IP network architecture. This platform consistency ensures reliable parts availability, familiar programming environments for client maintenance staff, and proven integration patterns across all control system components.</p>
+    </div>
+
+    <p style="margin-top:3rem;"><a class="btn btn-secondary" href="services.html">Next: Services</a> <a class="btn btn-primary" href="contact.html" style="margin-left:0.5rem;">Contact</a></p>
   </main>
 
   <footer class="site-footer">
