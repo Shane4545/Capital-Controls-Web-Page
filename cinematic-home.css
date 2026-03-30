@@ -28,6 +28,20 @@
 
 /* Top bar, stack strip, header, nav: inherit global styles from styles.css */
 
+/* Global styles.css uses a dark “elite” stack strip; keep the homepage strip light. */
+.page-home--cinematic .stack-strip {
+  background: linear-gradient(180deg, var(--color-surface-muted, #eef1f6) 0%, #e5eaf1 100%);
+  border-bottom: 1px solid var(--color-border, #e2e8f0);
+}
+
+.page-home--cinematic .stack-strip-chips {
+  color: var(--color-text-secondary, #3d4a5c);
+}
+
+.page-home--cinematic .stack-strip-chips li:not(:last-child)::after {
+  background: rgba(0, 166, 81, 0.5);
+}
+
 /* —— Main spine (continuity) —— */
 .cinema-main--cinematic {
   position: relative;
