@@ -79,10 +79,11 @@
     </div>
   </div>
 
-  <main id="main">
+  <main id="main" class="cinema-main cinema-main--cinematic">
     <section class="cinema-hero" aria-labelledby="cinema-hero-heading">
       <div class="cinema-hero__layers" aria-hidden="true">
-        <div class="cinema-hero__glow"></div>
+        <div class="cinema-hero__glow cinema-hero__glow--cool"></div>
+        <div class="cinema-hero__glow cinema-hero__glow--warm"></div>
         <div class="cinema-hero__grid"></div>
         <div class="cinema-hero__noise"></div>
       </div>
@@ -91,76 +92,104 @@
         <div class="cinema-hero__grade"></div>
         <div class="cinema-hero__vignette"></div>
         <div class="cinema-hero__scan"></div>
+        <div class="cinema-hero__rim"></div>
       </div>
+      <svg class="cinema-hero__schematic" viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <path class="cinema-hero__schematic-path" d="M 32 188 L 32 72 L 118 72 L 118 48 L 200 48"></path>
+        <path class="cinema-hero__schematic-path" d="M 118 72 L 118 120 L 260 120 L 260 88 L 340 88"></path>
+        <path class="cinema-hero__schematic-path cinema-hero__schematic-path--accent" d="M 48 188 L 168 188 L 168 152 L 288 152"></path>
+        <circle class="cinema-hero__schematic-node" cx="32" cy="188" r="3"></circle>
+        <circle class="cinema-hero__schematic-node" cx="200" cy="48" r="3"></circle>
+        <circle class="cinema-hero__schematic-node" cx="340" cy="88" r="3"></circle>
+      </svg>
+      <div class="cinema-hero__frame" aria-hidden="true"></div>
       <div class="cinema-hero__content">
-        <p class="cinema-hero__eyebrow">Ottawa · Eastern Ontario · Western Quebec · Programs across Canada</p>
+        <p class="cinema-hero__index"><span class="cinema-hero__index-line"></span> Control system delivery</p>
+        <p class="cinema-hero__eyebrow">Ottawa · Eastern Ontario · Western Quebec · Canada-wide programs</p>
         <h1 class="cinema-hero__title" id="cinema-hero-heading">
-          <span class="cinema-hero__title-line">Mission-critical control.</span>
-          <span class="cinema-hero__title-line">Engineered as one system.</span>
+          <span class="cinema-hero__title-line cinema-hero__title-line--primary">Infrastructure<br>under control.</span>
+          <span class="cinema-hero__title-line cinema-hero__title-line--secondary">One integrator. One system. From field to SCADA.</span>
         </h1>
         <p class="cinema-hero__lead">
-          Capital Controls &amp; Instrumentation designs, fabricates, programs, and commissions <strong>complete control systems</strong> for water, wastewater, and municipal infrastructure—from enclosure to SCADA to turnover.
+          We design, build, program, and commission <strong>integrated control systems</strong> for plants and stations where failure is not an option—panels, logic, graphics, instruments, networks, FAT/SAT, and documented turnover.
         </p>
         <div class="cinema-hero__actions">
-          <a class="cinema-btn cinema-btn--primary" href="contact.html">Contact engineering</a>
+          <a class="cinema-btn cinema-btn--primary" href="contact.html">Engage engineering</a>
           <a class="cinema-btn cinema-btn--ghost" href="services.html">Delivery scope</a>
         </div>
       </div>
-      <a class="cinema-hero__scroll" href="#cinema-signal">Continue</a>
+      <a class="cinema-hero__scroll" href="#cinema-signal"><span class="cinema-hero__scroll-label">Enter</span></a>
     </section>
 
     <section class="cinema-signal" id="cinema-signal" aria-labelledby="cinema-signal-heading">
+      <div class="cinema-signal__sweep" aria-hidden="true"></div>
       <div class="cinema-signal__inner">
         <header class="cinema-signal__header">
           <p class="cinema-section__kicker">System activation</p>
-          <h2 class="cinema-section__title" id="cinema-signal-heading">Signal path, end to end</h2>
-          <p class="cinema-section__deck">Field intelligence routes through structured terminations and PLC logic, surfaces in SCADA, and closes the loop on the physical process—documented, testable, and maintainable.</p>
+          <h2 class="cinema-section__title cinema-section__title--signal" id="cinema-signal-heading">The path power travels</h2>
+          <p class="cinema-section__deck">Not a diagram for decoration—this is how we think: disciplined I/O, explicit logic, operator-grade SCADA, and a physical process that must respond. Every segment is testable in FAT and traceable in documentation.</p>
         </header>
         <div class="cinema-signal__diagram">
-          <svg class="cinema-signal__svg" viewBox="0 0 1000 200" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Control signal flow from field devices through PLC and SCADA to process">
-            <defs>
-              <linearGradient id="cinema-signal-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#00a651" stop-opacity="0.25"></stop>
-                <stop offset="45%" stop-color="#00a651" stop-opacity="1"></stop>
-                <stop offset="100%" stop-color="#00a651" stop-opacity="0.35"></stop>
-              </linearGradient>
-            </defs>
-            <path class="cinema-signal__path" d="M 92 102 L 230 102"></path>
-            <path class="cinema-signal__path" d="M 230 102 L 380 102"></path>
-            <path class="cinema-signal__path" d="M 380 102 L 530 102"></path>
-            <path class="cinema-signal__path" d="M 530 102 L 680 102"></path>
-            <path class="cinema-signal__path" d="M 680 102 L 908 102"></path>
-            <path class="cinema-signal__path--energy" d="M 92 102 L 230 102"></path>
-            <path class="cinema-signal__path--energy" d="M 230 102 L 380 102"></path>
-            <path class="cinema-signal__path--energy" d="M 380 102 L 530 102"></path>
-            <path class="cinema-signal__path--energy" d="M 530 102 L 680 102"></path>
-            <path class="cinema-signal__path--energy" d="M 680 102 L 908 102"></path>
-            <g class="cinema-signal__node-group" data-node="0">
-              <circle class="cinema-signal__node-dot" cx="92" cy="102" r="11"></circle>
-            </g>
-            <g class="cinema-signal__node-group" data-node="1">
-              <circle class="cinema-signal__node-dot" cx="230" cy="102" r="11"></circle>
-            </g>
-            <g class="cinema-signal__node-group" data-node="2">
-              <circle class="cinema-signal__node-dot" cx="380" cy="102" r="11"></circle>
-            </g>
-            <g class="cinema-signal__node-group" data-node="3">
-              <circle class="cinema-signal__node-dot" cx="530" cy="102" r="11"></circle>
-            </g>
-            <g class="cinema-signal__node-group" data-node="4">
-              <circle class="cinema-signal__node-dot" cx="680" cy="102" r="11"></circle>
-            </g>
-            <g class="cinema-signal__node-group" data-node="5">
-              <circle class="cinema-signal__node-dot" cx="908" cy="102" r="11"></circle>
-            </g>
-          </svg>
+          <p class="cinema-signal__readout" aria-live="polite"><span class="cinema-signal__readout-label">Topology</span> <span class="cinema-signal__readout-value" data-signal-readout>Idle — awaiting energize</span></p>
+          <div class="cinema-signal__viewport">
+            <svg class="cinema-signal__svg" viewBox="0 0 1000 220" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Control signal flow from field devices through PLC and SCADA to process">
+              <defs>
+                <linearGradient id="cinema-signal-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#00a651" stop-opacity="0.2"></stop>
+                  <stop offset="40%" stop-color="#4ddb95" stop-opacity="1"></stop>
+                  <stop offset="100%" stop-color="#00a651" stop-opacity="0.45"></stop>
+                </linearGradient>
+                <filter id="cinema-signal-glow" x="-40%" y="-40%" width="180%" height="180%">
+                  <feGaussianBlur stdDeviation="1.2" result="b"></feGaussianBlur>
+                  <feMerge>
+                    <feMergeNode in="b"></feMergeNode>
+                    <feMergeNode in="SourceGraphic"></feMergeNode>
+                  </feMerge>
+                </filter>
+              </defs>
+              <path class="cinema-signal__path" d="M 92 112 L 230 112"></path>
+              <path class="cinema-signal__path" d="M 230 112 L 380 112"></path>
+              <path class="cinema-signal__path" d="M 380 112 L 530 112"></path>
+              <path class="cinema-signal__path" d="M 530 112 L 680 112"></path>
+              <path class="cinema-signal__path" d="M 680 112 L 908 112"></path>
+              <path class="cinema-signal__path--energy" filter="url(#cinema-signal-glow)" d="M 92 112 L 230 112"></path>
+              <path class="cinema-signal__path--energy" filter="url(#cinema-signal-glow)" d="M 230 112 L 380 112"></path>
+              <path class="cinema-signal__path--energy" filter="url(#cinema-signal-glow)" d="M 380 112 L 530 112"></path>
+              <path class="cinema-signal__path--energy" filter="url(#cinema-signal-glow)" d="M 530 112 L 680 112"></path>
+              <path class="cinema-signal__path--energy" filter="url(#cinema-signal-glow)" d="M 680 112 L 908 112"></path>
+              <g class="cinema-signal__node-group" data-node="0">
+                <circle class="cinema-signal__node-ring" cx="92" cy="112" r="20" fill="none"></circle>
+                <circle class="cinema-signal__node-dot" cx="92" cy="112" r="10"></circle>
+              </g>
+              <g class="cinema-signal__node-group" data-node="1">
+                <circle class="cinema-signal__node-ring" cx="230" cy="112" r="20" fill="none"></circle>
+                <circle class="cinema-signal__node-dot" cx="230" cy="112" r="10"></circle>
+              </g>
+              <g class="cinema-signal__node-group" data-node="2">
+                <circle class="cinema-signal__node-ring" cx="380" cy="112" r="20" fill="none"></circle>
+                <circle class="cinema-signal__node-dot" cx="380" cy="112" r="10"></circle>
+              </g>
+              <g class="cinema-signal__node-group" data-node="3">
+                <circle class="cinema-signal__node-ring" cx="530" cy="112" r="20" fill="none"></circle>
+                <circle class="cinema-signal__node-dot" cx="530" cy="112" r="10"></circle>
+              </g>
+              <g class="cinema-signal__node-group" data-node="4">
+                <circle class="cinema-signal__node-ring" cx="680" cy="112" r="20" fill="none"></circle>
+                <circle class="cinema-signal__node-dot" cx="680" cy="112" r="10"></circle>
+              </g>
+              <g class="cinema-signal__node-group" data-node="5">
+                <circle class="cinema-signal__node-ring" cx="908" cy="112" r="20" fill="none"></circle>
+                <circle class="cinema-signal__node-dot" cx="908" cy="112" r="10"></circle>
+              </g>
+            </svg>
+          </div>
           <div class="cinema-signal__labels">
-            <p class="cinema-signal__label" tabindex="0">Field / instrument<small>Transmitters, discrete devices, process feedback</small></p>
-            <p class="cinema-signal__label" tabindex="0">Terminations<small>Structured I/O, marshalling, protection</small></p>
-            <p class="cinema-signal__label" tabindex="0">PLC / control<small>Sequences, interlocks, alarming</small></p>
-            <p class="cinema-signal__label" tabindex="0">Plant network<small>Industrial Ethernet, secure paths</small></p>
-            <p class="cinema-signal__label" tabindex="0">HMI / SCADA<small>Operations visibility and control</small></p>
-            <p class="cinema-signal__label" tabindex="0">Process outcome<small>Pumps, valves, treatment, uptime</small></p>
+            <button type="button" class="cinema-signal__label" data-node-index="0"><span class="cinema-signal__label-tag">01</span> Field<small>Instruments &amp; discrete I/O</small></button>
+            <button type="button" class="cinema-signal__label" data-node-index="1"><span class="cinema-signal__label-tag">02</span> Terminations<small>Marshalling &amp; protection</small></button>
+            <button type="button" class="cinema-signal__label" data-node-index="2"><span class="cinema-signal__label-tag">03</span> PLC<small>Logic, sequences, interlocks</small></button>
+            <button type="button" class="cinema-signal__label" data-node-index="3"><span class="cinema-signal__label-tag">04</span> Network<small>Industrial Ethernet path</small></button>
+            <button type="button" class="cinema-signal__label" data-node-index="4"><span class="cinema-signal__label-tag">05</span> HMI / SCADA<small>Operator layer</small></button>
+            <button type="button" class="cinema-signal__label" data-node-index="5"><span class="cinema-signal__label-tag">06</span> Process<small>Pumps, valves, treatment</small></button>
           </div>
         </div>
       </div>
