@@ -75,7 +75,7 @@ function initCinemaScrollSpine() {
 
 function initCinemaHeader() {
   const header = document.querySelector(".page-home--cinematic .site-header");
-  const hero = document.querySelector(".cinema-hero");
+  const hero = document.querySelector(".home-flagship-scene") || document.querySelector(".cinema-hero");
   if (!header || !hero) return;
   const io = new IntersectionObserver(
     ([e]) => {
@@ -181,9 +181,10 @@ const CCI_HERO_MP4 = "assets/video/cci-hero-loop.mp4?v=5";
 async function initCinemaHeroVideo() {
   if (cinemaReduced) return;
   const hero = document.querySelector(".cinema-hero");
-  const media = hero?.querySelector(".cinema-hero__media");
-  const img = hero?.querySelector(".cinema-hero__img");
-  if (!hero || !media || !img) return;
+  if (!hero) return;
+  const media = hero.querySelector(".cinema-hero__media");
+  const img = hero.querySelector(".cinema-hero__img");
+  if (!media || !img) return;
 
   let exists = false;
   try {
@@ -340,6 +341,19 @@ function initCinemaSignalFlow() {
 
   if (cinemaReduced) {
     root.classList.add("cinema-signal--active");
+    nodes.forEach((n) => n.classList.add("is-live"));
+    labels.forEach((lb) => lb.classList.add("is-live"));
+    setReadout(READOUT_STAGES.length - 1);
+    return;
+  }
+
+  if (root.classList.contains("cinema-signal--static")) {
+    root.classList.add("cinema-signal--active");
+    paths.forEach((path) => {
+      path.style.strokeDashoffset = "0";
+      path.style.strokeDasharray = "";
+      path.style.transition = "";
+    });
     nodes.forEach((n) => n.classList.add("is-live"));
     labels.forEach((lb) => lb.classList.add("is-live"));
     setReadout(READOUT_STAGES.length - 1);

@@ -160,6 +160,32 @@ body.cci-cinematic .page-hero--image .eyebrow {
   color: rgba(0, 186, 124, 0.9);
 }
 
+/* Critical-systems tone (services + aligned interior heroes) */
+body.cci-cinematic .page-hero--critical::after {
+  background: linear-gradient(105deg, rgba(2, 4, 8, 0.94) 0%, rgba(4, 8, 14, 0.78) 50%, rgba(6, 10, 18, 0.52) 100%);
+}
+
+body.cci-cinematic .page-hero--critical .eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: rgba(148, 163, 184, 0.92);
+}
+
+body.cci-cinematic .page-hero--critical h1 {
+  font-weight: 650;
+  letter-spacing: -0.028em;
+  line-height: 1.18;
+  max-width: 44rem;
+}
+
+body.cci-cinematic .page-hero--critical .page-hero-actions {
+  margin: clamp(1.25rem, 3vw, 1.75rem) 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  align-items: center;
+}
+
 /* Prose rhythm: proposal-grade spacing */
 body.cci-cinematic .prose-page {
   padding: clamp(2.25rem, 5vw, 3.5rem) var(--gutter);
