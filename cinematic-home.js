@@ -67,6 +67,58 @@ function initCinemaHeroEntrance() {
   });
 }
 
+function initCinemaHeroVideo() {
+  if (cinemaReduced) return;
+  const hero = document.querySelector(".cinema-hero");
+  const video = document.querySelector("[data-cinema-hero-video]");
+  if (!hero || !video) return;
+
+  const conn = typeof navigator !== "undefined" ? navigator.connection : undefined;
+  if (conn && (conn.saveData === true || /2g|slow-2g/i.test(String(conn.effectiveType || "")))) {
+    return;
+  }
+
+  function markReady() {
+    hero.classList.add("is-video-ready");
+  }
+
+  video.addEventListener("canplay", markReady, { once: true });
+  video.addEventListener("error", () => {
+    hero.classList.remove("is-video-ready");
+    hero.classList.add("is-hero-video-failed");
+    video.remove();
+  });
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      const e = entries[0];
+      if (!e) return;
+      if (e.isIntersecting) {
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    },
+    { threshold: 0.08, rootMargin: "0px 0px 10% 0px" }
+  );
+  io.observe(hero);
+
+  if (document.visibilityState === "visible") {
+    const r = hero.getBoundingClientRect();
+    if (r.bottom > 0 && r.top < window.innerHeight) {
+      video.play().catch(() => {});
+    }
+  }
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState !== "visible") {
+      video.pause();
+    } else if (hero.getBoundingClientRect().bottom > 0) {
+      video.play().catch(() => {});
+    }
+  });
+}
+
 function initCinemaSignalFlow() {
   const root = document.querySelector(".cinema-signal");
   if (!root) return;
@@ -181,5 +233,6 @@ function initCinemaSectionReveals() {
 initCinemaScrollSpine();
 initCinemaHeader();
 initCinemaHeroEntrance();
+initCinemaHeroVideo();
 initCinemaSignalFlow();
 initCinemaSectionReveals();
