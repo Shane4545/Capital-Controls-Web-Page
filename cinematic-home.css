@@ -945,9 +945,23 @@
   transition: transform 1.1s var(--cin-ease-out), filter 0.5s ease;
 }
 
+.cinema-engine-card--screenshot {
+  background: #1a1f28;
+}
+
+.cinema-engine-card--screenshot img {
+  object-fit: contain;
+  object-position: center center;
+  filter: saturate(1) contrast(1.03);
+}
+
 .cinema-engine-card:hover img {
   transform: scale(1.02);
   filter: saturate(0.92) contrast(1.05);
+}
+
+.cinema-engine-card--screenshot:hover img {
+  filter: saturate(1.05) contrast(1.04);
 }
 
 .cinema-engine-card__cap {
