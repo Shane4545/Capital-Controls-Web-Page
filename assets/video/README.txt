@@ -1,14 +1,16 @@
-CCI homepage hero video — required filename
-===========================================
-The cinematic homepage checks for this exact file via HTTP HEAD:
+CCI homepage hero video — filename
+====================================
+The cinematic homepage loads:
 
     cci-hero-loop.mp4
 
-If the file is absent, visitors see only the hero still (no errors, no stock).
+Regenerate from your own still (no stock), from repo root:
 
-1. Export H.264 MP4, muted, 1080p or 720p, keep under ~15 MB if possible.
-2. Place it here as:  cci-hero-loop.mp4
-3. Commit and push — no HTML edit needed.
+    pip install pillow imageio imageio-ffmpeg numpy
+    python scripts/build_hero_loop_from_still.py
 
-Footage must be yours or client-authorized (shop, FAT, site, or your drone).
-Do not use stock libraries for this slot.
+Default still: assets/photos/wtp-rockland-actiflo-panel.jpg
+Optional: python scripts/build_hero_loop_from_still.py path\to\other.jpg
+
+To replace with real footage later: overwrite cci-hero-loop.mp4 with your H.264
+export (muted, 720p/1080p), then commit.
