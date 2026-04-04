@@ -1,0 +1,7 @@
+ISO 9001 web graphic (iso-9001-2015-badge.svg)
+========================================
+This file is a text-only lockup — it is NOT the ISO organization’s trademarked logo.
+ISO policy: certified organizations display their certification body’s mark plus approved
+wording; request the official PDF and registrar artwork from the company for RFPs.
+
+Replace this SVG with exported artwork from your certificate pack when marketing approves.
