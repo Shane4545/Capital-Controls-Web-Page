@@ -8,6 +8,9 @@ jobs (shop or field), and SCADA/HMI captures from programs you integrated where
 client policy allows. Do not commit stock aerial footage or generic stock video
 as if it were company work.
 
+Homepage hero VIDEO (optional): add your own loop as assets/video/cci-hero-loop.mp4
+(H.264, muted). The site probes for that file; if missing, the hero stays photo-only.
+
 Synced from H:\Jobs (see scripts/sync_job_photos.py)
 ----------------------------------------------------
 These JPEGs are resized from your job folders when you run the sync script:

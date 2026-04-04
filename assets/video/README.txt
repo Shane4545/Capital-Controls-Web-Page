@@ -1,14 +1,14 @@
-Optional hero video — Capital Controls only
+CCI homepage hero video — required filename
 ===========================================
-The homepage hero currently uses a CCI field photo (no background video).
+The cinematic homepage checks for this exact file via HTTP HEAD:
 
-To add a loop of YOUR footage (shop timelapse, FAT witness, drone you own,
-client-permitted site video):
+    cci-hero-loop.mp4
 
-1. Export H.264 MP4, muted, 1080p or 720p, reasonable file size (<15 MB for web).
-2. Save as:  cci-hero-loop.mp4  in this folder.
-3. Ask your developer (or Cursor) to re-insert a <video> in index.html hero with:
-   autoplay muted loop playsinline poster="assets/photos/<your-still>.jpg"
+If the file is absent, visitors see only the hero still (no errors, no stock).
 
-Do not use stock sites (Pexels, etc.) for hero video if the site represents
-CCI-delivered work.
+1. Export H.264 MP4, muted, 1080p or 720p, keep under ~15 MB if possible.
+2. Place it here as:  cci-hero-loop.mp4
+3. Commit and push — no HTML edit needed.
+
+Footage must be yours or client-authorized (shop, FAT, site, or your drone).
+Do not use stock libraries for this slot.
