@@ -68,7 +68,7 @@ function initCinemaHeroEntrance() {
 }
 
 /** CCI-owned hero loop only — `assets/video/cci-hero-loop.mp4`. Injected only if HEAD returns 200 (no stock, no 404 noise). */
-const CCI_HERO_MP4 = "assets/video/cci-hero-loop.mp4";
+const CCI_HERO_MP4 = "assets/video/cci-hero-loop.mp4?v=4";
 
 async function initCinemaHeroVideo() {
   if (cinemaReduced) return;

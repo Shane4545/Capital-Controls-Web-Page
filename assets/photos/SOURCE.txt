@@ -1,6 +1,9 @@
 Capital Controls & Instrumentation — site photography sources
 ==============================================================
 
+QA: from repo root run  python scripts/check_site_assets.py  to confirm every
+assets/ path referenced in *.html exists on disk before you push.
+
 Policy
 ------
 Public pages should use CCI-owned or CCI-delivered evidence only: photos from your
