@@ -11,8 +11,9 @@ jobs (shop or field), and SCADA/HMI captures from programs you integrated where
 client policy allows. Do not commit stock aerial footage or generic stock video
 as if it were company work.
 
-Homepage hero VIDEO: assets/video/cci-hero-loop.mp4 — generated from your still via
-scripts/build_hero_loop_from_still.py, or replace with real site/shop footage when ready.
+Homepage hero VIDEO: assets/video/cci-hero-loop.mp4 — prefer AI image-to-video from your
+still (scripts/build_hero_loop_ai.py + REPLICATE_API_TOKEN; see assets/video/SOURCE.txt),
+or non-AI Ken Burns (scripts/build_hero_loop_from_still.py), or replace with edited footage.
 
 Synced from H:\Jobs (see scripts/sync_job_photos.py)
 ----------------------------------------------------
