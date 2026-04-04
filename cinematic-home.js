@@ -19,11 +19,15 @@ function setScrollSpineVar() {
   const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
   const p = Math.min(1, Math.max(0, window.scrollY / max));
   document.body.style.setProperty("--cin-scroll-pct", String(p));
+  /* Spine visibility follows scroll for a subtle “live diagram” cue */
+  const bright = 0.32 + p * 0.58;
+  document.body.style.setProperty("--cin-spine-bright", String(bright));
 }
 
 function initCinemaScrollSpine() {
   if (cinemaReduced) {
     document.body.style.setProperty("--cin-scroll-pct", "0.5");
+    document.body.style.setProperty("--cin-spine-bright", "0.48");
     return;
   }
   let ticking = false;
@@ -259,6 +263,15 @@ function initCinemaSignalFlow() {
           setReadout(i + 1);
         }, 200 + i * 120);
       });
+
+      window.setTimeout(() => {
+        paths.forEach((path) => {
+          path.classList.add("cinema-signal__path--looping");
+          path.style.transition = "";
+          path.style.strokeDasharray = "";
+          path.style.strokeDashoffset = "";
+        });
+      }, 3200);
     },
     { threshold: 0.18, rootMargin: "0px 0px -8% 0px" }
   );

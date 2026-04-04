@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="cinematic-home.css?v=10">
+  <link rel="stylesheet" href="cinematic-home.css?v=11">
 </head>
 <body data-page="home" class="page-home page-home--cinematic">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -134,6 +134,14 @@
               <path class="cinema-signal__path--energy" d="M 380 112 L 530 112"></path>
               <path class="cinema-signal__path--energy" d="M 530 112 L 680 112"></path>
               <path class="cinema-signal__path--energy" d="M 680 112 L 908 112"></path>
+              <g class="cinema-signal__packets" aria-hidden="true">
+                <circle class="cinema-signal__packet" r="4" fill="#00a651" fill-opacity="0.88">
+                  <animateMotion dur="10s" repeatCount="indefinite" path="M 92 112 L 908 112"></animateMotion>
+                </circle>
+                <circle class="cinema-signal__packet cinema-signal__packet--echo" r="2.75" fill="#002d62" fill-opacity="0.4">
+                  <animateMotion dur="10s" repeatCount="indefinite" begin="2.2s" path="M 92 112 L 908 112"></animateMotion>
+                </circle>
+              </g>
               <g class="cinema-signal__node-group" data-node="0">
                 <circle class="cinema-signal__node-ring" cx="92" cy="112" r="20" fill="none"></circle>
                 <circle class="cinema-signal__node-dot" cx="92" cy="112" r="10"></circle>
