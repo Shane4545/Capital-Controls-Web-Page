@@ -1,5 +1,6 @@
 /**
- * Homepage flagship: authored PLC / ladder / process stage — constrained camera, no OrbitControls.
+ * Homepage flagship: representative industrial control narrative — constrained camera, no OrbitControls.
+ * Control-style chassis, Studio 5000–style ladder (generic), SCADA/HMI overview (generic).
  * Three loaded dynamically via import map → ./vendor/three/build/three.module.js
  */
 
@@ -19,167 +20,275 @@ function hasWebGL() {
   }
 }
 
-function darkConcrete(THREE) {
-  return new THREE.MeshStandardMaterial({ color: 0x232830, roughness: 0.92, metalness: 0.05 });
+function drawLadderRungRow(ctx, w, y0, rungIdx, lineH, activeRung, t) {
+  const left = 72;
+  const right = w - 72;
+  const midY = y0 + lineH * 0.52;
+  const active = rungIdx === activeRung;
+  const pulse = active ? 0.08 * Math.sin(t * 6) : 0;
+
+  if (active) {
+    ctx.fillStyle = "rgba(34, 197, 94, 0.14)";
+    ctx.fillRect(left - 8, y0, right - left + 16, lineH);
+  }
+
+  ctx.fillStyle = "#94a3b8";
+  ctx.font = "600 13px IBM Plex Mono, ui-monospace, monospace";
+  ctx.fillText(String(rungIdx), left - 44, midY + 5);
+
+  ctx.strokeStyle = active ? `rgba(74, 222, 128, ${0.75 + pulse})` : "#475569";
+  ctx.lineWidth = active ? 3.2 : 2;
+  ctx.beginPath();
+  ctx.moveTo(left, midY);
+  ctx.lineTo(right - 220, midY);
+  ctx.stroke();
+}
+
+function drawNOContact(ctx, cx, cy, active) {
+  ctx.strokeStyle = active ? "#4ade80" : "#64748b";
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(cx - 5, cy - 14);
+  ctx.lineTo(cx - 5, cy + 14);
+  ctx.moveTo(cx + 5, cy - 14);
+  ctx.lineTo(cx + 5, cy + 14);
+  ctx.stroke();
+}
+
+function drawNCContact(ctx, cx, cy, active) {
+  ctx.strokeStyle = active ? "#4ade80" : "#64748b";
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(cx - 5, cy - 14);
+  ctx.lineTo(cx - 5, cy + 14);
+  ctx.moveTo(cx + 5, cy - 14);
+  ctx.lineTo(cx + 5, cy + 14);
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(cx - 5, cy - 14);
+  ctx.lineTo(cx + 7, cy + 12);
+  ctx.stroke();
+}
+
+function drawCoil(ctx, cx, cy, active) {
+  ctx.strokeStyle = active ? "#4ade80" : "#64748b";
+  ctx.lineWidth = 2.5;
+  ctx.beginPath();
+  ctx.arc(cx, cy, 16, 0, Math.PI * 2);
+  ctx.stroke();
 }
 
 function drawLadderCanvas(ctx, w, h, activeRung, t) {
-  ctx.fillStyle = "#080c12";
+  ctx.fillStyle = "#1b2434";
   ctx.fillRect(0, 0, w, h);
-  ctx.strokeStyle = "#3d4d63";
-  ctx.lineWidth = 4;
+  ctx.strokeStyle = "#334155";
+  ctx.lineWidth = 3;
   ctx.beginPath();
-  ctx.moveTo(56, 52);
-  ctx.lineTo(56, h - 52);
-  ctx.moveTo(w - 56, 52);
-  ctx.lineTo(w - 56, h - 52);
+  ctx.moveTo(56, 64);
+  ctx.lineTo(56, h - 64);
+  ctx.moveTo(w - 56, 64);
+  ctx.lineTo(w - 56, h - 64);
   ctx.stroke();
-  const rungs = 8;
-  for (let i = 0; i < rungs; i++) {
-    const y = 68 + (i * (h - 136)) / (rungs - 1);
-    const active = i === activeRung;
-    ctx.strokeStyle = active ? "#00c964" : "#5c6b7e";
-    ctx.lineWidth = active ? 5 : 2.2;
-    ctx.globalAlpha = active ? 0.92 + 0.08 * Math.sin(t * 5) : 0.88;
-    ctx.beginPath();
-    ctx.moveTo(56, y);
-    ctx.lineTo(w - 56, y);
-    ctx.stroke();
-    ctx.globalAlpha = 1;
-    if (active) {
-      ctx.fillStyle = "rgba(0, 201, 100, 0.12)";
-      ctx.fillRect(60, y - 12, w - 120, 24);
-    }
-  }
-  ctx.fillStyle = "#b8c5d4";
-  ctx.font = "600 15px IBM Plex Mono, ui-monospace, monospace";
-  ctx.fillText("ROUTINE — PUMP_INTERLOCK", 60, 38);
+
+  ctx.fillStyle = "#e2e8f0";
+  ctx.font = "600 18px IBM Plex Mono, ui-monospace, monospace";
+  ctx.fillText("ROUTINE  PMP_BOOST_INTERLOCK  ·  MainProgram", 72, 46);
   ctx.fillStyle = "#64748b";
+  ctx.font = "500 13px IBM Plex Mono, ui-monospace, monospace";
+  ctx.fillText("Representative pump permissive / interlock — illustration only", 72, 72);
+
+  const lineH = Math.floor((h - 200) / 7);
+  let y = 108;
+  const rungSpecs = [
+    { tag: "(* Booster permissives — discharge pressure, tank level, HOA *)", comment: true },
+    {
+      parts: [
+        { type: "no", label: "TankLevel_OK" },
+        { type: "nc", label: "DischPress_HI" },
+        { type: "no", label: "HOA_AUTO" },
+        { type: "coil", label: "Permissive_OK" },
+      ],
+    },
+    {
+      parts: [
+        { type: "no", label: "Permissive_OK" },
+        { type: "no", label: "PumpStart_PB" },
+        { type: "coil", label: "Pump_Start_Seal" },
+      ],
+    },
+    {
+      parts: [
+        { type: "no", label: "Pump_Start_Seal" },
+        { type: "no", label: "Motor_FB" },
+        { type: "coil", label: "Pump_Run_Latch" },
+      ],
+    },
+    {
+      parts: [
+        { type: "nc", label: "Stop_PB" },
+        { type: "nc", label: "VFD_Fault" },
+        { type: "coil", label: "Pump_Run_Latch" },
+      ],
+    },
+    { tag: "(* Output mapping to rack & field devices *)", comment: true },
+  ];
+
+  let rungNum = 0;
+  for (let ri = 0; ri < rungSpecs.length; ri++) {
+    const spec = rungSpecs[ri];
+    if (spec.comment) {
+      ctx.fillStyle = "#64748b";
+      ctx.font = "italic 500 14px IBM Plex Mono, ui-monospace, monospace";
+      ctx.fillText(spec.tag, 80, y + lineH * 0.55);
+      y += lineH;
+      continue;
+    }
+    const active = rungNum === activeRung;
+    drawLadderRungRow(ctx, w, y, rungNum, lineH, activeRung, t);
+
+    const midY = y + lineH * 0.52;
+    let x = 140;
+    const gap = 150;
+
+    ctx.fillStyle = active ? "#bbf7d0" : "#94a3b8";
+    ctx.font = "500 12px IBM Plex Mono, ui-monospace, monospace";
+
+    for (const p of spec.parts) {
+      if (p.type === "no") {
+        drawNOContact(ctx, x, midY, active);
+        ctx.fillText(p.label, x - 48, midY - 26);
+        x += gap;
+      } else if (p.type === "nc") {
+        drawNCContact(ctx, x, midY, active);
+        ctx.fillText(p.label, x - 52, midY - 26);
+        x += gap;
+      } else if (p.type === "coil") {
+        drawCoil(ctx, x, midY, active);
+        ctx.fillText(p.label, x - 56, midY - 26);
+        x += gap + 20;
+      }
+    }
+
+    y += lineH;
+    rungNum++;
+  }
+
+  ctx.fillStyle = "#475569";
   ctx.font = "500 12px IBM Plex Mono, ui-monospace, monospace";
-  ctx.fillText("STUDIO 5000 · REPRESENTATIVE", 60, h - 22);
+  ctx.fillText("Studio 5000 / Logix Designer style — illustration only", 72, h - 28);
 }
 
+/** Silhouette: vertical PLC rack / ControlLogix-class chassis (generic, not a product model). */
 function buildRack(THREE) {
   const g = new THREE.Group();
-  const shell = new THREE.MeshStandardMaterial({
-    color: 0x151a22,
-    metalness: 0.65,
+  const chassisGray = new THREE.MeshStandardMaterial({
+    color: 0x6b7788,
+    metalness: 0.42,
+    roughness: 0.4,
+  });
+  const recess = new THREE.MeshStandardMaterial({
+    color: 0x4a5568,
+    metalness: 0.48,
+    roughness: 0.46,
+  });
+  const ioFace = new THREE.MeshStandardMaterial({
+    color: 0x8e99ab,
+    metalness: 0.32,
+    roughness: 0.44,
+  });
+  const portDark = new THREE.MeshStandardMaterial({
+    color: 0x1f2937,
+    metalness: 0.22,
+    roughness: 0.52,
+  });
+  const terminalStrip = new THREE.MeshStandardMaterial({
+    color: 0xc9a227,
+    metalness: 0.45,
     roughness: 0.42,
   });
-  const dark = new THREE.MeshStandardMaterial({
-    color: 0x0e1218,
-    metalness: 0.5,
-    roughness: 0.55,
-  });
-  const moduleFace = new THREE.MeshStandardMaterial({
-    color: 0x1e2632,
-    metalness: 0.55,
-    roughness: 0.48,
-  });
-  const psuFace = new THREE.MeshStandardMaterial({
-    color: 0x242d3a,
-    metalness: 0.5,
-    roughness: 0.5,
-  });
 
-  const base = new THREE.Mesh(new THREE.BoxGeometry(0.74, 0.09, 0.44), dark);
-  base.position.set(0, -1.32, 0);
+  const base = new THREE.Mesh(new THREE.BoxGeometry(0.78, 0.11, 0.48), recess);
+  base.position.set(0, -1.36, 0);
   base.castShadow = true;
   g.add(base);
 
-  const chassis = new THREE.Mesh(new THREE.BoxGeometry(0.66, 2.62, 0.4), shell);
+  const chassis = new THREE.Mesh(new THREE.BoxGeometry(0.72, 2.62, 0.44), chassisGray);
   chassis.position.set(0, 0.02, 0);
   chassis.castShadow = true;
   chassis.receiveShadow = true;
   g.add(chassis);
 
-  for (const x of [-0.33, 0.33]) {
-    const rail = new THREE.Mesh(new THREE.BoxGeometry(0.045, 2.58, 0.045), dark);
-    rail.position.set(x, 0.02, -0.14);
-    rail.castShadow = true;
+  const back = new THREE.Mesh(new THREE.BoxGeometry(0.74, 2.58, 0.04), recess);
+  back.position.set(0, 0.02, -0.22);
+  g.add(back);
+
+  for (const rx of [-0.35, 0.35]) {
+    const rail = new THREE.Mesh(new THREE.BoxGeometry(0.038, 2.54, 0.038), recess);
+    rail.position.set(rx, 0.02, -0.14);
     g.add(rail);
   }
 
-  const back = new THREE.Mesh(new THREE.BoxGeometry(0.68, 2.58, 0.04), dark);
-  back.position.set(0, 0.02, -0.2);
-  g.add(back);
-
-  for (let i = 0; i < 18; i++) {
-    const tb = new THREE.Mesh(new THREE.BoxGeometry(0.032, 0.055, 0.07), moduleFace);
-    tb.position.set(-0.28 + i * 0.033, -0.98, 0.21);
-    tb.castShadow = true;
-    g.add(tb);
-  }
-
-  const psu = new THREE.Mesh(new THREE.BoxGeometry(0.58, 0.4, 0.3), psuFace);
-  psu.position.set(0, -0.68, 0.05);
+  const psu = new THREE.Mesh(new THREE.BoxGeometry(0.64, 0.4, 0.34), recess);
+  psu.position.set(0, -1.02, 0.06);
   psu.castShadow = true;
   g.add(psu);
-  for (let v = 0; v < 6; v++) {
-    const slit = new THREE.Mesh(new THREE.BoxGeometry(0.42, 0.014, 0.02), dark);
-    slit.position.set(0, -0.72 + v * 0.055, 0.17);
+  for (let v = 0; v < 8; v++) {
+    const slit = new THREE.Mesh(new THREE.BoxGeometry(0.52, 0.01, 0.02), portDark);
+    slit.position.set(0, -1.14 + v * 0.042, 0.21);
     g.add(slit);
   }
 
-  const cpu = new THREE.Mesh(new THREE.BoxGeometry(0.58, 0.48, 0.3), moduleFace);
-  cpu.position.set(0, -0.05, 0.05);
+  const cpu = new THREE.Mesh(new THREE.BoxGeometry(0.64, 0.48, 0.32), ioFace);
+  cpu.position.set(0, -0.4, 0.06);
   cpu.castShadow = true;
   g.add(cpu);
-  const cpuStrip = new THREE.Mesh(
-    new THREE.BoxGeometry(0.38, 0.045, 0.02),
-    new THREE.MeshStandardMaterial({
-      color: 0x003d24,
-      emissive: 0x004d2e,
-      emissiveIntensity: 0.35,
-      metalness: 0.2,
-      roughness: 0.4,
-    })
-  );
-  cpuStrip.position.set(0, -0.02, 0.17);
-  g.add(cpuStrip);
+  const key = new THREE.Mesh(new THREE.BoxGeometry(0.15, 0.11, 0.02), portDark);
+  key.position.set(-0.2, -0.3, 0.22);
+  g.add(key);
+  for (let e = 0; e < 3; e++) {
+    const eth = new THREE.Mesh(new THREE.BoxGeometry(0.075, 0.055, 0.035), portDark);
+    eth.position.set(-0.04 + e * 0.095, -0.44, 0.22);
+    g.add(eth);
+  }
 
-  const ioYs = [0.38, 0.82, 1.22, 1.62];
   const leds = [];
-  ioYs.forEach((y, idx) => {
-    const io = new THREE.Mesh(new THREE.BoxGeometry(0.58, 0.34, 0.28), moduleFace);
-    io.position.set(0, y, 0.04);
-    io.castShadow = true;
-    g.add(io);
-    for (let p = 0; p < 4; p++) {
-      const port = new THREE.Mesh(
-        new THREE.CylinderGeometry(0.022, 0.022, 0.04, 12),
-        new THREE.MeshStandardMaterial({ color: 0x2a3442, metalness: 0.7, roughness: 0.35 })
-      );
-      port.rotation.z = Math.PI / 2;
-      port.position.set(-0.2 + p * 0.13, y, 0.16);
-      g.add(port);
-    }
+  const ledCpuMat = new THREE.MeshStandardMaterial({
+    color: 0x2c3c34,
+    emissive: 0x000000,
+    emissiveIntensity: 0,
+  });
+  const ledCpu = new THREE.Mesh(new THREE.SphereGeometry(0.017, 10, 10), ledCpuMat);
+  ledCpu.position.set(0.22, -0.36, 0.2);
+  g.add(ledCpu);
+  leds.push(ledCpu);
+
+  const ioYs = [0.14, 0.54, 0.94, 1.34];
+  ioYs.forEach((y) => {
+    const mod = new THREE.Mesh(new THREE.BoxGeometry(0.64, 0.34, 0.3), ioFace);
+    mod.position.set(0, y, 0.05);
+    mod.castShadow = true;
+    g.add(mod);
+    const tb = new THREE.Mesh(new THREE.BoxGeometry(0.58, 0.055, 0.02), terminalStrip);
+    tb.position.set(0, y - 0.11, 0.21);
+    g.add(tb);
     const led = new THREE.Mesh(
-      new THREE.SphereGeometry(0.018, 10, 10),
-      new THREE.MeshStandardMaterial({ color: 0x1a2a22, emissive: 0x000000, emissiveIntensity: 0 })
+      new THREE.SphereGeometry(0.015, 10, 10),
+      new THREE.MeshStandardMaterial({ color: 0x2c3c34, emissive: 0x000000, emissiveIntensity: 0 })
     );
-    led.position.set(0.24, y + 0.02, 0.16);
+    led.position.set(0.27, y + 0.05, 0.2);
     g.add(led);
     leds.push(led);
   });
 
-  const ledCpu = new THREE.Mesh(
-    new THREE.SphereGeometry(0.02, 10, 10),
-    new THREE.MeshStandardMaterial({ color: 0x1a2a22, emissive: 0x000000, emissiveIntensity: 0 })
-  );
-  ledCpu.position.set(0.22, -0.08, 0.17);
-  g.add(ledCpu);
-  leds.push(ledCpu);
-
-  const cableMat = new THREE.MeshStandardMaterial({ color: 0x1a1510, roughness: 0.85 });
-  const c1 = new THREE.CatmullRomCurve3([
-    new THREE.Vector3(-0.15, -1.28, 0.22),
-    new THREE.Vector3(-0.45, -1.48, 0.55),
-    new THREE.Vector3(-0.9, -1.55, 0.85),
+  const cableMat = new THREE.MeshStandardMaterial({ color: 0x374151, roughness: 0.88 });
+  const powerCurve = new THREE.CatmullRomCurve3([
+    new THREE.Vector3(-0.12, -1.3, 0.22),
+    new THREE.Vector3(-0.42, -1.52, 0.55),
+    new THREE.Vector3(-0.88, -1.58, 0.82),
   ]);
-  const tube1 = new THREE.Mesh(new THREE.TubeGeometry(c1, 32, 0.028, 8, false), cableMat);
-  tube1.castShadow = true;
-  g.add(tube1);
+  const cable = new THREE.Mesh(new THREE.TubeGeometry(powerCurve, 28, 0.022, 8, false), cableMat);
+  cable.castShadow = true;
+  g.add(cable);
 
   return { group: g, leds };
 }
@@ -187,9 +296,9 @@ function buildRack(THREE) {
 function buildLadderPanel(THREE, ladderTex) {
   const grp = new THREE.Group();
   const frameMat = new THREE.MeshStandardMaterial({
-    color: 0x2a3544,
-    metalness: 0.75,
-    roughness: 0.28,
+    color: 0x5a6a7e,
+    metalness: 0.72,
+    roughness: 0.24,
   });
   const w = 1.95;
   const h = 1.22;
@@ -217,8 +326,8 @@ function buildLadderPanel(THREE, ladderTex) {
     ior: 1.5,
     clearcoat: 1,
     clearcoatRoughness: 0.15,
-    emissive: 0x050808,
-    emissiveIntensity: 0.08,
+    emissive: 0x182028,
+    emissiveIntensity: 0.05,
   });
   const panel = new THREE.Mesh(new THREE.PlaneGeometry(w, h), glassMat);
   panel.position.z = 0.04;
@@ -226,7 +335,7 @@ function buildLadderPanel(THREE, ladderTex) {
 
   const backGlow = new THREE.Mesh(
     new THREE.PlaneGeometry(w * 0.98, h * 0.98),
-    new THREE.MeshBasicMaterial({ color: 0x0a1018, transparent: true, opacity: 0.55 })
+    new THREE.MeshBasicMaterial({ color: 0x2a3548, transparent: true, opacity: 0.28 })
   );
   backGlow.position.z = -0.02;
   grp.add(backGlow);
@@ -234,118 +343,144 @@ function buildLadderPanel(THREE, ladderTex) {
   return grp;
 }
 
-function buildProcess(THREE) {
-  const g = new THREE.Group();
-  const steel = new THREE.MeshStandardMaterial({
-    color: 0x2a323f,
-    metalness: 0.6,
-    roughness: 0.4,
-  });
-  const inner = new THREE.MeshStandardMaterial({ color: 0x121820, roughness: 0.9 });
-  const waterMat = new THREE.MeshStandardMaterial({
-    color: 0x1a4555,
-    metalness: 0.05,
-    roughness: 0.22,
-    transparent: true,
-    opacity: 0.88,
-  });
+/** Representative booster station SCADA / HMI overview (generic graphics, not a live display). */
+function drawScadaCanvas(ctx, w, h, t) {
+  ctx.fillStyle = "#1e293b";
+  ctx.fillRect(0, 0, w, h);
+  ctx.fillStyle = "#0f172a";
+  ctx.fillRect(0, 0, w, 56);
+  ctx.strokeStyle = "#334155";
+  ctx.strokeRect(0.5, 0.5, w - 1, 55);
+  ctx.fillStyle = "#f1f5f9";
+  ctx.font = "600 17px IBM Plex Sans, system-ui, sans-serif";
+  ctx.fillText("BOOSTER STATION — SCADA OVERVIEW", 20, 36);
 
-  const pad = new THREE.Mesh(new THREE.BoxGeometry(1.15, 0.07, 0.85), darkConcrete(THREE));
-  pad.position.set(0, -1.18, 0);
-  pad.receiveShadow = true;
-  g.add(pad);
+  ctx.fillStyle = "rgba(239, 68, 68, 0.18)";
+  ctx.fillRect(12, 60, w - 24, 22);
+  ctx.fillStyle = "#fca5a5";
+  ctx.font = "500 12px IBM Plex Mono, ui-monospace, monospace";
+  ctx.fillText("ALM: none active (illustration only)", 20, 76);
 
-  const tankOuter = new THREE.Mesh(new THREE.BoxGeometry(0.78, 1.05, 0.62), steel);
-  tankOuter.position.set(0, -0.35, 0);
-  tankOuter.castShadow = true;
-  tankOuter.receiveShadow = true;
-  g.add(tankOuter);
+  const py = 100;
+  const tankX = Math.min(140, w * 0.08);
+  const tankW = 110;
+  const tankH = Math.min(200, h - py - 72);
+  ctx.strokeStyle = "#94a3b8";
+  ctx.lineWidth = 3;
+  ctx.strokeRect(tankX, py, tankW, tankH);
+  const level = 0.52 + 0.1 * Math.sin(t * 0.85);
+  ctx.fillStyle = "rgba(56, 189, 248, 0.4)";
+  ctx.fillRect(tankX + 5, py + 5 + tankH * (1 - level), tankW - 10, tankH * level - 10);
+  ctx.fillStyle = "#e2e8f0";
+  ctx.font = "500 11px IBM Plex Mono, ui-monospace, monospace";
+  ctx.fillText("WET WELL", tankX + 8, py + 22);
+  ctx.fillText(`LEVEL ${(64 + level * 14).toFixed(1)} %`, tankX + 8, py + tankH - 10);
 
-  const tankInner = new THREE.Mesh(new THREE.BoxGeometry(0.64, 0.95, 0.5), inner);
-  tankInner.position.set(0, -0.28, 0.02);
-  g.add(tankInner);
-
-  const water = new THREE.Mesh(new THREE.CircleGeometry(0.29, 48), waterMat);
-  water.rotation.x = -Math.PI / 2;
-  water.position.set(0, 0.12, 0.02);
-  g.add(water);
-
-  const glass = new THREE.Mesh(
-    new THREE.PlaneGeometry(0.78, 0.75),
-    new THREE.MeshPhysicalMaterial({
-      color: 0x8899aa,
-      metalness: 0,
-      roughness: 0.06,
-      transmission: 0.55,
-      thickness: 0.25,
-      transparent: true,
-      opacity: 0.35,
-    })
-  );
-  glass.position.set(0, -0.08, 0.33);
-  g.add(glass);
-
-  const pumpMat = new THREE.MeshStandardMaterial({
-    color: 0x343d4c,
-    metalness: 0.55,
-    roughness: 0.38,
-  });
-  const spinners = [];
-  for (let i = 0; i < 2; i++) {
-    const px = -0.22 + i * 0.44;
-    const pump = new THREE.Group();
-    pump.position.set(px, 0.08, 0.18);
-    const body = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.11, 0.26, 20), pumpMat);
-    body.castShadow = true;
-    const flange = new THREE.Mesh(
-      new THREE.TorusGeometry(0.09, 0.022, 10, 24),
-      new THREE.MeshStandardMaterial({ color: 0x3d4a59, metalness: 0.6, roughness: 0.35 })
-    );
-    flange.rotation.x = Math.PI / 2;
-    flange.position.y = 0.14;
-    const spin = new THREE.Mesh(
-      new THREE.TorusGeometry(0.065, 0.016, 8, 24),
-      new THREE.MeshStandardMaterial({
-        color: 0x00a651,
-        metalness: 0.4,
-        roughness: 0.35,
-        emissive: 0x002818,
-        emissiveIntensity: 0.15,
-      })
-    );
-    spin.rotation.x = Math.PI / 2;
-    spin.position.y = 0.13;
-    pump.add(body, flange, spin);
-    spinners.push(spin);
-    g.add(pump);
+  function drawPump(cx, cy, run, label) {
+    ctx.beginPath();
+    ctx.arc(cx, cy, 34, 0, Math.PI * 2);
+    ctx.strokeStyle = run ? "#22c55e" : "#64748b";
+    ctx.lineWidth = 3;
+    ctx.stroke();
+    ctx.fillStyle = run ? "#86efac" : "#475569";
+    ctx.font = "600 13px IBM Plex Mono, ui-monospace, monospace";
+    ctx.fillText("M", cx - 6, cy + 6);
+    ctx.fillStyle = "#cbd5e1";
+    ctx.font = "500 10px IBM Plex Mono, ui-monospace, monospace";
+    ctx.fillText(label, cx - 28, cy + 52);
   }
 
-  const sensor = new THREE.Group();
-  sensor.position.set(0, 0.9, 0.15);
-  const head = new THREE.Mesh(new THREE.BoxGeometry(0.16, 0.07, 0.12), steel);
-  const beamMat = new THREE.MeshBasicMaterial({
-    color: 0x00a651,
-    transparent: true,
-    opacity: 0.42,
-  });
-  const beam = new THREE.Mesh(new THREE.CylinderGeometry(0.014, 0.018, 0.95, 10), beamMat);
-  beam.position.y = -0.48;
-  sensor.add(head, beam);
-  g.add(sensor);
+  const runA = Math.sin(t * 1.05) > 0;
+  const pump1X = tankX + tankW + 140;
+  const pump2X = pump1X + 160;
+  const pumpY = py + tankH * 0.45;
+  drawPump(pump1X, pumpY, runA, "P-101A");
+  drawPump(pump2X, pumpY, !runA, "P-101B");
 
-  return { group: g, water, beamMat, spinners };
+  ctx.strokeStyle = "#475569";
+  ctx.lineWidth = 4;
+  ctx.beginPath();
+  ctx.moveTo(tankX + tankW, py + 55);
+  ctx.lineTo(pump1X - 34, py + 55);
+  ctx.lineTo(pump1X, pumpY - 34);
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(tankX + tankW, py + 120);
+  ctx.lineTo(pump2X - 34, py + 115);
+  ctx.lineTo(pump2X, pumpY - 34);
+  ctx.stroke();
+
+  const bx = Math.max(pump2X + 80, w - 270);
+  ctx.fillStyle = "#334155";
+  ctx.fillRect(bx, py, 250, Math.min(210, h - py - 48));
+  ctx.fillStyle = "#94a3b8";
+  ctx.font = "600 11px IBM Plex Mono, ui-monospace, monospace";
+  ctx.fillText("DISCHARGE PRESS", bx + 14, py + 28);
+  const press = 42 + 7 * Math.sin(t * 0.65);
+  ctx.fillStyle = "#22c55e";
+  ctx.fillRect(bx + 14, py + 38, Math.min(216, Math.max(24, press * 3.8)), 14);
+  ctx.fillStyle = "#e2e8f0";
+  ctx.font = "500 13px IBM Plex Mono, ui-monospace, monospace";
+  ctx.fillText(`${press.toFixed(1)} PSI`, bx + 14, py + 78);
+
+  ctx.fillStyle = "#94a3b8";
+  ctx.font = "600 11px IBM Plex Mono, ui-monospace, monospace";
+  ctx.fillText("FLOW (MAG METER)", bx + 14, py + 108);
+  const flow = 820 + 55 * Math.sin(t * 1.15);
+  ctx.fillStyle = "#e2e8f0";
+  ctx.fillText(`${flow.toFixed(0)} GPM`, bx + 14, py + 132);
+
+  ctx.fillStyle = "#64748b";
+  ctx.font = "500 11px IBM Plex Mono, ui-monospace, monospace";
+  ctx.fillText("SCADA / HMI — representative graphics only", 20, h - 14);
+}
+
+/** Wall-mount operator display for SCADA texture. */
+function buildScadaPanel(THREE, scadaTex) {
+  const grp = new THREE.Group();
+  const frameMat = new THREE.MeshStandardMaterial({
+    color: 0x374151,
+    metalness: 0.55,
+    roughness: 0.35,
+  });
+  const w = 1.82;
+  const h = 1.02;
+  const t = 0.035;
+  const f = [
+    [0, h / 2 + t / 2, w + t * 2, t],
+    [0, -h / 2 - t / 2, w + t * 2, t],
+    [-w / 2 - t / 2, 0, t, h + t * 2],
+    [w / 2 + t / 2, 0, t, h + t * 2],
+  ];
+  for (const [px, py, fw, fh] of f) {
+    const piece = new THREE.Mesh(new THREE.BoxGeometry(fw, fh, 0.05), frameMat);
+    piece.position.set(px, py, -0.02);
+    piece.castShadow = true;
+    grp.add(piece);
+  }
+  const screenMat = new THREE.MeshPhysicalMaterial({
+    map: scadaTex,
+    roughness: 0.18,
+    metalness: 0.06,
+    emissive: 0x0c1018,
+    emissiveIntensity: 0.06,
+  });
+  const screen = new THREE.Mesh(new THREE.PlaneGeometry(w, h), screenMat);
+  screen.position.z = 0.04;
+  grp.add(screen);
+  return grp;
 }
 
 function buildLinkTubes(THREE, p0, p1, p2) {
   const curve = new THREE.CatmullRomCurve3([p0, p1, p2]);
   const mat = new THREE.MeshStandardMaterial({
-    color: 0x006b3c,
-    emissive: 0x002514,
-    emissiveIntensity: 0.25,
-    metalness: 0.35,
-    roughness: 0.45,
+    color: 0x6b7280,
+    emissive: 0x111820,
+    emissiveIntensity: 0.06,
+    metalness: 0.25,
+    roughness: 0.55,
     transparent: true,
-    opacity: 0.75,
+    opacity: 0.82,
   });
   const mesh = new THREE.Mesh(new THREE.TubeGeometry(curve, 64, 0.014, 6, false), mat);
   mesh.castShadow = true;
@@ -378,8 +513,8 @@ async function initPlcFlagship() {
   }
 
   const scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x06080e);
-  scene.fog = new THREE.FogExp2(0x06080e, 0.028);
+  scene.background = new THREE.Color(0x6b8299);
+  scene.fog = null;
 
   const camera = new THREE.PerspectiveCamera(38, 1, 0.12, 120);
   const targetBase = new THREE.Vector3(0.12, 0.42, 0);
@@ -402,11 +537,11 @@ async function initPlcFlagship() {
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.05;
+  renderer.toneMappingExposure = 1.72;
 
-  const amb = new THREE.AmbientLight(0x2a3f55, prefersReducedMotion ? 0.38 : 0.32);
+  const amb = new THREE.AmbientLight(0xb8c4d4, prefersReducedMotion ? 0.72 : 0.68);
   scene.add(amb);
-  const key = new THREE.DirectionalLight(0xf0f3f8, 1.05);
+  const key = new THREE.DirectionalLight(0xffffff, 1.85);
   key.position.set(4.2, 8.5, 5.5);
   key.castShadow = true;
   key.shadow.mapSize.set(2048, 2048);
@@ -418,10 +553,10 @@ async function initPlcFlagship() {
   key.shadow.camera.bottom = -8;
   key.shadow.bias = -0.00025;
   scene.add(key);
-  const fill = new THREE.DirectionalLight(0x8899bb, 0.28);
+  const fill = new THREE.DirectionalLight(0xd8e4f4, 0.58);
   fill.position.set(-3, 3, -2);
   scene.add(fill);
-  const rim = new THREE.DirectionalLight(0x00a651, prefersReducedMotion ? 0 : 0.08);
+  const rim = new THREE.DirectionalLight(0x7dffb3, prefersReducedMotion ? 0 : 0.18);
   rim.position.set(-2, 1.5, -4);
   scene.add(rim);
 
@@ -430,7 +565,7 @@ async function initPlcFlagship() {
 
   const ground = new THREE.Mesh(
     new THREE.PlaneGeometry(4040, 40),
-    new THREE.MeshStandardMaterial({ color: 0x070a10, roughness: 1, metalness: 0 })
+    new THREE.MeshStandardMaterial({ color: 0x3d4a5a, roughness: 1, metalness: 0 })
   );
   ground.rotation.x = -Math.PI / 2;
   ground.position.y = -1.66;
@@ -456,17 +591,24 @@ async function initPlcFlagship() {
   ladder.rotation.y = -0.06;
   stage.add(ladder);
 
-  const procData = buildProcess(THREE);
-  const proc = procData.group;
-  proc.position.set(3.15, 0.06, -0.2);
-  proc.rotation.y = -0.1;
-  stage.add(proc);
+  const scvs = document.createElement("canvas");
+  scvs.width = 1600;
+  scvs.height = 900;
+  const sctx = scvs.getContext("2d");
+  const scadaTex = new THREE.CanvasTexture(scvs);
+  scadaTex.colorSpace = THREE.SRGBColorSpace;
+  scadaTex.anisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy());
+
+  const scada = buildScadaPanel(THREE, scadaTex);
+  scada.position.set(3.05, 0.32, -0.18);
+  scada.rotation.y = -0.1;
+  stage.add(scada);
 
   const pRack = new THREE.Vector3(-2.2, 0.35, 0.35);
   const pLadder = new THREE.Vector3(0.2, 0.45, 0.75);
-  const pProc = new THREE.Vector3(2.35, 0.25, 0.25);
+  const pScada = new THREE.Vector3(2.32, 0.42, 0.28);
   stage.add(buildLinkTubes(THREE, pRack.clone(), pLadder.clone().lerp(pRack, 0.5), pLadder));
-  stage.add(buildLinkTubes(THREE, pLadder.clone(), pProc.clone().lerp(pLadder, 0.45), pProc));
+  stage.add(buildLinkTubes(THREE, pLadder.clone(), pScada.clone().lerp(pLadder, 0.45), pScada));
 
   stage.rotation.y = -0.04;
 
@@ -509,6 +651,7 @@ async function initPlcFlagship() {
 
   const clock = new THREE.Clock();
   let rung = 0;
+  const ladderRungCycle = 4;
 
   function resize() {
     const w = host.clientWidth;
@@ -544,19 +687,15 @@ async function initPlcFlagship() {
     camera.lookAt(lookTarget);
 
     if (!prefersReducedMotion) {
-      rung = Math.floor((t * 0.5) % 8);
+      rung = Math.floor((t * 0.45) % ladderRungCycle);
       drawLadderCanvas(lctx, lcvs.width, lcvs.height, rung, t);
       ladderTex.needsUpdate = true;
-      procData.water.scale.set(1, 1 + Math.sin(t * 1.05) * 0.012, 1);
-      procData.water.position.y = 0.12 + Math.sin(t * 0.95) * 0.01;
-      procData.beamMat.opacity = 0.32 + 0.2 * Math.sin(t * 2.6);
-      procData.spinners.forEach((s) => {
-        s.rotation.z = t * 2.6;
-      });
+      drawScadaCanvas(sctx, scvs.width, scvs.height, t);
+      scadaTex.needsUpdate = true;
       ladder.position.x = 0.15 + ptrX * 0.04;
       ladder.position.y = 0.28 + ptrY * 0.025;
       rack.position.x = -3.25 + ptrX * 0.02;
-      proc.position.x = 3.15 - ptrX * 0.02;
+      scada.position.x = 3.05 - ptrX * 0.02;
       rackData.leds.forEach((led, i) => {
         const mat = led.material;
         const on = i === rung % rackData.leds.length;
@@ -564,9 +703,16 @@ async function initPlcFlagship() {
         mat.emissiveIntensity = on ? 0.75 : 0;
       });
     } else {
-      drawLadderCanvas(lctx, lcvs.width, lcvs.height, 3, 0);
+      drawLadderCanvas(lctx, lcvs.width, lcvs.height, 1, 0);
       ladderTex.needsUpdate = true;
-      procData.beamMat.opacity = 0.38;
+      drawScadaCanvas(sctx, scvs.width, scvs.height, 0);
+      scadaTex.needsUpdate = true;
+      rackData.leds.forEach((led, i) => {
+        const mat = led.material;
+        const on = i === 0;
+        mat.emissive.setHex(on ? 0x00a651 : 0x000000);
+        mat.emissiveIntensity = on ? 0.4 : 0;
+      });
     }
 
     renderer.render(scene, camera);

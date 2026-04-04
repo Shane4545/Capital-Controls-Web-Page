@@ -59,8 +59,8 @@ body.cci-cinematic .nav-cta {
 }
 
 body.cci-cinematic .topbar {
-  background: #05080d;
-  color: rgba(226, 232, 240, 0.88);
+  background: #1e293b;
+  color: rgba(248, 250, 252, 0.92);
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-size: 0.5625rem;
   font-weight: 500;
@@ -129,7 +129,7 @@ body.cci-cinematic .page-hero--image::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(105deg, rgba(7, 10, 15, 0.92) 0%, rgba(7, 10, 15, 0.72) 45%, rgba(7, 10, 15, 0.45) 100%);
+  background: linear-gradient(105deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.06) 50%, transparent 85%);
   pointer-events: none;
   z-index: 0;
 }
@@ -143,32 +143,34 @@ body.cci-cinematic .page-hero--image h1 {
   font-family: var(--font-sans);
   font-size: clamp(1.28rem, 0.55rem + 2.75vw, 1.82rem);
   font-weight: 600;
-  text-shadow: 0 1px 24px rgba(0, 0, 0, 0.45);
+  text-shadow: none;
+  color: var(--color-text);
   max-width: 42rem;
 }
 
 body.cci-cinematic .page-hero--image .page-hero-lead {
   font-size: 0.90625rem;
   line-height: 1.62;
-  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.35);
+  text-shadow: none;
+  color: var(--color-text-secondary);
 }
 
 body.cci-cinematic .page-hero--image .eyebrow {
   font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-size: 0.5625rem;
   letter-spacing: 0.12em;
-  color: rgba(0, 186, 124, 0.9);
+  color: var(--color-brand-green);
 }
 
 /* Critical-systems tone (services + aligned interior heroes) */
 body.cci-cinematic .page-hero--critical::after {
-  background: linear-gradient(105deg, rgba(2, 4, 8, 0.94) 0%, rgba(4, 8, 14, 0.78) 50%, rgba(6, 10, 18, 0.52) 100%);
+  background: linear-gradient(105deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.04) 55%, transparent 90%);
 }
 
 body.cci-cinematic .page-hero--critical .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.16em;
-  color: rgba(148, 163, 184, 0.92);
+  color: var(--color-text-secondary);
 }
 
 body.cci-cinematic .page-hero--critical h1 {
@@ -310,13 +312,13 @@ body.cci-cinematic .cert-callout {
 }
 
 body.cci-cinematic .credibility-strip {
-  background: #05080d;
-  color: rgba(226, 232, 240, 0.88);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: #e2e8f0;
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-border);
 }
 
 body.cci-cinematic .credibility-strip span {
-  color: rgba(203, 213, 225, 0.85);
+  color: var(--color-text-secondary);
 }
 
 /* Industry / card grids on interior pages */
@@ -496,9 +498,15 @@ html.cci-interior-entered body.cci-cinematic[data-page]:not([data-page="home"]) 
 }
 
 .cci-page-chapter__label {
-  color: rgba(248, 250, 252, 0.85);
+  color: var(--color-text-secondary);
 }
 
-body.cci-cinematic .page-hero:not(.page-hero--image) .cci-page-chapter__label {
-  color: rgba(226, 232, 240, 0.88);
+body.cci-cinematic .page-hero:not(.page-hero--image) .cci-page-chapter,
+body.cci-cinematic .page-hero--image .cci-page-chapter {
+  color: var(--color-muted);
+}
+
+body.cci-cinematic .page-hero:not(.page-hero--image) .cci-page-chapter__label,
+body.cci-cinematic .page-hero--image .cci-page-chapter__label {
+  color: var(--color-text-secondary);
 }

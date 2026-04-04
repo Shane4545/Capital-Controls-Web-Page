@@ -82,8 +82,8 @@
 
 /* Credentials: static technical index (no marquee, no glow) */
 .page-home--cinematic .stack-strip--technical {
-  background: #05080d;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: #273548;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 0.45rem 0;
   box-shadow: none;
 }
@@ -141,27 +141,27 @@
 }
 
 .page-home--cinematic .site-header .nav-list a {
-  color: rgba(203, 213, 225, 0.88);
+  color: var(--color-text-secondary, #4a5568);
 }
 
 .page-home--cinematic .site-header .nav-list a:hover,
 .page-home--cinematic .site-header .nav-list a[aria-current="page"] {
-  color: #f8fafc;
+  color: var(--color-text, #0f172a);
 }
 
 .page-home--cinematic .site-header .nav-list a::after {
-  background: rgba(248, 250, 252, 0.85);
+  background: var(--color-brand-green, #00a651);
 }
 
 .page-home--cinematic .site-header:not(.is-scrolled) .nav-cta {
-  background: transparent !important;
-  color: #f8fafc !important;
-  border: 1px solid rgba(255, 255, 255, 0.28) !important;
-  box-shadow: none !important;
+  background: var(--color-brand-green, #00a651) !important;
+  color: #fff !important;
+  border: 1px solid transparent !important;
+  box-shadow: var(--shadow-xs) !important;
 }
 
 .page-home--cinematic .site-header:not(.is-scrolled) .nav-cta:hover {
-  background: rgba(255, 255, 255, 0.08) !important;
+  background: var(--color-brand-green-hover, #008a45) !important;
   color: #fff !important;
 }
 
@@ -195,9 +195,9 @@
 
 @media (max-width: 899px) {
   .page-home--cinematic .site-header .nav-toggle {
-    color: rgba(248, 250, 252, 0.95);
-    border-color: rgba(255, 255, 255, 0.25);
-    background: rgba(0, 0, 0, 0.2);
+    color: var(--color-text);
+    border-color: var(--color-border-strong);
+    background: var(--color-surface);
   }
 
   .page-home--cinematic .site-header.is-scrolled .nav-toggle {
@@ -2980,7 +2980,7 @@ body[data-cinema-act="4"] .cin-scroll-progress__bar {
   isolation: isolate;
   min-height: 100vh;
   min-height: 100svh;
-  background: #030508;
+  background: #5c6f82;
   overflow: hidden;
 }
 
@@ -2998,6 +2998,7 @@ body[data-cinema-act="4"] .cin-scroll-progress__bar {
   min-height: 100svh;
   touch-action: none;
   box-sizing: border-box;
+  pointer-events: auto;
 }
 
 .home-flagship-scene__viewport--fallback {
@@ -3026,7 +3027,7 @@ body[data-cinema-act="4"] .cin-scroll-progress__bar {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #06080e;
+  background: #5c6f82;
 }
 
 .home-flagship-scene__fallback[hidden] {
@@ -3048,6 +3049,7 @@ body[data-cinema-act="4"] .cin-scroll-progress__bar {
   min-height: 100svh;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   pointer-events: none;
   box-sizing: border-box;
   padding: clamp(5.75rem, 14vh, 9rem) 0 clamp(2.25rem, 5vh, 3.5rem);
@@ -3055,12 +3057,21 @@ body[data-cinema-act="4"] .cin-scroll-progress__bar {
 
 .home-flagship-scene__overlay-inner {
   pointer-events: auto;
-  max-width: min(34rem, calc(100vw - 2 * var(--gutter, 1.25rem)));
+  width: min(22rem, calc(100vw - 2 * var(--gutter, 1.25rem)));
+  max-width: 92vw;
+  flex: 0 0 auto;
   margin-left: var(--gutter, 1.25rem);
-  margin-right: auto;
-  padding: clamp(1.2rem, 2.8vw, 1.85rem) clamp(1.25rem, 2.5vw, 2rem);
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
-  background: linear-gradient(105deg, rgba(4, 7, 12, 0.92) 0%, rgba(6, 10, 16, 0.62) 65%, rgba(6, 10, 16, 0.18) 100%);
+  margin-right: 0;
+  padding: clamp(1rem, 2.2vw, 1.5rem) clamp(1rem, 2vw, 1.35rem);
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
+  background: linear-gradient(
+    100deg,
+    rgba(12, 18, 28, 0.52) 0%,
+    rgba(18, 26, 38, 0.22) 52%,
+    rgba(24, 34, 48, 0.06) 85%,
+    transparent 100%
+  );
+  box-shadow: 8px 0 32px -24px rgba(0, 24, 52, 0.22);
 }
 
 .home-flagship-scene__eyebrow {
@@ -3142,8 +3153,9 @@ body[data-cinema-act="4"] .cin-scroll-progress__bar {
   }
 
   .home-flagship-scene__overlay-inner {
+    width: min(100%, calc(100vw - 2 * var(--gutter, 1.25rem)));
     margin-right: var(--gutter, 1.25rem);
-    background: linear-gradient(180deg, rgba(4, 7, 12, 0.9) 0%, rgba(4, 7, 12, 0.45) 100%);
+    background: linear-gradient(180deg, rgba(12, 18, 28, 0.5) 0%, rgba(18, 26, 38, 0.12) 68%, transparent 100%);
   }
 }
 
