@@ -1,0 +1,34 @@
+Capital Controls & Instrumentation — site photography sources
+==============================================================
+
+Policy
+------
+Public pages should use CCI-owned or CCI-delivered evidence only: photos from your
+jobs (shop or field), and SCADA/HMI captures from programs you integrated where
+client policy allows. Do not commit stock aerial footage or generic stock video
+as if it were company work.
+
+Synced from H:\Jobs (see scripts/sync_job_photos.py)
+----------------------------------------------------
+These JPEGs are resized from your job folders when you run the sync script:
+
+  wtp-rockland-actiflo-panel.jpg   — OCWA East Rockland WTP (Actiflo panel photo)
+  wtp-rockland-main-plc.jpg        — OCWA East Rockland WTP (main PLC)
+  wtp-ingleside-field.jpg          — Ingleside WWTP Phase 1
+  panel-csa-shop-primary.jpg       — Bishop Water PLC panel (CSA shop)
+  panel-csa-shop-secondary.jpg     — Bishop Water PLC panel (second shop view)
+
+To refresh or add “best current” shots: add (path, output filename) tuples to
+JOBS[] in sync_job_photos.py, run:  python scripts/sync_job_photos.py
+
+SCADA / HMI PNGs (exports from delivered systems)
+-------------------------------------------------
+Examples: scada-killaloe-overview.png, scada-pembroke-*.png, hmi-chalk-river-*.png
+Replace these when you have newer, client-approved screen captures that represent
+your current graphics standards.
+
+Legacy / review individually before featuring
+-------------------------------------------
+Some older files in this folder may be phone snapshots or one-off exports.
+If an image does not meet marketing quality, swap it in HTML for a synced job
+photo or an updated SCADA export rather than using third-party stock.

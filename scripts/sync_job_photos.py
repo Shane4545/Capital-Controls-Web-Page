@@ -1,4 +1,14 @@
-"""Resize job photos from H:\\Jobs into assets/photos. pip install pillow"""
+"""Resize job photos from H:\\Jobs into assets/photos.
+
+This is the primary path for *current, CCI-owned* imagery on the public site.
+Add your best shop and field paths to JOBS, then run:
+
+    pip install pillow
+    python scripts/sync_job_photos.py
+
+Update HTML references only when filenames change. See assets/photos/SOURCE.txt
+for which deployed files are fed from which jobs.
+"""
 from pathlib import Path
 
 try:

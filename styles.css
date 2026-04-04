@@ -1740,7 +1740,6 @@ figcaption {
     grid-template-rows: auto auto;
   }
 
-  .footer-media-note,
   .footer-copy {
     grid-column: 1 / -1;
   }
@@ -1793,30 +1792,6 @@ figcaption {
 .footer-links a {
   font-size: 0.8125rem;
   font-weight: 600;
-}
-
-.footer-media-note {
-  margin: 0;
-  padding-top: 1.5rem;
-  font-size: 0.6875rem;
-  line-height: 1.55;
-  color: rgba(255, 255, 255, 0.38);
-  max-width: 42rem;
-}
-
-.footer-media-note a {
-  color: rgba(255, 255, 255, 0.72);
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-.footer-media-note__code {
-  font-family: ui-monospace, monospace;
-  font-size: 0.625rem;
-  padding: 0.1em 0.35em;
-  border-radius: 4px;
-  background: rgba(0, 0, 0, 0.25);
-  color: rgba(255, 255, 255, 0.65);
 }
 
 .footer-copy {
