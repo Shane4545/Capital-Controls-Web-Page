@@ -34,6 +34,16 @@ Examples: scada-killaloe-overview.png, scada-pembroke-*.png, hmi-chalk-river-*.p
 Replace these when you have newer, client-approved screen captures that represent
 your current graphics standards.
 
+Marketing refresh (PLC & pumping imagery)
+-----------------------------------------
+Several site photos pre-date current Rockwell catalog highlights (e.g. **CompactLogix 5380**
+and **ControlLogix 5580** processors) and do not yet show **Flygt MultiSmart** hardware
+on Xylem-led packages. When you re-run sync_job_photos.py, prioritize job folders that
+document:
+  • Field PLC enclosures where 5380/5580-class CPUs are clearly visible (with client approval).
+  • Lift or booster stations where MultiSmart and your panel work appear in the same story.
+  • Updated SCADA faceplates aligned to your present HMI standards.
+
 Legacy / review individually before featuring
 -------------------------------------------
 Some older files in this folder may be phone snapshots or one-off exports.

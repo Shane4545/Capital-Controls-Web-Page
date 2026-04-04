@@ -531,6 +531,12 @@ a:hover {
 }
 
 /* GE monogram SVG uses white + blue; white ring vanishes on light UI — give a neutral chip */
+/* Xylem wordmark — slightly shorter cap so it aligns with RA / AB in the strip */
+.partner-logo--xylem {
+  max-height: 34px !important;
+  max-width: 120px !important;
+}
+
 .partner-logo--ge {
   max-height: 40px !important;
   max-width: 48px !important;
@@ -591,6 +597,8 @@ a:hover {
 .partner-logo-link--iso img {
   max-height: 58px !important;
   max-width: 220px !important;
+  min-width: 140px;
+  flex-shrink: 0;
 }
 
 .brand-lockup-strip {

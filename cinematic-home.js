@@ -24,6 +24,34 @@ function setScrollSpineVar() {
   document.body.style.setProperty("--cin-spine-bright", String(bright));
 }
 
+/** Top-of-viewport reading progression — subtle “signal strength” cue without clutter. */
+function initCinemaPageProgress() {
+  const root = document.documentElement;
+  if (cinemaReduced) {
+    root.style.setProperty("--cin-page-progress", "1");
+    return;
+  }
+  let scheduled = false;
+  function update() {
+    scheduled = false;
+    const scrollTop = root.scrollTop || document.body.scrollTop;
+    const docHeight = root.scrollHeight - window.innerHeight;
+    const pRaw = docHeight > 0 ? Math.min(1, Math.max(0, scrollTop / docHeight)) : 0;
+    /* Tiny floor so the bar reads as “alive” even at scroll top — users complained it felt unchanged */
+    const p = pRaw < 0.02 ? 0.04 : pRaw;
+    root.style.setProperty("--cin-page-progress", p.toFixed(4));
+  }
+  function onScroll() {
+    if (!scheduled) {
+      scheduled = true;
+      requestAnimationFrame(update);
+    }
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", update, { passive: true });
+  update();
+}
+
 function initCinemaScrollSpine() {
   if (cinemaReduced) {
     document.body.style.setProperty("--cin-scroll-pct", "0.5");
@@ -59,16 +87,92 @@ function initCinemaHeader() {
   io.observe(hero);
 }
 
-function initCinemaHeroEntrance() {
-  const hero = document.querySelector(".cinema-hero");
-  if (!hero) return;
+/** Hero is static in HTML (no timed wipes / KB). */
+
+function initCinemaPinnedScene() {
+  const root = document.querySelector(".cinema-scene-pinned");
+  if (!root) return;
+
   if (cinemaReduced) {
-    hero.classList.add("is-entered");
+    root.classList.add("cinema-scene-pinned--reduced");
+    root.dataset.pinPhase = "1";
     return;
   }
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => hero.classList.add("is-entered"));
-  });
+
+  function update() {
+    const vh = window.innerHeight || 1;
+    const scrollY = window.scrollY || document.documentElement.scrollTop;
+    const start = root.offsetTop - vh * 0.08;
+    const total = Math.max(1, root.offsetHeight - vh);
+    const raw = (scrollY - start) / total;
+    const p = Math.min(1, Math.max(0, raw));
+    root.style.setProperty("--cin-pin-p", p.toFixed(4));
+
+    let phase = "1";
+    if (p > 0.34 && p < 0.67) phase = "2";
+    if (p >= 0.67) phase = "3";
+    root.dataset.pinPhase = phase;
+  }
+
+  let scheduled = false;
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!scheduled) {
+        scheduled = true;
+        requestAnimationFrame(() => {
+          scheduled = false;
+          update();
+        });
+      }
+    },
+    { passive: true }
+  );
+  window.addEventListener("resize", update, { passive: true });
+  update();
+}
+
+/** Scroll narrative: body[data-cinema-act] drives atmosphere + progress accent. */
+function initCinemaNarrativeAct() {
+  const doc = document.documentElement;
+  const body = document.body;
+  if (!body.classList.contains("page-home--cinematic")) return;
+  if (cinemaReduced) {
+    body.setAttribute("data-cinema-act", "4");
+    return;
+  }
+  const sections = document.querySelectorAll("[data-cinema-act]");
+  if (!sections.length) return;
+
+  function actFromScroll() {
+    const mid = window.innerHeight * 0.38;
+    let chosen = "1";
+    sections.forEach((el) => {
+      const r = el.getBoundingClientRect();
+      if (r.top <= mid && r.bottom >= mid * 0.35) {
+        const a = el.getAttribute("data-cinema-act");
+        if (a) chosen = a;
+      }
+    });
+    if (body.getAttribute("data-cinema-act") !== chosen) {
+      body.setAttribute("data-cinema-act", chosen);
+      doc.style.setProperty("--cin-narrative-act", chosen);
+    }
+  }
+
+  let t = false;
+  function tick() {
+    t = false;
+    actFromScroll();
+  }
+  window.addEventListener("scroll", () => {
+    if (!t) {
+      t = true;
+      requestAnimationFrame(tick);
+    }
+  }, { passive: true });
+  window.addEventListener("resize", tick, { passive: true });
+  tick();
 }
 
 /** CCI-owned hero loop only — `assets/video/cci-hero-loop.mp4`. Injected only if HEAD returns 200 (no stock, no 404 noise). */
@@ -266,12 +370,11 @@ function initCinemaSignalFlow() {
 
       window.setTimeout(() => {
         paths.forEach((path) => {
-          path.classList.add("cinema-signal__path--looping");
           path.style.transition = "";
           path.style.strokeDasharray = "";
-          path.style.strokeDashoffset = "";
+          path.style.strokeDashoffset = "0";
         });
-      }, 3200);
+      }, 2600);
     },
     { threshold: 0.18, rootMargin: "0px 0px -8% 0px" }
   );
@@ -279,29 +382,17 @@ function initCinemaSignalFlow() {
 }
 
 function initCinemaSectionReveals() {
-  const sections = document.querySelectorAll(".cinema-section[data-cinema-reveal]");
-  if (!sections.length) return;
-  if (cinemaReduced) {
-    sections.forEach((s) => s.classList.add("cinema-section--visible"));
-    return;
-  }
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((en) => {
-        if (en.isIntersecting) {
-          en.target.classList.add("cinema-section--visible");
-          io.unobserve(en.target);
-        }
-      });
-    },
-    { rootMargin: "0px 0px -10% 0px", threshold: 0.06 }
-  );
-  sections.forEach((s) => io.observe(s));
+  document.querySelectorAll(".cinema-section[data-cinema-reveal]").forEach((s) => {
+    s.classList.add("cinema-section--visible");
+  });
 }
 
+initCinemaPageProgress();
 initCinemaScrollSpine();
 initCinemaHeader();
-initCinemaHeroEntrance();
+initCinemaPinnedScene();
+initCinemaNarrativeAct();
 void initCinemaHeroVideo();
 initCinemaSignalFlow();
 initCinemaSectionReveals();
+

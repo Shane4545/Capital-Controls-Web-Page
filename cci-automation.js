@@ -206,6 +206,8 @@ function markRevealTargets() {
   const sel = "main .section, .page-hero, .partner-strip";
   document.querySelectorAll(sel).forEach((el) => {
     if (document.body.classList.contains("page-home--cinematic") && el.closest("main")) return;
+    /* Partner / certification strips: keep visible immediately (no cci-reveal) so ISO/CSA marks always paint */
+    if (el.classList.contains("partner-strip")) return;
     if (!el.classList.contains("cci-reveal")) el.classList.add("cci-reveal");
   });
   const proseMain = document.querySelector("main.prose-page");

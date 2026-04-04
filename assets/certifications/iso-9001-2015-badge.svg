@@ -1,20 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 112" role="img" aria-labelledby="isoMarkTitle isoMarkDesc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 112" role="img" aria-labelledby="isoMarkTitle isoMarkDesc" width="384" height="112">
   <title id="isoMarkTitle">ISO 9001:2015 certified quality management system</title>
   <desc id="isoMarkDesc">ISO conformity-style mark for a certified management system. Display only while certification is valid and per your certification body logo-use agreement.</desc>
   <defs>
-    <linearGradient id="isoPanelBlue" x1="0" y1="0" x2="0" y2="1">
+    <linearGradient id="cciQmsBlueGrad" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#0082c8"/>
       <stop offset="100%" stop-color="#004e8c"/>
     </linearGradient>
-    <filter id="isoBadgeShadow" x="-5%" y="-5%" width="110%" height="110%">
-      <feDropShadow dx="0" dy="1.5" stdDeviation="1.8" flood-color="#0c1929" flood-opacity="0.14"/>
-    </filter>
   </defs>
-  <g filter="url(#isoBadgeShadow)">
-    <rect x="1.5" y="1.5" width="381" height="109" rx="14" fill="#ffffff" stroke="#004e8c" stroke-width="1.5"/>
-    <rect x="10" y="10" width="112" height="92" rx="12" fill="url(#isoPanelBlue)"/>
-  </g>
-  <!-- ISO-style spherical emblem (background) -->
+  <!-- No filters: feDropShadow breaks many browsers when SVG is used as img src -->
+  <rect x="1.5" y="1.5" width="381" height="109" rx="14" fill="#ffffff" stroke="#004e8c" stroke-width="2"/>
+  <rect x="10" y="10" width="112" height="92" rx="12" fill="url(#cciQmsBlueGrad)"/>
   <g transform="translate(66,56)" fill="none" stroke="#ffffff" stroke-linecap="round" opacity="0.4" aria-hidden="true">
     <circle cx="0" cy="0" r="28" stroke-width="1.6"/>
     <path d="M -28 0 C -12 -20 12 -20 28 0" stroke-width="2"/>

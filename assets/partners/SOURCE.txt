@@ -1,0 +1,15 @@
+Partner logos
+-------------
+Vectors here are for web use with outbound links to each vendor. Prefer official
+print/web artwork from the vendor’s partner or media portal when your contract
+or brand rules require an exact lockup (especially for trademarked wordmarks).
+
+xylem.svg — Wordmark vector from Wikimedia Commons (sourced from xylem.com trace):
+  https://commons.wikimedia.org/wiki/File:Xylem_Logo.svg
+  https://upload.wikimedia.org/wikipedia/commons/2/2d/Xylem_Logo.svg
+Licensed as PD-textlogo on Commons; still a trademark—use only appropriately.
+Prefer Xylem partner/media-kit artwork if your agreement requires their official lockup.
+
+Official Flygt MultiSmart product hub (example locales):
+  https://www.xylem.com/en-ca/products--services/pumps-packaged-pump-systems/monitoring-control-equipment/control/pump-station-process-controllers/multismart/
+  https://www.xylem.com/en-us/products--services/pumps-packaged-pump-systems/monitoring-control-equipment/control/pump-station-process-controllers/multismart/

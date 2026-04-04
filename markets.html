@@ -18,10 +18,11 @@
   <link rel="icon" href="assets/cci-icon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="cci-cinematic-system.css?v=2">
 </head>
-<body data-page="markets">
+<body data-page="markets" class="cci-cinematic">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="topbar"><div class="topbar-inner section-inner"><span class="topbar-text">Treatment plants · Municipal pumping · Critical infrastructure</span></div></div>
   <header class="site-header">
@@ -51,6 +52,7 @@
         <li><a href="index.html">Home</a></li>
         <li aria-current="page">Industries</li>
       </ol>
+      <p class="cci-page-chapter"><span class="cci-page-chapter__act">III</span><span class="cci-page-chapter__rule" aria-hidden="true"></span><span class="cci-page-chapter__label">Sectors</span></p>
       <p class="eyebrow">Markets</p>
       <h1>Treatment plants, pumping infrastructure, and selective industrial process systems</h1>
       <p class="page-hero-lead">Most of our delivery is drinking-water and wastewater treatment plants, lift and booster stations, and municipal pumping—as summarized on <a href="https://capitalcontrols.ca/">capitalcontrols.ca</a> for years, we also support landfills, boiler and thermal processes, hydro-related facilities, airports, and broader industrial automation for municipal, provincial, federal, and private-sector clients.</p>
@@ -59,16 +61,16 @@
 
   <section class="credibility-micro section-inner" aria-label="Quality registrations">
     <ul class="credibility-micro-list">
-      <li><a href="about.html#certifications"><img src="assets/certifications/iso-9001-2015-badge.svg?v=20260401" alt="ISO 9001:2015 — certified quality management systems (licensed mark)" width="180" height="62" loading="lazy" decoding="async"></a></li>
+      <li><a href="about.html#certifications"><img src="assets/certifications/iso-9001-2015-badge.svg?v=20260331" alt="ISO 9001:2015 — certified quality management systems (licensed mark)" width="180" height="62" loading="lazy" decoding="async"></a></li>
       <li><a href="https://www.csagroup.org/" rel="noopener noreferrer" target="_blank"><img src="assets/partners/csa-group.svg" alt="CSA-certified panel fabrication" width="120" height="52" loading="lazy" decoding="async"></a></li>
     </ul>
   </section>
 
   <main id="main" class="prose-page">
     
-    <div class="prose-block" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 2.5rem; border-radius: 8px; margin-bottom: 3rem;">
+    <div class="prose-block cci-prose-lede">
       <h2 style="margin-top: 0;">Primary Market: Municipal Water & Wastewater</h2>
-      <p style="font-size: 1.1rem; line-height: 1.7;">Municipal water, wastewater, and pumping programs are the core of our practice. We supply, program, and commission PLC-based <strong>operational systems</strong> with integrated HMI and SCADA for process monitoring and control.</p>
+      <p style="font-size: 1.05rem; line-height: 1.65;">Municipal water, wastewater, and pumping programs are the core of our practice. We supply, program, and commission PLC-based <strong>operational systems</strong> with integrated HMI and SCADA for process monitoring and control.</p>
     </div>
 
     <div class="prose-block">
@@ -79,7 +81,7 @@
     </div>
 
     <div class="prose-block">
-      <img src="assets/photos/wtp-rockland-actiflo-panel.jpg?v=20260330" alt="Integrated control enclosure at a municipal water treatment plant—Actiflo and chemical feed context from a delivered Capital Controls scope." style="width: 100%; max-width: 900px; height: auto; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin: 2rem 0;">
+      <img class="cci-prose-img" src="assets/photos/wtp-rockland-actiflo-panel.jpg?v=20260330" alt="Integrated control enclosure at a municipal water treatment plant—Actiflo and chemical feed context from a delivered Capital Controls scope." style="width:100%;max-width:900px;height:auto;margin:2rem 0;display:block;">
     </div>
 
     <div class="prose-block">
@@ -102,6 +104,7 @@
       <h2>Pumping Stations & Lift Stations</h2>
       <p><strong>Configuration types:</strong> Sanitary sewage lift stations with submersible pumps and wet well level control, stormwater pumping stations with high-flow capacity, water booster stations with pressure control and variable speed drives, and raw water intake stations with traveling screens.</p>
       <p><strong>Standard features we implement:</strong> Duplex, triplex, or quad pump configurations with lead/lag/standby rotation, high and low level alarms with auto-dialer capability, wet well level control using ultrasonic transmitters, VFD speed control for flow matching, backup generator integration, and remote SCADA monitoring via cellular modem.</p>
+      <p><strong>Xylem Flygt MultiSmart:</strong> When pumps ship with <strong>MultiSmart</strong> integrated pump controllers, we align Ethernet/Modbus interfaces, PLC permissives, and SCADA faceplates with Capital Controls&rsquo; Allen-Bradley standards and work <strong>hand in hand with Xylem</strong> through design reviews, FAT, and startup—so operators see coordinated station control, not competing narratives from the pump skid and the municipal panel.</p>
       <p><strong>Recent project examples:</strong> McGee Street Lift Station (CCI-1413) included a SCADA panel with CompactLogix controller, PanelView touchscreen, and cellular modem to provide lift station control and monitoring with communication to the main plant. Golfview Subdivision Pumping Station (CCI-1413Q) featured similar architecture with duplex pump control and remote access capability.</p>
     </div>
 
@@ -187,6 +190,7 @@
     </div>
   </footer>
   <script type="module" src="cci-automation.js"></script>
+  <script src="cci-interior-motion.js?v=1" defer></script>
   <script src="site.js" defer></script>
 </body>
 </html>

@@ -16,10 +16,13 @@
   <link rel="manifest" href="site.webmanifest">
   <title>Experience · Capital Controls</title>
   <link rel="icon" href="assets/cci-icon.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="cci-cinematic-system.css?v=2">
 </head>
-<body data-page="experience">
+<body data-page="experience" class="cci-cinematic">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="topbar"><div class="topbar-inner section-inner"><span class="topbar-text">Treatment plants · Pumping infrastructure · Municipal &amp; transit</span></div></div>
   <header class="site-header">
@@ -44,6 +47,7 @@
   <header class="page-hero page-hero--image" style="background-image:linear-gradient(105deg,rgba(0,28,72,0.9) 0%,rgba(0,45,98,0.78) 100%),url('assets/photos/wtp-rockland-actiflo-panel.jpg?v=20260330');background-size:cover;background-position:50% 42%;">
     <div class="page-hero-inner">
       <ol class="breadcrumb"><li><a href="index.html">Home</a></li><li aria-current="page">Experience</li></ol>
+      <p class="cci-page-chapter"><span class="cci-page-chapter__act">III</span><span class="cci-page-chapter__rule" aria-hidden="true"></span><span class="cci-page-chapter__label">Evidence</span></p>
       <p class="eyebrow">Delivery record</p>
       <h1>Operational systems across treatment plants, pumping infrastructure, and transit utilities</h1>
       <p class="page-hero-lead">Integrated control delivery for municipal treatment plants, lift and booster stations, and critical infrastructure—CompactLogix/ControlLogix PLCs, SCADA/HMI, CSA-certified panels, FAT/SAT, and commissioning through operator turnover.</p>
@@ -130,7 +134,7 @@
 
     <div class="prose-block">
       <h2>Additional experience</h2>
-      <p>Beyond the programs highlighted here, our portfolio spans municipal water and wastewater, industrial process control, and infrastructure applications. Recurring platforms include Allen-Bradley CompactLogix/ControlLogix, FactoryTalk View, iFIX, Siemens process instrumentation, and Ethernet/IP architectures.</p>
+      <p>Beyond the programs highlighted here, our portfolio spans municipal water and wastewater, industrial process control, and infrastructure applications. Recurring platforms include Allen-Bradley CompactLogix/ControlLogix (1769 and 5069 Compact, 1756 ControlLogix including current-generation CPUs), FactoryTalk View, iFIX, Siemens process instrumentation, <strong>Xylem Flygt MultiSmart</strong> pump integration on coordinated pump packages, and Ethernet/IP architectures.</p>
       <p><strong>Typical applications:</strong> Water treatment plants (raw water intake, clarification, filtration, UV disinfection, high lift pumping), wastewater treatment plants (influent screening, biological treatment, clarification, sludge handling), pumping and lift stations (sanitary sewage, stormwater, water booster), and industrial process control (chemical feed, cooling towers, compressed air).</p>
       <p><strong>Standard deliverables:</strong> CSA-certified control panels (UL 508A, NEMA 4X), custom PLC programming with clear documentation, HMI/SCADA graphics development, instrumentation supply and configuration, network integration, factory acceptance testing, site commissioning, operator training, and as-built documentation packages.</p>
     </div>
@@ -143,7 +147,7 @@
       </figure>
       <figure class="mosaic-item photo-frame photo-frame--tile">
         <div class="photo-frame-inner"><img src="assets/photos/wtp-rockland-main-plc.jpg?v=20260330" alt="Allen-Bradley PLC rack with I/O in service." width="400" height="300" loading="lazy" decoding="async"></div>
-        <figcaption>PLC / I/O — field installation</figcaption>
+        <figcaption>PLC / I/O — field installation (representative; refresh when marketing has approved 5380/5580-era hardware shots)</figcaption>
       </figure>
       <figure class="mosaic-item photo-frame photo-frame--tile">
         <div class="photo-frame-inner"><img src="assets/photos/wtp-rockland-actiflo-panel.jpg?v=20260330" alt="Integrated control enclosure with power, PLC, and marshalling." width="400" height="300" loading="lazy" decoding="async"></div>
@@ -198,6 +202,7 @@
     </div>
   </footer>
   <script type="module" src="cci-automation.js"></script>
+  <script src="cci-interior-motion.js?v=1" defer></script>
   <script src="site.js" defer></script>
 </body>
 </html>

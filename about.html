@@ -19,10 +19,11 @@
   <link rel="icon" href="assets/cci-icon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="cci-cinematic-system.css?v=2">
 </head>
-<body data-page="about">
+<body data-page="about" class="cci-cinematic">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="topbar"><div class="topbar-inner section-inner"><span class="topbar-text">Capital Controls &amp; Instrumentation Inc. · CSA-certified shop · ISO 9001 · ISO 45001 OHS · Since 2007</span></div></div>
   <header class="site-header">
@@ -52,9 +53,10 @@
         <li><a href="index.html">Home</a></li>
         <li aria-current="page">About</li>
       </ol>
+      <p class="cci-page-chapter"><span class="cci-page-chapter__act">I</span><span class="cci-page-chapter__rule" aria-hidden="true"></span><span class="cci-page-chapter__label">Institution</span></p>
       <p class="eyebrow">Capital Controls &amp; Instrumentation Inc.</p>
       <h1>Independent controls engineering—with the credentials procurement teams require</h1>
-      <p class="page-hero-lead">We design and fabricate CSA-certified panels in-house, program Allen-Bradley PLCs and SCADA to documented standards, and commission Siemens instrumentation under authorized protocols. Our ISO 9001:2015 quality system and fabrication discipline produce documentation that satisfies FAT, SAT, and owner audit requirements—critical for municipal infrastructure and regulated facilities.</p>
+      <p class="page-hero-lead">We design and fabricate CSA-certified panels in-house, program Allen-Bradley PLCs and SCADA to documented standards, and commission Siemens instrumentation under authorized protocols. On pumping programs we work hand in hand with <strong>Xylem</strong>, integrating <strong>Flygt MultiSmart</strong> controllers with PLC and SCADA when they are part of the supplier package. Our ISO 9001:2015 quality system and fabrication discipline produce documentation that satisfies FAT, SAT, and owner audit requirements—critical for municipal infrastructure and regulated facilities.</p>
     </div>
   </header>
 
@@ -65,11 +67,12 @@
       <li><a class="partner-logo-link" href="https://www.rockwellautomation.com/en-us/products/hardware/allen-bradley.html" rel="noopener noreferrer" target="_blank"><img src="assets/partners/allen-bradley.svg" alt="Allen-Bradley" width="180" height="41" loading="lazy" decoding="async"></a></li>
       <li><a class="partner-logo-link" href="https://www.aveva.com/" rel="noopener noreferrer" target="_blank"><img src="assets/partners/aveva.svg" alt="AVEVA" width="120" height="36" loading="lazy" decoding="async"></a></li>
       <li><a class="partner-logo-link" href="https://www.ge.com/digital/" rel="noopener noreferrer" target="_blank"><img src="assets/partners/ge-monogram.svg" alt="GE Digital" width="56" height="56" loading="lazy" decoding="async" class="partner-logo--ge"></a></li>
+      <li><a class="partner-logo-link" href="https://www.xylem.com/en-ca/" rel="noopener noreferrer" target="_blank"><img src="assets/partners/xylem.svg" alt="Xylem" width="120" height="29" loading="lazy" decoding="async" class="partner-logo--xylem"></a></li>
       <li><a class="partner-logo-link" href="https://www.phoenixcontact.com/" rel="noopener noreferrer" target="_blank"><img src="assets/partners/phoenix-contact.jpg" alt="Phoenix Contact" width="160" height="77" loading="lazy" decoding="async"></a></li>
     </ul>
     <p class="partner-strip-subhead" id="about-partner-certs">Certifications &amp; registration</p>
     <ul class="partner-logos partner-logos--certs" aria-labelledby="about-partner-certs">
-      <li><a class="partner-logo-link partner-logo-link--iso" href="#certifications"><img src="assets/certifications/iso-9001-2015-badge.svg?v=20260401" alt="ISO 9001:2015 — certified quality management systems (licensed conformity mark)" width="220" height="76" loading="lazy" decoding="async"></a></li>
+      <li><a class="partner-logo-link partner-logo-link--iso" href="#certifications"><img src="assets/certifications/iso-9001-2015-badge.svg?v=20260331" alt="ISO 9001:2015 — certified quality management systems (licensed conformity mark)" width="220" height="76" loading="lazy" decoding="async"></a></li>
       <li><a class="partner-logo-link" href="https://www.csagroup.org/" rel="noopener noreferrer" target="_blank"><img src="assets/partners/csa-group.svg" alt="CSA Group" width="120" height="52" loading="lazy" decoding="async"></a></li>
     </ul>
   </section>
@@ -89,6 +92,7 @@
         <li>Strict standards for <strong>ladder logic, structured text, CAD, and SCADA</strong> graphics so any member of our team can support any site we commission.</li>
         <li><strong>Red Seal</strong> instrumentation technicians for calibration, verification, and startup—including <strong>yearly instrumentation verification</strong> programs for owners who need recurring compliance evidence.</li>
         <li><strong>Siemens authorized</strong> for commissioning of Siemens process instrumentation in Ontario—magnetic flow meters, ultrasonic level transmitters, and pressure transmitters configured to specification.</li>
+        <li><strong>Xylem / Flygt MultiSmart</strong>—close coordination on lift stations and booster packages so networked pump controllers, Allen-Bradley PLCs, and SCADA present a single operational picture.</li>
         <li><strong>Emergency response</strong> and warranty support—on-site in Eastern &amp; Northern Ontario and Western Quebec where contracted, and <strong>24-hour VPN</strong> support for remote sites.</li>
         <li>Technical partnerships (e.g. Sudbury, Gatineau) extend geographic coverage for larger maintenance programs.</li>
       </ul>
@@ -97,7 +101,7 @@
     <div class="prose-block cert-callout" id="certifications">
       <h2>Certifications &amp; quality</h2>
       <div class="cert-badge-row" aria-label="Registration marks">
-        <a href="https://www.iso.org/iso-9001-quality-management.html" rel="noopener noreferrer" target="_blank"><img class="cert-badge-iso" src="assets/certifications/iso-9001-2015-badge.svg?v=20260401" alt="ISO 9001:2015 — certified quality management systems (licensed conformity mark)" width="220" height="76" decoding="async"></a>
+        <a href="https://www.iso.org/iso-9001-quality-management.html" rel="noopener noreferrer" target="_blank"><img class="cert-badge-iso" src="assets/certifications/iso-9001-2015-badge.svg?v=20260331" alt="ISO 9001:2015 — certified quality management systems (licensed conformity mark)" width="220" height="76" decoding="async"></a>
         <a href="https://www.csagroup.org/" rel="noopener noreferrer" target="_blank"><img src="assets/partners/csa-group.svg" alt="CSA Group — panel certification" width="120" height="52" decoding="async"></a>
       </div>
       <p class="cert-lead">These items mirror what belongs on a municipal or industrial pre-qualification form—<strong>CSA</strong> for panels, <strong>ISO 9001:2015</strong> for the management system, and documented QA practices for day-to-day traceability. Shop panels ship with <strong>CSA photo registers</strong> (e.g. Bishop Water CP-100) alongside test sheets—so what ships matches what was witnessed.</p>
@@ -209,6 +213,7 @@
     </div>
   </footer>
   <script type="module" src="cci-automation.js"></script>
+  <script src="cci-interior-motion.js?v=1" defer></script>
   <script src="site.js" defer></script>
 </body>
 </html>

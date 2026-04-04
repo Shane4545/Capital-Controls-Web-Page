@@ -1,0 +1,478 @@
+/* Capital Controls — global cinematic / industrial system (interior + shared chrome)
+ * Scoped: body.cci-cinematic — use with IBM Plex Sans + Mono
+ * Roles: Architect + Design Engineer + Component Engineer */
+
+body.cci-cinematic {
+  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+  --font-serif: "IBM Plex Sans", system-ui, sans-serif;
+  --color-bg: #e4e8ef;
+  --color-surface: #f0f2f6;
+  --color-surface-muted: #d8dde6;
+  --color-text: #0c1018;
+  --color-text-secondary: #3d4a5c;
+  --color-muted: #5a6578;
+  --color-border: rgba(0, 24, 52, 0.12);
+  --color-border-strong: rgba(0, 24, 52, 0.22);
+  --color-primary: #001f3d;
+  --color-primary-hover: #00152a;
+  --color-brand-green: #00974a;
+  --color-brand-green-hover: #007a3c;
+  --color-ink-hero: #f4f6f8;
+  --max: 1080px;
+  --shadow-xs: none;
+  --shadow-sm: 0 1px 0 rgba(0, 24, 52, 0.06);
+  --radius: 2px;
+  --radius-md: 2px;
+  --radius-lg: 2px;
+  --cci-ease-scene: cubic-bezier(0.22, 0.9, 0.36, 1);
+}
+
+body.cci-cinematic .site-header {
+  background: rgba(250, 251, 252, 0.94);
+  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(10px) saturate(1.05);
+  -webkit-backdrop-filter: blur(10px) saturate(1.05);
+}
+
+body.cci-cinematic .nav-list a {
+  font-size: 0.78125rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  transition: color 0.2s ease;
+}
+
+body.cci-cinematic .nav-list a::after {
+  height: 1px;
+  bottom: -3px;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  body.cci-cinematic .nav-list a:hover {
+    transform: none;
+  }
+}
+
+body.cci-cinematic .nav-cta {
+  border-radius: 2px;
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+}
+
+body.cci-cinematic .topbar {
+  background: #05080d;
+  color: rgba(226, 232, 240, 0.88);
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.5625rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Interior hero: opening “scene” — dark, low noise */
+body.cci-cinematic .page-hero:not(.page-hero--image) {
+  padding: clamp(2.25rem, 5vw, 3.25rem) 0 clamp(2.75rem, 6vw, 3.75rem);
+  background: radial-gradient(ellipse 80% 120% at 20% -20%, rgba(0, 151, 74, 0.08) 0%, transparent 55%),
+    linear-gradient(180deg, #070a0f 0%, #0d1219 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+body.cci-cinematic .page-hero:not(.page-hero--image) .breadcrumb,
+body.cci-cinematic .page-hero:not(.page-hero--image) .breadcrumb li {
+  color: rgba(148, 163, 184, 0.9);
+}
+
+body.cci-cinematic .page-hero:not(.page-hero--image) .breadcrumb a {
+  color: rgba(226, 232, 240, 0.85);
+}
+
+body.cci-cinematic .page-hero:not(.page-hero--image) .breadcrumb a:hover {
+  color: #fff;
+}
+
+body.cci-cinematic .page-hero:not(.page-hero--image) .breadcrumb li:not(:last-child)::after {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+body.cci-cinematic .page-hero:not(.page-hero--image) .eyebrow {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.5625rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: rgba(0, 186, 124, 0.88);
+  margin-bottom: 0.5rem;
+}
+
+body.cci-cinematic .page-hero:not(.page-hero--image) h1 {
+  font-family: var(--font-sans);
+  font-size: clamp(1.28rem, 0.55rem + 2.75vw, 1.82rem);
+  font-weight: 600;
+  letter-spacing: -0.022em;
+  line-height: 1.2;
+  color: #f8fafc;
+  max-width: 42rem;
+  margin-bottom: 0.85rem;
+}
+
+body.cci-cinematic .page-hero:not(.page-hero--image) .page-hero-lead {
+  font-size: 0.90625rem;
+  line-height: 1.62;
+  color: rgba(203, 213, 225, 0.9);
+  max-width: 44rem;
+}
+
+body.cci-cinematic .page-hero--image {
+  padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(3rem, 7vw, 4.5rem);
+  position: relative;
+}
+
+body.cci-cinematic .page-hero--image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, rgba(7, 10, 15, 0.92) 0%, rgba(7, 10, 15, 0.72) 45%, rgba(7, 10, 15, 0.45) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+body.cci-cinematic .page-hero--image .page-hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+body.cci-cinematic .page-hero--image h1 {
+  font-family: var(--font-sans);
+  font-size: clamp(1.28rem, 0.55rem + 2.75vw, 1.82rem);
+  font-weight: 600;
+  text-shadow: 0 1px 24px rgba(0, 0, 0, 0.45);
+  max-width: 42rem;
+}
+
+body.cci-cinematic .page-hero--image .page-hero-lead {
+  font-size: 0.90625rem;
+  line-height: 1.62;
+  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.35);
+}
+
+body.cci-cinematic .page-hero--image .eyebrow {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.5625rem;
+  letter-spacing: 0.12em;
+  color: rgba(0, 186, 124, 0.9);
+}
+
+/* Prose rhythm: proposal-grade spacing */
+body.cci-cinematic .prose-page {
+  padding: clamp(2.25rem, 5vw, 3.5rem) var(--gutter);
+  max-width: var(--max);
+}
+
+body.cci-cinematic .prose-block {
+  margin-bottom: clamp(2rem, 4vw, 2.75rem);
+  max-width: 46rem;
+}
+
+body.cci-cinematic .prose-block h2 {
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  margin: 2rem 0 0.65rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+body.cci-cinematic .prose-block h2:first-child {
+  margin-top: 0;
+}
+
+body.cci-cinematic .prose-block h3 {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  margin: 1.35rem 0 0.5rem;
+  color: var(--color-text);
+}
+
+body.cci-cinematic .prose-block p {
+  font-size: 0.90625rem;
+  line-height: 1.65;
+}
+
+/* Scene reveals (paired with cci-interior-motion.js) */
+@media (prefers-reduced-motion: no-preference) {
+  body.cci-cinematic .prose-block,
+  body.cci-cinematic .partner-strip,
+  body.cci-cinematic .credibility-micro,
+  body.cci-cinematic .sales-evidence-callout,
+  body.cci-cinematic .cert-callout,
+  body.cci-cinematic .contact-card-prose,
+  body.cci-cinematic .credibility-strip,
+  body.cci-cinematic .careers-band,
+  body.cci-cinematic .contact-layout > * {
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity 0.62s var(--cci-ease-scene),
+      transform 0.62s var(--cci-ease-scene);
+  }
+
+  body.cci-cinematic .prose-block.cci-scene-in,
+  body.cci-cinematic .partner-strip.cci-scene-in,
+  body.cci-cinematic .credibility-micro.cci-scene-in,
+  body.cci-cinematic .sales-evidence-callout.cci-scene-in,
+  body.cci-cinematic .cert-callout.cci-scene-in,
+  body.cci-cinematic .contact-card-prose.cci-scene-in,
+  body.cci-cinematic .credibility-strip.cci-scene-in,
+  body.cci-cinematic .careers-band.cci-scene-in,
+  body.cci-cinematic .contact-layout > .cci-scene-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body.cci-cinematic .partner-strip {
+  background: #f6f7fa;
+  border-bottom: 1px solid var(--color-border);
+}
+
+body.cci-cinematic .partner-strip-subhead {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.14em;
+  color: var(--color-primary);
+}
+
+body.cci-cinematic .photo-frame {
+  border-radius: 0;
+  border: 1px solid var(--color-border-strong);
+  box-shadow: none;
+  background: var(--color-surface);
+}
+
+body.cci-cinematic .photo-frame-inner {
+  border-radius: 0;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  body.cci-cinematic .photo-frame:hover {
+    border-color: rgba(0, 151, 74, 0.35);
+    transform: none;
+    box-shadow: none;
+  }
+
+  body.cci-cinematic .photo-frame:hover .photo-frame-inner img {
+    transform: none;
+  }
+}
+
+body.cci-cinematic .sales-evidence-callout,
+body.cci-cinematic .cert-callout,
+body.cci-cinematic .contact-card-prose {
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid var(--color-border);
+  border-top: 2px solid rgba(0, 24, 52, 0.18);
+  background: var(--color-surface);
+}
+
+body.cci-cinematic .cert-callout {
+  border-left: 2px solid var(--color-brand-green);
+}
+
+body.cci-cinematic .credibility-strip {
+  background: #05080d;
+  color: rgba(226, 232, 240, 0.88);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body.cci-cinematic .credibility-strip span {
+  color: rgba(203, 213, 225, 0.85);
+}
+
+/* Industry / card grids on interior pages */
+body.cci-cinematic .cinema-industry-card {
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid var(--color-border);
+  border-left: 2px solid rgba(0, 151, 74, 0.55);
+}
+
+body.cci-cinematic .cinema-industry-card:hover {
+  box-shadow: none;
+}
+
+body.cci-cinematic .cinema-industry-card h3 {
+  font-size: 0.9375rem;
+}
+
+/* Markets / prose callout slabs — instrument-panel framing */
+body.cci-cinematic .cci-prose-lede {
+  padding: 1.75rem 1.65rem;
+  margin-bottom: clamp(2rem, 4vw, 2.75rem);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-top: 2px solid rgba(0, 24, 52, 0.2);
+  border-radius: 0;
+}
+
+body.cci-cinematic .cci-prose-lede h2 {
+  margin-top: 0 !important;
+  border-bottom: none;
+  padding-bottom: 0;
+  text-transform: none;
+  letter-spacing: -0.02em;
+  font-size: 1.0625rem;
+  font-weight: 600;
+}
+
+body.cci-cinematic .cci-prose-img {
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid var(--color-border-strong);
+}
+
+/* Credibility micro strip */
+body.cci-cinematic .credibility-micro {
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+body.cci-cinematic .credibility-micro-list {
+  gap: 1.25rem 2rem;
+}
+
+/* Contact: engineered form surface */
+body.cci-cinematic .contact-form {
+  border-radius: 0;
+  border: 1px solid var(--color-border);
+  border-top: 2px solid rgba(0, 24, 52, 0.18);
+  box-shadow: none;
+}
+
+body.cci-cinematic .contact-form input,
+body.cci-cinematic .contact-form textarea {
+  border-radius: 0;
+}
+
+body.cci-cinematic .btn {
+  border-radius: 2px;
+}
+
+/* 404 — same atmosphere as interior hero */
+body.cci-cinematic .error-page {
+  min-height: 100vh;
+  background: radial-gradient(ellipse 70% 100% at 20% -30%, rgba(0, 151, 74, 0.07) 0%, transparent 50%),
+    linear-gradient(180deg, #070a0f 0%, #0d1219 100%);
+  color: rgba(226, 232, 240, 0.92);
+}
+
+body.cci-cinematic .error-page-inner {
+  max-width: 36rem;
+}
+
+body.cci-cinematic .error-page-code {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  color: rgba(0, 186, 124, 0.75);
+  text-shadow: none;
+}
+
+body.cci-cinematic .error-page h1 {
+  font-family: var(--font-sans);
+  font-size: clamp(1.25rem, 0.5rem + 2.5vw, 1.65rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #f8fafc;
+}
+
+body.cci-cinematic .error-page-lead {
+  color: rgba(203, 213, 225, 0.9);
+}
+
+body.cci-cinematic .error-page-nav-label {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  color: rgba(148, 163, 184, 0.9);
+}
+
+body.cci-cinematic .error-page-nav a {
+  color: rgba(226, 232, 240, 0.85);
+}
+
+body.cci-cinematic .error-page-nav a:hover {
+  color: rgba(0, 186, 124, 0.95);
+}
+
+body.cci-cinematic .site-footer {
+  border-top: 1px solid var(--color-border);
+}
+
+body.cci-cinematic .footer-heading {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  letter-spacing: 0.1em;
+  font-size: 0.5625rem;
+}
+
+/* Interior “scene load” — one controlled lift into content */
+html.cci-interior-boot body.cci-cinematic[data-page]:not([data-page="home"]) #main,
+html.cci-interior-boot body.cci-cinematic[data-page]:not([data-page="home"]) .contact-section {
+  opacity: 0;
+  transform: translateY(22px);
+  filter: saturate(0.92) brightness(0.94);
+  transition:
+    opacity 0.78s cubic-bezier(0.22, 0.9, 0.36, 1),
+    transform 0.78s cubic-bezier(0.22, 0.9, 0.36, 1),
+    filter 0.95s ease;
+}
+
+html.cci-interior-entered body.cci-cinematic[data-page]:not([data-page="home"]) #main,
+html.cci-interior-entered body.cci-cinematic[data-page]:not([data-page="home"]) .contact-section {
+  opacity: 1;
+  transform: translateY(0);
+  filter: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.cci-interior-boot body.cci-cinematic[data-page]:not([data-page="home"]) #main,
+  html.cci-interior-boot body.cci-cinematic[data-page]:not([data-page="home"]) .contact-section {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
+
+/* Editorial chapter strip — ties interior heroes to homepage acts */
+.cci-page-chapter {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0 0 0.65rem;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(148, 163, 184, 0.95);
+}
+
+.cci-page-chapter__act {
+  color: rgba(0, 186, 124, 0.9);
+}
+
+.cci-page-chapter__rule {
+  flex: 1;
+  max-width: 3.25rem;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(0, 186, 124, 0.75), transparent);
+}
+
+.cci-page-chapter__label {
+  color: rgba(248, 250, 252, 0.85);
+}
+
+body.cci-cinematic .page-hero:not(.page-hero--image) .cci-page-chapter__label {
+  color: rgba(226, 232, 240, 0.88);
+}

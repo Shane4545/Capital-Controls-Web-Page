@@ -88,4 +88,20 @@
         if (parent) parent.insertBefore(span, img.nextSibling);
       });
     });
+
+  /* Interior scene load — matches homepage “directed” feeling (not a hard navigation cut). */
+  var interiorPage = document.body.getAttribute("data-page");
+  if (
+    document.body.classList.contains("cci-cinematic") &&
+    interiorPage &&
+    interiorPage !== "home" &&
+    interiorPage !== "404"
+  ) {
+    document.documentElement.classList.add("cci-interior-boot");
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        document.documentElement.classList.add("cci-interior-entered");
+      });
+    });
+  }
 })();
