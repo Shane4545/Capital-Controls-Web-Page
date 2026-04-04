@@ -1,16 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 104" role="img" aria-labelledby="isoBadgeTitle isoBadgeDesc">
-  <title id="isoBadgeTitle">Certified to ISO 9001:2015 — quality management systems</title>
-  <desc id="isoBadgeDesc">Text-only certification lockup. Does not depict the ISO organization trademark. Request the official registration certificate and certification body mark from Capital Controls for procurement files.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 112" role="img" aria-labelledby="isoMarkTitle isoMarkDesc">
+  <title id="isoMarkTitle">ISO 9001:2015 certified quality management system</title>
+  <desc id="isoMarkDesc">ISO conformity-style mark for a certified management system. Display only while certification is valid and per your certification body logo-use agreement.</desc>
   <defs>
-    <filter id="soft" x="-6%" y="-6%" width="112%" height="112%">
-      <feDropShadow dx="0" dy="1" stdDeviation="1.2" flood-color="#0f172a" flood-opacity="0.08"/>
+    <linearGradient id="isoPanelBlue" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0082c8"/>
+      <stop offset="100%" stop-color="#004e8c"/>
+    </linearGradient>
+    <filter id="isoBadgeShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="1.8" flood-color="#0c1929" flood-opacity="0.14"/>
     </filter>
   </defs>
-  <g filter="url(#soft)">
-    <rect x="1.5" y="1.5" width="357" height="101" rx="12" fill="#ffffff" stroke="#002d62" stroke-width="2"/>
-    <rect x="14" y="18" width="7" height="68" rx="2" fill="#00a651"/>
+  <g filter="url(#isoBadgeShadow)">
+    <rect x="1.5" y="1.5" width="381" height="109" rx="14" fill="#ffffff" stroke="#004e8c" stroke-width="1.5"/>
+    <rect x="10" y="10" width="112" height="92" rx="12" fill="url(#isoPanelBlue)"/>
   </g>
-  <text x="94" y="44" fill="#002d62" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="0.01em">ISO 9001:2015</text>
-  <text x="94" y="66" fill="#008a45" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="700" letter-spacing="0.16em">CERTIFIED — QUALITY MANAGEMENT</text>
-  <text x="94" y="86" fill="#5c6b7f" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="600" letter-spacing="0.06em">Certificate &amp; certification body mark on request</text>
+  <!-- ISO-style spherical emblem (background) -->
+  <g transform="translate(66,56)" fill="none" stroke="#ffffff" stroke-linecap="round" opacity="0.4" aria-hidden="true">
+    <circle cx="0" cy="0" r="28" stroke-width="1.6"/>
+    <path d="M -28 0 C -12 -20 12 -20 28 0" stroke-width="2"/>
+    <path d="M -28 0 C -12 20 12 20 28 0" stroke-width="2"/>
+    <ellipse cx="0" cy="0" rx="11" ry="28" stroke-width="1.4"/>
+  </g>
+  <text x="66" y="64" text-anchor="middle" fill="#ffffff" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="34" font-weight="900" letter-spacing="-0.03em">ISO</text>
+  <text x="140" y="44" fill="#004e8c" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" letter-spacing="-0.02em">9001:2015</text>
+  <text x="140" y="66" fill="#1a1a1a" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="700" letter-spacing="0.14em">QUALITY MANAGEMENT SYSTEMS</text>
+  <text x="140" y="86" fill="#4a5568" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="600">Certified organization</text>
 </svg>
