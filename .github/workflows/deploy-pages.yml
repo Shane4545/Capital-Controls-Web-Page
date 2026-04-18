@@ -6,6 +6,9 @@
 # Save, then wait a minute for the site to build. The first push from this workflow creates `gh-pages`.
 #
 # If you previously set Source to "GitHub Actions", switch it to "Deploy from a branch" as above.
+#
+# IMPORTANT: Do not use "Re-run failed jobs" on old runs from before this workflow dropped
+# configure-pages — that replays the OLD yaml. Use "Run workflow" or push to main instead.
 name: Deploy GitHub Pages
 
 on:
