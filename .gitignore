@@ -7,6 +7,10 @@ venv/
 .env
 .env.*
 
+# Scratch / paste buffers (local only)
+Pasted text.txt
+Pasted text (1).txt
+
 # OS / editor
 .DS_Store
 Thumbs.db
