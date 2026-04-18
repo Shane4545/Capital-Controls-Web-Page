@@ -1,14 +1,6 @@
-# Publishes the static site by pushing to the `gh-pages` branch (no configure-pages API).
-#
-# ONE-TIME in GitHub: Settings → Pages → Build and deployment
-#   Source: Deploy from a branch
-#   Branch: gh-pages   Folder: / (root)
-# Save, then wait a minute for the site to build. The first push from this workflow creates `gh-pages`.
-#
-# If you previously set Source to "GitHub Actions", switch it to "Deploy from a branch" as above.
-#
-# IMPORTANT: Do not use "Re-run failed jobs" on old runs from before this workflow dropped
-# configure-pages — that replays the OLD yaml. Use "Run workflow" or push to main instead.
+# Publishes the static site to branch `gh-pages`, then enables GitHub Pages via REST API
+# so https://<user>.github.io/<repo>/ serves without manual Settings clicks (when token allows).
+
 name: Deploy GitHub Pages
 
 on:
@@ -18,6 +10,7 @@ on:
 
 permissions:
   contents: write
+  pages: write
 
 concurrency:
   group: pages
@@ -36,3 +29,47 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: .
           exclude_assets: '.github,tools'
+
+      - name: Enable or fix GitHub Pages (legacy → gh-pages /)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          REPO="${{ github.repository }}"
+          API="https://api.github.com/repos/${REPO}/pages"
+          HDR=( -H "Accept: application/vnd.github+json" -H "Authorization: Bearer ${GH_TOKEN}" -H "X-GitHub-Api-Version: 2022-11-28" )
+
+          code=$(curl -sS -o /tmp/pages-get.json -w "%{http_code}" "${HDR[@]}" "$API" || true)
+          echo "GET $API -> HTTP $code"
+
+          if [[ "$code" == "404" ]]; then
+            echo "No Pages site yet — creating (legacy, gh-pages, /)..."
+            post_code=$(curl -sS -o /tmp/pages-post.json -w "%{http_code}" -X POST "${HDR[@]}" "$API" \
+              -d '{"build_type":"legacy","source":{"branch":"gh-pages","path":"/"}}')
+            echo "POST -> HTTP $post_code"
+            cat /tmp/pages-post.json || true
+            [[ "$post_code" == "201" ]] || [[ "$post_code" == "409" ]] || exit 1
+            if [[ "$post_code" == "409" ]]; then
+              echo "409 on POST — trying PUT to set source..."
+              put_code=$(curl -sS -o /tmp/pages-put.json -w "%{http_code}" -X PUT "${HDR[@]}" "$API" \
+                -d '{"build_type":"legacy","source":{"branch":"gh-pages","path":"/"}}')
+              echo "PUT -> HTTP $put_code"; cat /tmp/pages-put.json || true
+              [[ "$put_code" == "204" ]] || exit 1
+            fi
+          elif [[ "$code" == "200" ]]; then
+            branch=$(jq -r '.source.branch // empty' /tmp/pages-get.json)
+            path=$(jq -r '.source.path // empty' /tmp/pages-get.json)
+            btype=$(jq -r '.build_type // empty' /tmp/pages-get.json)
+            echo "Existing Pages: branch=$branch path=$path build_type=$btype"
+            if [[ "$branch" != "gh-pages" ]] || [[ "$path" != "/" ]] || [[ "$btype" == "workflow" ]]; then
+              echo "Updating Pages to legacy source gh-pages / ..."
+              put_code=$(curl -sS -o /tmp/pages-put.json -w "%{http_code}" -X PUT "${HDR[@]}" "$API" \
+                -d '{"build_type":"legacy","source":{"branch":"gh-pages","path":"/"}}')
+              echo "PUT -> HTTP $put_code"; cat /tmp/pages-put.json || true
+              [[ "$put_code" == "204" ]] || exit 1
+            else
+              echo "Pages already configured for gh-pages / — nothing to change."
+            fi
+          else
+            echo "Unexpected GET response"; cat /tmp/pages-get.json || true; exit 1
+          fi
