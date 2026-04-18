@@ -3,7 +3,7 @@
 Static site for **Capital Controls & Instrumentation Inc.**
 
 - **Repository:** [github.com/Shane4545/Capital-Controls-Web-Page](https://github.com/Shane4545/Capital-Controls-Web-Page)
-- **Live site:** enable **GitHub Pages** (Settings → Pages → branch `main`, folder `/ (root)`). URL will be `https://shane4545.github.io/Capital-Controls-Web-Page/`
+- **Live site:** `https://shane4545.github.io/Capital-Controls-Web-Page/` — if GitHub Pages is off, either set **Settings → Pages → Deploy from branch → `main` → `/ (root)`**, or run the **Configure GitHub Pages source** workflow once (**Actions → that workflow → Run workflow**).
 
 ## Local preview
 

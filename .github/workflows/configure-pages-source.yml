@@ -1,0 +1,45 @@
+# Run once from the Actions tab: enables GitHub Pages from main at repo root (legacy build).
+# No secrets required. Uses the default GITHUB_TOKEN.
+
+name: Configure GitHub Pages source
+
+on:
+  workflow_dispatch:
+
+permissions:
+  pages: write
+
+jobs:
+  set-main-root:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set Pages to main / (root)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          REPO="${{ github.repository }}"
+          API="https://api.github.com/repos/${REPO}/pages"
+          HDR=( -H "Accept: application/vnd.github+json" \
+                -H "Authorization: Bearer ${GH_TOKEN}" \
+                -H "X-GitHub-Api-Version: 2022-11-28" )
+
+          code=$(curl -sS -o /tmp/pages.json -w "%{http_code}" "${HDR[@]}" "$API")
+          echo "GET $API => HTTP $code"
+
+          if [ "$code" = "404" ]; then
+            echo "Creating Pages site (legacy, main, /)..."
+            p=$(curl -sS -o /tmp/out.json -w "%{http_code}" -X POST "${HDR[@]}" "$API" \
+              -d '{"build_type":"legacy","source":{"branch":"main","path":"/"}}')
+            echo "POST => HTTP $p"; cat /tmp/out.json || true
+            test "$p" = "201" || test "$p" = "409"
+          elif [ "$code" = "200" ]; then
+            echo "Updating Pages source to main / ..."
+            p=$(curl -sS -o /tmp/out.json -w "%{http_code}" -X PUT "${HDR[@]}" "$API" \
+              -d '{"build_type":"legacy","source":{"branch":"main","path":"/"}}')
+            echo "PUT => HTTP $p"; cat /tmp/out.json || true
+            test "$p" = "204"
+          else
+            echo "Unexpected response:"; cat /tmp/pages.json; exit 1
+          fi
+          echo "Done. Wait 1–2 minutes, then open your github.io URL for this repo."
