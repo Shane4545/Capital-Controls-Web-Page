@@ -262,6 +262,257 @@
       font-size: 0.8125rem;
       color: var(--color-muted);
     }
+    .pumping-detail-grid {
+      display: grid;
+      gap: 1rem;
+    }
+    @media (min-width: 960px) {
+      .pumping-detail-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    .pumping-detail-card {
+      padding: 1.15rem 1.2rem;
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-xs);
+    }
+    .pumping-detail-card h3 {
+      margin: 0 0 0.5rem;
+      font-size: 0.8125rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+    }
+    .pumping-detail-card p {
+      margin: 0;
+      font-size: 0.875rem;
+      line-height: 1.65;
+      color: var(--color-text-secondary);
+    }
+    .pumping-detail-card ul {
+      margin: 0.75rem 0 0;
+      padding-left: 1rem;
+      color: var(--color-text-secondary);
+    }
+    .pumping-detail-card li {
+      margin: 0 0 0.45rem;
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+    .pumping-detail-card li:last-child {
+      margin-bottom: 0;
+    }
+    .pumping-matrix {
+      display: grid;
+      gap: 0.75rem;
+    }
+    .pumping-matrix-head,
+    .pumping-matrix-row {
+      display: grid;
+      gap: 0.75rem;
+      padding: 0.95rem 1rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      background: linear-gradient(180deg, #fff 0%, var(--color-surface-muted) 100%);
+      box-shadow: var(--shadow-xs);
+    }
+    .pumping-matrix-head {
+      display: none;
+      background: #f4f7fb;
+    }
+    .pumping-matrix-cell {
+      min-width: 0;
+      font-size: 0.84375rem;
+      line-height: 1.6;
+      color: var(--color-text-secondary);
+    }
+    .pumping-matrix-cell strong {
+      color: var(--color-text);
+    }
+    .pumping-matrix-label {
+      display: block;
+      margin-bottom: 0.2rem;
+      font-size: 0.625rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+    }
+    @media (min-width: 900px) {
+      .pumping-matrix-head,
+      .pumping-matrix-row {
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.05fr) minmax(0, 1.15fr) minmax(0, 0.95fr);
+        align-items: start;
+      }
+      .pumping-matrix-head {
+        display: grid;
+      }
+      .pumping-matrix-head .pumping-matrix-cell {
+        font-size: 0.6875rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--color-muted);
+      }
+      .pumping-matrix-head .pumping-matrix-label,
+      .pumping-matrix-row .pumping-matrix-label {
+        display: none;
+      }
+    }
+    .pumping-walkthrough-layout {
+      display: grid;
+      gap: 1rem;
+      align-items: start;
+    }
+    @media (min-width: 960px) {
+      .pumping-walkthrough-layout {
+        grid-template-columns: minmax(0, 1.08fr) minmax(18rem, 0.92fr);
+        gap: 1.25rem 1.5rem;
+      }
+      .pumping-video-shell {
+        min-height: 32rem;
+      }
+    }
+    .pumping-walkthrough-media,
+    .pumping-walkthrough-panel,
+    .pumping-proof-figure {
+      background: linear-gradient(180deg, #fff 0%, var(--color-surface-muted) 100%);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-xs);
+    }
+    .pumping-walkthrough-media {
+      padding: 0.9rem;
+    }
+    .pumping-video-shell {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      border-radius: calc(var(--radius-md) - 2px);
+      background: #0f1720;
+      aspect-ratio: 5 / 6;
+      min-height: 16rem;
+    }
+    .pumping-video-poster {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background: #0f1720;
+      transition: opacity 0.2s ease;
+    }
+    .pumping-video-shell video {
+      position: relative;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      background: #0f1720;
+    }
+    .pumping-video-shell.is-playing .pumping-video-poster {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .pumping-video-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-top: 0.75rem;
+      padding: 0.7rem 1rem;
+      font: inherit;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+      background: rgba(0, 24, 52, 0.82);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      cursor: pointer;
+    }
+    .pumping-walkthrough-media.is-playing .pumping-video-toggle {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .pumping-video-note {
+      margin: 0.65rem 0 0;
+      font-size: 0.75rem;
+      line-height: 1.55;
+      color: var(--color-muted);
+    }
+    .pumping-walkthrough-copy {
+      display: grid;
+      gap: 1rem;
+    }
+    .pumping-walkthrough-panel {
+      padding: 1rem 1.05rem;
+    }
+    .pumping-walkthrough-panel h3 {
+      margin: 0 0 0.45rem;
+      font-size: 0.8125rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+    }
+    .pumping-walkthrough-panel p {
+      margin: 0;
+      font-size: 0.875rem;
+      line-height: 1.62;
+      color: var(--color-text-secondary);
+    }
+    .pumping-proof-gallery {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    @media (min-width: 700px) {
+      .pumping-proof-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (min-width: 1080px) {
+      .pumping-proof-gallery {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+    .pumping-proof-figure {
+      margin: 0;
+      overflow: hidden;
+    }
+    .pumping-proof-figure img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      background: #dbe2ea;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .pumping-proof-figure figcaption {
+      padding: 0.9rem 1rem 1rem;
+    }
+    .pumping-proof-figure strong {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+    }
+    .pumping-proof-figure p {
+      margin: 0;
+      font-size: 0.84375rem;
+      line-height: 1.58;
+      color: var(--color-text-secondary);
+    }
   </style>
 </head>
 <body data-page="pumping-stations" class="cci-cinematic pumping-page">
@@ -445,6 +696,144 @@
     </div>
 
     <div class="prose-block">
+      <h2>Control Philosophy</h2>
+      <p class="pumping-block-intro">A typical station is not just "pump on high level, pump off on low." The PLC usually applies a defined sequence so operators can see which pump is duty, when assist comes in, how runtimes are equalized, and what the station will do if the primary level signal or a pump becomes unavailable.</p>
+
+      <div class="pumping-matrix" aria-label="Typical pumping station control philosophy">
+        <div class="pumping-matrix-head" aria-hidden="true">
+          <div class="pumping-matrix-cell">Operating state</div>
+          <div class="pumping-matrix-cell">Typical trigger</div>
+          <div class="pumping-matrix-cell">Automatic control action</div>
+          <div class="pumping-matrix-cell">What operators see</div>
+        </div>
+        <div class="pumping-matrix-row">
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Operating state</span><strong>Duty pump start</strong></div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Typical trigger</span>Wet well rises to the duty start level from the analog transmitter.</div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Automatic control action</span>The current lead pump receives a start command and continues until the wet well returns to the programmed stop level, with anti-chatter delay and minimum runtime where required.</div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">What operators see</span>Lead pump status changes to run, current level is visible, and the next available pump remains in assist or standby.</div>
+        </div>
+        <div class="pumping-matrix-row">
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Operating state</span><strong>Assist pump sequence</strong></div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Typical trigger</span>Level continues rising past the assist start level or the duty pump cannot recover the wet well fast enough.</div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Automatic control action</span>The next available pump starts as assist. In a two-pump station this is the lag pump; in larger stations the sequence steps through the available lineup without defeating faulted or manually held-out units.</div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">What operators see</span>Duty and assist states are both shown, making it clear whether the station is in normal duty operation or elevated inflow.</div>
+        </div>
+        <div class="pumping-matrix-row">
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Operating state</span><strong>Alternate and equalize runtime</strong></div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Typical trigger</span>After a completed cycle, at a scheduled alternation point, or when accumulated runtime difference exceeds the equalization threshold.</div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Automatic control action</span>The PLC reassigns lead duty to the available pump with lower hours or to the next pump in the alternation order so wear is shared across motors, seals, and starters rather than staying on one preferred unit.</div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">What operators see</span>Lead designation changes on the HMI or SCADA summary without changing the underlying start and stop levels.</div>
+        </div>
+        <div class="pumping-matrix-row">
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Operating state</span><strong>High level override</strong></div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Typical trigger</span>Wet well reaches the high level threshold before the normal sequence has recovered the station.</div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Automatic control action</span>Available standby pumps are brought in regardless of normal alternation preference. The control objective changes from runtime balancing to level recovery, and the high level alarm is transmitted upstream.</div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">What operators see</span>Alarm banner, elevated level indication, and all available pumps commanded as required to protect storage volume.</div>
+        </div>
+        <div class="pumping-matrix-row">
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Operating state</span><strong>Manual vs auto operation</strong></div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Typical trigger</span>Operator selects hand or local manual for checkout, maintenance, or emergency operation.</div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Automatic control action</span>In auto, pump commands follow level logic and interlocks. In manual, operators can start the selected unit locally, but essential protections such as overload or motor fault still remove the pump if the hardware package trips.</div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">What operators see</span>Mode status is explicit so staff can tell whether the pump is under PLC level control or local hand control before responding to a callout.</div>
+        </div>
+        <div class="pumping-matrix-row">
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Operating state</span><strong>Analog level with float backup</strong></div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Typical trigger</span>Analog level signal goes out of range, flatlines, or fails validation against rate-of-change or backup float conditions.</div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Automatic control action</span>The station alarms the failed analog path and falls back to discrete float-based control where provided. Float start, float stop, and high level points keep the station operational until the transmitter issue is corrected.</div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">What operators see</span>Loss of primary level indication, active fallback mode, and the need to restore or recalibrate the analog instrument after the immediate pumping risk is controlled.</div>
+        </div>
+      </div>
+
+      <p class="pumping-subsection-title">Practical Design Notes</p>
+      <div class="pumping-detail-grid">
+        <div class="pumping-detail-card">
+          <h3>Level bands must be deliberate</h3>
+          <p>Start and stop points are set to give useful storage, avoid short cycling, and match the hydraulic behavior of the force main and wet well rather than relying on generic factory defaults.</p>
+        </div>
+        <div class="pumping-detail-card">
+          <h3>Unavailable pumps are skipped cleanly</h3>
+          <p>If a pump is faulted, locked out, or left in hand, the sequence should move to the next available unit instead of repeatedly calling an unavailable machine and masking the real condition.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="prose-block">
+      <h2>Alarms and Failover</h2>
+      <p class="pumping-block-intro">Operators need to know not only that an alarm occurred, but what the station did on its own and whether the site is still controlling safely. Practical failover logic turns a bad instrument, starter fault, or comms outage into a manageable operating condition instead of an ambiguous callout.</p>
+
+      <div class="pumping-matrix" aria-label="Typical pumping station alarms and failover responses">
+        <div class="pumping-matrix-head" aria-hidden="true">
+          <div class="pumping-matrix-cell">Event</div>
+          <div class="pumping-matrix-cell">Typical trigger</div>
+          <div class="pumping-matrix-cell">Automatic response</div>
+          <div class="pumping-matrix-cell">Operator view / action</div>
+        </div>
+        <div class="pumping-matrix-row">
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Event</span><strong>High level alarm</strong></div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Typical trigger</span>Wet well reaches the configured high level setpoint while the normal duty sequence is running.</div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Automatic response</span>The PLC annunciates the alarm locally and to SCADA, and it typically starts any available assist pump regardless of normal alternation preference.</div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Operator view / action</span>Operator sees rising level and active high level condition, then confirms whether the station is recovering or if field response is required.</div>
+        </div>
+        <div class="pumping-matrix-row">
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Event</span><strong>High-high level alarm</strong></div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Typical trigger</span>Level continues past the high level point to a second critical threshold or backup float.</div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Automatic response</span>The station escalates alarm priority, commands every available pump permitted to run, and flags the condition as overflow risk rather than routine assist demand.</div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Operator view / action</span>This is a response-now event. Staff need to verify pump availability, inflow condition, and whether bypass, vacuum truck support, or site attendance is needed.</div>
+        </div>
+        <div class="pumping-matrix-row">
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Event</span><strong>Pump fail to start</strong></div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Typical trigger</span>A start command is issued but run status or current proof is not received within the allowed timer.</div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Automatic response</span>The failed pump is alarmed and removed from the immediate sequence. If demand remains, the PLC calls the next available pump so the wet well still has a chance to recover.</div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Operator view / action</span>Operator sees which pump was called, which confirmation was missing, and whether a standby unit successfully picked up the load.</div>
+        </div>
+        <div class="pumping-matrix-row">
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Event</span><strong>Overload, seal fail, or motor fault</strong></div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Typical trigger</span>Starter overload trip, VFD fault, seal leak input, thermal switch, or packaged motor protection contact changes state.</div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Automatic response</span>The affected pump is marked unavailable, the fault is latched and annunciated, and the control sequence transfers demand to another available pump when process level still requires pumping.</div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Operator view / action</span>Operations can keep the station running if standby capacity exists, but maintenance still needs the specific fault source before resetting and returning the unit to auto.</div>
+        </div>
+        <div class="pumping-matrix-row">
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Event</span><strong>Loss of analog level signal</strong></div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Typical trigger</span>4-20 mA signal underrange, overrange, bad quality bit, frozen value, or mismatch against backup float logic.</div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Automatic response</span>The PLC alarms the transmitter path and shifts to discrete backup floats or a defined degraded control mode so pumping continues with reduced visibility but without blind operation.</div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Operator view / action</span>Operators lose trusted continuous level indication and need to treat the station as running on backup logic until the analog channel is restored.</div>
+        </div>
+        <div class="pumping-matrix-row">
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Event</span><strong>SCADA communication loss</strong></div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Typical trigger</span>Loss of radio, cellular modem, Ethernet path, RTU heartbeat, or protocol timeout to the supervisory system.</div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Automatic response</span>Local PLC control continues on the last valid field signals and local interlocks. The station does not need SCADA online to keep sequencing pumps safely.</div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Operator view / action</span>The remote operator sees a comms alarm rather than false process values, and site staff troubleshoot the telemetry path while confirming the station is still running locally.</div>
+        </div>
+        <div class="pumping-matrix-row">
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Event</span><strong>Power failure</strong></div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Typical trigger</span>Utility source drops out or falls below the ATS or power-monitor threshold.</div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Automatic response</span>The station alarms the power loss. Where standby generation is provided, the ATS transfers to generator after the source is ready, then the PLC or motor controls restart pumps in the defined order to avoid uncontrolled inrush.</div>
+          <div class="pumping-matrix-cell"><span class="pumping-matrix-label">Operator view / action</span>Operators need clear indication of utility loss, generator available or running status, and whether the site returned to normal pumping or remains on backup power.</div>
+        </div>
+      </div>
+
+      <p class="pumping-subsection-title">Why This Matters in the Field</p>
+      <div class="pumping-detail-grid">
+        <div class="pumping-detail-card">
+          <h3>Alarm text should explain the operating consequence</h3>
+          <ul>
+            <li>Which pump was called</li>
+            <li>Whether standby started successfully</li>
+            <li>Whether the station is still in automatic control or running in fallback</li>
+          </ul>
+        </div>
+        <div class="pumping-detail-card">
+          <h3>Failover should preserve service, not hide the fault</h3>
+          <ul>
+            <li>The station should keep pumping when a backup path exists</li>
+            <li>The failed device should remain clearly identified and unavailable until reset</li>
+            <li>SCADA should show both the active alarm and the degraded operating mode</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="prose-block">
       <h2>Hardware / Platforms</h2>
       <p class="pumping-block-intro">Platform selection follows station size, owner standard, and network architecture, but most municipal programs stay within a predictable Rockwell-centered stack.</p>
       <div class="pumping-grid-2">
@@ -468,33 +857,82 @@
     </div>
 
     <div class="prose-block">
-      <h2 id="panel-media-section">Panel Fabrication and Field Integration</h2>
-      <p class="pumping-block-intro">This section remains a placeholder for real proof assets only. When available, it will hold fabrication stills, a panel walkthrough clip, and commissioning visuals from delivered pump station work.</p>
-      <div class="pumping-proof-zone" aria-label="Reserved proof zone for future fabrication and commissioning media">
-        <div class="pumping-proof-head">
-          <div>
-            <p class="pumping-proof-kicker">Reserved proof zone</p>
-            <p>Future media will be placed here once approved assets are ready for publication. No embedded video is included in this version of the page.</p>
+      <h2 id="panel-media-section">Panel and System Walkthrough</h2>
+      <p class="pumping-block-intro">This proof block uses actual project footage and job photography rather than marketing renders. It shows the delivered enclosure, interior assembly, door-mounted operator interface, and an installed control cabinet so owners can evaluate serviceability, operating visibility, and real-world deployment from the hardware itself.</p>
+
+      <div class="pumping-walkthrough-layout">
+        <div class="pumping-walkthrough-media" id="pumping-walkthrough-media">
+          <div class="pumping-video-shell" id="pumping-video-shell">
+            <video
+              id="pumping-walkthrough-video"
+              poster="assets/video/pumping-panel-walkthrough-poster.jpg"
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              aria-label="Pump station control panel walkthrough video"
+            >
+              <source src="assets/video/pumping-panel-walkthrough.mp4" type="video/mp4">
+            </video>
+            <img class="pumping-video-poster" id="pumping-video-poster" src="assets/video/pumping-panel-walkthrough-poster.jpg" alt="" aria-hidden="true">
           </div>
-          <p class="pumping-proof-note">Preferred assets: compressed video, fabrication photography, site commissioning stills</p>
+          <button type="button" class="pumping-video-toggle" id="pumping-video-toggle">Play walkthrough</button>
+          <p class="pumping-video-note">Desktop loads this walkthrough muted and looped for quick proof review. Mobile starts paused so operators and engineers can choose when to play the clip.</p>
         </div>
-        <div class="pumping-proof-grid">
-          <div class="pumping-proof-card">
-            <h3>Panel Walkthrough Video</h3>
-            <p>Reserved for a short enclosure walkthrough showing labeling, wireway discipline, PLC and drive hardware, and door-mounted operator devices.</p>
-            <span class="pumping-proof-label">Video slot reserved</span>
+
+        <div class="pumping-walkthrough-copy">
+          <div class="pumping-walkthrough-panel">
+            <h3>What the walkthrough shows</h3>
+            <p>A real stainless pump station control package with the door open, showing the operator face, labeled devices, terminal field, power section, and the physical hardware layout maintenance staff actually inherit.</p>
           </div>
-          <div class="pumping-proof-card">
-            <h3>Fabrication Photography</h3>
-            <p>Reserved for shop images covering backpan assembly, terminal scheduling, and finished enclosure presentation before shipment.</p>
-            <span class="pumping-proof-label">Photo set reserved</span>
+          <div class="pumping-walkthrough-panel">
+            <h3>Why it matters</h3>
+            <p>Operators get local status, alarm acknowledgment points, and direct interface access. Maintenance gets clear component separation, identifiable replacement hardware, and realistic service clearances instead of a generic spec-sheet promise.</p>
           </div>
-          <div class="pumping-proof-card">
-            <h3>Field Commissioning Visuals</h3>
-            <p>Reserved for site integration stills showing installation context, wet well interfaces, MCC tie-in, and startup activity.</p>
-            <span class="pumping-proof-label">Site proof reserved</span>
+          <div class="pumping-walkthrough-panel">
+            <h3>What this proves</h3>
+            <p>This is built equipment, not concept art: real enclosure fabrication, real controls hardware, real operator devices, and real deployment context that shows how the system will be serviced after startup.</p>
           </div>
         </div>
+      </div>
+
+      <p class="pumping-subsection-title">Proof Images</p>
+      <div class="pumping-proof-gallery">
+        <figure class="pumping-proof-figure">
+          <img src="CCI%20Panels/Home%203.jpg?v=20260418exif" alt="Stainless multi-door pump station control panel exterior">
+          <figcaption>
+            <strong>Panel exterior</strong>
+            <p>Finished stainless enclosure with multi-door access and field-ready construction. This matters because enclosure form, cooling arrangement, and service access affect long-term reliability before the cabinet ever reaches site.</p>
+          </figcaption>
+        </figure>
+        <figure class="pumping-proof-figure">
+          <img src="CCI%20Panels/Home%204.jpg" alt="Pump station control panel with doors open showing interior power and control sections">
+          <figcaption>
+            <strong>Panel interior</strong>
+            <p>Open-panel view showing the actual power, control, and operator sections together. This matters because maintainability depends on real hardware spacing, wiring discipline, and a layout technicians can troubleshoot under callout conditions.</p>
+          </figcaption>
+        </figure>
+        <figure class="pumping-proof-figure">
+          <img src="CCI%20Panels/Home%205.jpg?v=20260418exif" alt="Close-up of power and control components inside a pump station panel">
+          <figcaption>
+            <strong>Close-up components</strong>
+            <p>Drive and protection hardware mounted in the power section. This matters because replacement points, isolation devices, and packaging quality determine whether faults can be diagnosed and returned to service quickly.</p>
+          </figcaption>
+        </figure>
+        <figure class="pumping-proof-figure">
+          <img src="CCI%20Panels/Home%202.jpg?v=20260418exif" alt="Door-mounted HMI and operator controls on a pump station panel">
+          <figcaption>
+            <strong>Operator interface</strong>
+            <p>Door-mounted HMI, indicators, selectors, and reset devices used for local operation. This matters because startup, alarm response, and manual fallback all depend on clear local visibility when SCADA is not enough on its own.</p>
+          </figcaption>
+        </figure>
+        <figure class="pumping-proof-figure">
+          <img src="assets/photos/wtp-rockland-actiflo-panel.jpg" alt="Installed control cabinet open in a real operating environment">
+          <figcaption>
+            <strong>Installed system context</strong>
+            <p>Real control hardware opened in service rather than staged as a marketing render. This matters because owners need proof that the delivered control approach survives actual operating environments, wiring density, and field access constraints.</p>
+          </figcaption>
+        </figure>
       </div>
     </div>
 
@@ -579,5 +1017,130 @@
   <script type="module" src="cci-automation.js"></script>
   <script src="cci-interior-motion.js?v=1" defer></script>
   <script src="site.js" defer></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var media = document.getElementById("pumping-walkthrough-media");
+      var shell = document.getElementById("pumping-video-shell");
+      var video = document.getElementById("pumping-walkthrough-video");
+      var toggle = document.getElementById("pumping-video-toggle");
+      if (!media || !shell || !video || !toggle) return;
+      var mobileQuery = window.matchMedia("(max-width: 767px)");
+      var mobileLockedPaused = true;
+      var desktopAutoplayConfirmed = false;
+
+      function updateToggle() {
+        if (isMobileViewport()) {
+          shell.classList.toggle("is-playing", !mobileLockedPaused);
+          media.classList.remove("is-playing");
+          toggle.textContent = mobileLockedPaused ? "Play walkthrough" : "Pause walkthrough";
+          toggle.setAttribute("aria-label", mobileLockedPaused ? "Play walkthrough video" : "Pause walkthrough video");
+          return;
+        }
+
+        var paused = !desktopAutoplayConfirmed || video.paused;
+        shell.classList.toggle("is-playing", !paused);
+        media.classList.toggle("is-playing", !paused);
+        toggle.textContent = paused ? "Play walkthrough" : "Pause walkthrough";
+        toggle.setAttribute("aria-label", paused ? "Play walkthrough video" : "Pause walkthrough video");
+      }
+
+      function isMobileViewport() {
+        return mobileQuery.matches || window.innerWidth <= 767 || document.documentElement.clientWidth <= 767;
+      }
+
+      function applyPreferredState() {
+        if (isMobileViewport()) {
+          mobileLockedPaused = true;
+          desktopAutoplayConfirmed = false;
+          video.pause();
+          try {
+            video.currentTime = 0;
+          } catch (error) {
+            // Ignore browsers that block currentTime adjustment before metadata is ready.
+          }
+          shell.classList.remove("is-playing");
+          media.classList.remove("is-playing");
+          updateToggle();
+          return;
+        }
+
+        mobileLockedPaused = false;
+        desktopAutoplayConfirmed = false;
+        var playAttempt = video.play();
+        if (playAttempt && typeof playAttempt.then === "function") {
+          playAttempt.then(function () {
+            desktopAutoplayConfirmed = true;
+            updateToggle();
+          }).catch(function () {
+            video.pause();
+            updateToggle();
+          });
+        } else {
+          updateToggle();
+        }
+      }
+
+      toggle.addEventListener("click", function () {
+        if (isMobileViewport()) {
+          if (mobileLockedPaused) {
+            mobileLockedPaused = false;
+            var mobilePlayAttempt = video.play();
+            if (mobilePlayAttempt && typeof mobilePlayAttempt.then === "function") {
+              mobilePlayAttempt.then(updateToggle).catch(updateToggle);
+            } else {
+              updateToggle();
+            }
+            return;
+          }
+
+          mobileLockedPaused = false;
+          video.pause();
+          mobileLockedPaused = true;
+          updateToggle();
+          return;
+        }
+
+        if (video.paused) {
+          var playAttempt = video.play();
+          if (playAttempt && typeof playAttempt.then === "function") {
+            playAttempt.then(function () {
+              desktopAutoplayConfirmed = true;
+              updateToggle();
+            }).catch(updateToggle);
+          } else {
+            desktopAutoplayConfirmed = true;
+            updateToggle();
+          }
+          return;
+        }
+
+        desktopAutoplayConfirmed = false;
+        video.pause();
+        updateToggle();
+      });
+
+      video.addEventListener("play", updateToggle);
+      video.addEventListener("pause", updateToggle);
+      video.addEventListener("loadeddata", applyPreferredState);
+      if (typeof mobileQuery.addEventListener === "function") {
+        mobileQuery.addEventListener("change", applyPreferredState);
+      } else if (typeof mobileQuery.addListener === "function") {
+        mobileQuery.addListener(applyPreferredState);
+      }
+      window.addEventListener("resize", applyPreferredState);
+
+      applyPreferredState();
+      window.setTimeout(applyPreferredState, 250);
+      var settleChecks = 0;
+      var settleTimer = window.setInterval(function () {
+        applyPreferredState();
+        settleChecks += 1;
+        if (settleChecks >= 10) {
+          window.clearInterval(settleTimer);
+        }
+      }, 200);
+      updateToggle();
+    });
+  </script>
 </body>
 </html>
