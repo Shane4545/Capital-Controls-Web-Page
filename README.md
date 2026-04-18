@@ -3,7 +3,8 @@
 Static site for **Capital Controls & Instrumentation Inc.**
 
 - **Repository:** [github.com/Shane4545/Capital-Controls-Web-Page](https://github.com/Shane4545/Capital-Controls-Web-Page)
-- **Live site:** `https://shane4545.github.io/Capital-Controls-Web-Page/` — if GitHub Pages is off, either set **Settings → Pages → Deploy from branch → `main` → `/ (root)`**, or run the **Configure GitHub Pages source** workflow once (**Actions → that workflow → Run workflow**).
+- **Live site:** `https://shane4545.github.io/Capital-Controls-Web-Page/`
+- **First-time GitHub Pages (required):** In the repo, open **Settings → [Pages](https://github.com/Shane4545/Capital-Controls-Web-Page/settings/pages)**. Under *Build and deployment*, set **Source** to **Deploy from a branch**, then **Branch** = `main`, **Folder** = `/ (root)`, and **Save**. GitHub’s default `GITHUB_TOKEN` in Actions is **not allowed** to turn Pages on or change that source via the API (you get 403 *Resource not accessible by integration*), so this one-time click in the UI is the reliable path.
 
 ## Local preview
 
