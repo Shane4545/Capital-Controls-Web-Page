@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Municipal and industrial pumping station control systems—wet well level control, lead/lag pump sequencing, SCADA integration, PLC and HMI delivery, field commissioning by Capital Controls.">
+  <meta name="theme-color" content="#002d62">
+  <link rel="canonical" href="https://www.capitalcontrols.ca/pumping-stations.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.capitalcontrols.ca/pumping-stations.html">
+  <meta property="og:title" content="Pumping Station Control Systems · Capital Controls">
+  <meta property="og:description" content="Design, fabrication, PLC/HMI programming, and commissioning for wastewater, storm, and lift stations—integrated with plant SCADA and built for field reliability.">
+  <meta property="og:image" content="https://www.capitalcontrols.ca/assets/photos/plc-scada-site.jpg">
+  <meta property="og:locale" content="en_CA">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"Pumping Station Control Systems","url":"https://www.capitalcontrols.ca/pumping-stations.html","description":"Industrial and municipal pump station controls—PLC, HMI, SCADA integration, commissioning.","isPartOf":{"@type":"WebSite","name":"Capital Controls & Instrumentation Inc.","url":"https://www.capitalcontrols.ca/"}}
+  </script>
+  <title>Pumping Station Control Systems · Capital Controls</title>
+  <link rel="icon" href="assets/cci-icon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="cci-cinematic-system.css?v=4">
+  <style>
+    /* Page-local: reserved area for future panel/video media (no embed yet) */
+    .pumping-media-placeholder {
+      margin-top: 1rem;
+      padding: clamp(2.5rem, 6vw, 4rem) 1.25rem;
+      text-align: center;
+      background: var(--color-surface-muted);
+      border: 1px dashed var(--color-border-strong);
+      border-radius: 2px;
+      color: var(--color-text-secondary);
+      font-size: 0.9375rem;
+      line-height: 1.55;
+    }
+    .pumping-media-placeholder strong {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--color-text);
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body data-page="pumping-stations" class="cci-cinematic">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="topbar"><div class="topbar-inner section-inner"><span class="topbar-text">Pump stations · Level control · PLC / HMI · SCADA · Field commissioning</span></div></div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo-link" href="index.html"><img class="site-logo" src="assets/logo-mark.jpg" alt="Capital Controls" width="240" height="64"></a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">Menu</button>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="markets.html">Industries</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="platforms.html">Platforms</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="process.html">Process</a></li>
+          <li><a href="contact.html#careers">Careers</a></li>
+          <li><a class="nav-cta" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <header class="page-hero" aria-labelledby="pumping-hero-heading">
+    <div class="page-hero-inner">
+      <ol class="breadcrumb"><li><a href="index.html">Home</a></li><li aria-current="page">Pumping stations</li></ol>
+      <p class="eyebrow">Lift &amp; pump station controls</p>
+      <h1 id="pumping-hero-heading">Pumping Station Control Systems</h1>
+      <p class="page-hero-lead">Design, fabrication, programming, and commissioning of municipal and industrial pump stations.</p>
+      <p>Wastewater and stormwater stations are controlled on <strong>wet well level</strong>—ultrasonic, pressure, or redundant level paths—rather than operator guesswork. Logic interfaces to <strong>plant or regional SCADA</strong> for status, alarms, and remote visibility, while hardware and software are specified for <strong>unconditioned field environments</strong>: moisture, temperature swing, and long service life.</p>
+    </div>
+  </header>
+
+  <main id="main" class="prose-page">
+    <div class="prose-block">
+      <h2>System Overview</h2>
+      <p>A typical pumping station delivered under our scope includes measurement at the wet well, deterministic pump control, annunciation for fault and high-level conditions, and a communication path suited to your telemetry or SCADA architecture.</p>
+      <ul class="detail-list detail-list--compact">
+        <li><strong>Wet well level</strong> — ultrasonic (commonly mounted in a stilling well or under a hatch), hydrostatic pressure, or both for check/backup; scaling, filtering, and fail-to-safe behavior defined in PLC.</li>
+        <li><strong>Pump control</strong> — lead/lag (or alternate) sequencing, start/stop bands, minimum runtime, and interlocks derived from level, pressure, or flow where instrumented.</li>
+        <li><strong>High level alarms</strong> — discrete and/or software alarms for high wet well, pump fail, seal/thermal faults (as wired), with visible/audible indication at the local HMI or panel.</li>
+        <li><strong>Emergency or override modes</strong> — hand-off-auto at the motor starter or VFD, permissive logic for maintenance, and defined behavior under instrument loss or single-pump outage.</li>
+        <li><strong>Remote telemetry / SCADA</strong> — Ethernet/IP or serial paths to RTU/cellular gateways or plant historians; alarm forwarding and remote setpoint/view where the specification allows.</li>
+      </ul>
+    </div>
+
+    <div class="prose-block">
+      <h2>What We Deliver</h2>
+      <ul class="detail-list detail-list--compact">
+        <li><strong>Control panel design and fabrication</strong> — CSA-rated construction, documented FAT, nameplate and drawing package aligned to site electrical codes.</li>
+        <li><strong>PLC programming</strong> — CompactLogix, MicroLogix, Micro800 family, or ControlLogix where the station is part of a larger campus standard; ladder logic structured for maintenance review.</li>
+        <li><strong>HMI development</strong> — FactoryTalk View (ME local or SE client context per site); faceplates for pumps, levels, alarms, and mode selection.</li>
+        <li><strong>Instrumentation integration</strong> — level, pressure, flow, and pump auxiliaries wired through appropriate I/O and grounded per instrument OEM and site grounding practice.</li>
+        <li><strong>Field commissioning and testing</strong> — loop checks, pump rotation and proof-of-performance under level simulation or staged wet well conditions, SCADA checkout with IT/operations.</li>
+        <li><strong>Documentation</strong> — I/O lists, loop folders as required, electrical schematics, panel BOM, redlines, and PLC/HMI exports for owner turnover.</li>
+      </ul>
+    </div>
+
+    <div class="prose-block">
+      <h2>Control Strategies</h2>
+      <p>Station logic is site-specific, but recurring patterns reflect how operators actually run lift and storm stations—minimize cycling, equalize wear, and fail predictably.</p>
+      <ul class="detail-list detail-list--compact">
+        <li><strong>Lead/lag/alternate sequencing</strong> — start order and level bands defined so both pumps share duty; alternate on hours, starts, or after each fill/drain cycle as specified.</li>
+        <li><strong>Runtime equalization</strong> — optional balancing of accumulated run hours between pumps to spread mechanical wear across the motor and impeller assembly.</li>
+        <li><strong>High level override</strong> — if level exceeds a threshold, lag may start regardless of alternation; may also drive a “storm” or “excess flow” alarm to SCADA.</li>
+        <li><strong>Failover conditions</strong> — on overload, seal fault, or no-flow (if instrumented), drop the faulted pump, annunciate, and bring the standby if level still demands.</li>
+        <li><strong>Manual / auto modes</strong> — local permissive for O&amp;M, remote start/stop from SCADA only when interlocks allow, hardwired E-stop and starter hand where the electrical design requires.</li>
+      </ul>
+    </div>
+
+    <div class="prose-block">
+      <h2>Hardware / Platforms</h2>
+      <ul class="detail-list detail-list--compact">
+        <li><strong>Allen-Bradley CompactLogix &amp; ControlLogix</strong> — Ethernet/IP I/O, scalable racks for multi-pump stations and networked sites.</li>
+        <li><strong>Micro800 series</strong> — compact installations where I/O count and networking match a smaller footprint.</li>
+        <li><strong>FactoryTalk View</strong> — operator screens for levels, pumps, faults, and trends at the panel or kiosk.</li>
+        <li><strong>VFD integration</strong> — speed control, torque or feedback points, coordination with PLC permissives and bypass logic.</li>
+        <li><strong>Remote I/O &amp; telemetry</strong> — distributed I/O over Ethernet/IP; cellular or fiber paths to SCADA per municipal IT standards.</li>
+      </ul>
+    </div>
+
+    <div class="prose-block">
+      <h2 id="panel-media-section">Panel Fabrication and Field Integration</h2>
+      <p>This section is reserved for <strong>photography or video</strong> of CSA-built panels, wet well interfaces, and field commissioning—content will be embedded here when assets are finalized. Video files will be referenced explicitly in markup at that time (no embedded media yet).</p>
+      <div class="pumping-media-placeholder" role="img" aria-label="Placeholder for future panel fabrication and field integration photos or video">
+        <strong>Media placeholder</strong>
+        Future embed: shop fabrication, enclosure installation, or commissioning clips. Still images or compressed video only—no autoplay audio.
+      </div>
+    </div>
+
+    <div class="prose-block">
+      <h2>Typical Applications</h2>
+      <ul class="detail-list detail-list--compact">
+        <li>Municipal wastewater pump stations</li>
+        <li>Stormwater pumping stations</li>
+        <li>Sanitary lift stations</li>
+        <li>Retrofit upgrades (PLC, panel, HMI, telemetry replacement)</li>
+      </ul>
+    </div>
+
+    <div class="prose-block">
+      <h2>Discuss Your Project</h2>
+      <p>For scope, platform standards, and commissioning windows, contact engineering with station type, pump count, and SCADA expectations.</p>
+      <p><a class="btn-primary" href="contact.html">Contact Capital Controls</a></p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner section-inner">
+      <div class="footer-brand">
+        <a class="footer-logo-link" href="index.html"><img src="assets/logo.png" alt="" width="320" height="130"></a>
+        <p class="footer-tagline">Capital Controls &amp; Instrumentation Inc. · Complete control system delivery · CSA-certified shop · ISO 9001</p>
+      </div>
+      <nav class="footer-col" aria-label="Footer">
+        <span class="footer-heading">Site</span>
+        <ul class="footer-links">
+          <li><a href="markets.html">Industries</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="platforms.html">Platforms</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="process.html">Process</a></li>
+          <li><a href="contact.html#careers">Careers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="footer-col"><span class="footer-heading">Legal</span><ul class="footer-links"><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li></ul></div>
+      <p class="footer-copy">© <span class="js-year"></span> Capital Controls &amp; Instrumentation Inc. All rights reserved.</p>
+    </div>
+  </footer>
+  <script type="module" src="cci-automation.js"></script>
+  <script src="cci-interior-motion.js?v=1" defer></script>
+  <script src="site.js" defer></script>
+</body>
+</html>
