@@ -6,8 +6,9 @@ on:
   workflow_dispatch:
 
 permissions:
-  pages: write
   contents: read
+  pages: write
+  id-token: write
 
 jobs:
   set-main-root:
