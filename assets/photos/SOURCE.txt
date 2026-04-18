@@ -20,7 +20,9 @@ Synced from H:\Jobs (see scripts/sync_job_photos.py)
 These JPEGs are resized from your job folders when you run the sync script:
 
   wtp-rockland-actiflo-panel.jpg   — OCWA East Rockland WTP (Actiflo panel photo)
-  wtp-rockland-main-plc.jpg        — OCWA East Rockland WTP (main PLC)
+  wtp-rockland-main-plc.jpg        — OCWA East Rockland WTP (Main Plant PLC 1 — long edge 3200)
+  flagship-rockland-plc-rack.jpg   — Same source; WebGL rack texture (long edge 4096)
+  flagship-rockland-filter-process.jpg — Rockland Pictures “Filter panel 1”; WebGL process panel (4096)
   wtp-ingleside-field.jpg          — Ingleside WWTP Phase 1
   panel-csa-shop-primary.jpg       — Bishop Water PLC panel (CSA shop)
   panel-csa-shop-secondary.jpg     — Bishop Water PLC panel (second shop view)
@@ -30,7 +32,7 @@ JOBS[] in sync_job_photos.py, run:  python scripts/sync_job_photos.py
 
 SCADA / HMI PNGs (exports from delivered systems)
 -------------------------------------------------
-Examples: scada-killaloe-overview.png, scada-pembroke-*.png, hmi-chalk-river-*.png
+Examples: flagship-scada-glen-cairn-dws.png (synced from H:\\Jobs CCI1603), scada-killaloe-overview.png, scada-pembroke-*.png
 Replace these when you have newer, client-approved screen captures that represent
 your current graphics standards.
 

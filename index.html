@@ -12,13 +12,13 @@
   <meta property="og:url" content="https://www.capitalcontrols.ca/">
   <meta property="og:title" content="Capital Controls &amp; Instrumentation · Complete control systems for critical infrastructure">
   <meta property="og:description" content="Design, build, and commission integrated operational systems for water, wastewater, and municipal infrastructure—accountable from fabrication through turnover.">
-  <meta property="og:image" content="https://www.capitalcontrols.ca/assets/photos/wtp-rockland-actiflo-panel.jpg">
-  <meta property="og:image:alt" content="Integrated municipal control enclosure — PLC, power, and field I/O.">
+  <meta property="og:image" content="https://www.capitalcontrols.ca/assets/photos/plc-scada-site.jpg">
+  <meta property="og:image:alt" content="Municipal control room — PLC hardware, operator workstations, and SCADA displays in service.">
   <meta property="og:locale" content="en_CA">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Capital Controls · Infrastructure control delivery">
   <meta name="twitter:description" content="Complete control systems for treatment plants and pumping stations. Ottawa · Eastern Ontario · Western Quebec · Projects across Canada.">
-  <meta name="twitter:image" content="https://www.capitalcontrols.ca/assets/photos/wtp-rockland-actiflo-panel.jpg">
+  <meta name="twitter:image" content="https://www.capitalcontrols.ca/assets/photos/flagship-rockland-plc-rack.jpg">
   <title>Capital Controls &amp; Instrumentation · Critical control systems</title>
   <link rel="manifest" href="site.webmanifest">
   <link rel="icon" href="assets/cci-icon.png" type="image/png">
@@ -33,11 +33,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="cinematic-home.css?v=28">
+  <link rel="stylesheet" href="cinematic-home.css?v=36">
   <link rel="stylesheet" href="cci-cinematic-system.css?v=4">
-  <script type="importmap">
-  {"imports":{"three":"./vendor/three/build/three.module.js"}}
-  </script>
 </head>
 <body data-page="home" class="page-home page-home--cinematic cci-cinematic" data-cinema-act="1">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -70,71 +67,66 @@
   </header>
 
   <main id="main" class="cinema-main cinema-main--cinematic">
-    <section class="home-flagship-scene" aria-labelledby="home-flagship-heading" data-cinema-act="1">
-      <div class="home-flagship-scene__stage">
-        <div
-          class="home-flagship-scene__viewport"
-          id="plc-engine-host"
+    <section class="home-hero-dominant" aria-labelledby="home-dominant-heading" data-cinema-act="1">
+      <div class="home-hero-dominant__media">
+        <img
+          class="home-hero-dominant__img"
+          src="CCI%20Panels/Home%201.jpg"
+          width="1600"
+          height="1200"
+          alt="CCI control panel fabrication—shop assembly and wiring discipline."
+          fetchpriority="high"
+          decoding="async"
         >
-          <canvas id="plc-engine-canvas" class="home-flagship-scene__canvas"></canvas>
-          <div class="home-flagship-scene__fallback" id="plc-engine-fallback" hidden>
-            <img
-              src="assets/plc-flagship-fallback.svg"
-              width="1400"
-              height="780"
-              decoding="async"
-              alt="Illustration of integrated control rack, ladder logic, and wet well — live visualization unavailable in this browser"
-            />
-          </div>
-        </div>
+        <div class="home-hero-dominant__scrim" aria-hidden="true"></div>
       </div>
-      <div class="home-flagship-scene__overlay">
-        <div class="home-flagship-scene__overlay-inner">
-          <p class="home-flagship-scene__eyebrow">RACK · LADDER · SCADA</p>
-          <h1 class="home-flagship-scene__headline" id="home-flagship-heading">Systems that must work.</h1>
-          <p class="home-flagship-scene__support">
-            Processor rack, Studio-style pump interlock logic, and operator SCADA—what we document, test, and hand over on real jobs.
-          </p>
-          <div class="home-flagship-scene__cta">
-            <a class="home-flagship-scene__btn home-flagship-scene__btn--primary" href="services.html">View Capabilities</a>
-            <a class="home-flagship-scene__btn home-flagship-scene__btn--secondary" href="process.html">See Our Process</a>
-          </div>
+      <div class="home-hero-dominant__content section-inner">
+        <p class="home-hero-dominant__eyebrow">Capital Controls &amp; Instrumentation</p>
+        <h1 id="home-dominant-heading" class="home-hero-dominant__headline">Systems that must work.</h1>
+        <p class="home-hero-dominant__lead">PLC, SCADA, CSA panels, and field integration—engineered, built, and commissioned under one accountable scope.</p>
+        <div class="home-hero-dominant__cta">
+          <a class="home-hero-dominant__btn home-hero-dominant__btn--primary" href="services.html">Capabilities</a>
+          <a class="home-hero-dominant__btn home-hero-dominant__btn--ghost" href="contact.html">Contact</a>
         </div>
       </div>
     </section>
 
-    <section id="home-operational-pause" class="home-pause-static" aria-labelledby="home-pause-heading" data-cinema-act="2">
-      <h2 class="visually-hidden" id="home-pause-heading">Operational consequence</h2>
-      <p class="home-pause-static__primary">When it stops, everything stops.</p>
-      <p class="home-pause-static__sub">Water. Wastewater. Process. Power.</p>
+    <section class="home-system-line" aria-label="Operating context">
+      <div class="section-inner home-system-line__inner">
+        <p class="home-system-line__primary">When it stops, everything stops.</p>
+        <p class="home-system-line__secondary">Field instruments through control, visualization, and turnover—same drawings, tags, and accountability from design to SAT.</p>
+      </div>
     </section>
 
-    <section class="cci-system-stack" aria-labelledby="cci-system-stack-heading" data-cinema-act="2">
-      <h2 class="visually-hidden" id="cci-system-stack-heading">Operational system stack</h2>
-      <div class="cci-system-stack__inner">
-        <p class="cci-system-stack__intro" role="presentation">Operational stack</p>
-        <ol class="cci-system-stack__layers">
-          <li class="cci-system-stack__layer">
-            <span class="cci-system-stack__tier">Field</span>
-            <p class="cci-system-stack__body">Instrumentation, devices, panels, wiring, and site realities.</p>
-          </li>
-          <li class="cci-system-stack__layer">
-            <span class="cci-system-stack__tier">Control</span>
-            <p class="cci-system-stack__body">PLC programming, control logic, sequencing, interlocks, alarm handling.</p>
-          </li>
-          <li class="cci-system-stack__layer">
-            <span class="cci-system-stack__tier">Visualization</span>
-            <p class="cci-system-stack__body">SCADA, HMI, operator visibility, alarming, trends, diagnostics.</p>
-          </li>
-          <li class="cci-system-stack__layer">
-            <span class="cci-system-stack__tier">Reporting</span>
-            <p class="cci-system-stack__body">Data, history, records, visibility, operational insight.</p>
-          </li>
-          <li class="cci-system-stack__layer">
-            <span class="cci-system-stack__tier">Support</span>
-            <p class="cci-system-stack__body">Troubleshooting, upgrades, documentation, commissioning, long-term reliability.</p>
-          </li>
-        </ol>
+    <section class="cinema-section cinema-section--elevated" data-cinema-reveal="clip" aria-labelledby="cinema-engine-heading" data-cinema-act="2">
+      <div class="cinema-section__inner">
+        <p class="cinema-section__kicker">Field proof</p>
+        <h2 class="cinema-section__title" id="cinema-engine-heading">Panels, integration, and site work</h2>
+        <p class="cinema-section__deck">Shop builds, commissioned control rooms, process enclosure work, operator SCADA, and field integration from delivered programs.</p>
+        <div class="cinema-engine-bento">
+          <figure class="cinema-engine-card cinema-engine-card--hero">
+            <img src="CCI%20Panels/Home%202.jpg" alt="CCI shop—control panel layout, power distribution, and enclosure wiring during build." width="1600" height="1200" loading="eager" decoding="async">
+            <figcaption><span class="cinema-engine-card__cap">Fabrication</span> Shop-built panels—layout, terminations, and checkout before FAT and shipment.</figcaption>
+          </figure>
+          <div class="cinema-engine-bento__cluster">
+            <figure class="cinema-engine-card">
+              <img src="CCI%20Panels/Home%203.jpg" alt="CCI panel build—internal wiring and component mounting detail." width="1600" height="1200" loading="eager" decoding="async">
+              <figcaption><span class="cinema-engine-card__cap">Build</span> Consistent wireway and labeling discipline through assembly.</figcaption>
+            </figure>
+            <figure class="cinema-engine-card">
+              <img src="CCI%20Panels/Home%204.jpg" alt="CCI enclosure assembly—marshalling and control hardware in progress." width="1600" height="1200" loading="lazy" decoding="async">
+              <figcaption><span class="cinema-engine-card__cap">Integration</span> Controllers, I/O, and power sections integrated to approved drawings.</figcaption>
+            </figure>
+            <figure class="cinema-engine-card">
+              <img src="CCI%20Panels/Home%205.jpg" alt="CCI control panel—final assembly and verification in the shop." width="1600" height="1200" loading="lazy" decoding="async">
+              <figcaption><span class="cinema-engine-card__cap">Quality</span> Visual and powered checkout before owner witness and turnover.</figcaption>
+            </figure>
+            <figure class="cinema-engine-card">
+              <img src="CCI%20Panels/Panel%20Pic%201.jpg" alt="CCI panel detail—shop fabrication close-up." width="1600" height="1200" loading="lazy" decoding="async">
+              <figcaption><span class="cinema-engine-card__cap">Detail</span> Enclosure craftsmanship and component layout typical of municipal programs.</figcaption>
+            </figure>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -226,55 +218,15 @@
       <div class="cinema-section__inner">
         <p class="cinema-section__kicker">Scope</p>
         <h2 class="cinema-section__title" id="cinema-manifest-heading">One scope. One voice. One system.</h2>
-        <p class="cinema-section__deck">Components do not run plants—integrated systems do. We stay responsible from approved drawings through FAT, commissioning, and turnover, so operations inherit a coherent control story, not a pile of vendor handoffs.</p>
+        <p class="cinema-section__deck">Integrated systems—not a pile of vendor handoffs. Same tags and documentation from approved drawings through FAT, commissioning, and turnover.</p>
         <div class="cinema-manifest__grid">
           <div class="cinema-manifest__block">
             <h3>Integrated delivery</h3>
-            <p>Enclosures, PLC, SCADA, instruments, and networks engineered together against the same P&amp;IDs and standards packages your consultants and owners expect.</p>
-            <p>Drawings, logic, graphics, and loop checks reference the same tags and narratives—auditable, maintainable, defensible.</p>
+            <p>Enclosures, PLC, SCADA, instruments, and networks engineered to one P&amp;ID and standards story—drawings, logic, and graphics stay aligned.</p>
           </div>
           <div class="cinema-manifest__block">
             <h3>Operational accountability</h3>
-            <p>FAT proves the system before shipment. SAT proves it in process. Training and as-builts close the loop with the people who run the facility.</p>
-            <p>We do not disappear at mechanical completion—we work through sign-off.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="cinema-section cinema-section--elevated" data-cinema-reveal="clip" aria-labelledby="cinema-engine-heading" data-cinema-act="2">
-      <div class="cinema-section__inner">
-        <p class="cinema-section__kicker">Documentation &amp; field work</p>
-        <h2 class="cinema-section__title" id="cinema-engine-heading">Drawings, panels, and site integration</h2>
-        <p class="cinema-section__deck">Representative electrical excerpts, enclosure wiring, and field-installed controllers from delivered programs. Ladder logic and HMI/SCADA screen captures are added here when client and vendor approvals allow public use.</p>
-        <div class="cinema-engine-bento">
-          <figure class="cinema-engine-card cinema-engine-card--hero">
-            <img src="assets/photos/wtp-ingleside-field.jpg?v=20260330" alt="Capital Controls packaged control enclosure on pallet—shipment and site readiness for Ingleside WWTP Phase 1." width="1600" height="1200" loading="lazy" decoding="async">
-            <figcaption><span class="cinema-engine-card__cap">Programs</span> CCI-labeled shipment—shop documentation and packaging aligned to municipal turnover.</figcaption>
-          </figure>
-          <div class="cinema-engine-bento__cluster">
-            <figure class="cinema-engine-card">
-              <img src="assets/photos/wtp-rockland-actiflo-panel.jpg?v=20260330" alt="Delivered CSA-listed control enclosure—PLC rack, power, and marshalling in a municipal treatment facility." width="960" height="720" loading="lazy" decoding="async">
-              <figcaption><span class="cinema-engine-card__cap">Fabrication</span> Shop-built enclosure standards—verified under power in treatment service.</figcaption>
-            </figure>
-            <figure class="cinema-engine-card">
-              <img src="assets/photos/wtp-rockland-main-plc.jpg?v=20260330" alt="Main PLC enclosure at a municipal water treatment facility." width="960" height="640" loading="lazy" decoding="async">
-              <figcaption><span class="cinema-engine-card__cap">Field</span> PLC deployment—treatment facility integration.</figcaption>
-            </figure>
-            <figure class="cinema-engine-card cinema-engine-card--void">
-              <div class="cinema-engine-card__void" aria-hidden="true">
-                <span class="cinema-engine-card__void-grid"></span>
-                <span class="cinema-engine-card__void-label">Ladder / logic</span>
-              </div>
-              <figcaption><span class="cinema-engine-card__cap">Reserved</span> Studio 5000 / RSLogix excerpt when approved for public use.</figcaption>
-            </figure>
-            <figure class="cinema-engine-card cinema-engine-card--void">
-              <div class="cinema-engine-card__void" aria-hidden="true">
-                <span class="cinema-engine-card__void-raster"></span>
-                <span class="cinema-engine-card__void-label">HMI / SCADA</span>
-              </div>
-              <figcaption><span class="cinema-engine-card__cap">Reserved</span> Operator display capture—InTouch, FactoryTalk, or iFIX.</figcaption>
-            </figure>
+            <p>FAT before shipment, SAT in process, training and as-builts with operations—we stay through sign-off.</p>
           </div>
         </div>
       </div>
@@ -382,7 +334,7 @@
       <div class="cinema-section__inner">
         <p class="cinema-section__kicker">Selected projects</p>
         <h2 class="cinema-section__title" id="cinema-proj-heading">Recent program types</h2>
-        <p class="cinema-section__deck">Examples below are from work performed under Capital Controls scope—SCADA displays, panel fabrication, and field integration. Thumbnails are representative; replace with client-approved shots of <strong>current-generation PLCs</strong> and <strong>MultiSmart/Xylem</strong> integration when you have them. See Experience for a broader record.</p>
+        <p class="cinema-section__deck">SCADA, panels, and field work under Capital Controls scope. See Experience for the full delivery record.</p>
         <div class="cinema-projects">
           <article class="cinema-project cinema-project--wide">
             <div class="cinema-project__media">
@@ -396,17 +348,17 @@
           </article>
           <article class="cinema-project">
             <div class="cinema-project__media">
-              <img src="assets/photos/wtp-rockland-actiflo-panel.jpg?v=20260330" alt="Delivered control enclosure—PLC rack, power distribution, and field I/O in municipal wastewater service." width="960" height="720" loading="lazy" decoding="async">
+              <img src="assets/photos/field-chalk-river-upgrade.jpg?v=20260430" alt="Municipal facility upgrade—field control integration from a delivered wastewater program." width="1600" height="1200" loading="lazy" decoding="async">
             </div>
             <div class="cinema-project__body">
               <span class="cinema-project__tag">Wastewater</span>
               <h3>ROPEC clarifiers &amp; disinfection</h3>
-              <p>Phased WWTP expansion—clarifier and UV control with running-plant commissioning discipline. New work typically lands on current CompactLogix / ControlLogix processor lines; update imagery when marketing has an approved rack photo.</p>
+              <p>Phased WWTP expansion—clarifier and UV control with running-plant commissioning discipline on current CompactLogix / ControlLogix lines.</p>
             </div>
           </article>
           <article class="cinema-project">
             <div class="cinema-project__media">
-              <img src="assets/photos/panel-csa-shop-primary.jpg?v=20260330" alt="CSA-certified control panel interior during shop assembly—transit and municipal pump panel programs." width="640" height="400" loading="lazy" decoding="async">
+              <img src="assets/photos/hero-installation.jpg?v=20260405" alt="Site installation and commissioning context—utility pumping and transit-grade documentation discipline." width="1600" height="1200" loading="lazy" decoding="async">
             </div>
             <div class="cinema-project__body">
               <span class="cinema-project__tag">Transit</span>
@@ -426,52 +378,6 @@
           </article>
         </div>
         <p class="cinema-projects__cta"><a class="cinema-btn cinema-btn--ghost" href="experience.html">Full delivery record</a></p>
-      </div>
-    </section>
-
-    <section class="cinema-section cinema-leadership cinema-section--deep" data-cinema-reveal="slide-left" aria-labelledby="cinema-lead-heading" data-cinema-act="3">
-      <div class="cinema-section__inner">
-        <p class="cinema-section__kicker">Leadership</p>
-        <h2 class="cinema-section__title" id="cinema-lead-heading">Leadership</h2>
-        <p class="cinema-section__deck">Names, titles, and photographs will be published when approved. Roles below describe typical areas of accountability.</p>
-        <div class="cinema-leadership__grid">
-          <article class="cinema-leadership-card">
-            <div class="cinema-leadership-card__photo" aria-hidden="true"><span class="cinema-leadership-card__silhouette"></span></div>
-            <div class="cinema-leadership-card__body">
-              <span class="cinema-leadership-card__cast" aria-hidden="true">01</span>
-              <p class="cinema-leadership-card__name">Name forthcoming</p>
-              <p class="cinema-leadership-card__role">Principal / Managing direction</p>
-              <p class="cinema-leadership-card__bio">Accountable for engineering judgment, client alignment, and delivery standards across programs.</p>
-            </div>
-          </article>
-          <article class="cinema-leadership-card">
-            <div class="cinema-leadership-card__photo" aria-hidden="true"><span class="cinema-leadership-card__silhouette"></span></div>
-            <div class="cinema-leadership-card__body">
-              <span class="cinema-leadership-card__cast" aria-hidden="true">02</span>
-              <p class="cinema-leadership-card__name">Name forthcoming</p>
-              <p class="cinema-leadership-card__role">Operations / fabrication leadership</p>
-              <p class="cinema-leadership-card__bio">Owns shop execution, CSA discipline, and build quality through FAT readiness.</p>
-            </div>
-          </article>
-          <article class="cinema-leadership-card">
-            <div class="cinema-leadership-card__photo" aria-hidden="true"><span class="cinema-leadership-card__silhouette"></span></div>
-            <div class="cinema-leadership-card__body">
-              <span class="cinema-leadership-card__cast" aria-hidden="true">03</span>
-              <p class="cinema-leadership-card__name">Name forthcoming</p>
-              <p class="cinema-leadership-card__role">Technical / commissioning lead</p>
-              <p class="cinema-leadership-card__bio">Drives site acceptance, loop strategy, and handover to operations and maintenance.</p>
-            </div>
-          </article>
-          <article class="cinema-leadership-card">
-            <div class="cinema-leadership-card__photo" aria-hidden="true"><span class="cinema-leadership-card__silhouette"></span></div>
-            <div class="cinema-leadership-card__body">
-              <span class="cinema-leadership-card__cast" aria-hidden="true">04</span>
-              <p class="cinema-leadership-card__name">Name forthcoming</p>
-              <p class="cinema-leadership-card__role">Programs / client continuity</p>
-              <p class="cinema-leadership-card__bio">Keeps schedules, standards packages, and stakeholder communication coherent from award to closeout.</p>
-            </div>
-          </article>
-        </div>
       </div>
     </section>
 
@@ -561,7 +467,6 @@
   </footer>
   <script type="module" src="cci-automation.js"></script>
   <script type="module" src="cinematic-home.js"></script>
-  <script type="module" src="plc-scene.js?v=29"></script>
   <script src="site.js" defer></script>
 </body>
 </html>

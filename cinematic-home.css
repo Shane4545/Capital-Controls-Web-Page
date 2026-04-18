@@ -2972,6 +2972,172 @@ body[data-cinema-act="4"] .cin-scroll-progress__bar {
 }
 
 /* --------------------------------------------------------------------------
+   Homepage: photo hero (CCI Panels stills) + system line
+   -------------------------------------------------------------------------- */
+
+.home-hero-dominant {
+  position: relative;
+  isolation: isolate;
+  min-height: min(92vh, 52rem);
+  min-height: min(92svh, 52rem);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: #0f172a;
+}
+
+.home-hero-dominant__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.home-hero-dominant__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 42%;
+  display: block;
+  z-index: 0;
+  transition: opacity 0.55s ease;
+}
+
+.home-hero-dominant__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+      105deg,
+      rgba(8, 12, 22, 0.85) 0%,
+      rgba(8, 12, 22, 0.45) 38%,
+      rgba(15, 23, 42, 0.2) 62%,
+      transparent 100%
+    ),
+    linear-gradient(0deg, rgba(8, 12, 22, 0.55) 0%, transparent 42%);
+  pointer-events: none;
+}
+
+.home-hero-dominant__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-block: clamp(4.5rem, 12vh, 7rem) clamp(2rem, 5vh, 3rem);
+  box-sizing: border-box;
+}
+
+.home-hero-dominant__eyebrow {
+  margin: 0 0 0.65rem;
+  font-family: var(--font-cin-mono), ui-monospace, monospace;
+  font-size: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(74, 222, 128, 0.92);
+}
+
+.home-hero-dominant__headline {
+  margin: 0 0 clamp(0.75rem, 2vh, 1rem);
+  font-family: var(--font-cin-ui);
+  font-weight: 650;
+  font-size: clamp(2.1rem, 0.5rem + 5.8vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.038em;
+  color: #f8fafc;
+  max-width: 14ch;
+}
+
+.home-hero-dominant__lead {
+  margin: 0;
+  font-size: clamp(0.92rem, 0.84rem + 0.35vw, 1.05rem);
+  line-height: 1.5;
+  color: rgba(226, 232, 240, 0.92);
+  max-width: 28rem;
+}
+
+.home-hero-dominant__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  margin-top: clamp(1.25rem, 3vh, 1.85rem);
+}
+
+.home-hero-dominant__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.58rem 1.15rem;
+  font-family: var(--font-cin-ui);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 0;
+  border: 1px solid transparent;
+}
+
+.home-hero-dominant__btn--primary {
+  background: var(--cin-accent, #00a651);
+  color: #fff;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.home-hero-dominant__btn--primary:hover {
+  background: #008a42;
+  color: #fff;
+}
+
+.home-hero-dominant__btn--ghost {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(248, 250, 252, 0.95);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.home-hero-dominant__btn--ghost:hover {
+  border-color: rgba(255, 255, 255, 0.55);
+  color: #fff;
+}
+
+@media (max-width: 720px) {
+  .home-hero-dominant__headline {
+    max-width: none;
+  }
+
+  .home-hero-dominant__img {
+    object-position: 52% 40%;
+  }
+}
+
+.home-system-line {
+  background: #0b1220;
+  border-top: 1px solid rgba(148, 163, 184, 0.12);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.home-system-line__inner {
+  padding-block: clamp(1.35rem, 4vw, 2rem);
+}
+
+.home-system-line__primary {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-cin-ui);
+  font-weight: 600;
+  font-size: clamp(1.05rem, 0.95rem + 0.45vw, 1.25rem);
+  letter-spacing: -0.02em;
+  color: #f1f5f9;
+}
+
+.home-system-line__secondary {
+  margin: 0;
+  font-size: clamp(0.88rem, 0.82rem + 0.2vw, 0.98rem);
+  line-height: 1.55;
+  color: rgba(148, 163, 184, 0.95);
+  max-width: 42rem;
+}
+
+/* --------------------------------------------------------------------------
    Homepage flagship: WebGL stage (full viewport) + minimal overlay copy
    -------------------------------------------------------------------------- */
 
@@ -3034,12 +3200,67 @@ body[data-cinema-act="4"] .cin-scroll-progress__bar {
   display: none !important;
 }
 
-.home-flagship-scene__fallback img {
+.home-flagship-fallback-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: clamp(0.5rem, 1.5vw, 1rem);
+  align-items: stretch;
   width: 100%;
-  height: 100%;
-  max-height: 100svh;
+  max-width: min(1600px, 100vw - 2 * var(--gutter, 1.25rem));
+  max-height: min(92svh, 900px);
+  padding: 0 var(--gutter, 1.25rem);
+  box-sizing: border-box;
+}
+
+.home-flagship-fallback-cell {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-height: 0;
+}
+
+.home-flagship-fallback-cap {
+  font-family: var(--font-cin-mono), ui-monospace, monospace;
+  font-size: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(15, 23, 42, 0.75);
+}
+
+.home-flagship-fallback-img {
+  flex: 1;
+  width: 100%;
+  min-height: 120px;
   object-fit: contain;
   object-position: 50% 50%;
+  background: rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+}
+
+.home-flagship-fallback-pre {
+  flex: 1;
+  margin: 0;
+  min-height: 180px;
+  max-height: min(72vh, 560px);
+  overflow: auto;
+  padding: 0.65rem 0.75rem;
+  font-family: var(--font-cin-mono), ui-monospace, monospace;
+  font-size: 0.5625rem;
+  line-height: 1.45;
+  color: #0f172a;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(15, 23, 42, 0.15);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+@media (max-width: 900px) {
+  .home-flagship-fallback-grid {
+    grid-template-columns: 1fr;
+    max-height: none;
+  }
 }
 
 .home-flagship-scene__overlay {
@@ -3100,6 +3321,12 @@ body[data-cinema-act="4"] .cin-scroll-progress__bar {
   line-height: 1.55;
   color: rgba(203, 213, 225, 0.9);
   max-width: 26rem;
+}
+
+.home-flagship-scene__code {
+  font-family: var(--font-cin-mono), ui-monospace, monospace;
+  font-size: 0.78em;
+  word-break: break-all;
 }
 
 .home-flagship-scene__cta {

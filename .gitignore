@@ -19,3 +19,6 @@ assets/_sales_file_index.json
 
 # Local review screenshots
 review-*.png
+
+# iPhone shop video source — large; keep locally for 3D/still extraction, not in repo
+CCI Panels/*.MOV

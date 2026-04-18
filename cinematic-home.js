@@ -75,7 +75,8 @@ function initCinemaScrollSpine() {
 
 function initCinemaHeader() {
   const header = document.querySelector(".page-home--cinematic .site-header");
-  const hero = document.querySelector(".home-flagship-scene") || document.querySelector(".cinema-hero");
+  const hero =
+    document.querySelector(".home-hero-dominant") || document.querySelector(".cinema-hero");
   if (!header || !hero) return;
   const io = new IntersectionObserver(
     ([e]) => {
