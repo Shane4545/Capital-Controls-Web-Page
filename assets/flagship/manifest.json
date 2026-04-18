@@ -1,0 +1,87 @@
+{
+  "version": 2,
+  "proof": {
+    "ladderL5xRepoPath": "assets/flagship/CCI1587-WeaversWay-WW.L5X",
+    "ladderL5xOriginalPath": "C:\\Cursor Projects\\AI NATION\\CCI_PLC_Utility\\CCI1587_WeaversWay_R0 for cursor.L5X",
+    "ladderExtractRepoPath": "assets/flagship/ladder-motor-control-main.json",
+    "ladderRoutine": "Motor_Control.Motor_Control_Main",
+    "controller": "CompactLogix 1769-L33ER — project WW (Weavers Way PS)",
+    "rackPhotoOriginalContext": "H:\\Jobs\\CCI1567 OCWA East Rockland WTP SCADA Upgrade\\Pictures\\Main Plant PLC 1.JPG",
+    "scadaOriginalContext": "H:\\Jobs\\CCI1603 B&M Ottawa DWS SCADA Network\\CSA\\CCI1603 Glen Cairn\\PICTURE\\20250710_135035.png",
+    "processPhotoOriginalContext": "H:\\Jobs\\CCI1567 OCWA East Rockland WTP SCADA Upgrade\\Pictures\\Filter panel 1.JPG"
+  },
+  "reference": {
+    "rockwellLiterature": [
+      {
+        "title": "1756 ControlLogix Chassis Specifications (Technical Data)",
+        "url": "https://literature.rockwellautomation.com/idc/groups/literature/documents/td/1756-td006_-en-e.pdf"
+      },
+      {
+        "title": "CompactLogix 1769 user documentation (verify module family)",
+        "url": "https://www.rockwellautomation.com/en-us/support/documentation/technical/programmable-controllers/compactlogix-controllers.html"
+      }
+    ]
+  },
+  "assets": {
+    "rackImage": "assets/photos/flagship-rockland-plc-rack.jpg",
+    "scadaImage": "assets/photos/flagship-scada-glen-cairn-dws.png",
+    "processImage": "assets/photos/flagship-rockland-filter-process.jpg",
+    "ladderExtract": "assets/flagship/ladder-motor-control-main.json",
+    "ladderScreenshotFallback": null
+  },
+  "tags": [
+    "Pump1_Run",
+    "Pump2_Run",
+    "HighLevel",
+    "Comm_OK",
+    "AlarmActive",
+    "AutoMode",
+    "IO_Healthy"
+  ],
+  "sequence": [
+    {
+      "durationSec": 6,
+      "Pump1_Run": true,
+      "Pump2_Run": false,
+      "HighLevel": false,
+      "Comm_OK": true,
+      "AlarmActive": false,
+      "AutoMode": true,
+      "IO_Healthy": true,
+      "ladderHighlightRung": 0
+    },
+    {
+      "durationSec": 6,
+      "Pump1_Run": true,
+      "Pump2_Run": false,
+      "HighLevel": false,
+      "Comm_OK": true,
+      "AlarmActive": false,
+      "AutoMode": true,
+      "IO_Healthy": true,
+      "ladderHighlightRung": 2
+    },
+    {
+      "durationSec": 6,
+      "Pump1_Run": false,
+      "Pump2_Run": true,
+      "HighLevel": true,
+      "Comm_OK": true,
+      "AlarmActive": false,
+      "AutoMode": true,
+      "IO_Healthy": true,
+      "ladderHighlightRung": 3
+    },
+    {
+      "durationSec": 5,
+      "Pump1_Run": false,
+      "Pump2_Run": false,
+      "HighLevel": false,
+      "Comm_OK": false,
+      "AlarmActive": true,
+      "AutoMode": false,
+      "IO_Healthy": false,
+      "ladderHighlightRung": 1
+    }
+  ]
+}

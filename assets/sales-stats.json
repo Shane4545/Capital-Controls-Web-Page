@@ -1,0 +1,257 @@
+{
+  "generatedAt": "2026-03-29T17:48:27.828720+00:00",
+  "source": "H:\\Jobs\\*\\Sales Documents",
+  "jobsWithSalesDocuments": 182,
+  "totalFiles": 11708,
+  "pdfFiles": 5448,
+  "docxFiles": 139,
+  "docFiles": 1622,
+  "xlsxFiles": 1593,
+  "xlsFiles": 11,
+  "extensionsTop": [
+    {
+      "ext": ".pdf",
+      "count": 5448
+    },
+    {
+      "ext": ".doc",
+      "count": 1622
+    },
+    {
+      "ext": ".xlsx",
+      "count": 1593
+    },
+    {
+      "ext": ".dwg",
+      "count": 993
+    },
+    {
+      "ext": ".db",
+      "count": 626
+    },
+    {
+      "ext": ".msg",
+      "count": 419
+    },
+    {
+      "ext": ".jpg",
+      "count": 296
+    },
+    {
+      "ext": ".dgn",
+      "count": 215
+    },
+    {
+      "ext": ".docx",
+      "count": 139
+    },
+    {
+      "ext": ".png",
+      "count": 67
+    },
+    {
+      "ext": ".txt",
+      "count": 39
+    },
+    {
+      "ext": ".mov",
+      "count": 34
+    }
+  ],
+  "keywordsTop": [
+    {
+      "keyword": "specification",
+      "count": 6436
+    },
+    {
+      "keyword": "quotation",
+      "count": 5216
+    },
+    {
+      "keyword": "drawing",
+      "count": 1644
+    },
+    {
+      "keyword": "pumping",
+      "count": 1203
+    },
+    {
+      "keyword": "panel",
+      "count": 1167
+    },
+    {
+      "keyword": "quote",
+      "count": 1002
+    },
+    {
+      "keyword": "wtp",
+      "count": 807
+    },
+    {
+      "keyword": "instrument",
+      "count": 760
+    },
+    {
+      "keyword": "wwtp",
+      "count": 486
+    },
+    {
+      "keyword": "vfd",
+      "count": 323
+    },
+    {
+      "keyword": "scada",
+      "count": 163
+    },
+    {
+      "keyword": "plc",
+      "count": 155
+    },
+    {
+      "keyword": "lift",
+      "count": 150
+    },
+    {
+      "keyword": "design",
+      "count": 88
+    },
+    {
+      "keyword": "bom",
+      "count": 76
+    },
+    {
+      "keyword": "scope",
+      "count": 66
+    },
+    {
+      "keyword": "network",
+      "count": 65
+    },
+    {
+      "keyword": "treatment",
+      "count": 55
+    }
+  ],
+  "topJobsByFileCount": [
+    {
+      "job": "CCI1536 B&M Hurdman",
+      "file_count": 1541
+    },
+    {
+      "job": "CCI1009 Rondeau Golfview Subdivision PS",
+      "file_count": 1115
+    },
+    {
+      "job": "CCI1544 Xylem TTC Warden",
+      "file_count": 639
+    },
+    {
+      "job": "CCI1103 LRT Pump Panels",
+      "file_count": 486
+    },
+    {
+      "job": "CCI1362 Xylem TTC Islington",
+      "file_count": 400
+    },
+    {
+      "job": "CCI1105 LRT Accessory Work Sumps",
+      "file_count": 396
+    },
+    {
+      "job": "CCI-1677 Carlteton Place WTP WWTP Upgrade",
+      "file_count": 356
+    },
+    {
+      "job": "CCI1608 T&M Elec ROPEC Secondary Clarifiers Rehab Ph 3",
+      "file_count": 309
+    },
+    {
+      "job": "CCI1149 Modern Niagara - Ropec Disinfection",
+      "file_count": 216
+    },
+    {
+      "job": "CCI1663 Sheridan - Napanee WPCP",
+      "file_count": 209
+    },
+    {
+      "job": "CCI1703 NAC - ROPEC Reliability",
+      "file_count": 173
+    },
+    {
+      "job": "CCI1186 Acres Road Pumping Station Phase 1 Upgrades",
+      "file_count": 137
+    },
+    {
+      "job": "CCI1514 IECBL Lemieux PS Screen Install",
+      "file_count": 137
+    },
+    {
+      "job": "CCI1247 B&M ROPEC RSPS Rehabilitation",
+      "file_count": 131
+    },
+    {
+      "job": "CCI1551 KU Power Richcraft 1298 Ogilvie Road Pumping Station",
+      "file_count": 126
+    },
+    {
+      "job": "CCI1662 INGLESIDE WWTP PHASE 1",
+      "file_count": 124
+    },
+    {
+      "job": "CCI1146 Xylem TTC Museum Easier Access",
+      "file_count": 113
+    },
+    {
+      "job": "CCI1531 B&M  ROPEC Aeration",
+      "file_count": 105
+    },
+    {
+      "job": "CCI1211 B&M ROPEC T&D Building Polymer Chemical System Upgrades",
+      "file_count": 98
+    },
+    {
+      "job": "CCI1592 PWGSC BACS Maintenance at Uplands",
+      "file_count": 98
+    },
+    {
+      "job": "CCI1376 IECBL City Ottawa Tenth Line",
+      "file_count": 97
+    },
+    {
+      "job": "CCI1087 Cumberland SPS 2,3,4 Rehabilitation",
+      "file_count": 92
+    },
+    {
+      "job": "CCI1522 Russell Recreation Complex Sanitary Pump Station",
+      "file_count": 89
+    },
+    {
+      "job": "CCI1398 Seguin Morris Lac Philippe",
+      "file_count": 87
+    },
+    {
+      "job": "CCI1671 B&M - Trail Road Groundwater",
+      "file_count": 87
+    },
+    {
+      "job": "CCI1569 Xylem TTC St. George Station",
+      "file_count": 83
+    },
+    {
+      "job": "CCI1473 B&M Carleton Place Princess and Findlay",
+      "file_count": 79
+    },
+    {
+      "job": "CCI1571 Trent Hills Warkworth George St. Pumping Station",
+      "file_count": 79
+    },
+    {
+      "job": "CCI1425 OCWA Petawawa Renfrew St Controls Migration",
+      "file_count": 73
+    },
+    {
+      "job": "CCI1484 DUPERON Varennes Bar Screen",
+      "file_count": 72
+    }
+  ]
+}

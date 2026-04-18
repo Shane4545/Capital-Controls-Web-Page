@@ -1,0 +1,8 @@
+ISO 9001:2015 badge (iso-9001-2015-badge.svg)
+============================================
+This SVG is an on-site conformity-style lockup for the certified QMS. Capital Controls
+has licensed use of ISO certification marks subject to the certification body agreement.
+
+If your registrar supplies official vector artwork, replace this file (or swap the img src)
+so pixels match the PDF certificate pack exactly. Retire web use immediately if certification
+is suspended or withdrawn.

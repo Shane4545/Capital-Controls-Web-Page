@@ -1,0 +1,44 @@
+{
+    "sourceL5x":  "assets/flagship/CCI1587-WeaversWay-WW.L5X",
+    "sourceProject":  "WW (Weavers Way PS) — CompactLogix 1769-L33ER",
+    "exportedFrom":  "C:\\Cursor Projects\\AI NATION\\CCI_PLC_Utility\\CCI1587_WeaversWay_R0 for cursor.L5X",
+    "program": "Motor_Control",
+    "routine":  "Motor_Control_Main",
+    "rungs":  [
+                  {
+                      "number":  0,
+                      "comment":  "Motor_Main Routine\r\n\r\nThis routine is used to call subroutine required to \r\nmanipulate all data related to motor start/stop and failure.\r\nIt also handles motor runtime and the ability to return to automatic\r\nmode after an operator set delay when left in manual. In a power failure the motor waits for the power up sequence \r\nnumber to reach its number before starting.\r\n  \r\n//set motor start delay \r\n//this delay delays the start of a motor if another one just started",
+                      "text":  "LT(Powerup_Sequence,100)XIC(Pulse_Seconds)ADD(Powerup_Sequence,1,Powerup_Sequence);"
+                  },
+                  {
+                      "number":  1,
+                      "comment":  "The powerup sequence is reset on the PLC first cycle\r\n\r\nThe power fail status or no power available is also used on this rung to reset the power up sequence so the motor will not try to run during power failure and get a fail to start alarm that will lock them",
+                      "text":  "XIO(FirstCycle_Motor_Control_DN)[MOVE(0,Powerup_Sequence) ,OTU(Other_Motor_Starting) ];"
+                  },
+                  {
+                      "number":  2,
+                      "comment":  "When a motor is started the bit\r\nOther_Motor_Starting\r\nis triggered and prevent any other motor from starting until the Motor_Start_Dekay timer expires\r\nTHe timer Preset value is controlled by the motor being started.",
+                      "text":  "XIC(Motor_Start_Delay.DN)OTU(Other_Motor_Starting);"
+                  },
+                  {
+                      "number":  3,
+                      "comment":  "",
+                      "text":  "XIC(Other_Motor_Starting)TON(Motor_Start_Delay,?,?);"
+                  },
+                  {
+                      "number":  4,
+                      "comment":  "",
+                      "text":  "JSR(T7_Motor_Control_Main,0);"
+                  },
+                  {
+                      "number":  5,
+                      "comment":  "",
+                      "text":  "OTU(Operator_Gen_Alm_Reset);"
+                  },
+                  {
+                      "number":  6,
+                      "comment":  "",
+                      "text":  "OTE(FirstCycle_Motor_Control_DN);"
+                  }
+              ]
+}
