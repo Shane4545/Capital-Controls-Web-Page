@@ -1,4 +1,11 @@
-# Publishes the static site to GitHub Pages (enable in repo Settings → Pages → GitHub Actions).
+# Publishes the static site to GitHub Pages.
+#
+# ONE-TIME (required or "Setup Pages" fails with HttpError Not Found):
+#   Repo → Settings → Pages → Build and deployment → Source → GitHub Actions
+#   (Do NOT leave Source on "Deploy from a branch" for this workflow.)
+# Then: Actions → failed run → Re-run failed jobs.
+#
+# Note: Push to main still lands your files on GitHub; only the Pages publish step needs the setting above.
 name: Deploy GitHub Pages
 
 on:
