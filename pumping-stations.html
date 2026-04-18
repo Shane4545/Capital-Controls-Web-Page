@@ -26,27 +26,245 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="cci-cinematic-system.css?v=4">
   <style>
-    /* Page-local: reserved area for future panel/video media (no embed yet) */
-    .pumping-media-placeholder {
-      margin-top: 1rem;
-      padding: clamp(2.5rem, 6vw, 4rem) 1.25rem;
-      text-align: center;
-      background: var(--color-surface-muted);
-      border: 1px dashed var(--color-border-strong);
-      border-radius: 2px;
-      color: var(--color-text-secondary);
-      font-size: 0.9375rem;
-      line-height: 1.55;
+    .pumping-page .page-hero-inner {
+      display: grid;
+      gap: 1.5rem;
     }
-    .pumping-media-placeholder strong {
-      display: block;
-      margin-bottom: 0.5rem;
+    .pumping-page .page-hero-inner > p:not(.eyebrow):not(.page-hero-lead) {
+      margin: 0;
+      max-width: 52rem;
+      font-size: 0.90625rem;
+      line-height: 1.68;
+      color: rgba(226, 232, 240, 0.88);
+    }
+    .pumping-hero-grid {
+      display: grid;
+      gap: 1rem;
+      align-items: start;
+    }
+    @media (min-width: 880px) {
+      .pumping-hero-grid {
+        grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr);
+        gap: 1.5rem 2rem;
+      }
+    }
+    .pumping-hero-card,
+    .pumping-card,
+    .pumping-spec,
+    .pumping-application-card,
+    .pumping-proof-card,
+    .pumping-cta {
+      background: linear-gradient(180deg, #fff 0%, var(--color-surface-muted) 100%);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-xs);
+    }
+    .pumping-hero-card {
+      padding: 1.1rem 1.15rem;
+    }
+    .pumping-hero-card-title,
+    .pumping-meta-title {
+      margin: 0 0 0.55rem;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+    }
+    .pumping-meta-list,
+    .pumping-spec-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .pumping-meta-list li,
+    .pumping-spec-list li {
+      margin: 0;
+      padding: 0.5rem 0;
+      border-top: 1px solid var(--color-border);
+      font-size: 0.8125rem;
+      line-height: 1.55;
+      color: var(--color-text-secondary);
+    }
+    .pumping-meta-list li:first-child,
+    .pumping-spec-list li:first-child {
+      padding-top: 0;
+      border-top: none;
+    }
+    .pumping-meta-list strong,
+    .pumping-spec-list strong {
       color: var(--color-text);
-      font-size: 1rem;
+    }
+    .pumping-grid-2,
+    .pumping-grid-3,
+    .pumping-card-grid,
+    .pumping-app-grid,
+    .pumping-proof-grid,
+    .pumping-deliverables-grid {
+      display: grid;
+      gap: 1rem;
+    }
+    @media (min-width: 768px) {
+      .pumping-grid-2,
+      .pumping-proof-grid,
+      .pumping-deliverables-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (min-width: 960px) {
+      .pumping-grid-3,
+      .pumping-card-grid,
+      .pumping-app-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+    .pumping-card,
+    .pumping-spec,
+    .pumping-application-card,
+    .pumping-proof-card {
+      padding: 1.15rem 1.2rem;
+    }
+    .pumping-card h3,
+    .pumping-spec h3,
+    .pumping-application-card h3,
+    .pumping-proof-card h3 {
+      margin: 0 0 0.55rem;
+      font-size: 0.8125rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+    }
+    .pumping-card p,
+    .pumping-spec p,
+    .pumping-application-card p,
+    .pumping-proof-card p {
+      margin: 0;
+      font-size: 0.875rem;
+      line-height: 1.65;
+      color: var(--color-text-secondary);
+    }
+    .pumping-block-intro {
+      margin: 0 0 1.15rem;
+      max-width: 58ch;
+    }
+    .pumping-subsection-title {
+      margin: 1.5rem 0 0.65rem;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-muted);
+    }
+    .pumping-spec {
+      background: #fff;
+    }
+    .pumping-proof-zone {
+      margin-top: 1rem;
+      padding: clamp(1.25rem, 4vw, 1.5rem);
+      background: linear-gradient(180deg, #08111f 0%, #102038 100%);
+      border: 1px solid rgba(148, 163, 184, 0.28);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+    }
+    .pumping-proof-head {
+      display: grid;
+      gap: 0.65rem;
+      margin-bottom: 1rem;
+    }
+    @media (min-width: 880px) {
+      .pumping-proof-head {
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: end;
+      }
+    }
+    .pumping-proof-kicker {
+      margin: 0;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(226, 232, 240, 0.72);
+    }
+    .pumping-proof-zone p {
+      margin: 0;
+      color: rgba(226, 232, 240, 0.84);
+    }
+    .pumping-proof-note {
+      font-size: 0.75rem;
+      color: rgba(226, 232, 240, 0.72);
+    }
+    .pumping-proof-card {
+      min-height: 11rem;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.03) 100%);
+      border: 1px dashed rgba(148, 163, 184, 0.42);
+      box-shadow: none;
+    }
+    .pumping-proof-card h3 {
+      color: #f8fafc;
+    }
+    .pumping-proof-card p {
+      color: rgba(226, 232, 240, 0.84);
+    }
+    .pumping-proof-label {
+      display: inline-block;
+      margin-top: 0.85rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(148, 163, 184, 0.9);
+    }
+    .pumping-application-card {
+      background: #fff;
+    }
+    .pumping-cta {
+      padding: clamp(1.25rem, 4vw, 1.75rem);
+      display: grid;
+      gap: 1rem;
+    }
+    @media (min-width: 960px) {
+      .pumping-cta {
+        grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
+        align-items: start;
+      }
+    }
+    .pumping-cta p {
+      margin: 0;
+    }
+    .pumping-cta-fields {
+      display: grid;
+      gap: 0.75rem;
+    }
+    .pumping-cta-field {
+      padding: 0.85rem 0.95rem;
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: calc(var(--radius-md) - 4px);
+    }
+    .pumping-cta-field strong {
+      display: block;
+      margin-bottom: 0.2rem;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+    }
+    .pumping-cta-actions {
+      margin-top: 0.35rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+    .pumping-cta-note {
+      font-size: 0.8125rem;
+      color: var(--color-muted);
     }
   </style>
 </head>
-<body data-page="pumping-stations" class="cci-cinematic">
+<body data-page="pumping-stations" class="cci-cinematic pumping-page">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="topbar"><div class="topbar-inner section-inner"><span class="topbar-text">Pump stations · Level control · PLC / HMI · SCADA · Field commissioning</span></div></div>
   <header class="site-header">
@@ -80,75 +298,258 @@
 
   <main id="main" class="prose-page">
     <div class="prose-block">
-      <h2>System Overview</h2>
-      <p>A typical pumping station delivered under our scope includes measurement at the wet well, deterministic pump control, annunciation for fault and high-level conditions, and a communication path suited to your telemetry or SCADA architecture.</p>
-      <ul class="detail-list detail-list--compact">
-        <li><strong>Wet well level</strong> — ultrasonic (commonly mounted in a stilling well or under a hatch), hydrostatic pressure, or both for check/backup; scaling, filtering, and fail-to-safe behavior defined in PLC.</li>
-        <li><strong>Pump control</strong> — lead/lag (or alternate) sequencing, start/stop bands, minimum runtime, and interlocks derived from level, pressure, or flow where instrumented.</li>
-        <li><strong>High level alarms</strong> — discrete and/or software alarms for high wet well, pump fail, seal/thermal faults (as wired), with visible/audible indication at the local HMI or panel.</li>
-        <li><strong>Emergency or override modes</strong> — hand-off-auto at the motor starter or VFD, permissive logic for maintenance, and defined behavior under instrument loss or single-pump outage.</li>
-        <li><strong>Remote telemetry / SCADA</strong> — Ethernet/IP or serial paths to RTU/cellular gateways or plant historians; alarm forwarding and remote setpoint/view where the specification allows.</li>
-      </ul>
+      <div class="pumping-hero-grid">
+        <div>
+          <h2>System Overview</h2>
+          <p class="pumping-block-intro">A typical pumping station delivered under our scope includes measurement at the wet well, deterministic pump control, annunciation for fault and high-level conditions, and a communication path suited to your telemetry or SCADA architecture.</p>
+        </div>
+        <aside class="pumping-hero-card" aria-label="Typical station summary">
+          <p class="pumping-hero-card-title">Typical station scope</p>
+          <ul class="pumping-meta-list">
+            <li><strong>Station types</strong> — wastewater, stormwater, sanitary lift, and retrofit pump station upgrades.</li>
+            <li><strong>Control basis</strong> — level, sequence, alarm, and failover logic defined in PLC rather than ad hoc field adjustments.</li>
+            <li><strong>Integration path</strong> — local HMI, remote telemetry, and plant or regional SCADA visibility.</li>
+            <li><strong>Delivered under one scope</strong> — panel build, programming, checkout, commissioning, and turnover documentation.</li>
+          </ul>
+        </aside>
+      </div>
+
+      <div class="pumping-card-grid">
+        <div class="pumping-card">
+          <h3>Wet Well Level</h3>
+          <p>Ultrasonic, hydrostatic pressure, or both for check or backup; scaling, filtering, and fail-to-safe behavior are defined in the PLC from the outset.</p>
+        </div>
+        <div class="pumping-card">
+          <h3>Pump Control</h3>
+          <p>Lead/lag or alternate sequencing with start and stop bands, minimum runtime, and interlocks derived from level, pressure, or flow where instrumented.</p>
+        </div>
+        <div class="pumping-card">
+          <h3>Alarm State</h3>
+          <p>High wet well, pump fail, and seal or thermal faults are annunciated locally and passed upstream to SCADA or telemetry as required.</p>
+        </div>
+      </div>
+
+      <p class="pumping-subsection-title">Common Inputs and Outputs</p>
+      <div class="pumping-grid-2">
+        <div class="pumping-spec">
+          <h3>Inputs</h3>
+          <ul class="pumping-spec-list">
+            <li><strong>Level measurement</strong> from ultrasonic or pressure transmitters, with discrete high-level backup where specified.</li>
+            <li><strong>Pump auxiliaries</strong> including run status, overload, seal fail, thermal trip, and permissives from starters or VFDs.</li>
+            <li><strong>Field instrumentation</strong> such as discharge pressure, flow, sump level, door contacts, or generator status where the station warrants it.</li>
+          </ul>
+        </div>
+        <div class="pumping-spec">
+          <h3>Outputs</h3>
+          <ul class="pumping-spec-list">
+            <li><strong>Pump commands</strong> for start/stop or speed reference through motor starters, soft starters, or VFD packages.</li>
+            <li><strong>Alarm and status transmission</strong> to HMI, RTU, cellular telemetry, or central SCADA with point naming aligned to the owner standard.</li>
+            <li><strong>Operator indication</strong> through local panel lights, horn, HMI banners, and remote alarm summaries.</li>
+          </ul>
+        </div>
+      </div>
     </div>
 
     <div class="prose-block">
       <h2>What We Deliver</h2>
-      <ul class="detail-list detail-list--compact">
-        <li><strong>Control panel design and fabrication</strong> — CSA-rated construction, documented FAT, nameplate and drawing package aligned to site electrical codes.</li>
-        <li><strong>PLC programming</strong> — CompactLogix, MicroLogix, Micro800 family, or ControlLogix where the station is part of a larger campus standard; ladder logic structured for maintenance review.</li>
-        <li><strong>HMI development</strong> — FactoryTalk View (ME local or SE client context per site); faceplates for pumps, levels, alarms, and mode selection.</li>
-        <li><strong>Instrumentation integration</strong> — level, pressure, flow, and pump auxiliaries wired through appropriate I/O and grounded per instrument OEM and site grounding practice.</li>
-        <li><strong>Field commissioning and testing</strong> — loop checks, pump rotation and proof-of-performance under level simulation or staged wet well conditions, SCADA checkout with IT/operations.</li>
-        <li><strong>Documentation</strong> — I/O lists, loop folders as required, electrical schematics, panel BOM, redlines, and PLC/HMI exports for owner turnover.</li>
-      </ul>
+      <p class="pumping-block-intro">The delivery model stays practical: one accountable control scope tied to the station design, the owner standard, and field startup requirements.</p>
+      <div class="capability-grid">
+        <div class="capability-card">
+          <h3>Panel design &amp; fabrication</h3>
+          <p>CSA-rated control panels with documented FAT, nameplate discipline, and drawing packages aligned to the project electrical scope.</p>
+        </div>
+        <div class="capability-card">
+          <h3>PLC programming</h3>
+          <p>CompactLogix, MicroLogix, Micro800, or ControlLogix programming structured so maintenance staff can follow the sequencing years later.</p>
+        </div>
+        <div class="capability-card">
+          <h3>HMI development</h3>
+          <p>FactoryTalk View local or supervisory graphics for pumps, levels, alarms, trends, and operating modes.</p>
+        </div>
+        <div class="capability-card">
+          <h3>Instrumentation integration</h3>
+          <p>Level, pressure, flow, and pump auxiliaries wired and commissioned with the right I/O handling, shielding, and grounding practice.</p>
+        </div>
+        <div class="capability-card">
+          <h3>Field commissioning</h3>
+          <p>Loop checks, pump rotation verification, wet well simulation or staged startup, and telemetry or SCADA checkout with operations.</p>
+        </div>
+        <div class="capability-card">
+          <h3>Documentation</h3>
+          <p>I/O lists, schematics, panel BOMs, redlines, and PLC or HMI exports prepared for owner turnover and future support.</p>
+        </div>
+      </div>
+
+      <p class="pumping-subsection-title">Typical Deliverables</p>
+      <div class="pumping-deliverables-grid">
+        <div class="pumping-spec">
+          <h3>Design package</h3>
+          <p>Control narratives, I/O assignments, panel layouts, power distribution, and terminal schedules tied back to the station equipment list.</p>
+        </div>
+        <div class="pumping-spec">
+          <h3>Turnover package</h3>
+          <p>Native PLC and HMI files, searchable PDFs, FAT markups, commissioning notes, and field redlines where required by the owner.</p>
+        </div>
+      </div>
     </div>
 
     <div class="prose-block">
       <h2>Control Strategies</h2>
-      <p>Station logic is site-specific, but recurring patterns reflect how operators actually run lift and storm stations—minimize cycling, equalize wear, and fail predictably.</p>
-      <ul class="detail-list detail-list--compact">
-        <li><strong>Lead/lag/alternate sequencing</strong> — start order and level bands defined so both pumps share duty; alternate on hours, starts, or after each fill/drain cycle as specified.</li>
-        <li><strong>Runtime equalization</strong> — optional balancing of accumulated run hours between pumps to spread mechanical wear across the motor and impeller assembly.</li>
-        <li><strong>High level override</strong> — if level exceeds a threshold, lag may start regardless of alternation; may also drive a “storm” or “excess flow” alarm to SCADA.</li>
-        <li><strong>Failover conditions</strong> — on overload, seal fault, or no-flow (if instrumented), drop the faulted pump, annunciate, and bring the standby if level still demands.</li>
-        <li><strong>Manual / auto modes</strong> — local permissive for O&amp;M, remote start/stop from SCADA only when interlocks allow, hardwired E-stop and starter hand where the electrical design requires.</li>
-      </ul>
+      <p class="pumping-block-intro">Station logic is site-specific, but recurring patterns reflect how operators actually run lift and storm stations: minimize cycling, equalize wear, and fail predictably.</p>
+      <div class="pumping-grid-3">
+        <div class="pumping-card">
+          <h3>Lead / Lag / Alternate</h3>
+          <p>Start order and level bands are defined so both pumps share duty, with alternation based on hours, starts, or cycle-by-cycle changeover as specified.</p>
+        </div>
+        <div class="pumping-card">
+          <h3>Runtime Equalization</h3>
+          <p>Accumulated runtime can be balanced between pumps to distribute wear across motors, seals, and rotating assemblies.</p>
+        </div>
+        <div class="pumping-card">
+          <h3>High-Level Override</h3>
+          <p>If wet well level exceeds threshold, lag starts regardless of alternation logic and the station drives the appropriate overflow or storm alarm upstream.</p>
+        </div>
+        <div class="pumping-card">
+          <h3>Failover Conditions</h3>
+          <p>On overload, seal fault, or no-flow where instrumented, the faulted pump is removed from duty, alarmed, and the standby is brought on if demand remains.</p>
+        </div>
+        <div class="pumping-card">
+          <h3>Manual / Auto Modes</h3>
+          <p>Local permissive for O&amp;M, remote start/stop from SCADA only when interlocks allow, and hand positions coordinated with the motor control design.</p>
+        </div>
+        <div class="pumping-card">
+          <h3>Emergency Operation</h3>
+          <p>Defined behavior under instrument loss, single-pump outage, comms loss, or backup power conditions so the station degrades in a controlled way.</p>
+        </div>
+      </div>
+
+      <p class="pumping-subsection-title">Operator Priorities</p>
+      <div class="pumping-grid-2">
+        <div class="pumping-spec">
+          <h3>What operations staff need</h3>
+          <ul class="pumping-spec-list">
+            <li><strong>Clear duty state</strong> so they can see which pump is lead, available, faulted, or manually held out.</li>
+            <li><strong>Alarm clarity</strong> with direct indication of high wet well, failed starts, motor trips, and comms health.</li>
+            <li><strong>Stable control</strong> that avoids nuisance cycling and unplanned equalization drift.</li>
+          </ul>
+        </div>
+        <div class="pumping-spec">
+          <h3>What maintenance staff need</h3>
+          <ul class="pumping-spec-list">
+            <li><strong>Traceable logic</strong> with readable tags, structured alarms, and predictable fallback behavior.</li>
+            <li><strong>Accessible hand modes</strong> for checkout without defeating essential protections.</li>
+            <li><strong>Turnover records</strong> that match the installed panel, field terminations, and final PLC revision.</li>
+          </ul>
+        </div>
+      </div>
     </div>
 
     <div class="prose-block">
       <h2>Hardware / Platforms</h2>
-      <ul class="detail-list detail-list--compact">
-        <li><strong>Allen-Bradley CompactLogix &amp; ControlLogix</strong> — Ethernet/IP I/O, scalable racks for multi-pump stations and networked sites.</li>
-        <li><strong>Micro800 series</strong> — compact installations where I/O count and networking match a smaller footprint.</li>
-        <li><strong>FactoryTalk View</strong> — operator screens for levels, pumps, faults, and trends at the panel or kiosk.</li>
-        <li><strong>VFD integration</strong> — speed control, torque or feedback points, coordination with PLC permissives and bypass logic.</li>
-        <li><strong>Remote I/O &amp; telemetry</strong> — distributed I/O over Ethernet/IP; cellular or fiber paths to SCADA per municipal IT standards.</li>
-      </ul>
+      <p class="pumping-block-intro">Platform selection follows station size, owner standard, and network architecture, but most municipal programs stay within a predictable Rockwell-centered stack.</p>
+      <div class="pumping-grid-2">
+        <div class="pumping-spec">
+          <h3>Control platform</h3>
+          <ul class="pumping-spec-list">
+            <li><strong>Allen-Bradley CompactLogix / ControlLogix</strong> for scalable Ethernet/IP I/O and multi-pump station integration.</li>
+            <li><strong>Micro800 series</strong> for compact installations where I/O count and communications suit a smaller controller footprint.</li>
+            <li><strong>Remote I/O / telemetry</strong> through distributed Ethernet/IP, cellular, or fiber paths to suit owner IT and SCADA standards.</li>
+          </ul>
+        </div>
+        <div class="pumping-spec">
+          <h3>Operator and drive layer</h3>
+          <ul class="pumping-spec-list">
+            <li><strong>FactoryTalk View</strong> for local or supervisory interfaces showing levels, pump states, alarms, and trends.</li>
+            <li><strong>VFD integration</strong> where speed control, soft fill, or hydraulic operating limits call for more than across-the-line starts.</li>
+            <li><strong>Starter and auxiliary integration</strong> coordinated with overloads, HOA selectors, seal fail points, and motor thermal status.</li>
+          </ul>
+        </div>
+      </div>
     </div>
 
     <div class="prose-block">
       <h2 id="panel-media-section">Panel Fabrication and Field Integration</h2>
-      <p>This section is reserved for <strong>photography or video</strong> of CSA-built panels, wet well interfaces, and field commissioning—content will be embedded here when assets are finalized. Video files will be referenced explicitly in markup at that time (no embedded media yet).</p>
-      <div class="pumping-media-placeholder" role="img" aria-label="Placeholder for future panel fabrication and field integration photos or video">
-        <strong>Media placeholder</strong>
-        Future embed: shop fabrication, enclosure installation, or commissioning clips. Still images or compressed video only—no autoplay audio.
+      <p class="pumping-block-intro">This section remains a placeholder for real proof assets only. When available, it will hold fabrication stills, a panel walkthrough clip, and commissioning visuals from delivered pump station work.</p>
+      <div class="pumping-proof-zone" aria-label="Reserved proof zone for future fabrication and commissioning media">
+        <div class="pumping-proof-head">
+          <div>
+            <p class="pumping-proof-kicker">Reserved proof zone</p>
+            <p>Future media will be placed here once approved assets are ready for publication. No embedded video is included in this version of the page.</p>
+          </div>
+          <p class="pumping-proof-note">Preferred assets: compressed video, fabrication photography, site commissioning stills</p>
+        </div>
+        <div class="pumping-proof-grid">
+          <div class="pumping-proof-card">
+            <h3>Panel Walkthrough Video</h3>
+            <p>Reserved for a short enclosure walkthrough showing labeling, wireway discipline, PLC and drive hardware, and door-mounted operator devices.</p>
+            <span class="pumping-proof-label">Video slot reserved</span>
+          </div>
+          <div class="pumping-proof-card">
+            <h3>Fabrication Photography</h3>
+            <p>Reserved for shop images covering backpan assembly, terminal scheduling, and finished enclosure presentation before shipment.</p>
+            <span class="pumping-proof-label">Photo set reserved</span>
+          </div>
+          <div class="pumping-proof-card">
+            <h3>Field Commissioning Visuals</h3>
+            <p>Reserved for site integration stills showing installation context, wet well interfaces, MCC tie-in, and startup activity.</p>
+            <span class="pumping-proof-label">Site proof reserved</span>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="prose-block">
       <h2>Typical Applications</h2>
-      <ul class="detail-list detail-list--compact">
-        <li>Municipal wastewater pump stations</li>
-        <li>Stormwater pumping stations</li>
-        <li>Sanitary lift stations</li>
-        <li>Retrofit upgrades (PLC, panel, HMI, telemetry replacement)</li>
-      </ul>
+      <div class="pumping-app-grid">
+        <div class="pumping-application-card">
+          <h3>Municipal Wastewater</h3>
+          <p>Duty or standby pump stations tied into treatment plant SCADA, area telemetry, or district-wide alarm reporting.</p>
+        </div>
+        <div class="pumping-application-card">
+          <h3>Stormwater Stations</h3>
+          <p>Level-driven pumping with high-level escalation, event visibility, and operating modes suited to wet-weather conditions.</p>
+        </div>
+        <div class="pumping-application-card">
+          <h3>Lift Stations</h3>
+          <p>Sanitary lift applications where lead/lag control, remote alarming, and maintainable local operator interfaces matter.</p>
+        </div>
+        <div class="pumping-application-card">
+          <h3>Retrofit Upgrades</h3>
+          <p>PLC, HMI, panel, telemetry, and instrumentation replacements for stations that need a cleaner control layer without civil rebuild.</p>
+        </div>
+      </div>
     </div>
 
     <div class="prose-block">
       <h2>Discuss Your Project</h2>
-      <p>For scope, platform standards, and commissioning windows, contact engineering with station type, pump count, and SCADA expectations.</p>
-      <p><a class="btn-primary" href="contact.html">Contact Capital Controls</a></p>
+      <div class="pumping-cta">
+        <div>
+          <p class="pumping-meta-title">Project brief</p>
+          <p>Contact engineering with the station type, pump count, telemetry or SCADA standard, and whether the work is a retrofit or new build. That gives us the right starting point for platform alignment, panel scope, and commissioning planning.</p>
+          <div class="pumping-cta-actions">
+            <a class="btn-primary" href="contact.html">Discuss Your Project</a>
+            <span class="pumping-cta-note">Best first message: application, pump quantity, control standard, and project stage</span>
+          </div>
+        </div>
+        <div class="pumping-cta-fields" aria-label="Recommended project details">
+          <div class="pumping-cta-field">
+            <strong>Station type</strong>
+            Wastewater, stormwater, lift station, or industrial pumping application
+          </div>
+          <div class="pumping-cta-field">
+            <strong>Pump count</strong>
+            Duty / standby arrangement, sequencing expectations, and any VFD requirement
+          </div>
+          <div class="pumping-cta-field">
+            <strong>Telemetry / SCADA</strong>
+            Existing plant standard, RTU path, owner network constraints, and alarm expectations
+          </div>
+          <div class="pumping-cta-field">
+            <strong>Project type</strong>
+            Retrofit upgrade, like-for-like replacement, or control scope for a new build
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 
