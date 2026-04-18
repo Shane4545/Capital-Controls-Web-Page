@@ -1,11 +1,11 @@
-# Publishes the static site to GitHub Pages.
+# Publishes the static site by pushing to the `gh-pages` branch (no configure-pages API).
 #
-# ONE-TIME (required or "Setup Pages" fails with HttpError Not Found):
-#   Repo → Settings → Pages → Build and deployment → Source → GitHub Actions
-#   (Do NOT leave Source on "Deploy from a branch" for this workflow.)
-# Then: Actions → failed run → Re-run failed jobs.
+# ONE-TIME in GitHub: Settings → Pages → Build and deployment
+#   Source: Deploy from a branch
+#   Branch: gh-pages   Folder: / (root)
+# Save, then wait a minute for the site to build. The first push from this workflow creates `gh-pages`.
 #
-# Note: Push to main still lands your files on GitHub; only the Pages publish step needs the setting above.
+# If you previously set Source to "GitHub Actions", switch it to "Deploy from a branch" as above.
 name: Deploy GitHub Pages
 
 on:
@@ -14,9 +14,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: pages
@@ -24,22 +22,14 @@ concurrency:
 
 jobs:
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload site
-        uses: actions/upload-pages-artifact@v3
+      - name: Publish site to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: .
-
-      - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v5
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          exclude_assets: '.github,tools'
