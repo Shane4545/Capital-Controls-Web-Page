@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700;800;900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="cinematic-home.css?v=50">
+  <link rel="stylesheet" href="cinematic-home.css?v=60">
   <link rel="stylesheet" href="cci-cinematic-system.css?v=9">
 </head>
 <body data-page="home" class="page-home page-home--cinematic cci-cinematic">
@@ -75,6 +75,7 @@
       <div class="home-proof-hero__scene" aria-hidden="true">
         <img class="home-proof-hero__scene-img" src="assets/photos/hero-panel-cci.png" alt="" width="768" height="1024" decoding="async" fetchpriority="high">
         <div class="home-proof-hero__scene-overlay"></div>
+        <canvas class="hero-network-canvas" aria-hidden="true"></canvas>
         <div class="home-proof-hero__scanlines"></div>
       </div>
 
@@ -88,8 +89,6 @@
             <li>Water / wastewater</li>
             <li>PLC / HMI / SCADA</li>
             <li>CSA panels</li>
-            <li>FAT / SAT / startup</li>
-            <li>Ontario-built</li>
           </ul>
           <div class="home-proof-hero__actions">
             <a class="home-proof-hero__btn home-proof-hero__btn--primary" href="contact.html">Discuss your project</a>
@@ -131,27 +130,27 @@
         <p class="cinema-section__deck">Representative hardware, SCADA captures, and field enclosures from municipal programs.</p>
 
         <div class="home-proof-grid">
-          <figure class="home-proof-card">
+          <figure class="home-proof-card" data-reveal>
             <img src="CCI%20Panels/SAHL8231.JPG" alt="CompactLogix-oriented panel interior with segregated AC/DC wiring and labeled terminations." width="473" height="1024" loading="lazy" decoding="async">
             <figcaption><span class="home-proof-card__tag">Terminations</span> DIN-rail power distribution, grouped terminal blocks, and routed field circuits—labels aligned to issued drawings.</figcaption>
           </figure>
-          <figure class="home-proof-card">
+          <figure class="home-proof-card" data-reveal>
             <img src="assets/photos/flagship-rockland-plc-rack.jpg?v=20260418" alt="Allen-Bradley PLC chassis with digital and analog I/O during shop integration." width="1024" height="768" loading="lazy" decoding="async">
             <figcaption><span class="home-proof-card__tag">PLC / I/O</span> ControlLogix-style rack with marshalled I/O, terminal islands, and control power—shop checkout prior to FAT.</figcaption>
           </figure>
-          <figure class="home-proof-card home-proof-card--contain">
+          <figure class="home-proof-card home-proof-card--contain" data-reveal>
             <img src="assets/photos/scada-pembroke-mixer-pumps.png?v=20260418" alt="iFIX SCADA process overview for a municipal water purification plant." width="1920" height="1080" loading="lazy" decoding="async">
             <figcaption><span class="home-proof-card__tag">SCADA</span> Operator overview—process mimic, equipment status, and alarm banner for low-lift and chemical trains.</figcaption>
           </figure>
-          <figure class="home-proof-card">
+          <figure class="home-proof-card" data-reveal>
             <img src="CCI%20Panels/CIEL1506.JPG" alt="Outdoor municipal control enclosure with doors open—motor control and distribution sections." width="1024" height="576" loading="lazy" decoding="async">
             <figcaption><span class="home-proof-card__tag">Field enclosure</span> NEMA-rated installation—service access, cable entries, and coordinated starter/control sections after landing.</figcaption>
           </figure>
-          <figure class="home-proof-card">
+          <figure class="home-proof-card" data-reveal>
             <img src="assets/photos/wtp-rockland-actiflo-panel.jpg?v=20260418" alt="Large CSA-rated control panel fully wired—PLC, motor controls, terminal sections, and wireway prior to FAT." width="1024" height="768" loading="lazy" decoding="async">
             <figcaption><span class="home-proof-card__tag">Fabrication</span> Shop build—PLC and I/O layout, wireway, and labeling prior to inspection and shipment.</figcaption>
           </figure>
-          <figure class="home-proof-card">
+          <figure class="home-proof-card" data-reveal>
             <img src="assets/photos/flagship-rockland-filter-process.jpg?v=20260418" alt="Actiflo control enclosure with Allen-Bradley HMI and local operator controls at a municipal facility." width="768" height="1024" loading="lazy" decoding="async">
             <figcaption><span class="home-proof-card__tag">Commissioning</span> Process control enclosure—disconnect, HMI, and manual controls at grade in the treatment building.</figcaption>
           </figure>
@@ -167,23 +166,23 @@
         <p class="cinema-section__deck">End-to-end delivery from design intent through documented turnover—scoped for municipal procurement and EOR review.</p>
 
         <div class="home-service-grid home-service-grid--six">
-          <article class="home-service-card">
+          <article class="home-service-card" data-reveal>
             <h3>Pump station controls</h3>
             <p>Sanitary and storm pumping, wet wells, lead/lag and alternation, permissives, and alarms—logic and interfaces aligned to the sequence of operation, drawings, and owner standards.</p>
           </article>
-          <article class="home-service-card">
+          <article class="home-service-card" data-reveal>
             <h3>Water / wastewater treatment controls</h3>
             <p>Unit operations from influent through effluent: instrumentation, drives and starters, interlocks, and operator-facing HMI/SCADA—flow, level, pressure, and analytical devices commissioned to loop sheets.</p>
           </article>
-          <article class="home-service-card">
+          <article class="home-service-card" data-reveal>
             <h3>PLC / HMI / SCADA integration</h3>
             <p>Allen‑Bradley PLCs with FactoryTalk, iFIX, Wonderware/Aveva, or owner-mandated platforms—tagging, alarming, trends, and historian handoff where specified.</p>
           </article>
-          <article class="home-service-card">
+          <article class="home-service-card" data-reveal>
             <h3>CSA control panel fabrication</h3>
             <p>In-house shop builds to CSA and project specifications—layout, segregation, labeling, test evidence, and shipment documentation for procurement and audit.</p>
           </article>
-          <article class="home-service-card">
+          <article class="home-service-card" data-reveal>
             <h3>FAT / SAT / commissioning / startup</h3>
             <p>Factory and site acceptance support, I/O checkout, sequence and alarm verification, process tuning, training, and structured turnover to operations and maintenance.</p>
           </article>
@@ -319,7 +318,7 @@
         <p class="cinema-section__deck">Samples from the experience page—locations, markets, and accountable deliverables.</p>
 
         <div class="home-program-teasers">
-          <article class="home-program-teaser">
+          <article class="home-program-teaser" data-reveal>
             <div class="home-program-teaser__img">
               <img src="assets/photos/flagship-rockland-filter-process.jpg" alt="Control enclosure at a municipal treatment facility." width="800" height="600" loading="lazy" decoding="async">
             </div>
@@ -329,7 +328,7 @@
               <p>Multi-PLC architecture, centralized SCADA, CompactLogix with iFIX workstations, process narratives from clarification through disinfection, FAT, commissioning, and operator training.</p>
             </div>
           </article>
-          <article class="home-program-teaser">
+          <article class="home-program-teaser" data-reveal>
             <div class="home-program-teaser__img">
               <img src="assets/photos/flagship-rockland-plc-rack.jpg" alt="Allen-Bradley ControlLogix PLC rack during shop integration." width="800" height="600" loading="lazy" decoding="async">
             </div>
@@ -339,7 +338,7 @@
               <p>Multiple phases at Robert O. Pickard—clarifiers, UV, aeration, polymer feed, ControlLogix programming, SCADA consolidation, instrumentation and VFD support, fiber backbone.</p>
             </div>
           </article>
-          <article class="home-program-teaser">
+          <article class="home-program-teaser" data-reveal>
             <div class="home-program-teaser__img">
               <img src="assets/photos/wtp-rockland-actiflo-panel.jpg" alt="Large CSA-rated control panel fully wired—PLC, motor controls, and terminal sections." width="800" height="600" loading="lazy" decoding="async">
             </div>
@@ -349,7 +348,7 @@
               <p>CSA pump control panels for Confederation Line drainage—transit-grade submittals, FAT with witness, integration to the LRT SCADA backbone, and site commissioning coordination.</p>
             </div>
           </article>
-          <article class="home-program-teaser">
+          <article class="home-program-teaser" data-reveal>
             <div class="home-program-teaser__img">
               <img src="assets/photos/wtp-rockland-main-plc.jpg" alt="Allen-Bradley ControlLogix PLC rack with labeled terminal blocks during shop integration." width="800" height="600" loading="lazy" decoding="async">
             </div>
@@ -434,7 +433,7 @@
     </div>
   </footer>
   <script type="module" src="cci-automation.js?v=4"></script>
-  <script type="module" src="cinematic-home.js?v=4"></script>
+  <script type="module" src="cinematic-home.js?v=5"></script>
   <script src="site.js" defer></script>
 </body>
 </html>
