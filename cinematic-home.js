@@ -75,6 +75,28 @@ function initCinemaHeader() {
   io.observe(hero);
 }
 
+function initSectionReveal() {
+  if (cinemaReduced) {
+    document.querySelectorAll(".cinema-section, .home-stats-strip").forEach((el) => {
+      el.classList.add("cinema-section--visible", "cci-scene-in");
+    });
+    return;
+  }
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("cinema-section--visible", "cci-scene-in");
+          io.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.06, rootMargin: "0px 0px -40px 0px" }
+  );
+  document.querySelectorAll(".cinema-section, .home-stats-strip").forEach((el) => io.observe(el));
+}
+
 initCinemaPageProgress();
 initCinemaScrollSpine();
 initCinemaHeader();
+initSectionReveal();
