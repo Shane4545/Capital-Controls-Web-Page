@@ -1,26 +1,20 @@
-CCI homepage hero video — filename
+CCI homepage hero video (production)
 ====================================
-The cinematic homepage loads:
+The static site loads this file from index.html:
 
-    cci-hero-loop.mp4
+    pumping-panel-walkthrough.mp4
 
-AI build (image-to-video from your CCI photo — Replicate Stable Video Diffusion, HTTP API):
+Poster image:
 
-    set REPLICATE_API_TOKEN=your_token
-    pip install requests pillow imageio-ffmpeg
-    python scripts/build_hero_loop_ai.py
+    pumping-panel-walkthrough-poster.jpg
 
-See assets/video/SOURCE.txt for full lineage and fallback.
+Playback is controlled by cinematic-home.js (targets [data-home-hero-video] inside .home-proof-hero).
 
-Non-AI fallback (Ken Burns from the same still), from repo root:
+Optional internal builds (do not change the live wiring unless you update index.html):
 
-    pip install pillow imageio imageio-ffmpeg numpy
     python scripts/build_hero_loop_from_still.py
+    python scripts/build_hero_loop_ai.py   # requires REPLICATE_API_TOKEN
 
-Default still: assets/photos/wtp-rockland-actiflo-panel.jpg
-Optional: python scripts/build_hero_loop_ai.py path\to\other.jpg
+Those scripts can produce cci-hero-loop.mp4 for optional/future use; the homepage does not reference that filename in HTML or active JS.
 
-After changing the file, bump ?v= in cinematic-home.js (CCI_HERO_MP4).
-
-To replace with hand-edited footage: overwrite cci-hero-loop.mp4 with your H.264
-export (muted, 720p/1080p), then commit.
+After replacing the walkthrough MP4, bump the ?v= query on cinematic-home.css / index.html script links as needed for cache busting on GitHub Pages.

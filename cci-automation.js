@@ -219,9 +219,6 @@ function markRevealTargets() {
 }
 
 function initHeroEntrance() {
-  const cinemaHero = document.querySelector(".cinema-hero");
-  if (cinemaHero) return;
-
   if (prefersReduced) return;
   const hero = document.querySelector(".hero--cinematic, .hero--elite, .hero--automation");
   if (!hero) return;
@@ -238,12 +235,8 @@ function initHeroParallax() {
   if (prefersReduced) return;
   if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
 
-  let hero = document.querySelector(".hero--cinematic");
-  let root = hero?.querySelector(".hero-cinematic-parallax-root");
-  if (!hero) {
-    hero = document.querySelector(".cinema-hero");
-    root = hero?.querySelector(".cinema-hero__media");
-  }
+  const hero = document.querySelector(".hero--cinematic");
+  const root = hero?.querySelector(".hero-cinematic-parallax-root");
   if (!hero || !root) return;
 
   const maxX = 16;
