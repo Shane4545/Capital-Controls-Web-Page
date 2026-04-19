@@ -6,6 +6,14 @@ const prefersReduced =
   typeof window !== "undefined" &&
   window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+/** Resolve click/pointer target to nearest anchor (text nodes have no `.closest`). */
+function anchorFromEventTarget(target) {
+  let el = target;
+  if (!el) return null;
+  if (el.nodeType === Node.TEXT_NODE) el = el.parentElement;
+  return el && typeof el.closest === "function" ? el.closest("a") : null;
+}
+
 function isInternalHtmlLink(anchor) {
   if (!anchor || anchor.tagName !== "A") return false;
   const href = anchor.getAttribute("href");
@@ -28,7 +36,7 @@ function isInternalHtmlLink(anchor) {
 function initViewTransitions() {
   if (prefersReduced || typeof document.startViewTransition !== "function") return;
   document.addEventListener("click", (e) => {
-    const a = e.target.closest("a");
+    const a = anchorFromEventTarget(e.target);
     if (!a || !isInternalHtmlLink(a)) return;
     if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey)
       return;
@@ -46,7 +54,7 @@ function initLinkPrefetch() {
   document.addEventListener(
     "pointerenter",
     (e) => {
-      const a = e.target.closest("a");
+      const a = anchorFromEventTarget(e.target);
       if (!a || !isInternalHtmlLink(a)) return;
       const href = a.href;
       if (done.has(href)) return;
