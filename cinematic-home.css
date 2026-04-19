@@ -3912,16 +3912,6 @@ body[data-page="home"] .cinema-cta-final__chapter {
   }
 }
 
-/* —— Service card icons —— */
-.home-service-card__icon {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin-bottom: 0.75rem;
-  color: var(--cin-accent);
-  opacity: 0.9;
-}
-
 /* —— Sector cards (replaces flat bullet list) —— */
 .home-sector-grid {
   display: grid;
