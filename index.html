@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700;800;900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="cinematic-home.css?v=62">
+  <link rel="stylesheet" href="cinematic-home.css?v=63">
   <link rel="stylesheet" href="cci-cinematic-system.css?v=9">
 </head>
 <body data-page="home" class="page-home page-home--cinematic cci-cinematic">
@@ -73,7 +73,14 @@
 
       <!-- Full-bleed panel background scene -->
       <div class="home-proof-hero__scene" aria-hidden="true">
-        <img class="home-proof-hero__scene-img" src="assets/photos/hero-panel-cci.png" alt="" width="768" height="1024" decoding="async" fetchpriority="high">
+        <video class="home-proof-hero__scene-img"
+               autoplay muted playsinline
+               preload="auto"
+               poster="assets/video/pumping-panel-walkthrough-poster.jpg"
+               aria-hidden="true">
+          <source src="assets/video/pumping-panel-walkthrough.mp4" type="video/mp4">
+          <img src="assets/video/pumping-panel-walkthrough-poster.jpg" alt="" class="home-proof-hero__scene-img--fallback">
+        </video>
         <div class="home-proof-hero__scene-overlay"></div>
         <canvas class="hero-network-canvas" aria-hidden="true"></canvas>
         <div class="home-proof-hero__scanlines"></div>
@@ -433,7 +440,7 @@
     </div>
   </footer>
   <script type="module" src="cci-automation.js?v=4"></script>
-  <script type="module" src="cinematic-home.js?v=5"></script>
+  <script type="module" src="cinematic-home.js?v=6"></script>
   <script src="site.js" defer></script>
 </body>
 </html>

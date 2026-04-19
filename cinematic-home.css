@@ -3759,9 +3759,13 @@ body.page-home--cinematic .home-proof-hero #home-dominant-heading.home-proof-her
 .home-proof-hero__scene-overlay {
   position: absolute;
   inset: 0;
+  /* Stronger overlay for video — frames can be brighter than a static image.
+     Left-to-right: solid dark left (text area) → lighter right (compositional view).
+     Bottom vignette keeps the stats strip transition clean. */
   background:
-    linear-gradient(to right, rgba(7,16,25,0.60) 0%, rgba(7,16,25,0.30) 40%, rgba(7,16,25,0.05) 100%),
-    linear-gradient(to top, rgba(7,16,25,0.55) 0%, transparent 20%);
+    linear-gradient(to right, rgba(7,16,25,0.80) 0%, rgba(7,16,25,0.55) 38%, rgba(7,16,25,0.22) 70%, rgba(7,16,25,0.10) 100%),
+    linear-gradient(to top, rgba(7,16,25,0.75) 0%, rgba(7,16,25,0.20) 25%, transparent 50%),
+    linear-gradient(to bottom, rgba(7,16,25,0.40) 0%, transparent 20%);
 }
 
 /* Scanline overlay across the whole hero */
@@ -5657,4 +5661,44 @@ body[data-page="home"] .cinema-cta-final__chapter {
 /* ── Reduced motion compatibility ── */
 @media (prefers-reduced-motion: reduce) {
   .hero-network-canvas { display: none !important; }
+}
+
+/* ==========================================================================
+   HERO VIDEO v63 — clean approved clip, no watermark
+   ========================================================================== */
+
+/* Video element inherits all scene-img layout rules via shared class.
+   These additional declarations handle video-specific display requirements. */
+video.home-proof-hero__scene-img {
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Fallback img inside <video> — shown only when video cannot play */
+.home-proof-hero__scene-img--fallback {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* On mobile, anchor video composition to the panel (left-center area) */
+@media (max-width: 639px) {
+  video.home-proof-hero__scene-img {
+    object-position: 35% center;
+  }
+}
+
+/* Reduced-motion: pause video immediately, show poster */
+@media (prefers-reduced-motion: reduce) {
+  video.home-proof-hero__scene-img {
+    display: none !important;
+  }
+  /* Reveal the fallback img as the background instead */
+  .home-proof-hero__scene-img--fallback {
+    display: block;
+  }
 }
