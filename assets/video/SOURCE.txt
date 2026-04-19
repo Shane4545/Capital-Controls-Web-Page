@@ -5,7 +5,8 @@ Production file wired in index.html:
 
   File: pumping-panel-walkthrough.mp4 (shop walkthrough, H.264, muted loop in .home-proof-hero)
 
-Optional build scripts in /scripts may generate cci-hero-loop.mp4 for other uses; that file is not referenced by the current homepage HTML or cinematic-home.js.
+Optional build scripts in /scripts may generate an alternate loop for testing; the
+production homepage uses pumping-panel-walkthrough.mp4 unless index.html is changed.
 
 For AI or Ken-Burns–style loops from a still, see scripts/build_hero_loop_ai.py and build_hero_loop_from_still.py and assets/video/README.txt.
 

@@ -15,6 +15,8 @@ Optional internal builds (do not change the live wiring unless you update index.
     python scripts/build_hero_loop_from_still.py
     python scripts/build_hero_loop_ai.py   # requires REPLICATE_API_TOKEN
 
-Those scripts can produce cci-hero-loop.mp4 for optional/future use; the homepage does not reference that filename in HTML or active JS.
+Those scripts write a filename defined in each script; the production homepage only
+uses pumping-panel-walkthrough.mp4 unless you explicitly change index.html and
+bump cache-bust query parameters.
 
 After replacing the walkthrough MP4, bump the ?v= query on cinematic-home.css / index.html script links as needed for cache busting on GitHub Pages.
