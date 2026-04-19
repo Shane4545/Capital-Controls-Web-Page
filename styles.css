@@ -102,57 +102,86 @@ a:hover {
   outline-offset: 2px;
 }
 
-/* Top bar */
+/* ── Utility bar (Rockwell-style) ── */
 .topbar {
-  background: var(--color-primary);
-  color: rgba(255, 255, 255, 0.88);
+  background: #001428;
+  color: rgba(255, 255, 255, 0.70);
   font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  font-weight: 500;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
+  border-bottom: 1px solid rgba(0, 151, 74, 0.30);
 }
 
 .topbar-inner {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  text-align: center;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 680px) {
   .topbar-inner {
-    text-align: left;
+    justify-content: space-between;
   }
 }
 
 .topbar-text {
-  display: block;
-  white-space: normal;
+  display: none;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 680px) {
   .topbar-text {
+    display: block;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  }
+
+  .topbar-text--left {
+    display: block;
   }
 }
 
-/* Header */
+.topbar-text--right {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .topbar-text--right {
+    display: block;
+    color: rgba(255, 255, 255, 0.55);
+  }
+}
+
+.topbar-phone {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.15s;
+}
+
+.topbar-phone:hover {
+  color: #00974a;
+}
+
+/* ── Sticky nav (Xylem + Rockwell hybrid) ── */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 200;
-  background: rgba(255, 255, 255, 0.96);
-  border-bottom: 1px solid var(--color-border);
-  backdrop-filter: saturate(180%) blur(12px);
-  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 2px solid #f0f4f8;
+  backdrop-filter: saturate(200%) blur(16px);
+  -webkit-backdrop-filter: saturate(200%) blur(16px);
+  box-shadow: 0 1px 16px rgba(0, 31, 61, 0.07);
 }
 
 .header-inner {
   position: relative;
   max-width: var(--max);
   margin: 0 auto;
-  padding: 1rem var(--gutter);
+  padding: 0.85rem var(--gutter);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -815,25 +844,28 @@ a:hover {
   font-weight: 800;
 }
 
+/* ── Pill CTA in nav (Xylem-style) ── */
 .nav-cta {
   display: inline-flex;
   align-items: center;
-  padding: 0.55rem 1.15rem;
+  padding: 0.55rem 1.4rem;
   font-weight: 700 !important;
   font-size: 0.75rem !important;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #fff !important;
-  background: var(--color-brand-green) !important;
-  border-radius: var(--radius);
+  background: #00974a !important;
+  border-radius: 999px !important;
   text-decoration: none !important;
-  transition: background 0.15s var(--ease), box-shadow 0.15s var(--ease);
-  box-shadow: var(--shadow-xs);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  box-shadow: 0 2px 12px rgba(0, 151, 74, 0.28);
 }
 
 .nav-cta:hover {
-  background: var(--color-brand-green-hover) !important;
+  background: #006b35 !important;
   color: #fff !important;
+  box-shadow: 0 4px 20px rgba(0, 151, 74, 0.38);
+  transform: translateY(-1px);
 }
 
 .nav-list a.nav-cta[aria-current="page"] {
@@ -1723,19 +1755,22 @@ figcaption {
 }
 
 /* Footer */
+/* ── Footer (white + green accent, clean typography) ── */
 .site-footer {
-  background: var(--color-primary);
-  color: rgba(255, 255, 255, 0.65);
-  padding: 3rem 0 2rem;
+  background: #ffffff;
+  color: #4b5563;
+  padding: 3.5rem 0 2rem;
+  border-top: 4px solid #00974a;
+  box-shadow: 0 -1px 0 rgba(0, 31, 61, 0.06);
 }
 
 .site-footer a {
-  color: rgba(255, 255, 255, 0.9);
+  color: #111827;
   text-decoration: none;
 }
 
 .site-footer a:hover {
-  color: #fff;
+  color: #00974a;
 }
 
 .footer-inner {
@@ -1757,11 +1792,11 @@ figcaption {
 .footer-logo-link {
   display: inline-block;
   line-height: 0;
-  padding: 0.65rem 0.85rem;
-  margin: -0.65rem -0.85rem 0 0;
-  background: #fff;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-xs);
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .footer-logo-link img {
@@ -1775,17 +1810,17 @@ figcaption {
   font-size: 0.8125rem;
   line-height: 1.55;
   max-width: 22rem;
-  color: rgba(255, 255, 255, 0.55);
+  color: #6b7280;
 }
 
 .footer-heading {
   display: block;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
   font-size: 0.6875rem;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
+  color: #00974a;
 }
 
 .footer-links {
@@ -1801,14 +1836,19 @@ figcaption {
 .footer-links a {
   font-size: 0.8125rem;
   font-weight: 600;
+  color: #374151;
+}
+
+.footer-links a:hover {
+  color: #00974a;
 }
 
 .footer-copy {
   margin: 0;
   padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid #e5e7eb;
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.45);
+  color: #9ca3af;
 }
 
 /* Mobile nav */
