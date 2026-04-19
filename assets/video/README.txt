@@ -8,7 +8,7 @@ Poster image:
 
     pumping-panel-walkthrough-poster.jpg
 
-Playback is controlled by cinematic-home.js (targets [data-home-hero-video] inside .home-proof-hero).
+The homepage hero uses the still frame pumping-panel-walkthrough-poster.jpg (no autoplay video). The MP4 remains available for other uses if needed.
 
 Optional internal builds (do not change the live wiring unless you update index.html):
 

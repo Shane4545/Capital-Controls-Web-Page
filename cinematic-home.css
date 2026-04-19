@@ -2912,6 +2912,8 @@
   background:
     radial-gradient(circle at top left, rgba(0, 151, 74, 0.12), transparent 30%),
     linear-gradient(180deg, #071019 0%, #0b1521 48%, #101b28 100%);
+  /* Body (.page-home--cinematic) sets dark text; establish light defaults inside dark hero */
+  color: rgba(226, 232, 240, 0.95);
 }
 
 .home-proof-hero__inner {
@@ -2950,6 +2952,15 @@
   letter-spacing: -0.025em;
   color: #f8fafc;
   max-width: 36rem;
+}
+
+/* Plain <h1> inherits body text color on dark hero */
+.home-proof-hero__copy > h1 {
+  color: #f8fafc;
+}
+
+body.page-home--cinematic .home-proof-hero #home-dominant-heading.home-proof-hero__headline {
+  color: #f8fafc;
 }
 
 .home-proof-hero__lead {
@@ -3604,12 +3615,13 @@
   aspect-ratio: 16 / 10;
 }
 
-.home-proof-hero__video {
+.home-proof-hero__video,
+.home-proof-hero__hero-img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 45%;
+  object-position: 42% 48%;
 }
 
 .home-proof-hero__media-caption {

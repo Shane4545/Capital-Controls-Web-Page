@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="cinematic-home.css?v=40">
+  <link rel="stylesheet" href="cinematic-home.css?v=43">
   <link rel="stylesheet" href="cci-cinematic-system.css?v=9">
 </head>
 <body data-page="home" class="page-home page-home--cinematic cci-cinematic">
@@ -68,11 +68,11 @@
 
   <main id="main" class="cinema-main cinema-main--cinematic">
     <!-- 1. Hero -->
-    <section class="home-proof-hero home-hero-dominant" aria-labelledby="home-dominant-heading">
+    <section class="home-proof-hero" aria-labelledby="home-dominant-heading">
       <div class="home-proof-hero__inner section-inner">
         <div class="home-proof-hero__copy">
           <p class="home-proof-hero__eyebrow">Controls integrator · Municipal &amp; infrastructure</p>
-          <h1 id="home-dominant-heading">Pump and lift stations, water and wastewater facilities, and related infrastructure—controls designed, fabricated, programmed, and commissioned in Ontario</h1>
+          <h1 id="home-dominant-heading" class="home-proof-hero__headline">Pump and lift stations, water and wastewater facilities, and related infrastructure—controls designed, fabricated, programmed, and commissioned in Ontario</h1>
           <p class="home-proof-hero__lead">Capital Controls designs, fabricates, programs, integrates, and commissions custom control systems for pump stations, lift stations, water and wastewater facilities, and related infrastructure. Scope includes CSA-rated panels, PLC and I/O, operator interfaces, SCADA integration, and startup through turnover.</p>
           <ul class="home-proof-hero__proof-strip" aria-label="Focus areas">
             <li>Pump / lift stations</li>
@@ -90,20 +90,16 @@
         </div>
         <div class="home-proof-hero__media">
           <div class="home-proof-hero__media-frame">
-            <video
-              class="home-proof-hero__video"
-              data-home-hero-video
-              muted
-              playsinline
-              loop
-              preload="metadata"
-              poster="assets/video/pumping-panel-walkthrough-poster.jpg"
-              tabindex="-1"
-              aria-hidden="true">
-              <source src="assets/video/pumping-panel-walkthrough.mp4" type="video/mp4">
-            </video>
+            <img
+              class="home-proof-hero__hero-img"
+              src="assets/video/pumping-panel-walkthrough-poster.jpg"
+              alt="CSA control panel interior during shop build: motor control, terminations, and organized field wiring."
+              width="1920"
+              height="1080"
+              decoding="async"
+              fetchpriority="high">
           </div>
-          <p class="home-proof-hero__media-caption">Shop walkthrough—enclosure layout, motor control, and termination sections during build and checkout.</p>
+          <p class="home-proof-hero__media-caption">Shop build—enclosure layout, motor control, and termination sections prior to FAT and shipment.</p>
         </div>
       </div>
     </section>
@@ -318,7 +314,7 @@
     </div>
   </footer>
   <script type="module" src="cci-automation.js?v=4"></script>
-  <script type="module" src="cinematic-home.js?v=3"></script>
+  <script type="module" src="cinematic-home.js?v=4"></script>
   <script src="site.js" defer></script>
 </body>
 </html>
