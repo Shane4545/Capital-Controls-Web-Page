@@ -5127,11 +5127,6 @@ body[data-page="home"] .cinema-cta-final__chapter {
   }
 }
 
-/* ── Platforms section: white ── */
-.cinema-section:has(.home-partner-logos) {
-  background: #f8f9fb !important;
-}
-
 .home-partner-logos {
   margin-top: 2.5rem !important;
   padding: 1.75rem 2rem !important;
@@ -5159,19 +5154,6 @@ body[data-page="home"] .cinema-cta-final__chapter {
   opacity: 0.6;
 }
 
-.cinema-section:has(.home-partner-logos) .cinema-section__label,
-.cinema-section:has(.home-partner-logos) .cinema-section__title {
-  color: #001f3d !important;
-}
-
-.cinema-section:has(.home-partner-logos) .cinema-section__deck {
-  color: #4b5563 !important;
-}
-
-.cinema-section:has(.home-partner-logos) .home-inline-cta a {
-  background: #00974a;
-  color: #ffffff;
-}
 
 /* ── Program teasers: premium case study cards ── */
 .home-program-teasers {
@@ -5396,4 +5378,283 @@ body[data-page="home"] .cinema-cta-final__chapter {
   .home-proof-card,
   .home-program-teaser,
   .home-service-card { transition: none !important; }
+}
+
+/* ==========================================================================
+   REFINEMENT v61 — Premium restraint pass
+   Heavy-handed accents removed; replaced with layered, nuanced composition
+   ========================================================================== */
+
+/* ── Hero canvas: dial back further — should be barely perceptible ── */
+.hero-network-canvas {
+  opacity: 0.22 !important;
+}
+
+/* ── Stats strip: remove artificial dots, refine to clean precision ── */
+.home-stat::before {
+  display: none !important;
+}
+
+.home-stats-strip {
+  background: #060f18 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+.home-stat {
+  border-right-color: rgba(255, 255, 255, 0.06) !important;
+  padding: 1.75rem 2rem !important;
+}
+
+.home-stat__num {
+  font-size: clamp(1.35rem, 0.7rem + 1.6vw, 2rem) !important;
+  letter-spacing: -0.03em;
+}
+
+.home-stat__label {
+  font-size: 0.7rem !important;
+  letter-spacing: 0.09em !important;
+  color: rgba(100, 116, 139, 0.85) !important;
+}
+
+/* Thin green accent line — top edge of strip, not per-stat dots */
+.home-stats-strip::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(0, 151, 74, 0.5) 30%, rgba(0, 151, 74, 0.5) 70%, transparent);
+  pointer-events: none;
+}
+.home-stats-strip {
+  position: relative;
+}
+
+/* ── Dark sections: add subtle depth gradient, never flat slab ── */
+.cinema-section:not(.cinema-section--elevated):not(.cinema-section--deep):not(.cinema-section--sectors-green):not(.cinema-section--credibility-green):not(.home-cta-tech):not(.cinema-section--platforms) {
+  background: linear-gradient(180deg, #0b1521 0%, #0d1a28 100%) !important;
+}
+
+/* ── Platforms section: light surface ── */
+.cinema-section--platforms {
+  background: #f7f8fa !important;
+}
+
+.cinema-section--platforms .cinema-section__label {
+  color: #00974a !important;
+}
+
+.cinema-section--platforms .cinema-section__title {
+  color: #001f3d !important;
+}
+
+.cinema-section--platforms .cinema-section__deck {
+  color: #4b5563 !important;
+}
+
+/* ── Service cards: white surface on dark — premium contrast, not dark-on-dark ── */
+.home-service-card {
+  background: rgba(255, 255, 255, 0.055) !important;
+  border: 1px solid rgba(255, 255, 255, 0.09) !important;
+  border-left: none !important;
+  border-top: 1px solid rgba(0, 151, 74, 0.35) !important;
+  padding: 1.65rem 1.4rem 1.5rem !important;
+  border-radius: 3px !important;
+  box-shadow: none !important;
+}
+
+@media (hover: hover) {
+  .home-service-card:hover {
+    background: rgba(255, 255, 255, 0.085) !important;
+    border-top-color: rgba(0, 151, 74, 0.7) !important;
+    border-left: none !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3) !important;
+  }
+}
+
+.home-service-card h3 {
+  font-size: 0.9375rem !important;
+  margin-bottom: 0.7rem !important;
+}
+
+/* ── Signal path: reduce grid to near-invisible watermark ── */
+.cinema-section--deep::before {
+  opacity: 0.4 !important;
+  background-image:
+    linear-gradient(rgba(0, 151, 74, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 151, 74, 0.035) 1px, transparent 1px) !important;
+  background-size: 48px 48px !important;
+}
+
+/* Subtle radial depth on deep sections — not flat black */
+.cinema-section--deep {
+  background: radial-gradient(ellipse at 20% 0%, rgba(0, 40, 20, 0.6) 0%, transparent 60%),
+              linear-gradient(180deg, #040c14 0%, #060f18 100%) !important;
+}
+
+/* Flow steps: more refined treatment — no harsh borders, more breathing room */
+.home-flow-steps li {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-top: none !important;
+  padding: 1.75rem 1.4rem 1.6rem !important;
+}
+
+@media (hover: hover) {
+  .home-flow-steps li:hover {
+    background: rgba(0, 151, 74, 0.05) !important;
+  }
+}
+
+/* Step number: smaller, more refined */
+.home-flow-steps li::before {
+  width: 1.85rem !important;
+  height: 1.85rem !important;
+  font-size: 0.7rem !important;
+  background: rgba(0, 151, 74, 0.08) !important;
+  border-color: rgba(0, 151, 74, 0.3) !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Top accent bar: thinner, more refined */
+.home-flow-steps li::after {
+  height: 1px !important;
+  background: linear-gradient(to right, rgba(0, 151, 74, 0.6), transparent 70%) !important;
+}
+
+/* ── Program teasers: remove heavy left green border ── */
+.home-program-teaser {
+  border-left: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.07) !important;
+}
+
+@media (hover: hover) {
+  .home-program-teaser:hover {
+    border-color: rgba(0, 151, 74, 0.25) !important;
+    border-left-color: rgba(0, 151, 74, 0.25) !important;
+  }
+}
+
+/* Image overlay: more cinematic, less abrupt */
+.home-program-teaser__img::after {
+  background: linear-gradient(to top, rgba(4, 12, 20, 0.75) 0%, rgba(4, 12, 20, 0.15) 45%, transparent 70%) !important;
+}
+
+/* More padding inside body */
+.home-program-teaser__body {
+  padding: 1.4rem 1.5rem 1.6rem !important;
+}
+
+.home-program-teaser h3 {
+  font-size: 1rem !important;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+/* ── Proof of work cards: more generous, premium spacing ── */
+.home-proof-card figcaption {
+  padding: 0.9rem 1.1rem 1rem !important;
+}
+
+/* ── Sectors: green band — refine from solid to gradient ── */
+.cinema-section--sectors-green {
+  background: linear-gradient(135deg, #006b35 0%, #00974a 50%, #007a3d 100%) !important;
+}
+
+/* ── Credibility strip: gradient not flat ── */
+.cinema-section--credibility-green {
+  background: linear-gradient(135deg, #005a2d 0%, #00874a 60%, #006b35 100%) !important;
+}
+
+/* ── CTA: add subtle texture depth, not flat ── */
+.cinema-cta-final--finale {
+  background: radial-gradient(ellipse at 70% 50%, rgba(0, 40, 20, 0.5) 0%, transparent 60%),
+              linear-gradient(180deg, #040c14 0%, #060e18 100%) !important;
+}
+
+/* ── Inline CTA buttons: more refined style ── */
+.home-inline-cta a {
+  font-size: 0.8rem !important;
+  letter-spacing: 0.07em !important;
+  padding: 0.6rem 1.5rem !important;
+}
+
+/* ── Hero bottom fade: softer, more integrated ── */
+.home-proof-hero::after {
+  height: 10rem !important;
+  background: linear-gradient(to bottom, transparent 0%, rgba(7, 16, 25, 0.4) 40%, #060f18 100%) !important;
+}
+
+/* ── Section label / title / deck: better spacing in all dark sections ── */
+.cinema-section__label {
+  letter-spacing: 0.14em;
+  margin-bottom: 0.6rem;
+}
+
+/* ── Partner logos: increase grayscale transparency for more refinement ── */
+.home-partner-logos li a {
+  opacity: 0.45 !important;
+  filter: grayscale(1) !important;
+}
+
+@media (hover: hover) {
+  .home-partner-logos li a:hover {
+    opacity: 0.85 !important;
+    filter: grayscale(0.2) !important;
+  }
+}
+
+/* ── Better section framing: subtle inner top highlight on dark sections ── */
+.cinema-section--deep .cinema-section__inner::before {
+  content: none;
+}
+
+/* ── Proof of work section: slight warm tint for photographic richness ── */
+.cinema-section--elevated {
+  background: #f7f8fa !important;
+}
+
+/* ── Topbar: slightly less opaque text ── */
+.topbar-text {
+  letter-spacing: 0.08em !important;
+}
+
+/* ── Hero chip tags: even lighter weight ── */
+.home-proof-hero__proof-strip li {
+  background: rgba(0, 151, 74, 0.08) !important;
+  border-color: rgba(0, 151, 74, 0.30) !important;
+  color: rgba(180, 230, 200, 0.9) !important;
+}
+
+/* ── Sector cards: cleaner hover (no translate on horizontal links) ── */
+@media (hover: hover) {
+  .home-sector-card:hover {
+    background: rgba(255, 255, 255, 0.12) !important;
+    transform: none !important;
+    border-color: rgba(255, 255, 255, 0.22) !important;
+    box-shadow: none !important;
+  }
+}
+
+/* ── Remove hero bottom fade from stacking context issue on some browsers ── */
+.home-proof-hero {
+  overflow: visible;
+}
+
+/* ── CTA headline: tighter line height ── */
+.cinema-cta-final__headline {
+  line-height: 1.15 !important;
+}
+
+/* ── Footer: slightly more breathing room ── */
+.site-footer .footer-inner {
+  padding-top: 3rem;
+  padding-bottom: 2.5rem;
+}
+
+/* ── Reduced motion compatibility ── */
+@media (prefers-reduced-motion: reduce) {
+  .hero-network-canvas { display: none !important; }
 }
