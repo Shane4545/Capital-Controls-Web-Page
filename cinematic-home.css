@@ -3732,7 +3732,17 @@ body.page-home--cinematic .home-proof-hero #home-dominant-heading.home-proof-her
    Homepage rebuild: hero video + proof grid + flow + programs (v37)
    -------------------------------------------------------------------------- */
 
-/* ── Hero full-bleed scene layer ── */
+/* ── Hero full-bleed scene layer ──
+   Strict layering:
+     .home-proof-hero          position: relative, overflow: hidden (container)
+     .home-proof-hero__scene   absolute, inset: 0, z-index: 0 (media stage)
+       └ video / img           absolute, inset: 0 (the clip itself, background)
+       └ scene-overlay         absolute, inset: 0 (dark gradient)
+       └ wm-cover              absolute, top-right (watermark block)
+       └ hero-network-canvas   absolute, inset: 0 (linework)
+       └ scanlines             absolute, inset: 0 (texture)
+     .home-proof-hero__inner   relative, z-index: 2 (copy/CTA on top)
+*/
 .home-proof-hero {
   position: relative;
   overflow: hidden;
@@ -3743,6 +3753,7 @@ body.page-home--cinematic .home-proof-hero #home-dominant-heading.home-proof-her
   inset: 0;
   z-index: 0;
   pointer-events: none;
+  overflow: hidden;
 }
 
 .home-proof-hero__scene-img {
@@ -3750,10 +3761,19 @@ body.page-home--cinematic .home-proof-hero #home-dominant-heading.home-proof-her
   inset: 0;
   width: 100%;
   height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: cover;
   object-position: center center;
   opacity: 1;
   filter: saturate(0.95) contrast(1.0);
+  z-index: 0;
+  display: block;
+  /* Defensive: prevent the video from ever flowing as a normal block */
+  margin: 0;
+  padding: 0;
+  border: 0;
+  pointer-events: none;
 }
 
 .home-proof-hero__scene-overlay {
@@ -3784,10 +3804,10 @@ body.page-home--cinematic .home-proof-hero #home-dominant-heading.home-proof-her
   pointer-events: none;
 }
 
-/* Ensure inner content sits above the scene */
+/* Ensure inner content sits above the scene (video + overlays) */
 .home-proof-hero__inner {
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 
 /* ── Rockwell-style diagonal geometric accents ── */
@@ -5644,9 +5664,13 @@ body[data-page="home"] .cinema-cta-final__chapter {
   }
 }
 
-/* ── Remove hero bottom fade from stacking context issue on some browsers ── */
+/* ── Hero container: strict background/media containment ──
+   The hero must behave as a positioned container that clips its absolutely
+   positioned media layer (video + overlays). Overflow MUST stay hidden. */
 .home-proof-hero {
-  overflow: visible;
+  position: relative !important;
+  overflow: hidden !important;
+  isolation: isolate; /* new stacking context — keeps video layering local */
 }
 
 /* ── CTA headline: tighter line height ── */
@@ -5698,14 +5722,18 @@ video.home-proof-hero__scene-img {
   object-position: center center;
 }
 
-/* Fallback img inside <video> — shown only when video cannot play */
+/* Fallback img inside <video> — hidden by default; JS shows it only when
+   autoplay is blocked / video cannot play. Browsers that support <video> hide
+   child fallback content automatically, but this is a defensive guarantee. */
 .home-proof-hero__scene-img--fallback {
+  display: none;
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center center;
+  z-index: 0;
 }
 
 /* On mobile, anchor video composition to the panel (left-center area) */

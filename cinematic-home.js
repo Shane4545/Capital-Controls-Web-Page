@@ -210,40 +210,64 @@ function initRevealObserver() {
   document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
 }
 
-/** Hero video: play once, freeze on last frame, graceful fallback */
+/** Hero video: play once inside the hero container only, freeze on final frame,
+ *  pause when the hero scrolls out of view, never restart, graceful fallback. */
 function initHeroVideo() {
+  const hero = document.querySelector('.home-proof-hero');
   const video = document.querySelector('video.home-proof-hero__scene-img');
-  if (!video) return;
+  if (!hero || !video) return;
 
-  // Ensure muted (required for autoplay on most browsers)
   video.muted = true;
   video.playsInline = true;
+  video.loop = false;
+  video.removeAttribute('controls');
 
-  // Attempt autoplay — if blocked (e.g. some mobile browsers), the poster is shown
-  const playPromise = video.play();
-  if (playPromise !== undefined) {
-    playPromise.catch(() => {
-      // Autoplay blocked: poster is already visible from the `poster` attribute.
-      // Optionally show the fallback img explicitly.
-      const fallback = video.querySelector('img');
-      if (fallback) {
-        video.style.display = 'none';
-        fallback.style.display = 'block';
-      }
-    });
-  }
+  let hasPlayed = false;
+  let hasEnded = false;
 
-  // On ended: video naturally stays on its last frame (browser default when no loop).
-  // Nothing further needed, but we add a hook for future use.
+  const showFallback = () => {
+    const fallback = video.querySelector('img');
+    if (fallback) {
+      video.style.display = 'none';
+      fallback.style.display = 'block';
+    }
+  };
+
+  const tryPlay = () => {
+    if (hasEnded || cinemaReduced) return;
+    const p = video.play();
+    if (p !== undefined) {
+      p.then(() => { hasPlayed = true; }).catch(() => {
+        if (!hasPlayed) showFallback();
+      });
+    }
+  };
+
   video.addEventListener('ended', () => {
+    hasEnded = true;
     video.pause();
-    // Remain on final frame — do not seek, do not reload, do not loop.
   }, { once: true });
 
-  // On reduced-motion preference, pause immediately
   if (cinemaReduced) {
     video.pause();
     video.currentTime = 0;
+    return;
+  }
+
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (hasEnded) return;
+        if (entry.isIntersecting) {
+          tryPlay();
+        } else {
+          video.pause();
+        }
+      });
+    }, { threshold: 0.1 });
+    io.observe(hero);
+  } else {
+    tryPlay();
   }
 }
 
